@@ -1,6 +1,7 @@
 # ไฟล์: .agents/skills/bpsr-data-scraper/scripts/extract_maxroll_master_db.py
 import asyncio
 import json
+import re
 from pathlib import Path
 from playwright.async_api import async_playwright
 
@@ -11,58 +12,102 @@ DUMP_DIR.mkdir(parents=True, exist_ok=True)
 PLANNER_URL = "https://maxroll.gg/blue-protocol/planner"
 
 async def dump_all_planner_databases():
+    # ล้างไฟล์ขยะเก่าออกก่อนเริ่ม
+    for old_file in DUMP_DIR.glob("*"):
+        if old_file.is_file():
+            old_file.unlink()
+
     async with async_playwright() as p:
-        # เปิดเบราว์เซอร์เพื่อดักไฟล์ฐานข้อมูลทั้งหมดที่ Planner โหลดขึ้นมา
-        browser = await p.chromium.launch(headless=False) # เปิดหน้าจอให้เห็นจะช่วยผ่าน Cloudflare ได้ง่ายขึ้น
+        browser = await p.chromium.launch(headless=False)
         context = await browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
         )
         page = await context.new_page()
+
+        # บล็อกโฆษณาและ Tracker ทั้งหมดเพื่อให้หน้าเว็บโหลดเร็วและไม่เซฟไฟล์ขยะ
+        await page.route("**/*", lambda route: route.abort() if any(
+            ad in route.request.url for ad in [
+                "adsrvr", "criteo", "gumgum", "rubicon", "pubmatic", "primis",
+                "id5-sync", "3lift", "cpmstar", "cookielaw", "onetrust", "google-analytics",
+                "doubleclick", "amazon-adsystem", "ad-score", "crwdcntrl"
+            ]
+        ) else route.continue_())
 
         captured_count = 0
 
         async def on_response(response):
             nonlocal captured_count
             url = response.url
-            content_type = response.headers.get("content-type", "")
+            # กรองเฉพาะไฟล์ที่มาจากโดเมนของ Maxroll เท่านั้น!
+            if "maxroll.gg" not in url:
+                return
 
-            # ดักจับทุกไฟล์ JSON หรือไฟล์ข้อมูลเกมจาก CDN ของ Maxroll
-            if "json" in content_type or ".json" in url or "data" in url:
-                try:
-                    body = await response.text()
-                    data = json.loads(body)
-                    
-                    # สร้างชื่อไฟล์จาก URL เพื่อดูว่าไฟล์ไหนเก็บ Equipments, Sets, Talents, Psychoscopes
-                    clean_name = url.split("/")[-1].split("?")[0]
-                    if not clean_name.endswith(".json"):
-                        clean_name = f"payload_{captured_count}_{clean_name[:30]}.json"
-                    
-                    out_file = DUMP_DIR / clean_name
-                    with open(out_file, "w", encoding="utf-8") as f:
-                        json.dump(data, f, ensure_ascii=False, indent=2)
-                    
+            content_type = response.headers.get("content-type", "").lower()
+            if any(ext in url.lower() for ext in [".png", ".webp", ".jpg", ".svg", ".woff", ".css"]):
+                return
+
+            try:
+                body = await response.text()
+                size_kb = len(body.encode("utf-8")) / 1024
+
+                # เก็บทุกไฟล์ JSON จาก maxroll.gg หรือไฟล์ JS ขนาดใหญ่ที่มีข้อมูลเกม
+                is_json = "json" in content_type or url.split("?")[0].endswith(".json")
+                has_game_data = size_kb > 10 and any(
+                    kw in body for kw in ["Falconry", "Wildpack", "Psychoscope", "Illusion", "Versatility", "Emblem", "Perfection"]
+                )
+
+                if is_json or has_game_data:
                     captured_count += 1
-                    print(f"[SAVED #{captured_count}] {clean_name} (Size: {len(body)//1024} KB) <- {url}")
-                except Exception:
-                    pass
+                    raw_name = url.split("/")[-1].split("?")[0]
+                    safe_name = re.sub(r"[^a-zA-Z0-9._-]", "_", raw_name)[:50]
+                    ext = ".json" if is_json else ".js"
+                    if not safe_name.endswith(ext):
+                        safe_name = f"{captured_count:02d}_{safe_name}{ext}"
+                    else:
+                        safe_name = f"{captured_count:02d}_{safe_name}"
+
+                    out_path = DUMP_DIR / safe_name
+                    if is_json:
+                        try:
+                            parsed = json.loads(body)
+                            out_path.write_text(json.dumps(parsed, ensure_ascii=False, indent=2), encoding="utf-8")
+                        except Exception:
+                            out_path.write_text(body, encoding="utf-8")
+                    else:
+                        out_path.write_text(body, encoding="utf-8")
+
+                    print(f"[MAXROLL DATA #{captured_count}] {safe_name} ({size_kb:,.1f} KB) <- {url}")
+            except Exception:
+                pass
 
         page.on("response", on_response)
 
-        print(f"1. กำลังเปิดหน้าเว็บ {PLANNER_URL} ...")
+        print(f"1. กำลังเปิดหน้าเว็บ {PLANNER_URL} (บล็อกโฆษณาทั้งหมดแล้ว) ...")
         await page.goto(PLANNER_URL, wait_until="domcontentloaded", timeout=60000)
 
-        print("2. กรุณาคลิกเลือกอาชีพ / ช่องอุปกรณ์ / โมดูล / Psychoscope บนหน้าเว็บที่เด้งขึ้นมาสัก 15 วินาที เพื่อให้เว็บโหลด JSON ครบทุกหมวด...")
-        await page.wait_for_timeout(20000)
+        print("2. กรุณาลองคลิกเลือกอาชีพ / ช่องอุปกรณ์ / โมดูล / Psychoscope บนหน้าเว็บที่เด้งขึ้นมา (มีเวลา 25 วินาที)...")
+        await page.wait_for_timeout(25000)
 
-        # ดึงข้อมูลที่อาจจะฝังอยู่ใน window.__NEXT_DATA__ หรือ Global State ของเว็บด้วย
-        next_data = await page.evaluate("() => window.__NEXT_DATA__ || window.__INITIAL_STATE__ || null")
-        if next_data:
-            with open(DUMP_DIR / "_window_state_dump.json", "w", encoding="utf-8") as f:
-                json.dump(next_data, f, ensure_ascii=False, indent=2)
-            print("[SAVED] _window_state_dump.json จาก Global Window Object!")
+        # ดึง Global Variables ทั้งหมดในหน้าเว็บที่มีขนาดใหญ่ (เช่น Remix Context / Planner Store)
+        window_dump = await page.evaluate("""() => {
+            const result = {};
+            for (const key of Object.keys(window)) {
+                if (key.startsWith('__') || key.toLowerCase().includes('data') || key.toLowerCase().includes('planner') || key.toLowerCase().includes('remix')) {
+                    try {
+                        result[key] = window[key];
+                    } catch (e) {}
+                }
+            }
+            return result;
+        }""")
+
+        if window_dump:
+            win_path = DUMP_DIR / "00_window_globals.json"
+            win_path.write_text(json.dumps(window_dump, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"[SAVED WINDOW STATE] 00_window_globals.json ({win_path.stat().st_size / 1024:,.1f} KB)")
 
         await browser.close()
-        print(f"\nเสร็จสมบูรณ์! ดึงไฟล์ฐานข้อมูลมาได้ทั้งหมด {captured_count} ไฟล์ ที่โฟลเดอร์: {DUMP_DIR.resolve()}")
+        print(f"\n✅ เสร็จสมบูรณ์! ดึงไฟล์ของแท้จาก Maxroll ได้ทั้งหมด {captured_count} ไฟล์ ที่: {DUMP_DIR}")
 
 if __name__ == "__main__":
     asyncio.run(dump_all_planner_databases())

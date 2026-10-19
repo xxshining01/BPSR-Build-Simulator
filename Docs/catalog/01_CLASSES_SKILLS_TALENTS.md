@@ -1,0 +1,2520 @@
+# 1. รายการอาชีพ (Classes), สกิลประจำคลาส (Skills) และผังโหนด Talents ทั้งหมด
+
+## อาชีพ [1]: **Stormblade**
+- **สาย Talents ย่อย (Specializations):** **Spec 101** (Stage ID: `101`), **Spec 102** (Stage ID: `102`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[1701] Judgment Cut** (Max Tier/Rank: `0`)
+  - *Text:* Blade IntentStacks 2 Blade Intent per second. When fully charged, Special Attack is enhanced: Consumes 100 Blade Intent to greatly increase its casting speed.Basic Attack: Swift JusticeUnleashes up to four sweeping strikes in longsword form, each dealing Attack DMG.Tips: Use the Special Attack promptly when Blade Intent reaches the max to maximize damage.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[1714] Iaido Slash** (Max Tier/Rank: `0`)
+  - *Text:* Powers up and delivers a swift forward slash, consuming all Thunder Sigils to deal Attack Damage. Each Thunder Sigil consumed boosts DMG by 25%. "Everything I see, hear, or sense can be severed."Tips: Use when Thunder Sigils reach the max for maximum damage.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[1713] Oblivion Combo** (Max Tier/Rank: `0`)
+  - *Text:* A supreme sword technique sharp enough to cut the air itself. Unleashes a flurry of slashes in front, dealing Attack Damage to all enemies in range. Grants max Thunder Sigil and fully restores Blade Intent at the end of the strike."Heaven's weapon dims even the brightest stars."Tips: Cast when Thunder Sigil is empty to quickly charge it. Also effective against multiple targets for massive area damage.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[1705] Overdrive** (Max Tier/Rank: `1`)
+  - *Text:* Unleashes the power of tachi and shifts its form into a scythe, each attack dealing increased Attack Damage and granting 1 Thunder Sigil.This skill holds 5 charges.Tips: Always keep at least one charge regenerating without overflowing Thunder Sigils.
+- **[1717] Flash Strike** (Max Tier/Rank: `2`)
+  - *Text:* Consumes all Thunder Sigils to power up and dash forward, slashing all enemies along the path to deal Attack DMG. Each Thunder Sigil increases DMG by 25%. "In a blink of lightning, the blade is already unsheathed."Tips: A core skill of Iaido Slash Spec. Prioritize using it before Iaido Slash. Use when your Thunder Sigils are at their maximum to maximize damage.
+- **[1718] Raijin Dash** (Max Tier/Rank: `3`)
+  - *Text:* Consumes all Thunder Sigils to release slashes across a wide area, dealing Attack DMG. Each Thunder Sigil increases DMG by 25%. Grants immunity to all DMG while slashing. Tips: A core skill of Iaido Slash Spec. Use when facing 3 or more targets and your Thunder Sigils are at their maximum to maximize damage.
+- **[1719] Scythe Wheel** (Max Tier/Rank: `4`)
+  - *Text:* Turns the weapon into a scythe, swinging it to perform multi-hit attacks against surrounding enemies, dealing Attack DMG and repelling enemies. The final strike inflicts a 50% Wound on the target for 10s. Summons Moonblades to aid in combat. Moonblade: Spins for 35s, dealing Attack DMG on the target every 2s. Casting Moonstrike commands all active Moonblades to release a whirling attack, dealing Attack DMG to nearby enemies. When you die, Moonblades end immediately and the remaining CD of Scythe Wheel is refunded.Tips: A core skill of Iaido Slash Spec. Release just prior to each Moonblade's expiration to maximize its DMG.
+- **[1724] Thundercut** (Max Tier/Rank: `5`)
+  - *Text:* Double lightning-fast Iai Slashes. Inflicts Attack DMG on enemies at the cost of 50 Blade Intent. Once Attack Speed reaches 25%|50%|80%, deals 1|2|3 additional attack(s). If Blade Intent remains after the strike, the skill can be recast. Tips: Core skill of the Spec. Consumes Blade Intent to deal DMG. Release when Blade Intent is at its maximum.
+- **[1730] Volt Surge** (Max Tier/Rank: `6`)
+  - *Text:* Enchants the blade with thunderous power. While active, any action that would grant Thunder Sigils would instantly maxes them out. Also increases ATK and grants Super Armor for the duration. Tips: Best paired with Overdrive and Talents to rapidly gain and spend Thunder Sigils, unleashing massive DMG within a short window.
+- **[1731] Stormflash** (Max Tier/Rank: `7`)
+  - *Text:* Unleashes raging Thunder within, generating 20 Blade Intent per second. When in this state, using Expertise Skills that consume Blade Intent triggers a Lightning Strike, dealing Attack DMG to the current target. Tips: Pair with Thundercut to generate more Thunder strikes. Higher Mastery significantly increases Moonblade DMG for the Moonstrike Spec.
+- **[1720] True Sight** (Max Tier/Rank: `8`)
+  - *Text:* Enters a defensive stance, gaining immunity to all DMG. If hit while in this stance, counterattacks with a slash and leaps backward. Recast to dash forward and slash, dealing Attack Damage. If the attack hits a target, gains max Thunder Sigils.Tips: Release under intense battles or when confident in timing to gain Thunder Sigil more efficiently.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[1715] Moonstrike** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 3 Thunder Sigils to dash forward with a spinning blade attack, dealing Attack DMG to nearby enemies. Moonblades on the field perform a whirling slashing attack, dealing Attack DMG to surrounding targets. This damage scales with the Level/Tier of Scythe Wheel."Under the moonlight, I move as one with the shadows."Tips: Use when multiple Moonblades exist to trigger as many whirling attacks as possible.
+- **[1728] Oblivion Combo** (Max Tier/Rank: `0`)
+  - *Text:* Oblivion ComboA supreme sword technique sharp enough to cut the air itself. Unleashes a flurry of slashes in front, dealing Attack DMG to all enemies in range. Grants max Thunder Sigil and fully restores Blade Intent at the end of the strike."Heaven's weapon dims even the brightest stars."Tips: Cast when Thunder Sigil is empty to quickly charge it. Also effective against multiple targets for massive area damage.
+- **[1733] Storm Scythe** (Max Tier/Rank: `0`)
+  - *Text:* Quickly slashes horizontally with a scythe condensed from lightning, dealing Attack DMG equal to 300%ATK to the enemy, which scales with the Level/Tier of Thundercut.
+- **[1734] Thunder Iaido Slash** (Max Tier/Rank: `0`)
+  - *Text:* Consume all Thunder Sigil to unleash 5 rapid blade waves, dealing Attack DMG equal to 700% ATK. Scales with the Level/Tier of Special Attack.
+- **[1735] Dragonhammer** (Max Tier/Rank: `0`)
+  - *Text:* Enhanced Flash Strike, Consume all Thunder Sigils, then charges forward after powering up to slash all enemies in path, dealing 510% ATK as Attack DMG (which scales with the Level/Tier of Flash Strike). Each Thunder Sigil consumed increases DMG by 25%.
+- **[1736] Raijin Dash Slash** (Max Tier/Rank: `0`)
+  - *Text:* Enhanced Raijin Dash, Consume all Thunder Sigils to summon more ferocious lightning, dealing 450% ATK as Attack DMG (which scales with the Level/Tier of Raijin Dash). Each Thunder Sigil consumed increases DMG by 25%.
+- **[1737] Divine Sickle** (Max Tier/Rank: `0`)
+  - *Text:* Forcefully slashes vertically forward with a scythe wreathed in destructive power, dealing Attack DMG equal to 1500%ATK to the enemies. Scales with the Level/Tier of Basic Attack.
+- **[1738] Chaos Breaker** (Max Tier/Rank: `0`)
+  - *Text:* Enhanced Moonstrike. Throws a devastating thunderous cyclone forward, dealing Attack DMG equal to 500% ATK to enemies while gaining full Blade Intent. Scales with the Level/Tier of Moonstrike.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3611] Overclock Wave** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m.This skill is unaffected by CD effects.
+- **[3612] Unyielding Spirit** (Max Tier/Rank: `0`)
+  - *Text:* Grants 35% additional DMG Reduction for 5s. This skill can store 2 charges. This skill is unaffected by CD effects.
+- **[3613] Master of Stealth** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3614] Energy Reflux** (Max Tier/Rank: `0`)
+  - *Text:* Instantly recovers 50% Stamina and increases Movement Speed by 15% for 5s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `70` โหนด:
+  - **Node [100] Blade Intent** (Cost: `1`, Type: `4`)
+    - *Text:* 3 points of Blade Intent are gained when an Expertise Skill is cast.
+    - *Stat Effects:* [Buff 2200020] Effect 2200020
+  - **Node [101] Agility Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 8 Agility grants 1 ATK.
+    - *Stat Effects:* Attr#2: +11332 (Type 4)
+  - **Node [102] Thunder Whirl** (Cost: `1`, Type: `4`)
+    - *Text:* Piercing Slash grants Overdrive 1 charge.
+    - *Stat Effects:* [Buff 2200040] Effect 2200040
+  - **Node [103] Keen Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When Basic Attacks deal DMG, 10% chance to trigger Piercing Slash, once per second.
+    - *Stat Effects:* [Buff 2200050] Effect 2200050
+  - **Node [104] Keen Enhancement** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the fixed chance to trigger Piercing Slash by 10%.
+    - *Stat Effects:* [Buff 2200060] Effect 2200060
+  - **Node [105] Iaido Mastery** (Cost: `1`, Type: `4`)
+    - *Text:* Iaido Slash Crit +10%.Each 1% Crit chance grants 0.15% Crit DMG for skills that consume Thunder Sigils. When Crit chance exceeds 60%, every extra 1% grants an additional 0.88% Crit DMG for skills that consume Thunder Sigils.
+    - *Stat Effects:* [Buff 2200070] Effect 2200070
+  - **Node [106] Wind Assault I** (Cost: `1`, Type: `4`)
+    - *Text:* Crit Rate obtained in any way is increased by 12%, but Luck chance obtained in any way are reduced by 10%.
+    - *Stat Effects:* [Buff 2200080] Effect 2200080
+  - **Node [107] Zen Moment** (Cost: `1`, Type: `4`)
+    - *Text:* Crit hits of Special Attacks grant 100 Blade Intent.
+    - *Stat Effects:* [Buff 2200090] Effect 2200090
+  - **Node [108] Thunder Sigil Charm** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Thunder Sigil by 1.
+    - *Stat Effects:* [Buff 2200100] Effect 2200100
+  - **Node [109] Thunder Reversal** (Cost: `1`, Type: `4`)
+    - *Text:* Consumes 100 Blade Intent to gain stacks of Thunder Reversal Mark. When Thunder Reversal Mark reaches 5 stacks, casting Iaido Slash grants the Thunder Reversal effect and removes all Thunder Reversal Mark stacks.Thunder Reversal: Gain a 10% Thunder DMG bonus for 15s.
+    - *Stat Effects:* [Buff 2200110] Effect 2200110
+  - **Node [110] Vacuum Slash** (Cost: `1`, Type: `4`)
+    - *Text:* Each cast of Flash Strike, Raijin Dash, or its enhanced skills grants 1 stack of Thundrage. When Thundrage reaches 5 stacks, Iaido Slash evolves into Thunder Cut.After casting Thunder Cut, 5 stacks of Thundrage are consumed. Thundrage stacks up to 8 times.
+    - *Stat Effects:* [Buff 2200120] Effect 2200120
+  - **Node [112] Flash Frenzy Blade** (Cost: `1`, Type: `4`)
+    - *Text:* When Iaido Slash and its enhanced skill (Thunder Cut) deal DMG, there is a fixed 10% chance to reset the remaining CD of Flash Strike and Raijin Dash. For each Thunder Sigil consumed, the chance increases by 10%. During Volt Surge, this chance is doubled.
+    - *Stat Effects:* [Buff 2200140] Effect 2200140
+  - **Node [113] Bladewind Domain** (Cost: `1`, Type: `4`)
+    - *Text:* Every 3 casts of Overdrive allows the next Iaido Slash to generate a Bladewind Domain in front.Each time Bladewind Domain deals DMG, reduces the CD of Oblivion Combo by 1.5s.
+    - *Stat Effects:* [Buff 2200150] Effect 2200150
+  - **Node [114] Touch of Thunder Soul** (Cost: `1`, Type: `4`)
+    - *Text:* Moonblades have a fixed 60% chance to cast Thunderstrike on a Lucky Strike. Thunderstrike deals double DMG.
+    - *Stat Effects:* [Buff 2200160] Effect 2200160
+  - **Node [115] Breath of Mark** (Cost: `1`, Type: `4`)
+    - *Text:* Lucky Strikes of Moonblades grant a fixed 30% chance to restore 1 Thunder Sigil, once per 2 seconds.
+    - *Stat Effects:* [Buff 2200170] Effect 2200170
+  - **Node [116] Phantom Delay** (Cost: `1`, Type: `4`)
+    - *Text:* For 12 seconds after casting Chaos Breaker, whenever the Talents Raijin Dash Charge, Moonlight Charge, and Charge Catcher obtain a Charge Seed, 1 additional Charge Seed is granted.
+    - *Stat Effects:* [Buff 2200180] Effect 2200180
+  - **Node [118] Phantom Scythe Realm I** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Moonblades by 1.
+    - *Stat Effects:* [Buff 2200200] Effect 2200200
+  - **Node [119] Phantom Scythe Realm II** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Thundercut grants 12 + Luck% x 10 points of Blade Intent.
+    - *Stat Effects:* [Buff 2200210] Effect 2200210
+  - **Node [120] Power of Thunder** (Cost: `1`, Type: `4`)
+    - *Text:* For every 10 instances of damage dealt, triggers Thunder Power.Thunder Power: Thunder DMG +22 for 10s, up to 10 stacks.
+    - *Stat Effects:* [Buff 2200220] Effect 2200220
+  - **Node [121] Moonstrike Delay** (Cost: `1`, Type: `4`)
+    - *Text:* Blade Intent cap +25.After 5 consecutive Thundercuts in one go, it evolves into the more powerful Thundercleave, which deals higher DMG.
+    - *Stat Effects:* [Buff 2200230] Effect 2200230
+  - **Node [122] Lightning Flash** (Cost: `1`, Type: `4`)
+    - *Text:* During Stormflash, doubles Moonblades' Attack SPD.
+    - *Stat Effects:* [Buff 2200240] Effect 2200240
+  - **Node [123] Thunder Curse** (Cost: `1`, Type: `4`)
+    - *Text:* Special Attacks inflict Thunder Curse on the target upon dealing DMG.Thunder Curse: Each stack of Thunder Curse increases the target's DMG taken from you by 2% for 10s, stacking up to 4 times.
+    - *Stat Effects:* [Buff 2200250] Effect 2200250
+  - **Node [124] Duel Awareness** (Cost: `1`, Type: `4`)
+    - *Text:* Deals 20% more DMG to enemies with 80% HP or above.
+    - *Stat Effects:* [Buff 2200260] Effect 2200260
+  - **Node [126] Frenzied Thunder Roar** (Cost: `1`, Type: `4`)
+    - *Text:* Defeating an enemy triggers Thunderburst, once every 3s.
+    - *Stat Effects:* [Buff 2200280] Effect 2200280
+  - **Node [128] Shadow Despise** (Cost: `1`, Type: `4`)
+    - *Text:* For each enemy within 3m, you gain 3% Armor Penetration, up to 15%. This effect is doubled against Elite or stronger enemies.
+    - *Stat Effects:* [Buff 2200300] Effect 2200300
+  - **Node [129] Iai Thunder Dance** (Cost: `1`, Type: `4`)
+    - *Text:* When Thunder Sigils are at 3 or higher, Special Attack hits twice times consecutively.
+    - *Stat Effects:* [Buff 2200310] Effect 2200310
+  - **Node [130] Iaido Slash Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances the ability to use Iaido Slash. When the number of Thunder Sigils consumed by Iaido Slash and its enhanced skill (Thunder Cut) equals the current maximum Thunder Sigil count, increases the DMG of Iaido Slash and its enhanced skill (Thunder Cut) by 12% and grants Super Armor during the cast. Consume as many Thunder Sigils as possible to deliver a powerful blow to the target with Iaido Slash. High Crit and Mastery allow Iaido Slash to deal greater DMG and more hits. Under certain conditions, Iaido Slash no longer needs to be channeled.
+    - *Stat Effects:* [Buff 2200320] Effect 2200320
+  - **Node [131] Thunder Seed** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Thundercut guarantees 2 Charge Seed.
+    - *Stat Effects:* [Buff 2200330] Effect 2200330
+  - **Node [132] Flash Sharp Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Triggers Sharp Strike when casting Iaido Slash and its enhanced skill (Thunder Cut). Sharp Strike: Increases Crit Rate of Flash Strike and its enhanced skill (Dracoflash) by 10%. If Flash Strike and its enhanced skill (Dracoflash) deals Crit DMG 1 time, gains 1 Thunder Sigil. This effect is removed after the use of Flash Strike and its enhanced skill (Dracoflash) or after 10s.
+    - *Stat Effects:* [Buff 2200340] Effect 2200340
+  - **Node [133] Rapid Thunder Assault** (Cost: `1`, Type: `4`)
+    - *Text:* Each additional Thunder Sigil consumed by a skill increases its DMG by 3%.
+    - *Stat Effects:* [Buff 2200350] Effect 2200350
+  - **Node [134] End of Annihilation** (Cost: `1`, Type: `4`)
+    - *Text:* The final strike of Oblivion Combo is empowered into Ultimate Slash.
+    - *Stat Effects:* [Buff 2200360] Effect 2200360
+  - **Node [135] Swift** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% Haste provides 1% Attack Speed.
+    - *Stat Effects:* Attr#4: +11722 (Type 4)
+  - **Node [136] Thunder Sigil Charm** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Thunder Sigil by 1.
+    - *Stat Effects:* [Buff 2200380] Effect 2200380
+  - **Node [137] Swift Blade** (Cost: `1`, Type: `4`)
+    - *Text:* When Agility reaches 500 points, Crit DMG and Luck Damage +5%.
+    - *Stat Effects:* [Buff 2200390] Effect 2200390
+  - **Node [138] Thunder Charm Blade** (Cost: `1`, Type: `4`)
+    - *Text:* For each 1 Thunder Sigil consumed by Expertise Skill, gain an additional 3 points of Blade Intent.For every consumption of Blade Intent, grants 20% DMG Reduction for 5s.
+    - *Stat Effects:* [Buff 2200400] Effect 2200400
+  - **Node [139] Infinite Thunder** (Cost: `1`, Type: `4`)
+    - *Text:* For every 5 Thunder Sigils consumed, the remaining CD of Volt Surge -0.5s.
+    - *Stat Effects:* [Buff 2200410] Effect 2200410
+  - **Node [140] Thunder Sigil Rewind** (Cost: `1`, Type: `4`)
+    - *Text:* When consuming Thunder Sigils, there is a chance to return 1 Thunder Sigil, and for each additional 1 Thunder Sigil consumed, the return chance +9%.
+    - *Stat Effects:* [Buff 2200420] Effect 2200420
+  - **Node [141] Thunder Might** (Cost: `1`, Type: `4`)
+    - *Text:* Activate Volt Surge. Flash Strike and Raijin Dash evolve into Dracoflash and Phantom Slash.
+    - *Stat Effects:* [Buff 2200430] Effect 2200430
+  - **Node [142] Unmatched Raijin Dash** (Cost: `1`, Type: `4`)
+    - *Text:* Raijin Dash and its enhanced skill (Phantom Slash) ignore the target's Armor. Raijin Dash and its enhanced skill (Phantom Slash) deal 10% more damage per additional 1 enemy hit.
+    - *Stat Effects:* [Buff 2200440] Effect 2200440
+  - **Node [143] Violent Slash** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the critical rate of Iaido Slash and Thunder Cut by 12%.
+    - *Stat Effects:* [Buff 2200450] Effect 2200450
+  - **Node [144] Wind Assault II** (Cost: `1`, Type: `4`)
+    - *Text:* Crit Rate obtained in any way is increased by 12%, but Luck chance obtained in any way are reduced by 10%.
+    - *Stat Effects:* [Buff 2200460] Effect 2200460
+  - **Node [145] Dual Blade Intent** (Cost: `1`, Type: `4`)
+    - *Text:* When Blade Intent is at least 100, Flash Strike, Raijin Dash, and their enhanced skills (Dracoflash, Phantom Slash) +10% Crit and +20% Thunder DMG.When Blade Intent is at least 100, greatly increases Flash Strike's and Raijin Dash's casting speed.
+    - *Stat Effects:* [Buff 2200470] Effect 2200470
+  - **Node [146] Thunder Sigil Affinity** (Cost: `1`, Type: `4`)
+    - *Text:* Each additional Thunder Sigil consumed by Expertise Skill or Special Attacks increases your Thunder DMG dealt by 1.5% when they deal DMG.
+    - *Stat Effects:* [Buff 2200480] Effect 2200480
+  - **Node [147] Thundrage** (Cost: `1`, Type: `4`)
+    - *Text:* Each use of Dracoflash or Phantom Slash grants 4 stacks of Thundrage, up to 8 stacks.
+    - *Stat Effects:* [Buff 2200490] Effect 2200490
+  - **Node [148] Overdrive Refinement** (Cost: `1`, Type: `4`)
+    - *Text:* Reduces the CD of Overdrive by 30%.
+    - *Stat Effects:* [Buff 2200500] Effect 2200500
+  - **Node [149] Blade Intent Thunderstrike** (Cost: `1`, Type: `4`)
+    - *Text:* When Iaido Slash deals Crit DMG, if the Blade Intent exceeds 20, launches Thunderstrike (which can only be triggered once per use of Iaido Slash).
+    - *Stat Effects:* [Buff 2200510] Effect 2200510
+  - **Node [150] Thunder Sigil Charm** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Thunder Sigil by 1.
+    - *Stat Effects:* [Buff 2200520] Effect 2200520
+  - **Node [151] Break Slash** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing Crit DMG, Iaido Slash and its enhanced skill (Thunder Cut) nullifies 30% of the targets' Armor.
+    - *Stat Effects:* [Buff 2200530] Effect 2200530
+  - **Node [152] Arcane** (Cost: `1`, Type: `4`)
+    - *Text:* Crit DMG +10%
+    - *Stat Effects:* [Buff 2200540] Effect 2200540
+  - **Node [153] Instant Slash** (Cost: `1`, Type: `4`)
+    - *Text:* Iaido Slash reduces the Armor of the target hit by 6%. The effect lasts 5s and stacks up to 5 times.
+    - *Stat Effects:* [Buff 2200550] Effect 2200550
+  - **Node [154] Advancement** (Cost: `1`, Type: `4`)
+    - *Text:* Mastery +6%
+    - *Stat Effects:* [Buff 2200560] Effect 2200560
+  - **Node [155] Thunder Scythe** (Cost: `1`, Type: `4`)
+    - *Text:* Reduces the Charge Seeds that Storm Scythe consumes by 5.
+    - *Stat Effects:* [Buff 2200570] Effect 2200570
+  - **Node [156] Blade Intent Recovery** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% Haste increases the REG SPD of Blade Intent by 1%.
+    - *Stat Effects:* [Buff 2200580] Effect 2200580
+  - **Node [157] Moonstrike Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with Moonstrike, enhancing the ability.Cast Moonstrike to gain 30 Blade Intent.Frequent consumption of Thunder Sigils summons Moonblades to continuously attack the target. High Haste accelerates Moonblades' attacks. High Luck increases the frequency of Moonblades triggering Thunder Strike.
+    - *Stat Effects:* Attr#1714: +1715 (Type 6), [Buff 2200590] Effect 2200590
+  - **Node [158] Divine Sickle** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Storm Scythe 7 times triggers Divine Sickle.Divine Sickle is guaranteed to Crit.When Luck is between 28% and 45%, Divine Sickle's Final DMG increases by 150%, but requires 14 casts of Storm Scythe to trigger.When Luck chance is above 45%, Final DMG increases by 275%, but requires 21 casts of Storm Scythe to trigger.
+    - *Stat Effects:* [Buff 2200600] Effect 2200600
+  - **Node [159] Moonlight Charge** (Cost: `1`, Type: `4`)
+    - *Text:* If Luck chance exceeds 25%, Moonblades trigger a Lucky Strike to gain Charge Seed. Otherwise, when Moonblades deal DMG, it has a fixed 25% chance to gain Charge Seed.
+    - *Stat Effects:* [Buff 2200610] Effect 2200610
+  - **Node [160] Blade Intent - Rare** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Blade Intent by 75.
+    - *Stat Effects:* [Buff 2200620] Effect 2200620
+  - **Node [161] Thousand Thunder Flashes** (Cost: `1`, Type: `4`)
+    - *Text:* Every 2 times Thunderstrike is triggered, the CD of Stormflash is reduced by 0.7s.
+    - *Stat Effects:* [Buff 2200630] Effect 2200630
+  - **Node [162] Chaos Breaker** (Cost: `1`, Type: `4`)
+    - *Text:* When Stormflash is activated, Moonstrike evolves into Chaos Breaker.
+    - *Stat Effects:* [Buff 2200640] Effect 2200640
+  - **Node [163] Enhanced Thunderstrike** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the DMG dealt by Thunderstrike by 20%.Each 1% Luck grants Thunderstrike 1% more DMG dealt.
+    - *Stat Effects:* [Buff 2200650] Effect 2200650
+  - **Node [164] Charge Catcher** (Cost: `1`, Type: `4`)
+    - *Text:* Each enemy defeated grants 1 Charge Seed (effective within a team).
+    - *Stat Effects:* [Buff 2200660] Effect 2200660
+  - **Node [165] Thunderstrike Whisper** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the Thunder DMG Thunderstrike deals by 50%, yet Thunderstrike never deals Crit DMG.
+    - *Stat Effects:* [Buff 2200670] Effect 2200670
+  - **Node [166] Moonstrike Sharp Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When Blade Intent is at least 50, Moonstrike and its enhanced skill (Chaos Breaker) are guaranteed to land a Crit.
+    - *Stat Effects:* [Buff 2200680] Effect 2200680
+  - **Node [167] Thunder Sigil Charm** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Thunder Sigil by 1. During Stormflash, each trigger of Storm Scythe extends its duration by 0.5s, up to 5s.
+    - *Stat Effects:* [Buff 2200690] Effect 2200690
+  - **Node [168] Thunder Rune Mastery** (Cost: `1`, Type: `4`)
+    - *Text:* Doubles Max Blade Intent.
+    - *Stat Effects:* [Buff 2200700] Effect 2200700
+  - **Node [169] Raijin Dash Charge** (Cost: `1`, Type: `4`)
+    - *Text:* When Thundercut triggers a Lucky Strike, grants 1 Charge Seed.
+    - *Stat Effects:* [Buff 2200710] Effect 2200710
+  - **Node [170] Moonblade Swift** (Cost: `1`, Type: `4`)
+    - *Text:* Moonblades additionally deal 1 instance of Whirling DMG every 6s. Each 2% Haste reduces its CD by 1%.
+    - *Stat Effects:* [Buff 2200720] Effect 2200720
+  - **Node [171] Thunder Might** (Cost: `1`, Type: `4`)
+    - *Text:* During Stormflash, Storm Scythe will activate twice in succession.
+    - *Stat Effects:* [Buff 2200730] Effect 2200730
+  - **Node [172] Thunder Sigil Rewind** (Cost: `1`, Type: `4`)
+    - *Text:* During Volt Surge, the return chance of Thunder Sigil Rewind doubles, but the damage bonus of non-derivative skills that consume Thunder Sigil is reduced from 25% to 20%.
+    - *Stat Effects:* [Buff 2200740] Effect 2200740
+  - **Node [173] Luck Enhancement** (Cost: `1`, Type: `4`)
+    - *Text:* Lucky Strike ATK +100%.
+    - *Stat Effects:* [Buff 2200130] Effect 2200130
+
+---
+
+## อาชีพ [2]: **Frost Mage**
+- **สาย Talents ย่อย (Specializations):** **Spec 104** (Stage ID: `104`), **Spec 105** (Stage ID: `105`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[1201] Raincall Surge** (Max Tier/Rank: `0`)
+  - *Text:* Ice EnergyA key resource for unleashing Special Attacks and Expertise Skills. Starts with a maximum of 50 points, regenerating 2 points per second.Basic Attack: Raincall SurgeUnleashes up to four consecutive water-based attacks, each dealing Magic Damage.Tips: When Ice Energy is low, this skill allows you to deal DMG flexibly as needed.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[1242] Frost Lance** (Max Tier/Rank: `0`)
+  - *Text:* Chants for 1.4s, then consumes 10 Ice Energy to fire a sharp Frost Lance at the target, dealing Magic Damage on impact. Consuming 1 Frost Crystal can skip chanting and increase DMG by 20%. Tips: Cast Frost Lance regularly to avoid wasting excess Energy.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[1248] Glacier Hymn** (Max Tier/Rank: `0`)
+  - *Text:* Summons the ice's blessing to unfold an Ice Domain, knocking all enemies back within range. Then summons a comet to strike the targets, dealing Magic DMG and inflicting Frozen on all affected enemies. Ice DomainWithin the Domain, restores 220 Ice Energy over time and gains Ultra Cold. Enemies within the domain are continuously Slowed until Frozen. While in Ultra Cold, targets are treated as Frozen. Tips: Don't use this skill when Ice Energy is about to cap. If you do, burn the Ice Energy quickly afterward. Skills enhanced by the Ultra Cold state are most effective when cast within this skill's duration.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[1239] Meteor Storm** (Max Tier/Rank: `1`)
+  - *Text:* Consumes 5 Ice Energy to instantly summon 3 Meteor Storms above the target, dealing Magic Damage to the target and surrounding enemies. This skill holds 2 charges. Tips: This instant-cast DMG skill is best utilized in a highly mobile style of combat to maximize DMG dealt through repeated use.
+- **[1211] Crystal Veil** (Max Tier/Rank: `2`)
+  - *Text:* Casts a slow-moving water orb and gains 1 Frost Crystal immediately, and 1 Frost Crystal every 3s thereafter. On impact, the orb's velocity decays. While the aqueous orb persists, it continuously deals Magic Damage to all nearby enemies and applies Frost to them. Ultra Cold: Crystal VeilWhile in the Ultra Cold state, the water orb will freeze and violently explode upon ending, dealing higher Magic Damage to all enemies within range. This skill holds 2 charges. Tips: At least one charge shall be maintained at all times unless Ice Energy overflows. It is recommended to maintain two charges before casting the Ultimate, as combining it with Ultra Cold grants bonus DMG.
+- **[1244] Blizzard** (Max Tier/Rank: `3`)
+  - *Text:* Chants for 2.9s, then consumes 20 Ice Energy to summon an intense Blizzard at the target location, continuously dealing Magic DMG and applying Frost to all enemies within the area. Tips: This devastating AoE skill is most effective when used against immobilized enemies to maximize DMG dealt.
+- **[1210] Maelstrom** (Max Tier/Rank: `4`)
+  - *Text:* Unleashes a water vortex at the target's feet, continuously dealing Magic DMG to enemies within range. For each target hit, restores 2 Ice Energy, up to 10 Ice Energy per hit. Ultra Cold: ​Maelstrom​While in the Ultra Cold state, the water vortex will freeze and explode upon ending, dealing higher Magic DMG to all enemies within range. Tips: Pair with Frostbeam Spec. Casting at the right moment can restore considerable Ice Energy.
+- **[1240] Frozen Gale** (Max Tier/Rank: `5`)
+  - *Text:* Unleashes built-up cold energy in a violent surge, dealing Magic Damage and inflicting Frozen on nearby enemies.Charging the skill alters both its range and DMG.Tier 1: Chants for 1s, targeting an 8m frontal cone.Tier 2: Chants for 2s, targeting an 8m frontal cone with 50% increased DMG.Tier 3: Chants for 3s, targeting an 8m frontal cone with 100% increased DMG.When holding 1/3/5 Frost Crystal, the skill will instantly cast at Tier 1/2/3, skipping the charge time.Tips: This skill offers both area damage and crowd control. For best results, cast it when you have high Frost Crystal count.
+- **[1243] Permafrost** (Max Tier/Rank: `6`)
+  - *Text:* Summons the power of frost, gaining Super Armor for the duration while accumulating 6 Ice Energy per second and increasing Haste. Tips: Increases Attack SPD and Casting SPD. Since this skill generates Ice Energy, don't use it when Ice Energy is about to cap. If you do, burn the Ice Energy quickly afterward.
+- **[1246] Tidepool** (Max Tier/Rank: `7`)
+  - *Text:* Summons a surging Tidal Vortex at the target location, dealing Magic DMG on impact. Channels for 5s after casting. Recast to end early.Ultra Cold: TidepoolIn the Ultra Cold state, the vortex freezes and violently explodes upon ending, dealing higher Magic DMG to all enemies within range.Tips: You cannot move or cast other skills while channeling. Best paired with allies' AoE skills in coordinated attacks.
+- **[1245] Frost Shelter** (Max Tier/Rank: `8`)
+  - *Text:* Encases yourself in ice, rendering you immune to all DMG but immobilized for the duration. Deals Magic Damage to all nearby enemies, and inflicts Slow until they are Frozen. Tips: Equip this skill in high-pressure situations to increase survivability.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[1241] Frostbeam** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 15 Ice Energy to launch a concentrated ice beam toward the target, dealing Magic Damage to all enemies in its path every 0.3s. After dealing DMG 5 instances, the beam attempts to consume additional Ice Energy to sustain itself. Every 12 Ice Energy extends the beam by 0.3s and deals 1 additional instance of DMG. Each time Frostbeam deals DMG, it increases its own DMG by 8%, up to 80%. (Terminates when Ice Energy drops below 3.)Frostbeam's firing interval is affected by Haste. Tips: Cast when Ice Energy is near maximum capacity for extended beam duration. While firing, use the joystick to make minor positioning adjustments.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3611] Overclock Wave** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m.This skill is unaffected by CD effects.
+- **[3612] Unyielding Spirit** (Max Tier/Rank: `0`)
+  - *Text:* Grants 35% additional DMG Reduction for 5s. This skill can store 2 charges. This skill is unaffected by CD effects.
+- **[3613] Master of Stealth** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3614] Energy Reflux** (Max Tier/Rank: `0`)
+  - *Text:* Instantly recovers 50% Stamina and increases Movement Speed by 15% for 5s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `68` โหนด:
+  - **Node [200] Cold Intent - Sharp** (Cost: `1`, Type: `4`)
+    - *Text:* Max Ice Energy +10.Special Attack DMG +12%.
+    - *Stat Effects:* [Buff 2204010] Effect 2204010
+  - **Node [201] Intellect Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 10 Intellect grants 1 MATK.
+    - *Stat Effects:* Attr#3: +11342 (Type 4)
+  - **Node [202] Frost Curse Sigil** (Cost: `1`, Type: `4`)
+    - *Text:* When a Special Attack deals DMG, it has a fixed 5% chance to Frozen the target.
+    - *Stat Effects:* [Buff 2204030] Effect 2204030
+  - **Node [203] Ice Revelation** (Cost: `1`, Type: `4`)
+    - *Text:* Summons 2 permanent Ice Crystal Cores that float beside you. Ice Crystal CoreWhen Basic Attacks deal DMG, Ice Crystal Cores have a fixed 10% chance to fire 2 Ice Arrows. Ice Arrow: Each arrow deals Magic DMG equal to 28% ATK to the target and grants 1 Frost Crystal (up to 2 Frost Crystals can be stored).
+    - *Stat Effects:* [Buff 2204040] Effect 2204040
+  - **Node [204] Breath of Frost** (Cost: `1`, Type: `4`)
+    - *Text:* Frost Crystal cap +1.
+    - *Stat Effects:* [Buff 2204050] Effect 2204050
+  - **Node [206] Tide Mastery** (Cost: `1`, Type: `4`)
+    - *Text:* While casting Frostbeam, you can channel Tidepool and Maelstrom.
+    - *Stat Effects:* [Buff 2204060] Effect 2204060
+  - **Node [207] Crystal Resonance** (Cost: `1`, Type: `4`)
+    - *Text:* When Frostbeam deals DMG, it has a 30% fixed chance to make Ice Crystal Core fire an Ice Arrow. Up to 1 Ice Arrow can be fired every 0.5s.The final DMG of the Ice Arrow is doubled (this also affects DMG triggered by the Frost Explosion talent).
+    - *Stat Effects:* [Buff 2204070] Effect 2204070
+  - **Node [208] Frost Explosion** (Cost: `1`, Type: `4`)
+    - *Text:* When Ice Arrows fired by Ice Crystal Cores deal a Crit, they deal an additional instance of Magic DMG equal to 28% ATK. This DMG can trigger Lucky Strike.
+    - *Stat Effects:* [Buff 2204080] Effect 2204080
+  - **Node [209] Ice Crystal Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Max Ice Energy +40.
+    - *Stat Effects:* [Buff 2204090] Effect 2204090
+  - **Node [210] Ice Shard Pact** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Maelstrom's Ice Energy recovery rate by 200%.
+    - *Stat Effects:* [Buff 2204100] Effect 2204100
+  - **Node [211] Cold Wind Convergence** (Cost: `1`, Type: `4`)
+    - *Text:* When Frozen Gale hits a target (only triggers once when hitting multiple targets), it consumes all Frost Crystals to summon Icy Bolt, with the number of Icy Bolt equal to the consumed Frost Crystals.Icy Bolt deals DMG, restores 5 Ice Energy, and reduces the Ice Energy cost of skills by 3% for the next 15s, stacking up to 6 times.
+    - *Stat Effects:* [Buff 2204110] Effect 2204110
+  - **Node [212] Frostbeam Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with ​Frostbeam​ and enhances the skill.Every Frost Crystal increases ​Frostbeam​ DMG by 15%. Each 10% Mastery grants an additional 0.85% DMG bonus (up to 5%) and increases the Ice Energy consumed by 30%.When ​Frostbeam​ hits a target, every 13 hits reduce the remaining CD of Permafrostby 1s (hitting multiple targets only counts once).Consumes Ice Energy to channel Frostbeam continuously at the target. High Haste and Mastery greatly speed up its channeling while improving Ice Energy recovery.
+    - *Stat Effects:* Attr#1242: +1241 (Type 6), [Buff 2204120] Effect 2204120
+  - **Node [214] Snow Shadow** (Cost: `1`, Type: `4`)
+    - *Text:* For every 25 Ice Energy consumed, the CD of Crystal Veil -1s.
+    - *Stat Effects:* [Buff 2204130] Effect 2204130
+  - **Node [215] Frost Comet** (Cost: `1`, Type: `4`)
+    - *Text:* When Frost Lance that consumes Frost Crystals deals DMG, there is a fixed 21% chance to summon Frost Comet.
+    - *Stat Effects:* [Buff 2204140] Effect 2204140
+  - **Node [216] Frozen Stars** (Cost: `1`, Type: `4`)
+    - *Text:* When Frost Lance triggers both a Crit and a Lucky Strike, Meteor Storm's CD is immediately reset. If Meteor Storm is already off cooldown, it will be automatically cast (but this Meteor Storm will deal half damage). This effect can trigger up to 3 times within 1.5s (affected by Attack Speed).
+    - *Stat Effects:* [Buff 2204150] Effect 2204150
+  - **Node [217] Blizzard Dual Lances** (Cost: `1`, Type: `4`)
+    - *Text:* Within 8s after casting Blizzard, Frost Lance can fire an additional Frost Lance at another target near the original one.
+    - *Stat Effects:* [Buff 2204160] Effect 2204160
+  - **Node [219] Stormy Encounter** (Cost: `1`, Type: `4`)
+    - *Text:* When Crystal Veil deals DMG, it has a fixed chance to reduce the CD of Blizzard by 1s. The chance equals half percentage of your Luck.
+    - *Stat Effects:* [Buff 2204170] Effect 2204170
+  - **Node [220] Shattering Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When Meteor Storm deals DMG, it causes Ice Crystal Cores to fire Ice Arrows. This effect can trigger up to once per Meteor Storm cast.
+    - *Stat Effects:* [Buff 2204180] Effect 2204180
+  - **Node [221] Glacier fury** (Cost: `1`, Type: `4`)
+    - *Text:* Consuming 15 Frost Crystals enhances the next Blizzard. Blizzard: Bypasses the casting time and increases DMG dealt by 30%, and trigger Lucky Strike.
+    - *Stat Effects:* [Buff 2204190] Effect 2204190
+  - **Node [222] Icicle Volley** (Cost: `1`, Type: `4`)
+    - *Text:* For every 10 casts of Frost Lance, a Piercing Ice Lance is launched forward.
+    - *Stat Effects:* [Buff 2204200] Effect 2204200
+  - **Node [223] Glazed Vastness** (Cost: `1`, Type: `4`)
+    - *Text:* Ice skills deal 8% more DMG to Elites and stronger targets.
+    - *Stat Effects:* [Buff 2204210] Effect 2204210
+  - **Node [224] Continuous Stream** (Cost: `1`, Type: `4`)
+    - *Text:* Dealing DMG triggers Trickle.Trickle: Grants a 1% Ice damage bonus for 6s, stacking up to 5 times.
+    - *Stat Effects:* [Buff 2204220] Effect 2204220
+  - **Node [225] Boundless Frost** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 Ice Energy consumed grants 1 Frost Crystal.Max Frost Crystal +3. Each possessed Frost Crystal increases Frostbeam DMG by 5%.
+    - *Stat Effects:* [Buff 2204230] Effect 2204230
+  - **Node [226] Frost Shock** (Cost: `1`, Type: `4`)
+    - *Text:* When an Expertise Skill or Ultimate lands a Lucky Strike, it has a fixed 30% chance to trigger Frost Shock, once every 3s.
+    - *Stat Effects:* [Buff 2204240] Effect 2204240
+  - **Node [227] Quick Frozen Blast** (Cost: `1`, Type: `4`)
+    - *Text:* When an Expertise Skill or Ultimate deals DMG to a target with Frozen, it triggers Frost Shock, once per second.
+    - *Stat Effects:* [Buff 2204250] Effect 2204250
+  - **Node [228] Icy Calm** (Cost: `1`, Type: `4`)
+    - *Text:* Each additional target hit by an Expertise Skill or Ultimate grants a 2% bonus to your highest stat among Mastery, Haste, Crit, or Luck for 5s. Hitting more than 5 additional targets still only counts as 5.
+    - *Stat Effects:* [Buff 2204260] Effect 2204260
+  - **Node [229] Instant Cooling** (Cost: `1`, Type: `4`)
+    - *Text:* Every 35 Ice Energy consumed reduces the remaining CD of Meteor Storm and Frozen Gale by 1.3s.
+    - *Stat Effects:* [Buff 2204270] Effect 2204270
+  - **Node [230] Cold Stream** (Cost: `1`, Type: `4`)
+    - *Text:* Max Ice Energy +25.Every 1% Haste increases Ice Energy's auto REG SPD by 1%.
+    - *Stat Effects:* [Buff 2204280] Effect 2204280
+  - **Node [231] Frostjade Staff** (Cost: `1`, Type: `4`)
+    - *Text:* When Ice Arrow cast with Ice Crystal Core deals DMG, restores 1 Ice Energy.In the Permafrost status, the recovery doubles.
+    - *Stat Effects:* [Buff 2204290] Effect 2204290
+  - **Node [233] Icicle Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances Frost Lance.When Frost Lance deals Crit DMG, there is a fixed 30% chance for Ice Crystal Cores to fire Ice Arrows.Time your use of Ice Energy to chant and launch Frost Lance. Crit and Luck increase the chance to skip chanting and significantly boost the lance's DMG.
+    - *Stat Effects:* [Buff 2204300] Effect 2204300
+  - **Node [234] Frost Domain** (Cost: `1`, Type: `4`)
+    - *Text:* The area of Glacier Hymn -50%. While within the domain, you gain a 25% Ice bonus.
+    - *Stat Effects:* [Buff 2204310] Effect 2204310
+  - **Node [235] Cold Pulse** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 hits by Frostbeam trigger a Cold Pulse.For each additional enemy hit, increases Cold Pulse DMG by 20%, up to 500%.
+    - *Stat Effects:* [Buff 2204320] Effect 2204320
+  - **Node [236] Intellect Cooling** (Cost: `1`, Type: `4`)
+    - *Text:* When Intellect reaches 300, skill CD -10%.
+    - *Stat Effects:* [Buff 2204330] Effect 2204330
+  - **Node [237] Secondary Amp** (Cost: `1`, Type: `4`)
+    - *Text:* Boost the highest stat among the following 5 stats: Crit, Haste, Luck, Mastery, and Versatility by 3.5% as a final value.
+    - *Stat Effects:* [Buff 2204340] Effect 2204340
+  - **Node [238] Cold Intent - Flow** (Cost: `1`, Type: `4`)
+    - *Text:* Ice Energy cap +40.Special Attack damage +4%.
+    - *Stat Effects:* [Buff 2204350] Effect 2204350
+  - **Node [239] Ice Comet** (Cost: `1`, Type: `4`)
+    - *Text:* When Intellect reaches 500, gain 5% Ice bonus.
+    - *Stat Effects:* [Buff 2204360] Effect 2204360
+  - **Node [240] Endless Cold** (Cost: `1`, Type: `4`)
+    - *Text:* Every 20 Frost Crystals consumed grants Endless Cold effect. Endless Cold: For 10s, increases Meteor Storm DMG by 150%, and removes its CD and Ice Energy cost. During this period, Ice Arrows triggered by Meteor Storm cannot produce Frost Crystal.When Endless Cold is triggered during Permafrost, enter the Endless Cold state after the effect of Permafrost ends. If the number of Frost Crystals consumed during this period exceeds 20, proportionally increase the final damage dealt by Meteor Storm (up to 100%).
+    - *Stat Effects:* [Buff 2204370] Effect 2204370
+  - **Node [241] Frost Lance Barrage** (Cost: `1`, Type: `4`)
+    - *Text:* During Permafrost, Frost Lance fires 2 consecutive shots.
+    - *Stat Effects:* [Buff 2204380] Effect 2204380
+  - **Node [242] Freezing Meteor Storm** (Cost: `1`, Type: `4`)
+    - *Text:* When Meteor Storm deals damage, 20% chance to apply Frozen to the target.Throughout the duration of Permafrost, when Frost Lance and Meteor Storm critically hit, extends the duration of Permafrost by 0.5s, up to 5s of extension.
+    - *Stat Effects:* [Buff 2204390] Effect 2204390
+  - **Node [243] Energy Saving** (Cost: `1`, Type: `4`)
+    - *Text:* When consuming Frost Crystal to cast Frost Lance, refunds 50% of the Ice Energy consumed after the cast.When casting Frost Lance without consuming Frost Crystal, an additional 50% of the Ice Energy consumed is deducted after the cast.
+    - *Stat Effects:* [Buff 2204400] Effect 2204400
+  - **Node [244] Frost Blade** (Cost: `1`, Type: `4`)
+    - *Text:* Frost Lances that consume Frost Crystal deal 30% more DMG.
+    - *Stat Effects:* [Buff 2204410] Effect 2204410
+  - **Node [245] Deep Cold Magic Spear** (Cost: `1`, Type: `4`)
+    - *Text:* Frost Lance deals 70% more DMG.Frost Lance costs 100% more time to use.
+    - *Stat Effects:* [Buff 2204420] Effect 2204420
+  - **Node [246] Meteor Storm Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Meteor Storm hit count +1. Meteor Storm gains 10% Ice Bonus.
+    - *Stat Effects:* [Buff 2204430] Effect 2204430
+  - **Node [247] Frost Lance Crit** (Cost: `1`, Type: `4`)
+    - *Text:* Frost Lance deals 1.5% more Crit DMG. The effect lasts 6s and stacks up to 10 times.
+    - *Stat Effects:* [Buff 2204440] Effect 2204440
+  - **Node [248] Infusion Sublimation** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Frost Crystal by 1.During Permafrost, Ice ATK increases by 150.When Permafrost ends, your Frost Crystal resets to the amount you had before the activation of Permafrost.
+    - *Stat Effects:* [Buff 2204450] Effect 2204450
+  - **Node [249] Deadly Frost Lance** (Cost: `1`, Type: `4`)
+    - *Text:* Frost Lance deals 20% more DMG to targets with HP less than 35%
+    - *Stat Effects:* [Buff 2204460] Effect 2204460
+  - **Node [250] Critical Cold** (Cost: `1`, Type: `4`)
+    - *Text:* During Permafrost, increases Crit DMG dealt by 15%.During Permafrost, increases allies' critical rate by 3%.
+    - *Stat Effects:* [Buff 2204470] Effect 2204470
+  - **Node [251] Bitter Cold** (Cost: `1`, Type: `4`)
+    - *Text:* Every 265 Intellect grants 0.5% bonus Crit DMG.
+    - *Stat Effects:* [Buff 2204480] Effect 2204480
+  - **Node [252] Sharp Blizzard** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the critical rate of Blizzard by 50%.Increases the Crit DMG of Blizzard by 15%.
+    - *Stat Effects:* [Buff 2204490] Effect 2204490
+  - **Node [253] Frost Crystal Empowerment** (Cost: `1`, Type: `4`)
+    - *Text:* Each Frost Crystal consumed increases Intellect by 55. This effect lasts 10s and stacks up to 5 times.
+    - *Stat Effects:* [Buff 2204500] Effect 2204500
+  - **Node [254] Frost Assault** (Cost: `1`, Type: `4`)
+    - *Text:* Blizzard reduces the Ice Resistance of targets hit by 10%. The effect lasts 10s and does not stack, and only works on your own.
+    - *Stat Effects:* [Buff 2204510] Effect 2204510
+  - **Node [255] Luck Damage** (Cost: `1`, Type: `4`)
+    - *Text:* Lucky Strike DMG Multiplier +15%. Every 2% Luck grants 1% Lucky Strike DMG Multiplier.
+    - *Stat Effects:* [Buff 2204520] Effect 2204520
+  - **Node [256] Cold Retention** (Cost: `1`, Type: `4`)
+    - *Text:* In the Permafrost status, the cost of Frostbeam decreases by 25%.
+    - *Stat Effects:* [Buff 2204530] Effect 2204530
+  - **Node [257] Frost Revelation** (Cost: `1`, Type: `4`)
+    - *Text:* The first hit of Tidepool on the target grants 5 Ice Energy. Each additional Frost Crystal increases Ice Energy restored by 10.
+    - *Stat Effects:* [Buff 2204540] Effect 2204540
+  - **Node [258] Law of Energy Surge** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 Ice Arrows shot increases the DMG of your next Frozen Gale by 200% for 30s. Additionally, casting Frozen Gale grants the Law of Energy Surge.
+    - *Stat Effects:* [Buff 2204550] Effect 2204550
+  - **Node [259] Power of Ice Crystals** (Cost: `1`, Type: `4`)
+    - *Text:* When Ice Energy is above 50%, deals 8% more Ice damage.
+    - *Stat Effects:* [Buff 2204560] Effect 2204560
+  - **Node [260] Ice Crystal Recovery** (Cost: `1`, Type: `4`)
+    - *Text:* When Ice Energy is below 50%, enhances the recovery rate of Ice Energy by 10%.
+    - *Stat Effects:* [Buff 2204570] Effect 2204570
+  - **Node [261] Rapid Ice Arrow** (Cost: `1`, Type: `4`)
+    - *Text:* During Permafrost, Frostbeam fires 2 additional Ice Arrows generated by Ice Crystal Core.
+    - *Stat Effects:* [Buff 2204580] Effect 2204580
+  - **Node [262] Endless Tide** (Cost: `1`, Type: `4`)
+    - *Text:* During Permafrost, each Ice Arrow triggered by Ice Crystal Core extends the duration of Permafrost by 0.5s, up to 5s.
+    - *Stat Effects:* [Buff 2204590] Effect 2204590
+  - **Node [263] Frost Tide** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing DMG, Frostbeam has a fixed 20% chance to grant Frost Crystal. If Max Frost Crystal is reached, grants 5% bonus Ice damage dealt instead for 3s.
+    - *Stat Effects:* [Buff 2204600] Effect 2204600
+  - **Node [264] Ray Mastery I** (Cost: `1`, Type: `4`)
+    - *Text:* Frostbeam deals 2% more Ice damage.Frostbeam deals 5% more Ice damage to the main target.
+    - *Stat Effects:* [Buff 2204610] Effect 2204610
+  - **Node [265] Wide Area Ice Arrow** (Cost: `1`, Type: `4`)
+    - *Text:* Every 10 hits of Expertise Skill allows Ice Crystal Core to fire Ice Arrow (triggers up to once every 0.5s).
+    - *Stat Effects:* [Buff 2204620] Effect 2204620
+  - **Node [266] Intellect Ice Crystal** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 Intellect grants 1 Max Ice Energy, up to 100 from this source.
+    - *Stat Effects:* [Buff 2204630] Effect 2204630
+  - **Node [267] Quick Chant** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Haste by 2500.During Permafrost, Casting SPD increases by 15%.
+    - *Stat Effects:* [Buff 2204640] Effect 2204640
+  - **Node [268] Sharp Ice Arrow** (Cost: `1`, Type: `4`)
+    - *Text:* Ice Arrows from Ice Crystal Core are guaranteed to Crit.Increases the Crit DMG of Ice Arrows from Ice Crystal Core by 10%.
+    - *Stat Effects:* [Buff 2204650] Effect 2204650
+  - **Node [269] Ray's Swan Song** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing DMG, Frostbeam gains a fixed 10% chance to double Mastery for 3s (which can only be triggers once on multiple hits).
+    - *Stat Effects:* [Buff 2204660] Effect 2204660
+  - **Node [270] Ice Crystal Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Max Ice Energy +40.
+    - *Stat Effects:* [Buff 2204670] Effect 2204670
+  - **Node [271] Intellect Amp** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Intellect by 5%.
+    - *Stat Effects:* [Buff 2204680] Effect 2204680
+
+---
+
+## อาชีพ [3]: **Twin Striker**
+- **สาย Talents ย่อย (Specializations):** **Spec 128** (Stage ID: `128`), **Spec 129** (Stage ID: `129`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[1601] Blazing Swing** (Max Tier/Rank: `0`)
+  - *Text:* Basic Attack: Scorching SwingExecutes a sequence of up to four attacks, dealing Attack DMG and recovering 3 Flame Soul.Tips: Fill the gaps with Basic Attacks when Flame Soul is too low for other offensive skills.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[1605] Blazing Ascension** (Max Tier/Rank: `0`)
+  - *Text:* Wielding the battle axe, spins to continuously attack targets in front, dealing Attack DMG and recovering 15 Flame Soul.Strategy: The most basic skill for increasing Formless level. Alternate use with other Expertise Skills.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[1618] Cinderfall! Hellfire Shiranui** (Max Tier/Rank: `0`)
+  - *Text:* Gains the Surge effect and immediately restores all Flame Soul. During this effect, Expertise Skill CD Boost is increased by 10%. Uses Dual Axes to launch enemies into the air, then performs a lethal spiraling aerial attack that rends through them, dealing Attack DMG to all enemies below.Tips: Maintain a faster skill rotation.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[1607] Blazing Assault** (Max Tier/Rank: `1`)
+  - *Text:* Continuously swings the battle axe left and right to attack the target, dealing Attack DMG and recovering 10 Flame Soul.This skill holds 2 charges.Strategy: Make full use of the short CD and 2 charges. Combining it with Blazing Ascension can quickly increase Formless level.
+- **[1608] Rage Cleave** (Max Tier/Rank: `2`)
+  - *Text:* With superb technique, continuously unleashes storm-like slashes on the target, dealing Attack DMG and consuming 85 Flame Soul. The skill can be cast again within 2s of the previous instance ending, up to a maximum of 4 times.Strategy: High cost makes it unsuitable for increasing Formless level. It is usually used as the main damage dealer after Formless reaches maximum.
+- **[1612] Axe Wind** (Max Tier/Rank: `3`)
+  - *Text:* Wields the weapon like a whirlwind, dealing Attack DMG to targets within 3 meters. Each spin consumes 260 Stamina. Tap again while skill is active to end it.Strategy: Stamina must be reasonably allocated between damage output and survivability. When safe, it can be used more for dealing damage and increasing Formless level.
+- **[1613] Wildfire Dance** (Max Tier/Rank: `4`)
+  - *Text:* Unleashes an ultra-high-speed flurry. Each round consumes 50 Flame Soul, 25% of the Crimson Soul Gauge, or 25% of Max HP to deal Attack DMG to all enemies within 3 meters. Prioritizes consuming Flame Soul, then Crimson Soul Gauge, then HP. Cannot be cast if HP is below 50%. Tap again while the skill is active to end it.Strategy: The absolute core skill of Crimson Spec. Accumulate as much Flame Soul and Crimson Soul Gauge as possible to sustain its use. Observe play while casting to interrupt it at any time for survival.
+- **[1614] Unbound Meteor** (Max Tier/Rank: `5`)
+  - *Text:* Releases power to perform a powerful leaping cleave at the target, dealing Attack DMG to enemies within 4 meters of the landing point. Upon landing, creates Crimson Earth, which deals additional Attack DMG to all enemies within 4 meters over 5s, and restores 15 Flame Soul.Tips: Use to engage targets and restore Flame Soul. Cast in advance when burst damage is needed to remain within Crimson Earth.
+- **[1615] Wasteland's End** (Max Tier/Rank: `6`)
+  - *Text:* Imbues the power of fire, granting a Class Skills CD Boost and increased Haste while active.Strategy: Use when Formless reaches A or S to maximize benefits during the burst window.
+- **[1616] Flowing Splendor Slash** (Max Tier/Rank: `7`)
+  - *Text:* Consumes 50 Flame Soul to unleash a powerful cross-shaped energy slash forward. The slash travels forward for a set duration, dealing Attack DMG to all enemies along its path. 100% of the DMG dealt to the primary target is converted into HP. Also grants 50% Life Steal for a certain duration.Tips: Combine with rapid Crimson Soul Gauge buildup and gain additional recovery when HP is low.
+- **[1617] Endless Hellfire** (Max Tier/Rank: `8`)
+  - *Text:* Becomes frenzied, increasing all Flame Soul generated by 100%, and temporarily granting increased Crit.Strategy: Must maintain during the burst window.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3611] Overclock Wave** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m.This skill is unaffected by CD effects.
+- **[3612] Unyielding Spirit** (Max Tier/Rank: `0`)
+  - *Text:* Grants 35% additional DMG Reduction for 5s. This skill can store 2 charges. This skill is unaffected by CD effects.
+- **[3613] Master of Stealth** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3614] Energy Reflux** (Max Tier/Rank: `0`)
+  - *Text:* Instantly recovers 50% Stamina and increases Movement Speed by 15% for 5s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `67` โหนด:
+  - **Node [300] Power Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 8 Strength grants 1 ATK.
+    - *Stat Effects:* Attr#0: +11332 (Type 4)
+  - **Node [301] Swift Turn** (Cost: `1`, Type: `4`)
+    - *Text:* For every 1% Haste, gains 1% Attack SPD.
+    - *Stat Effects:* Attr#4: +11722 (Type 4)
+  - **Node [302] Infernal Combo** (Cost: `1`, Type: `4`)
+    - *Text:* When Special Attacks or Basic Attacks deal damage, grants Infernal Combo (triggers only once when hitting multiple targets).
+    - *Stat Effects:* [Buff 2208030] Effect 2208030
+  - **Node [303] Crimson Lotus** (Cost: `1`, Type: `4`)
+    - *Text:* Gain adaptive effects when Infernal Combo reaches max stacks:Formless Spec: ATK +8%.Crimson Spec: Crimson Recovery effect +10%.
+    - *Stat Effects:* [Buff 2208040] Effect 2208040
+  - **Node [304] Crimson Flame Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* Special Attack hits cause the target to take +2.5% DMG. The effect lasts 8s and stacks up to 3 times.
+    - *Stat Effects:* [Buff 2208050] Effect 2208050
+  - **Node [305] Wild Soul - Break** (Cost: `1`, Type: `4`)
+    - *Text:* When Strength reaches 500 points, Expertise Skill damage +5%.
+    - *Stat Effects:* [Buff 2208060] Effect 2208060
+  - **Node [306] Crimson Lotus Duality** (Cost: `1`, Type: `4`)
+    - *Text:* Each stack of Infernal Combo grants effects based on the relationship between Luck Chance and Crit Chance:When Luck Chance is greater than or equal to Crit Chance, each stack of Infernal Combo grants 1.6% Lucky Strike Multiplier.When Crit Chance is greater than Luck Chance, each stack of Infernal Combo grants 1.2% Crit DMG.
+    - *Stat Effects:* [Buff 2208070] Effect 2208070
+  - **Node [307] Flame Soul Seal** (Cost: `1`, Type: `4`)
+    - *Text:* Flame Soul cap +50.Every 50 Flame Soul gained triggers Infernal Combo.
+    - *Stat Effects:* [Buff 2208080] Effect 2208080
+  - **Node [308] Wild Soul - Swift** (Cost: `1`, Type: `4`)
+    - *Text:* When Strength reaches 300 points, the effect of the talent Infernal Combo is increased by 50%.
+    - *Stat Effects:* [Buff 2208090] Effect 2208090
+  - **Node [309] Ember Epiphany** (Cost: `1`, Type: `4`)
+    - *Text:* Grants the Flame Suppression specialization effect.
+    - *Stat Effects:* [Buff 2208100] Effect 2208100
+  - **Node [310] Crimson Lotus Ember Epiphany** (Cost: `1`, Type: `4`)
+    - *Text:* While in the Infernal Combo state, the Flame Suppression effect is increased by 50%.
+    - *Stat Effects:* [Buff 2208110] Effect 2208110
+  - **Node [311] Soaring Crimson Flame Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* Enhances Crimson Flame Pursuit based on the target's lost HP:When the target's HP is below 80%, enhances the base effect by 30%.The lower the target's HP, the higher the bonus, up to a maximum enhancement of 100% when the target's HP drops to 30%.
+    - *Stat Effects:* [Buff 2208120] Effect 2208120
+  - **Node [312] Formless Expertise Spec** (Cost: `1`, Type: `5`)
+    - *Text:* By using different Special Attacks and Expertise Skills, the Formless level can be raised from E to S (a total of 6 levels). During its 8s duration, each 1 level grants Blazing Assault, Rage Cleave, and Axe Wind a 2% CD Speed increase.Trigger Formless effects to accelerate CDs, chain Blazing Assault to boost Expertise Skill DMG, and combine with the core Formless Flame Slash mechanic to deal massive combo DMG.
+    - *Stat Effects:* [Buff 2208130] Effect 2208130
+  - **Node [313] Blazing Pact** (Cost: `1`, Type: `4`)
+    - *Text:* After casting Blazing Assault, the next Expertise Skill deals +20% Final DMG, but its Crit Chance is halved.
+    - *Stat Effects:* [Buff 2208140] Effect 2208140
+  - **Node [314] Soaring Flame** (Cost: `1`, Type: `4`)
+    - *Text:* After gaining Formless 6 times or activating Wasteland's End, Blazing Ascension evolves into Soaring Flame.Gains Blaze after casting Soaring Flame.
+    - *Stat Effects:* [Buff 2208150] Effect 2208150
+  - **Node [315] Time Wheel Rewind** (Cost: `1`, Type: `4`)
+    - *Text:* When Formless is obtained, the remaining CD of the skill with the longest current CD among Blazing Assault, Rage Cleave, and Axe Wind is reduced by 1.5s.
+    - *Stat Effects:* [Buff 2208160] Effect 2208160
+  - **Node [316] Inferno** (Cost: `1`, Type: `4`)
+    - *Text:* In Blaze state, Expertise Skills inflict Burn when they hit a target.
+    - *Stat Effects:* [Buff 2208170] Effect 2208170
+  - **Node [317] Inferno Explosion** (Cost: `1`, Type: `4`)
+    - *Text:* When a target is inflicted with Burn, there is a 30% fixed chance to accumulate 1 stack of Wildfire that lasts for 10s. When Wildfire reaches 12 stacks, it triggers Explosion and clears Wildfire stacks.
+    - *Stat Effects:* [Buff 2208180] Effect 2208180
+  - **Node [318] Lucky Explosion** (Cost: `1`, Type: `4`)
+    - *Text:* Burn can trigger Lucky Strike.Based on the target's current Burn stacks, increases Explosion damage. Each additional 1 stack of Burn increases Explosion damage by 5%.
+    - *Stat Effects:* [Buff 2208190] Effect 2208190
+  - **Node [319] Wasteland Raid** (Cost: `1`, Type: `4`)
+    - *Text:* During Wasteland's End, triggering a Lucky Strike with Rage Cleave or Axe Wind reduces the charge time of Blazing Assault by 1s.
+    - *Stat Effects:* [Buff 2208200] Effect 2208200
+  - **Node [320] Time Wheel Lucky Soul** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1 level of the Formless effect increases Lucky Strike DMG by 2%.
+    - *Stat Effects:* [Buff 2208210] Effect 2208210
+  - **Node [321] Time Wheel Agile Soul** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1 level of the Formless effect grants 2.5% Strength.
+    - *Stat Effects:* [Buff 2208220] Effect 2208220
+  - **Node [322] Returning Soul** (Cost: `1`, Type: `4`)
+    - *Text:* Blazing Assault restores 5% of lost Flame Soul. When Formless is at S level, enhances recovery effect to 10%.
+    - *Stat Effects:* [Buff 2208230] Effect 2208230
+  - **Node [323] Double Inferno** (Cost: `1`, Type: `4`)
+    - *Text:* Axe Wind applies 3 stacks of Burn to hit targets.At S Formless level, targets hit by Axe Wind accumulate 1 stack of Wildfire that lasts for 10s. When Wildfire reaches 12 stacks, it triggers Explosion and clears Wildfire stacks.
+    - *Stat Effects:* [Buff 2208240] Effect 2208240
+  - **Node [324] Hellfire Meteor** (Cost: `1`, Type: `4`)
+    - *Text:* In the Formless S-Rank state, each cast of Rage Cleave summons 1 Hellfire Meteor at the primary target's location.
+    - *Stat Effects:* [Buff 2208250] Effect 2208250
+  - **Node [325] Supreme Battlefield** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Mastery grants 0.2% Fire Bonus.
+    - *Stat Effects:* [Buff 2208260] Effect 2208260
+  - **Node [326] Wasteland Finale** (Cost: `1`, Type: `4`)
+    - *Text:* Gains 25% Fire Bonus for 15s after casting Ultimate.
+    - *Stat Effects:* [Buff 2208270] Effect 2208270
+  - **Node [327] Expertise Formless Flame Slash** (Cost: `1`, Type: `4`)
+    - *Text:* Rage Cleave, Blazing Assault, and Axe Wind can trigger Formless Flame Slash.
+    - *Stat Effects:* [Buff 2208280] Effect 2208280
+  - **Node [328] Formless Flame Slash Luck** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Luck increases the trigger chance of Formless Flame Slash stages 1 to 3 by 0.2%/0.1%/0.05% respectively, but the Crit Rate of Formless Flame Slash is halved.
+    - *Stat Effects:* [Buff 2208290] Effect 2208290
+  - **Node [329] Formless Combo** (Cost: `1`, Type: `4`)
+    - *Text:* For every 5 hits an Expertise Skill deals to the main target, it grants a buff that increases the Lucky Strike Multiplier by 27% and reduces Lucky Strike Crit Rate by 20% for the next 8s. This effect stacks up to 3 times.
+    - *Stat Effects:* [Buff 2208300] Effect 2208300
+  - **Node [330] Formless Flame Slash - Break** (Cost: `1`, Type: `4`)
+    - *Text:* Formless Flame Slash can trigger Lucky Strike.Lucky Strike DMG Multiplier +5%. Every 1% Luck grants 0.8% Lucky Strike DMG Multiplier.
+    - *Stat Effects:* [Buff 2208310] Effect 2208310
+  - **Node [331] Formless Flame Slash - Luck** (Cost: `1`, Type: `4`)
+    - *Text:* Formless Flame Slash Luck Chance +8%.
+    - *Stat Effects:* [Buff 2208320] Effect 2208320
+  - **Node [332] Formless Flame Slash - Blaze** (Cost: `1`, Type: `4`)
+    - *Text:* Formless Flame Slash gains 5% Fire Bonus.
+    - *Stat Effects:* [Buff 2208330] Effect 2208330
+  - **Node [333] Formless Flame Slash Attack Break** (Cost: `1`, Type: `4`)
+    - *Text:* Basic Attacks, Blazing Ascension, and Soaring Flame can trigger Formless Flame Slash.
+    - *Stat Effects:* [Buff 2208340] Effect 2208340
+  - **Node [334] Lucky Blade Combo** (Cost: `1`, Type: `4`)
+    - *Text:* Expertise Skills ignore 35% of the target's Armor.
+    - *Stat Effects:* [Buff 2208350] Effect 2208350
+  - **Node [335] Formless Flame Slash Combo** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1 level of the Formless effect provides 2% Formless Flame Slash DMG.
+    - *Stat Effects:* [Buff 2208360] Effect 2208360
+  - **Node [336] Oblivion Inferno** (Cost: `1`, Type: `4`)
+    - *Text:* During Wasteland's End, Expertise Skill DMG +30%.
+    - *Stat Effects:* [Buff 2208370] Effect 2208370
+  - **Node [337] Instant Wasteland** (Cost: `1`, Type: `4`)
+    - *Text:* When Formless is obtained, the remaining CD of Wasteland's End is reduced by 0.5s or its duration is extended by 0.5s (total extended duration cannot exceed 5s).
+    - *Stat Effects:* [Buff 2208380] Effect 2208380
+  - **Node [338] Burning Attack** (Cost: `1`, Type: `4`)
+    - *Text:* Fire Bonus +8% when attacking Elite or higher targets.
+    - *Stat Effects:* [Buff 2208390] Effect 2208390
+  - **Node [339] Varied Strikes** (Cost: `1`, Type: `4`)
+    - *Text:* For each additional target hit by an Expertise Skill, DMG dealt +10%, up to 60%.
+    - *Stat Effects:* [Buff 2208400] Effect 2208400
+  - **Node [340] Flame Soul Attack Spirit** (Cost: `1`, Type: `4`)
+    - *Text:* When killing a target, Flame Soul +5.
+    - *Stat Effects:* [Buff 2208410] Effect 2208410
+  - **Node [341] Stellar Spark** (Cost: `1`, Type: `4`)
+    - *Text:* Expertise Skill DMG increases Fire ATK by 22 for the next 10s. Stacks up to 10 times.
+    - *Stat Effects:* [Buff 2208420] Effect 2208420
+  - **Node [342] Crimson Expertise Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Gains the Crimson Recovery effect: When hitting the main target (excluding Wildfire Dance), 20% of the DMG dealt is converted into Crimson Soul Gauge (Crimson Soul Gauge value cannot exceed Max HP). When Flame Soul is insufficient, 25% of the Crimson Soul Gauge value can be consumed to extend the duration of Wildfire Dance by 0.8s.Build the gauge quickly through Crimson Recovery, then leverage high Attack SPD to trigger Wildfire Dance frequently. Use this as the core mechanic and combine it with other skill effects to unleash massive DMG within the burst window.
+    - *Stat Effects:* Attr#1605: +1606 (Type 6), [Buff 2208430] Effect 2208430
+  - **Node [343] Soul Flame** (Cost: `1`, Type: `4`)
+    - *Text:* For every 10% Crimson Soul Gauge charged, immediately gains a buff: Increases ATK bonuses from all sources by 2% for 5s. This effect can stack up to 3 times.
+    - *Stat Effects:* [Buff 2208440] Effect 2208440
+  - **Node [344] Raging Flame Sharpness I** (Cost: `1`, Type: `4`)
+    - *Text:* For every 10% Max HP or Crimson Soul Gauge lost, a stack of a buff is immediately gained: Crit Chance from all sources is increased by 2.5% for 5s. This effect can stack up to 3 times.
+    - *Stat Effects:* [Buff 2208450] Effect 2208450
+  - **Node [345] Crimson Earth - Flame Soul** (Cost: `1`, Type: `4`)
+    - *Text:* While within Crimson Earth, Flame Soul recovery efficiency +30%. While within Crimson Earth, Wildfire Dance DMG +50%.
+    - *Stat Effects:* [Buff 2208460] Effect 2208460
+  - **Node [346] Crimson Earth - Swift** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Attack SPD increases the Crimson Recovery effect by 1% while within Crimson Earth.
+    - *Stat Effects:* [Buff 2208470] Effect 2208470
+  - **Node [347] Crimson Earth Meteor I** (Cost: `1`, Type: `4`)
+    - *Text:* Every 2 casts of Unbound Meteor cause Unbound Meteor to evolve into Falling Hellfire.
+    - *Stat Effects:* [Buff 2208480] Effect 2208480
+  - **Node [348] Raging Flame Sharpness II** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Haste grants 0.5% Expertise Skill CD Boost.
+    - *Stat Effects:* [Buff 2208490] Effect 2208490
+  - **Node [349] Crimson Earth Meteor II** (Cost: `1`, Type: `4`)
+    - *Text:* Unbound Meteor and its enhanced skill (Falling Hellfire) gain 15% Fire Bonus. This is increased by an additional 15% within Crimson Earth.
+    - *Stat Effects:* [Buff 2208500] Effect 2208500
+  - **Node [350] Destined Meteor** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Flowing Splendor Slash, Unbound Meteor, and its enhanced skill (Falling Hellfire) consumes up to 2 stacks of Infernal Combo. Each stack of Infernal Combo grants that skill a 10% Fire Bonus.
+    - *Stat Effects:* [Buff 2208510] Effect 2208510
+  - **Node [351] Crimson Break Slash** (Cost: `1`, Type: `4`)
+    - *Text:* Crit DMG +8%.
+    - *Stat Effects:* [Buff 2208520] Effect 2208520
+  - **Node [352] Hellfire Manifestation** (Cost: `1`, Type: `4`)
+    - *Text:* While Endless Hellfire is active, the Crimson Recovery effect is doubled and the final consumption of the Crimson Soul Gauge is reduced by half.
+    - *Stat Effects:* [Buff 2208530] Effect 2208530
+  - **Node [353] Crimson Focus** (Cost: `1`, Type: `4`)
+    - *Text:* For every 1% Attack SPD exceeding 30%, 0.2% Expertise Skill DMG is provided.
+    - *Stat Effects:* [Buff 2208540] Effect 2208540
+  - **Node [354] Flowing Splendor Rotation** (Cost: `1`, Type: `4`)
+    - *Text:* After casting Flowing Splendor Slash, Wildfire Dance DMG is increased by50% for 5s.Flowing Splendor Slash charge count +1.
+    - *Stat Effects:* [Buff 2208550] Effect 2208550
+  - **Node [355] Instant Flowing Splendor** (Cost: `1`, Type: `4`)
+    - *Text:* When Frenzied Slash deals DMG, there is a 15% fixed chance to grant Flowing Splendor Slash 1 charge and cause its next cast to consume no Flame Soul.
+    - *Stat Effects:* [Buff 2208560] Effect 2208560
+  - **Node [356] Ultimate Hellfire** (Cost: `1`, Type: `4`)
+    - *Text:* Activating Endless Hellfire immediately grants 5 stacks of Infernal Combo, which are not consumed while it is active.While Endless Hellfire is active, Strength +15%.
+    - *Stat Effects:* [Buff 2208570] Effect 2208570
+  - **Node [357] Crimson Crit** (Cost: `1`, Type: `4`)
+    - *Text:* When Crimson Soul Gauge is charged above 50%, Fire ATK +50%.
+    - *Stat Effects:* [Buff 2208580] Effect 2208580
+  - **Node [358] Crimson Pierce** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing Crit DMG, ignores 22% of the target's Armor.
+    - *Stat Effects:* [Buff 2208590] Effect 2208590
+  - **Node [359] Unbound Meteor Combo** (Cost: `1`, Type: `4`)
+    - *Text:* Falling Hellfire is enhanced into a continuous three-hit strike form.  Every 1% Crimson Soul Gauge increases Falling Hellfire DMG by 1%.
+    - *Stat Effects:* [Buff 2208600] Effect 2208600
+  - **Node [360] Crimson Epiphany** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Mastery grants 2% Crimson Recovery final effect.
+    - *Stat Effects:* [Buff 2208610] Effect 2208610
+  - **Node [361] Wildfire Dance Final Slash** (Cost: `1`, Type: `4`)
+    - *Text:* After Wildfire Dance deals Crit DMG 10 times (hits on multiple targets count as one), it triggers a Final Slash that deals 500% ATK as Attack DMG to enemies.Each Crit DMG instance dealt by Wildfire Dance grants the Final Slash a 3% Final DMG Bonus (up to a maximum of 100%).
+    - *Stat Effects:* [Buff 2208620] Effect 2208620
+  - **Node [362] Wildfire Formless Flame Slash** (Cost: `1`, Type: `4`)
+    - *Text:* Wildfire Dance can trigger Formless Flame Slash, but can no longer trigger Lucky Strikes.The damage multiplier of Formless Flame Slash is adjusted to the skill multiplier that triggered it * (30% + Crit%).
+    - *Stat Effects:* [Buff 2208630] Effect 2208630
+  - **Node [363] Wild Slash Combo** (Cost: `1`, Type: `4`)
+    - *Text:* Each time Wildfire Dance deals DMG 1 time, it grants the next Unbound Meteor, Falling Hellfire, or Flowing Splendor Slash a 2.5% Final DMG Bonus (up to a maximum of 100%). Casting any of these skills clears this bonus.
+    - *Stat Effects:* [Buff 2208640] Effect 2208640
+  - **Node [364] Arcane Wildfire Bloodline** (Cost: `1`, Type: `4`)
+    - *Text:* When Wildfire Dance deals DMG, there is a fixed chance of 12% + Haste% / 2.5 to gain 1 stack of Crimson Bloodline. When Crimson Bloodline reaches 7 stacks, it triggers Great Crimson Lotus and clears all Crimson Bloodline stacks.
+    - *Stat Effects:* [Buff 2208650] Effect 2208650
+  - **Node [365] Arcane Wildfire Haste** (Cost: `1`, Type: `4`)
+    - *Text:* Wildfire Dance Attack SPD +20%.
+    - *Stat Effects:* [Buff 2208660] Effect 2208660
+  - **Node [366] Arcane Raging Flame** (Cost: `1`, Type: `4`)
+    - *Text:* Every 15% Crimson Soul Gauge charged reduces the remaining CD of Endless Hellfire by 0.5s. Every 10% of Haste reduces it by an additional 0.1s, up to 1s.
+    - *Stat Effects:* [Buff 2208670] Effect 2208670
+
+---
+
+## อาชีพ [4]: **Wind Knight**
+- **สาย Talents ย่อย (Specializations):** **Spec 107** (Stage ID: `107`), **Spec 108** (Stage ID: `108`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[1401] Windborne Grace** (Max Tier/Rank: `0`)
+  - *Text:* CourageA key resource for unleashing Special Attacks and select Expertise Skills. Regenerates 3 points per second, with a starting maximum of 100. Basic Attack: Windborne GraceExecutes a sequence of up to four attacks, dealing Attack DMGTips: Fill the gaps with Basic Attacks when Courage is too low for other offensive skills.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[1418] Gale Thrust** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 50 Courage to perform 3 thrusts toward the enemy, dealing Attack DMG with each hit.Tips: Time casts carefully, and use this skill between Basic Attacks, as Courage takes time to accumulate.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[1426] Typhoon Cleave** (Max Tier/Rank: `0`)
+  - *Text:* Launches into enemy lines, dealing Attack DMG to enemies in range and knocking them Airborne. Restores 100 Courage."Endless storm, unlock thy mighty power at my knight's command! Wind, reveal thy glory with a surging rush!"Tips: Cast when Courage is low.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[1420] Galeform** (Max Tier/Rank: `1`)
+  - *Text:* Stuns enemies in front upon casting, dealing Attack DMG. While active, continuously restores 105 Courage and increases your Strength.This skill holds 2 charges.Tips: Cast when Courage is low.
+- **[1421] Spiral Thrust** (Max Tier/Rank: `2`)
+  - *Text:* Consumes 30 Courage to reel in the spinning lance and unleash a final piercing strike. The spiraling gust tears through the air, dealing sustained Attack DMG to enemies within range. The initial strike inflicts a 50% Wound on the target, lasting 10s. Tips: Whenever you have enough Courage, use it on your most important skill.
+- **[1422] Breach Pursuit** (Max Tier/Rank: `3`)
+  - *Text:* Lunges toward the enemy, dealing Attack DMG and gaining 15 Courage. Can be cast again to unleash a sweeping slash, dealing Attack DMG to all nearby enemies and knocking them Airborne. Targets with Resilience cannot be knocked airborne but will have their Resilience reduced. Additionally, gains 10 Courage for each enemy hit, up to a maximum of 50 Courage.Tips: Equip when facing multiple enemies.
+- **[1425] Falcon Toss** (Max Tier/Rank: `4`)
+  - *Text:* Consumes 40 Courage to leap into the air and hurl a wind-forged spear with force. Deals Attack DMG to all enemies in range and greatly reduces their Resilience. Grants 1 stack of Sharp.Tips: Effective against enemies with Resilience. Also recommended when dealing with multiple targets.
+- **[1424] Instant Edge** (Max Tier/Rank: `5`)
+  - *Text:* Consumes 2 stacks of Sharp to leap into the air and deliver a powerful aerial strike, dealing Attack DMG.Tips: Combo with Skyward Spec. Cast when Courage is low to prevent overcapping and wasting Courage regeneration.
+- **[1430] Valor Cyclone** (Max Tier/Rank: `6`)
+  - *Text:* Converts Courage into a sustained wind field, dealing Attack DMG to nearby enemies until Courage runs out, using 16 Courage per second. The skill may be deactivated by clicking again. Tips: Cast at full Courage and regain Courage during Valor Cyclone to extend duration.
+- **[1431] Sharp Impact** (Max Tier/Rank: `7`)
+  - *Text:* Leaps into the air and crashes down, dealing massive Attack DMG to the target and surrounding enemies. Each stack of Sharp consumed charges the skill for 5%.Tips: Sharp Impact deals massive DMG. Consume as much Sharp as possible within a fixed time window to maximize DMG.
+- **[1423] Aegis Gale** (Max Tier/Rank: `8`)
+  - *Text:* Condenses wind pressure in front of the caster, rendering the caster immune to all DMG. Counterattack DMG is incrementally amplified with each incoming attack, dealing Attack DMG in retaliation. Tips: This skill is intended to be used in high-pressure situations to increase chances of survival. The more frequent enemy attack, the more this skill brings you.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[1409] Typhoon Cleave** (Max Tier/Rank: `0`)
+  - *Text:* Launches into enemy lines, dealing Attack DMG to enemies in range and knocking them Airborne. Restores 100 Courage."Endless storm, unlock thy mighty power at my knight's command! Wind, reveal thy glory with a surging rush!"Tips: Cast when Courage is low.
+- **[1410] Typhoon Cleave** (Max Tier/Rank: `0`)
+  - *Text:* Raises the banner spear, granting Inspire to allies. Afterward, a follow-up leap can be launched, dealing Attack DMG to the enemies within range and knocking them airborne, while restoring 100 Courage. Inspire: Lasts for 10s. During this time, all allies' Haste +10%. You restore 10 Courage per second and 1 stack of Sharp every 2s. "Endless storm, unlock thy mighty power at my knight's command! Wind, reveal thy glory with a surging rush! Manifest in the wind! Tips: Cast when Courage is low.
+- **[1411] Swift Blade** (Max Tier/Rank: `0`)
+  - *Text:* Deals Attack DMG equal to 100% ATK to all the enemies, which scales with the Level/Tier of Basic Attack. Restores 10 Courage immediately upon use.
+- **[1419] Skyfall** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 35 Courage to leap into the air and deliver a downward strike on the enemy, dealing Attack DMG."Even if enemy lines are unbreakable, the wind of victory will tear them asunder!"Tips: Cast when Courage is near cap. When casting in succession, the leap is skipped for faster follow-up attacks.
+- **[1433] Falcon Strike** (Max Tier/Rank: `0`)
+  - *Text:* Enhanced Falcon Toss, leap into the air and gather wind power, launching a fierce wind blade spear. Deals 750% ATK as Attack DMG to all enemies in the area and significantly reduces their tenacity, growing with the upgrade/advancement of the Falcon Toss skill.Immediately gain 3 stacks of Sharp after Casting .
+- **[1434] Vortex Strike** (Max Tier/Rank: `0`)
+  - *Text:* Empowered Spiral Thrust unleashes a final strike, dealing Attack DMG equal to 1265% ATK (which scales with the Level/Tier of Spiral Thrust).
+- **[1435] Drake Cannon** (Max Tier/Rank: `0`)
+  - *Text:* A thrust followed by a backward leap releasing strong wind pressure, dealing Attack DMG equal to 380% ATK to enemies (which scales with the Level/Tier of Basic Attack).After casting, immediately restores 20 Courage.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3611] Overclock Wave** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m.This skill is unaffected by CD effects.
+- **[3612] Unyielding Spirit** (Max Tier/Rank: `0`)
+  - *Text:* Grants 35% additional DMG Reduction for 5s. This skill can store 2 charges. This skill is unaffected by CD effects.
+- **[3613] Master of Stealth** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3614] Energy Reflux** (Max Tier/Rank: `0`)
+  - *Text:* Instantly recovers 50% Stamina and increases Movement Speed by 15% for 5s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `68` โหนด:
+  - **Node [400] Swift Shadow** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 points of Courage consumed reduces the CD of Spiral Thrust, Breach Pursuit, and Falcon Toss by 1s.
+    - *Stat Effects:* [Buff 2205010] Effect 2205010
+  - **Node [401] Power Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 8 Strength grants 1 ATK.
+    - *Stat Effects:* Attr#0: +11332 (Type 4)
+  - **Node [402] Vulnerable Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Dealing DMG grants a fixed 30% chance to apply Vulnerability to the enemy. Vulnerability: Increases the DMG you deal to the target by 10% for 5s.
+    - *Stat Effects:* [Buff 2205030] Effect 2205030
+  - **Node [403] Sharp** (Cost: `1`, Type: `4`)
+    - *Text:* Dealing DMG with Special Attacks grants Sharp.
+    - *Stat Effects:* [Buff 2205040] Effect 2205040
+  - **Node [404] Sharp Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp cap +1.
+    - *Stat Effects:* [Buff 2205050] Effect 2205050
+  - **Node [405] Wind Rift Diffusion** (Cost: `1`, Type: `4`)
+    - *Text:* Expertise and Ultimates deal 10% more DMG to targets inflicted with Rend, and when hitting Rend targets, deal 1 additional hit of 75% DMG.
+    - *Stat Effects:* [Buff 2205060] Effect 2205060
+  - **Node [406] Wind Tear** (Cost: `1`, Type: `4`)
+    - *Text:* When Gale Thrust deals DMG, apply Rend to targets.
+    - *Stat Effects:* [Buff 2205070] Effect 2205070
+  - **Node [407] Quickshot Meteor** (Cost: `1`, Type: `4`)
+    - *Text:* Gale Thrust is enhanced, increasing hit counts by 2.Reduces Gale Thrust's Courage consumption by 20%.
+    - *Stat Effects:* [Buff 2205080] Effect 2205080
+  - **Node [409] Sharp Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp cap +1.
+    - *Stat Effects:* [Buff 2205090] Effect 2205090
+  - **Node [410] Swift Blade** (Cost: `1`, Type: `4`)
+    - *Text:* When Valor Cyclone deals DMG, it has a fixed 7% chance to evolve Basic Attacks into Swift Blade.
+    - *Stat Effects:* [Buff 2205100] Effect 2205100
+  - **Node [411] Zephyr Waltz Agility** (Cost: `1`, Type: `4`)
+    - *Text:* Additional Courage recovery: Recovers 1 extra point of Courage per second for every 2 stacks of Sharp.
+    - *Stat Effects:* [Buff 2205110] Effect 2205110
+  - **Node [412] Wind Chaser** (Cost: `1`, Type: `4`)
+    - *Text:* During the casting of Valor Cyclone, for every 20 points of Courage consumed, increase the DMG of Valor Cyclone by 4%, up to 20%.
+    - *Stat Effects:* [Buff 2205120] Effect 2205120
+  - **Node [413] Vortex Strike** (Cost: `1`, Type: `4`)
+    - *Text:* After every 2 casts of Drake Cannon, your Spiral Thrust evolves into Vortex Strike.
+    - *Stat Effects:* [Buff 2205130] Effect 2205130
+  - **Node [414] Instantaneous Crit** (Cost: `1`, Type: `4`)
+    - *Text:* While Chasing Step is active, Instant Edge and Sharp Impact have their Crit Chance doubled. Additionally, for Instant Edge and Sharp Impact, every 1% excess Crit is converted into 3% Crit DMG for the respective skill.
+    - *Stat Effects:* [Buff 2205140] Effect 2205140
+  - **Node [416] Spear Thrust** (Cost: `1`, Type: `4`)
+    - *Text:* When Skyfall lands a Lucky Strike, it triggers Spear Thrust, once every 2s.Dealing DMG with Spear Thrust restores 8 points of Courage. This effect triggers only once, even if multiple targets are hit.
+    - *Stat Effects:* [Buff 2205150] Effect 2205150
+  - **Node [417] Wind Fury** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Sharp Impact grants Wind Fury.
+    - *Stat Effects:* [Buff 2205160] Effect 2205160
+  - **Node [418] Sharp Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp cap +1.
+    - *Stat Effects:* [Buff 2205170] Effect 2205170
+  - **Node [419] Air Dance Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp Impact and its enhanced skill (Typhoon: Sharp Impact) increase the Courage restored by the next ​Galeform​ by 50%.Casting Sharp Impact immediately grants 3 Sharp, and casting its enhanced skill Typhoon: Sharp Impact immediately grants 6 Sharp.
+    - *Stat Effects:* [Buff 2205180] Effect 2205180
+  - **Node [420] Sharp Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp cap +1.
+    - *Stat Effects:* [Buff 2205190] Effect 2205190
+  - **Node [421] Tornado Dance** (Cost: `1`, Type: `4`)
+    - *Text:* During Wind Fury, DMG dealt by Instant Edge and Azure Sever triggers Tornado (triggered at most once when hitting multiple targets).
+    - *Stat Effects:* [Buff 2205200] Effect 2205200
+  - **Node [422] Chasing Step** (Cost: `1`, Type: `4`)
+    - *Text:* When Skyfall or Falcon Toss deals a Crit or Lucky Strike, they trigger Chasing Step.When Skyfall or Falcon Toss trigger a Crit and Lucky Strike simultaneously, they grant 2 stacks of Chasing Step.
+    - *Stat Effects:* [Buff 2205210] Effect 2205210
+  - **Node [423] Divine Wind Support** (Cost: `1`, Type: `4`)
+    - *Text:* When Falcon Toss and its enhanced skill (Azure Sever), or Instant Edge hits 1 target, the DMG gains a 10% Wind bonus.
+    - *Stat Effects:* [Buff 2205320] Effect 2205320
+  - **Node [424] Combat Expertise** (Cost: `1`, Type: `4`)
+    - *Text:* As the battle goes on, grants continuously increasing ATK. Every 10s, ATK +2.5%, up to 10%. Cleared after battle.
+    - *Stat Effects:* [Buff 2205220] Effect 2205220
+  - **Node [425] Momentum Surge** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Sharp effect by 1%, and for each enemy within 12m, additionally increases by 1%, up to 3%.
+    - *Stat Effects:* [Buff 2205230] Effect 2205230
+  - **Node [427] Catcher** (Cost: `1`, Type: `4`)
+    - *Text:* In combat, for every 1 enemy target defeated (party-wide effect), ATK +65 for 30s, up to 650.
+    - *Stat Effects:* [Buff 2205240] Effect 2205240
+  - **Node [428] Wind Split Technique** (Cost: `1`, Type: `4`)
+    - *Text:* When Rend deals DMG, it has a fixed 50% chance to grant 2 points of Courage.
+    - *Stat Effects:* [Buff 2205250] Effect 2205250
+  - **Node [429] Tempestrike** (Cost: `1`, Type: `4`)
+    - *Text:* When Galeform ends, it applies the Tempestrike.Every 50 points of Courage or 3 points of Sharp consumed during Galeform extends the duration of Tempestrike by 1s.
+    - *Stat Effects:* [Buff 2205260] Effect 2205260
+  - **Node [430] Divine Concealment** (Cost: `1`, Type: `4`)
+    - *Text:* Consuming Courage increases Haste by 1% and Speed by 2% for 5s, stacking up to 5 times.
+    - *Stat Effects:* [Buff 2205270] Effect 2205270
+  - **Node [431] Valor** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Courage by 30.
+    - *Stat Effects:* [Buff 2205280] Effect 2205280
+  - **Node [432] Skyward Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with Skyfall and enhances the skill.When having Sharp, gains ATK based on the max number of Sharp.Skyfall and Instant Edge can chain together, skipping the aerial cast delay. High Luck and critical rate enable Skyfall to trigger a low-cost Instant Edge.
+    - *Stat Effects:* Attr#1418: +1419 (Type 6), [Buff 2205290] Effect 2205290
+  - **Node [433] Vanguard Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances Gale Thrust.Casting Gale Thrust grants a 20% fixed chance to cause Basic Attacks to evolve into Swift Blade, with an additional 5% chance per stack of Sharp.Maximize Courage gain and expenditure to reduce the CD of Expertise skills. Haste increases Courage generation and the casting speed of core Expertise skills.
+    - *Stat Effects:* [Buff 2205300] Effect 2205300
+  - **Node [434] Battle Cry** (Cost: `1`, Type: `4`)
+    - *Text:* Typhoon Cleave raises the banner spear, granting Inspire to allies and increasing the caster's Crit DMG by 50% for 10s. Afterward, a follow-up leap can be launched, dealing Attack DMG to the enemies within range and knocking them airborne, while restoring 100 Courage. Inspire: Lasts for 10s. All allies gain 10% Haste (only one effect can be active at a time). You restore 10 Courage per second and 1 Sharp every 2s.
+    - *Stat Effects:* Attr#1426: +1410 (Type 6), [Buff 2205310] Effect 2205310
+  - **Node [435] Swift** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% Haste provides 1% Attack Speed.
+    - *Stat Effects:* Attr#4: +11722 (Type 4)
+  - **Node [436] Sharp Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp cap +1.
+    - *Stat Effects:* [Buff 2205340] Effect 2205340
+  - **Node [437] Long Lance Sharp Blade** (Cost: `1`, Type: `4`)
+    - *Text:* When Strength reaches 300 points, Expertise Skill damage +7%.
+    - *Stat Effects:* [Buff 2205350] Effect 2205350
+  - **Node [438] Sharp** (Cost: `1`, Type: `4`)
+    - *Text:* When Strength reaches 500 points, the additional ATK from Sharp increases to 6%.
+    - *Stat Effects:* [Buff 2205360] Effect 2205360
+  - **Node [439] Break Pursuit Advancement** (Cost: `1`, Type: `4`)
+    - *Text:* Within 15s after Casting the Ultimate, Casting Breach Pursuit will not start CD. This effect is removed after the duration ends or after Casting 3 times Breach Pursuit.
+    - *Stat Effects:* [Buff 2205370] Effect 2205370
+  - **Node [440] Wind Spiral** (Cost: `1`, Type: `4`)
+    - *Text:* When Gale Thrust deals DMG, it has a fixed 50% chance to grant 1 stack of Wind Spiral for 20s, stacking up to 10 times.Wind Spiral: When casting Spiral Thrust or Valor Cyclone, it triggers a Spiral Explosion, dealing Attack DMG equal to Wind Spiral stacks x 200% ATK to nearby enemies. Each 1% of Mastery increases this DMG multiplier by 7%, up to 560%. This DMG cannot Crit, and decreases by 5% for each additional target hit, down to a minimum of 25%. Triggering this clears all Wind Spiral stacks.
+    - *Stat Effects:* [Buff 2205380] Effect 2205380
+  - **Node [441] Vigor Spike** (Cost: `1`, Type: `4`)
+    - *Text:* When Sharp reaches full amount and the caster is in combat, enters Vigor Spike state, effective up to once every 30s (affected by CD Boost stats).
+    - *Stat Effects:* [Buff 2205390] Effect 2205390
+  - **Node [442] Fearless Gale** (Cost: `1`, Type: `4`)
+    - *Text:* After casting Spiral Thrust or Breach Pursuit or Valor Cyclone, the next Gale Thrust will not consume Courage. This effect is removed after leaving combat.
+    - *Stat Effects:* [Buff 2205400] Effect 2205400
+  - **Node [443] Whispering Breeze** (Cost: `1`, Type: `4`)
+    - *Text:* When Courage is below or equal to 50%, reduces the Energy Valor Cyclone consumes by 2.When Courage is above 50%, increases the DMG Valor Cyclone deals by 12%.
+    - *Stat Effects:* [Buff 2205410] Effect 2205410
+  - **Node [444] Rapid Drake Cannon** (Cost: `1`, Type: `4`)
+    - *Text:* Using Swift Blade grants it a fixed 10% chance to evolve Basic Attack into Drake Cannon in 10s. Each failure to evolve increases the chance by 10% until success.
+    - *Stat Effects:* [Buff 2205420] Effect 2205420
+  - **Node [445] Rupture** (Cost: `1`, Type: `4`)
+    - *Text:* When Valor Cyclone deals DMG, it has a fixed 50% chance to inflict Rupture.
+    - *Stat Effects:* [Buff 2205430] Effect 2205430
+  - **Node [446] Spiral Tear** (Cost: `1`, Type: `4`)
+    - *Text:* Spiral Thrust and Vortex Strike deals 30% more DMG to the targets with Rend.
+    - *Stat Effects:* [Buff 2205440] Effect 2205440
+  - **Node [447] Fortitude** (Cost: `1`, Type: `4`)
+    - *Text:* During Valor Cyclone, gains Super Armor and reduces DMG taken by 20%. When Valor Cyclone deals DMG, restores HP equal to 10% ATK.
+    - *Stat Effects:* [Buff 2205450] Effect 2205450
+  - **Node [448] Swift Breeze** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% Haste accelerates the REG SPD of Courage by 2%.
+    - *Stat Effects:* [Buff 2205460] Effect 2205460
+  - **Node [449] Breath of Wind** (Cost: `1`, Type: `4`)
+    - *Text:* Skills that consume Courage (Spiral Thrust and its enhanced skills, Valor Cyclone, Falcon Toss and its enhanced skills, Gale Thrust) gain 6% Wind Bonus.
+    - *Stat Effects:* [Buff 2205470] Effect 2205470
+  - **Node [450] Wind Rise** (Cost: `1`, Type: `4`)
+    - *Text:* When Valor Cyclone deals DMG, increases Drake Cannon and Vortex Strike Crit Chance by 7%, and Crit DMG by 5%. The effect lasts 5s and stacks up to 7 times.
+    - *Stat Effects:* [Buff 2205480] Effect 2205480
+  - **Node [451] Strong Attack** (Cost: `1`, Type: `4`)
+    - *Text:* When Valor Cyclone deals DMG, reduces the CD of Ultimate by 0.5s (which can only be triggers once on multiple hits).
+    - *Stat Effects:* [Buff 2205490] Effect 2205490
+  - **Node [452] Spiral Flame** (Cost: `1`, Type: `4`)
+    - *Text:* Using Vortex Strike, increases Haste by 25% for 10s.
+    - *Stat Effects:* [Buff 2205500] Effect 2205500
+  - **Node [453] Dragon's Fury Flame** (Cost: `1`, Type: `4`)
+    - *Text:* The Crit chance of ​Drake Cannon​ and ​Vortex Strike​ is doubled.Increases the Crit DMG of Drake Cannon and Vortex Strike by 8%.Each 1% Haste grants 0.5% Crit DMG for Drake Cannon​ and ​Vortex Strike​.
+    - *Stat Effects:* [Buff 2205510] Effect 2205510
+  - **Node [454] Wind Gate Drake Cannon** (Cost: `1`, Type: `4`)
+    - *Text:* Every 22 triggers of Valor Cyclone allows Basic Attack to evolve into Drake Cannon in 10s.
+    - *Stat Effects:* [Buff 2205520] Effect 2205520
+  - **Node [455] Bird Advancement** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the charge of Falcon Toss by 1.Reduces Courage consumed by Falcon Toss by 50%.
+    - *Stat Effects:* [Buff 2205530] Effect 2205530
+  - **Node [456] Sharp Advancement** (Cost: `1`, Type: `4`)
+    - *Text:* Enhances the effectiveness of Wind Fury by 50%.When Instant Edge consumes Chasing Step, doubles the charge efficiency of Sharp Impact.
+    - *Stat Effects:* [Buff 2205540] Effect 2205540
+  - **Node [457] Spear Recovery** (Cost: `1`, Type: `4`)
+    - *Text:* Spear Thrust reduces the CD of Falcon Toss by 2s (which can only be triggers once on multiple hits).
+    - *Stat Effects:* [Buff 2205550] Effect 2205550
+  - **Node [458] Sharp Long Breath** (Cost: `1`, Type: `4`)
+    - *Text:* During Wind Fury, Falcon Toss evolves into Azure Sever once.
+    - *Stat Effects:* [Buff 2205560] Effect 2205560
+  - **Node [459] Sharp Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp cap +1.
+    - *Stat Effects:* [Buff 2205570] Effect 2205570
+  - **Node [460] Skyfall** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing DMG, Skyfall gains a fixed 15% chance to grant 1 stack of Sharp.
+    - *Stat Effects:* [Buff 2205580] Effect 2205580
+  - **Node [461] Pursuit Power** (Cost: `1`, Type: `4`)
+    - *Text:* Chasing Step consumed increases Strength by 15%. The effect lasts 10s and stacks up to 2 times.
+    - *Stat Effects:* [Buff 2205590] Effect 2205590
+  - **Node [462] Exceptional Elegance** (Cost: `1`, Type: `4`)
+    - *Text:* During Galeform, increases the DMG dealt by Instant Edge and Skyfall by 25%.
+    - *Stat Effects:* [Buff 2205600] Effect 2205600
+  - **Node [463] Typhoon: Sharp Impact** (Cost: `1`, Type: `4`)
+    - *Text:* Sharp Impact is enhanced, evolving into Typhoon: Sharp Impact.
+    - *Stat Effects:* [Buff 2205610] Effect 2205610
+  - **Node [464] Instant Edge Break Style** (Cost: `1`, Type: `4`)
+    - *Text:* Instant Edge consumes 1 more Sharp.Increases the DMG dealt by Instant Edge by 90%.
+    - *Stat Effects:* [Buff 2205620] Effect 2205620
+  - **Node [465] Wind Swirl Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the DMG dealt by Tornado by 30%. Increases the DMG dealt by Spear Thrust by 30%.
+    - *Stat Effects:* [Buff 2205630] Effect 2205630
+  - **Node [466] Sharp Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* When Instant Edge consumes Chasing Step, grants 1 stack of Sharp.
+    - *Stat Effects:* [Buff 2205640] Effect 2205640
+  - **Node [467] Instant Edge Combo** (Cost: `1`, Type: `4`)
+    - *Text:* Instant Edge has a fixed 25% chance to trigger one extra instance of DMG (if Lucky Strike chance exceeds 25%, that becomes the new trigger chance). This extra DMG equals Instant Edge DMG x current Lucky Strike DMG multiplier%, and is affected by all relevant Instant Edge DMG bonuses.
+    - *Stat Effects:* [Buff 2205650] Effect 2205650
+  - **Node [468] Break Style** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing Crit DMG, Expertise Skill ignore the targets' 50% Armor.
+    - *Stat Effects:* [Buff 2205660] Effect 2205660
+  - **Node [469] Sharp Echo** (Cost: `1`, Type: `4`)
+    - *Text:* If Sharp isn't at Max stacks, increases the DMG dealt by Skyfall by 25%.
+    - *Stat Effects:* [Buff 2205670] Effect 2205670
+  - **Node [470] Kamikaze Luck** (Cost: `1`, Type: `4`)
+    - *Text:* For each 1 stack of Sharp consumed, gains 3 points of Courage. Increases Lucky Strike final DMG by 50%.
+    - *Stat Effects:* [Buff 2205680] Effect 2205680
+
+---
+
+## อาชีพ [5]: **Verdant Oracle**
+- **สาย Talents ย่อย (Specializations):** **Spec 110** (Stage ID: `110`), **Spec 111** (Stage ID: `111`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[1501] Vines' Embrace** (Max Tier/Rank: `0`)
+  - *Text:* EnergyA vital resource needed to perform Special Attacks and select Expertise. Regenerates 4 points per second, with a starting maximum of 100 points. Basic Attack: Vine's GripExecutes a sequence of up to four attacks, dealing Magic DMG. Tips: Fill the gap with Basic Attacks when Energy is too low to for other offensive abilities.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[1518] Wild Bloom** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 20 Energy to summon a giant vine that strikes a target area, dealing Magic DMG and healing the caster and the nearby ally with the lowest HP (Party Members Prioritized). Healing grows with MATK.Use on demand in emergencies. For better results, pair with offensive skills to trigger Symbiotic Marks and boost effectiveness.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[1509] Divine Circle Bloom** (Max Tier/Rank: `0`)
+  - *Text:* Creates a barrier using the forest power. When the barrier forms, it continuously deals Magic DMG to nearby enemies. The caster and up to 10 nearby allies receive 25% DMG Reduction and HOT while inside the barrier.Tips: Great for easing pressure on the party. Cast before incoming DMG. Requires solid timing awareness.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[1519] Feral Seed** (Max Tier/Rank: `1`)
+  - *Text:* Summons a seed to strike enemies, dealing Magic DMG and reducing their Move SPD by 30%. While dealing DMG, the seed restores a total of 30 Energy. This skill holds 2 charges. Tips: Casting is advised when Energy is low.
+- **[1520] Infusion** (Max Tier/Rank: `2`)
+  - *Text:* Consumes 30 Energy to channel a seed barrage for 5.9s, dealing Magic DMG to enemies. You can move while channeling.Tips: Great for solo play or filling DMG gaps.
+- **[1522] Nourish** (Max Tier/Rank: `3`)
+  - *Text:* Consumes 20 Energy to imbue the caster and up to 10 nearby allies (prioritizing teammates) with the forest power for 10s, healing them every second (Interval affected by Haste).Tips: Cast after combat begins to provide steady team-wide healing over time.
+- **[1523] Regen Pulse** (Max Tier/Rank: `4`)
+  - *Text:* Chants for 2.3s, then consumes 40 Energy to release a pulse from the caster. The pulse heals the caster and all affected allies.Tips: In AoE-heavy healing encounters, use this skill carefully to avoid wasting its dispel and putting it on CD too early.
+- **[1521] Grove Wish** (Max Tier/Rank: `5`)
+  - *Text:* Consumes 40 Energy to channel the power of forest for 4s, healing the caster and up to 10 nearby allies over time (party members prioritized). Healing scales with the caster's MATK (plus an additional fixed amount equal to 15% of the target's Max HP), and healing targets also gain 15% All Element Resistance for 10s. Tips: A strong healing skill for high-pressure moments. Since it requires channeling, time your cast carefully.
+- **[1531] Nature Ward** (Max Tier/Rank: `6`)
+  - *Text:* Grants a Nature Shield to the caster and up to 10 nearby allies.Tips: Great for high-pressure moments, helping stabilize the party. Pairs well with Smite Spec Talents for healing allies.
+- **[1529] Blossom Charge** (Max Tier/Rank: `7`)
+  - *Text:* Unleashes vines, inflicting Stun on surrounding enemies while dealing Magic DMG, and restoring HP to friendly targets around you. Tips: This is an instant cast skill. Paired with Lifebind Spec talents, it provides good damaging and healing capabilities in combats requiring continuous movement.
+- **[1524] Fast Growth** (Max Tier/Rank: `8`)
+  - *Text:* Applies an acceleration effect to the caster. Increases MATK and reduces CD while active.Tips: Cast when other skills are on CD .
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[1507] Life Bloom** (Max Tier/Rank: `0`)
+  - *Text:* Chants for 1.8s, then consumes 30 Energy to heal the caster and up to 10 nearby allies (Party Members Prioritized). Healing grows with MATK.Tips: In emergencies, cast repeatedly for fast healing. Otherwise, use Basic Attacks to stack Regen Buds, boosting Bloom's healing.
+- **[1525] Stag Charge** (Max Tier/Rank: `0`)
+  - *Text:* Deals Magic DMG equal to 500% ATK to enemies hit along the path, and heals allies hit for 100% ATK. Scales with the Level/Tier of Special attack. Casting it immediately refreshes Infusion.
+- **[1527] Bloomheal** (Max Tier/Rank: `0`)
+  - *Text:* Channels for 6s, summoning falling seeds every 0.5s to deal magic dmg to nearby enemies. At the same time, heals up to 10 nearby allies (prioritizing teammates) and grants them 25% DMG Reduction.
+- **[1528] Vital Surge** (Max Tier/Rank: `0`)
+  - *Text:* Immediately resets the CD of Healing Expertise Skills and grants 50 Energy. While active, surrounds you with verdant energy, increasing ATK, reducing skill Energy costs, and each Life Bloom cast shortens the remaining CD of Healing Expertise Skills.
+- **[1541] Wild Bloom** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 30 Energy to summon giant vines that strike a target area, dealing Magic DMG and healing the caster and the nearby ally with the lowest HP (Party Members Prioritized). Healing grows with MATK.Tips: In emergencies, cast repeatedly for fast healing. Otherwise, use Basic Attacks to stack Regen Buds, which improves both healing and DMG.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3311] Overclock Shock** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m and silencing them for 5s.This skill is unaffected by CD effects.
+- **[3312] Renewal Prayer** (Max Tier/Rank: `0`)
+  - *Text:* Revives the nearest ally within 3m.This skill is unaffected by CD effects.Weakness: Unaffected by same type of effects for 60s (Weakness effects are enhanced in party dungeons in Nightmare mode).
+- **[3313] Life Barrier** (Max Tier/Rank: `0`)
+  - *Text:* Immediately grants the caster and up to 10 nearby allies (party members prioritized) a shield equal to 20% Max HP, and while the shield persists, increases 15% additional DMG Reduction for 10s. This skill is unaffected by CD effects.
+- **[3314] Silent Command** (Max Tier/Rank: `0`)
+  - *Text:* Dispels debuffs from up to 10 allies within 25m (party members prioritized).This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `70` โหนด:
+  - **Node [500] Brimming Vitality** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Energy REG SPD by 20%.
+    - *Stat Effects:* [Buff 2202020] Effect 2202020
+  - **Node [501] Intellect Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 10 points of Intellect provides 1 point of MATK.
+    - *Stat Effects:* Attr#3: +11342 (Type 4)
+  - **Node [502] Inspiration** (Cost: `1`, Type: `4`)
+    - *Text:* Applies Inspiration to yourself and allies within 30 meters.
+    - *Stat Effects:* [Buff 2202040] Effect 2202040
+  - **Node [503] Regen Bud** (Cost: `1`, Type: `4`)
+    - *Text:* Casting a Special Attack grants 1 Regen Bud. Initial cap of Regen Buds: 4.When an Expertise Skill or Ultimate generates healing, 2 Regen Buds are consumed to throw a Nourishing Seed, triggering up to once per second.When an Expertise Skill or Ultimate deals DMG, 2 Regen Buds are consumed to shoot a Wild Seed, once per second.
+    - *Stat Effects:* [Buff 2202050] Effect 2202050
+  - **Node [504] Breath of Buds** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Regen Bud by 4.
+    - *Stat Effects:* [Buff 2202060] Effect 2202060
+  - **Node [505] Nature Shield** (Cost: `1`, Type: `4`)
+    - *Text:* When Wild Bloom heals a target, it also applies Nature Shield to them.Targets with Nature Shield restore HP when hit, with the amount equal to 10% of your ATK. This effect can occur up to once per second.
+    - *Stat Effects:* [Buff 2202120] Effect 2202120
+  - **Node [506] Arcane of Green** (Cost: `1`, Type: `4`)
+    - *Text:* When Feral Seed deals DMG, it increases ATK by Mastery % x Luck % for the next 10s.
+    - *Stat Effects:* [Buff 2202080] Effect 2202080
+  - **Node [507] Healing Breath** (Cost: `1`, Type: `4`)
+    - *Text:* When a Special Attack, Expertise Skill, or Ultimate generates Healing, there is a 20% to trigger Healing Chain. For every 2% Luck, the chance +1%.
+    - *Stat Effects:* [Buff 2202090] Effect 2202090
+  - **Node [508] Wild Blessing** (Cost: `1`, Type: `4`)
+    - *Text:* Wild Bloom now holds up to 2 charges.Wild Bloom's Energy cost -15%.
+    - *Stat Effects:* [Buff 2202100] Effect 2202100
+  - **Node [509] Flourish** (Cost: `1`, Type: `4`)
+    - *Text:* When Infusion, Feral Seed, or Wild Bloom deals DMG, 30% chance to reduce the CD of the Ultimate by 1s, once per second.
+    - *Stat Effects:* [Buff 2202320] Effect 2202320
+  - **Node [510] Smite Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances the ability to use Wild Bloom.Wild Bloom, Regen Pulse, and ​Nature Ward​ grant Symbiotic Mark to allies.Symbiotic Mark: Lasts for 10s. All of the caster's DMG will heal allies with Symbiotic Mark for 45% of the DMG dealt.Increases the final DMG of Lucky Strikes by 50%.When overhealing a target with Symbiotic Mark, if the overheal reaches 30% of their Max HP, the excess healing is converted into a regeneration effect lasting for 10s. This effect can trigger only once every 30s.Healing of Stillness: If the caster deals no DMG to enemies for 5s, each hit of the caster's Basic Attack will heal up to 10 allies (party members prioritized), with the 4-hit combo restoring 12.6% Max HP in total. After using an Ultimate, Basic Attacks immediately start healing, but this effect is disabled upon dealing DMG to enemies.Capable of converting attacks into healing. Lucky Strikes from attacks trigger various healing effects, enhancing healing while increasing DMG dealt.
+    - *Stat Effects:* [Buff 2202110] Effect 2202110
+  - **Node [511] Double Infusion** (Cost: `1`, Type: `4`)
+    - *Text:* After casting Stag Charge, the number of channels for the next Infusion +100%.
+    - *Stat Effects:* [Buff 2202130] Effect 2202130
+  - **Node [512] Final Bloomwheel** (Cost: `1`, Type: `4`)
+    - *Text:* When Wild Bloom deals DMG, reduces the remaining CD of Infusion by 1s. If the DMG triggers a Lucky Strike, the remaining CD is reduced by 3s.
+    - *Stat Effects:* [Buff 2202140] Effect 2202140
+  - **Node [514] Verdant Root** (Cost: `1`, Type: `4`)
+    - *Text:* While in battle state, standing still for 2s creates a Grass Domain. Grass Domain: While inside the Grass Domain, your Haste +10%. Upon exiting the Grass Domain, your Movement SPD +50% for 0.5s, and Grass Domain disappears.
+    - *Stat Effects:* [Buff 2202160] Effect 2202160
+  - **Node [515] Full Bloom** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Life Bloom grants a 40% chance to reduce the remaining CD of Blossom Charge and Nourish by 2s. Each 1% of Mastery increases this chance by 0.4%, up to a maximum of 60%.Casting Life Bloom grants a 50% chance to reduce the remaining CD of Fast Growth by 0.2s, triggering at most once every 10s. Each 20% of Haste increases the CD reduction by 0.1s, up to a maximum of 0.5s.
+    - *Stat Effects:* [Buff 2202170] Effect 2202170
+  - **Node [516] Healing Infusion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 5 uses of Life Bloom enhances the next direct healing Expertise Skill by 100%.
+    - *Stat Effects:* [Buff 2202180] Effect 2202180
+  - **Node [518] Verdant Duet** (Cost: `1`, Type: `4`)
+    - *Text:* Life Bloom has a fixed 20% chance to heal 1 additional time.
+    - *Stat Effects:* [Buff 2202200] Effect 2202200
+  - **Node [519] Floral Whisper** (Cost: `1`, Type: `4`)
+    - *Text:* Healing Expertise generate 20% more healing, but healing from Life Bloom -50%.
+    - *Stat Effects:* [Buff 2202210] Effect 2202210
+  - **Node [520] Lifeforce Extension** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the Healing of Healing Chain by 10%. For every 7% Mastery, Healing Chain jumps 1 additional time.Healing Chain restores 1% of an ally's Max HP with each tick.
+    - *Stat Effects:* [Buff 2202220] Effect 2202220
+  - **Node [521] Nourish Essence** (Cost: `1`, Type: `4`)
+    - *Text:* When Life Bloom generates healing, 50% chance to apply Nourish.
+    - *Stat Effects:* [Buff 2202230] Effect 2202230
+  - **Node [522] Endless Blossom** (Cost: `1`, Type: `4`)
+    - *Text:* When casting Blossom Charge, Grove Wish, or Regen Pulse, 20% chance that the next cast of Life Bloom within 5s consumes no Energy.
+    - *Stat Effects:* [Buff 2202240] Effect 2202240
+  - **Node [523] Stag Charge** (Cost: `1`, Type: `4`)
+    - *Text:* After triggering a total of 10 Nourishing Seeds or Wild Seeds, Wild Bloom evolves into Stag Charge.Casting Stag Charge instants grants 3 Regen Buds.
+    - *Stat Effects:* [Buff 2202250] Effect 2202250
+  - **Node [524] Wings of Revival** (Cost: `1`, Type: `4`)
+    - *Text:* When an ally within 20 meters takes DMG exceeding 30% of their HP, Revival triggers, which can affect the same target up to once every 45s.Revival: Restores HP equal to 50% of the DMG taken over 5s.
+    - *Stat Effects:* [Buff 2202260] Effect 2202260
+  - **Node [525] Natural Bloom** (Cost: `1`, Type: `4`)
+    - *Text:* When healing an ally with lower than 30% HP, Natural Bloom triggers, instantly restoring HP equal to 200% ATK to them. This effect can occur up to once every 30s.
+    - *Stat Effects:* [Buff 2202270] Effect 2202270
+  - **Node [526] Healing Pulse** (Cost: `1`, Type: `4`)
+    - *Text:* When an enemy within 10 meters that you are engaged with is defeated (effective within a team), generates a Healing Pulse. This can only occur once every 10s.
+    - *Stat Effects:* [Buff 2202280] Effect 2202280
+  - **Node [527] Gift of Life** (Cost: `1`, Type: `4`)
+    - *Text:* When an enemy within 10 meters that you are engaged with is defeated (effective within a team), generates a Healing Orb. This can only occur once every 2s.
+    - *Stat Effects:* [Buff 2202290] Effect 2202290
+  - **Node [528] Bud Acquisition** (Cost: `1`, Type: `4`)
+    - *Text:* When an enemy within 10 meters that you are engaged with is defeated (effective within a team), generates an Engram Orb, which grants 1 Regen Bud upon pickup.
+    - *Stat Effects:* [Buff 2202300] Effect 2202300
+  - **Node [529] Defensive Blessing** (Cost: `1`, Type: `4`)
+    - *Text:* Inspiration provides the target with an additional 400 Armor.
+    - *Stat Effects:* [Buff 2202310] Effect 2202310
+  - **Node [530] Flowers Ascension** (Cost: `1`, Type: `4`)
+    - *Text:* When Wild Seed deals DMG or Nourishing Seed generates healing, you gain a 10% Forest DMG bonus for the next 8s.
+    - *Stat Effects:* [Buff 2202330] Effect 2202330
+  - **Node [531] Lifebind Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replace Special Attack with Life Bloom and enhances the skill.Life Bloom generates 20% more healing.Casting Life Bloom grants 1 additional Regen Bud.Whenever safety allows, aim to cast as many healing skills as possible. Haste increases cast speed, and Mastery enhances healing potency.
+    - *Stat Effects:* Attr#1518: +1507 (Type 6), [Buff 2202340] Effect 2202340
+  - **Node [532] Thorn** (Cost: `1`, Type: `4`)
+    - *Text:* When Wild Seed hits a target, it inflicts Thorn on them.Forest DMG dealt by players to targets with Thorn +20%.
+    - *Stat Effects:* [Buff 2202360] Effect 2202360
+  - **Node [533] Vital Surge** (Cost: `1`, Type: `4`)
+    - *Text:* Replace Ultimate, Divine Circle Bloom with Vital Surge.
+    - *Stat Effects:* Attr#1509: +1528 (Type 6)
+  - **Node [534] Verdant Blessing** (Cost: `1`, Type: `4`)
+    - *Text:* When HP of an ally with Inspiration drops below 20%, Blessing triggers.Blessing: Grants a Nature Shield and reduces the DMG taken by 35% for 8s, once every 60s.
+    - *Stat Effects:* [Buff 2202380] Effect 2202380
+  - **Node [535] Bloomheal** (Cost: `1`, Type: `4`)
+    - *Text:* Replace Ultimate, Divine Circle Bloom with Bloomheal.
+    - *Stat Effects:* Attr#1509: +1527 (Type 6)
+  - **Node [536] Dancing Seed** (Cost: `1`, Type: `4`)
+    - *Text:* When a DMG-type Expertise Skill triggers Lucky Strike, next Wild Seed launches 1 more projectile.For every 5 Nourishing Seeds thrown, next Nourishing Seed throws 1 more projectile.
+    - *Stat Effects:* [Buff 2202400] Effect 2202400
+  - **Node [537] Energy Surge** (Cost: `1`, Type: `4`)
+    - *Text:* Every 2% haste provides 1% energy natural recovery efficiency.
+    - *Stat Effects:* [Buff 2202410] Effect 2202410
+  - **Node [538] Regeneration Bud** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing damage with Basic Attacks, 10% chance to gain 1 Regen Bud.
+    - *Stat Effects:* [Buff 2202420] Effect 2202420
+  - **Node [539] Omnipotent Breath** (Cost: `1`, Type: `4`)
+    - *Text:* When Intellect reaches 500, versatility +4%.
+    - *Stat Effects:* [Buff 2202430] Effect 2202430
+  - **Node [540] Shelter** (Cost: `1`, Type: `4`)
+    - *Text:* Within 5s after Casting Infusion, the damage absorption of the Nature Shield added by Wild Bloom or Nature Ward is doubled.
+    - *Stat Effects:* [Buff 2202440] Effect 2202440
+  - **Node [541] Pulse Breath** (Cost: `1`, Type: `4`)
+    - *Text:* If equipped with Regen Pulse skill, Nature Ward and Ultimates will trigger Regen Pulse when their CDs are completed.
+    - *Stat Effects:* [Buff 2202450] Effect 2202450
+  - **Node [542] Feral Seed Symbiosis** (Cost: `1`, Type: `4`)
+    - *Text:* When active Symbiotic Marks reach 5 or more, ​Feral Seed​ and Wild Seed DMG increases by 100%.
+    - *Stat Effects:* [Buff 2202460] Effect 2202460
+  - **Node [543] Wild Protection** (Cost: `1`, Type: `4`)
+    - *Text:* The charge count of Nature Ward +1.The charge time of Nature Ward decreases by 5s.
+    - *Stat Effects:* [Buff 2202470] Effect 2202470
+  - **Node [544] Wide-area Thorns** (Cost: `1`, Type: `4`)
+    - *Text:* Successful hit of Feral Seed on the targets with Thorn spreads Thorn to other units within 10 meters.Attacking Elite or stronger targets grants 8% Forest Bonus.
+    - *Stat Effects:* [Buff 2202480] Effect 2202480
+  - **Node [545] Thornbreaker** (Cost: `1`, Type: `4`)
+    - *Text:* Infusion and Stag Charge deal 100% more Final DMG to Thorned targets (each 1% of Mastery grants an additional 4%), but the healing conversion of Infusion and Stag Charge is halved.
+    - *Stat Effects:* [Buff 2202490] Effect 2202490
+  - **Node [546] Pulse Duality** (Cost: `1`, Type: `4`)
+    - *Text:* When Regen Pulse is actively used, it spreads twice.
+    - *Stat Effects:* [Buff 2202500] Effect 2202500
+  - **Node [547] Swift Shelter** (Cost: `1`, Type: `4`)
+    - *Text:* Each use or trigger of Regen Pulse, reduces the CD of Nature Ward by 2s.
+    - *Stat Effects:* [Buff 2202510] Effect 2202510
+  - **Node [548] Pulse Retrospect** (Cost: `1`, Type: `4`)
+    - *Text:* Regen Pulse returns to your position after it reaches the max distance.Regen Pulse now deals DMG to enemies.
+    - *Stat Effects:* [Buff 2202520] Effect 2202520
+  - **Node [549] Swift Bud** (Cost: `1`, Type: `4`)
+    - *Text:* Each Regen Bud gained, reduces the CD of Feral Seed by 1 second.
+    - *Stat Effects:* [Buff 2202530] Effect 2202530
+  - **Node [550] Breath of Symbiosis** (Cost: `1`, Type: `4`)
+    - *Text:* Symbiotic Mark increases converted healing by 2%. Each 5% Mastery grants an additional 1%.Symbiotic Mark also grants 2% Max HP for 5s (duration cannot be refreshed when reapplied).
+    - *Stat Effects:* [Buff 2202540] Effect 2202540
+  - **Node [551] Symbiosis Extension** (Cost: `1`, Type: `4`)
+    - *Text:* Each Wild Seed fired extends the duration of activated Symbiotic Mark by 1s.
+    - *Stat Effects:* [Buff 2202550] Effect 2202550
+  - **Node [552] Pulse Echo** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing DMG, Infusion grants 1 stack of Pulse Echo. Pulse Echo: Increases DMG dealt of Regen Pulse by 20%, which lasts 12s and stacks up to 5 times.
+    - *Stat Effects:* [Buff 2202560] Effect 2202560
+  - **Node [553] Luck Damage** (Cost: `1`, Type: `4`)
+    - *Text:* Lucky Strike DMG Multiplier +5%.Every 1% Luck grants 1.5% Lucky Strike DMG Multiplier.
+    - *Stat Effects:* [Buff 2202570] Effect 2202570
+  - **Node [554] Verdant Impact** (Cost: `1`, Type: `4`)
+    - *Text:* For every 20 stacks of Pulse Echo gained, the next actively cast Regen Pulse triggers a Blossom Charge at both the nearest enemy and the Ally with lowest HP.
+    - *Stat Effects:* [Buff 2202580] Effect 2202580
+  - **Node [555] Wild Luck** (Cost: `1`, Type: `4`)
+    - *Text:* When Wild Bloom or Regen Pulse deal DMG, grants a chance (equal to the half percentage of Luck) to gain 1 Regen Bud. If the target is affected by Thorn, doubles the chance.
+    - *Stat Effects:* [Buff 2202590] Effect 2202590
+  - **Node [556] Verdant Nourishment** (Cost: `1`, Type: `4`)
+    - *Text:* If you're affected with Nourish, reduces all DMG taken by 10%. If the targets are affected by Nourish, enhances their Healing Received from yourself by 5%. If the stack of Nourish is above or equal to 3, additionally enhances Healing Received by 3%.
+    - *Stat Effects:* [Buff 2202600] Effect 2202600
+  - **Node [557] Ultimate Inspiration** (Cost: `1`, Type: `4`)
+    - *Text:* Doubles the effectiveness of Inspiration.
+    - *Stat Effects:* [Buff 2202610] Effect 2202610
+  - **Node [558] Life Bloom** (Cost: `1`, Type: `4`)
+    - *Text:* Using Blossom Charge enhances the next Life Bloom, skipping the cast and increasing the Healing by 50%.
+    - *Stat Effects:* [Buff 2202620] Effect 2202620
+  - **Node [559] Vitality** (Cost: `1`, Type: `4`)
+    - *Text:* Nourish can stack up to 5 times.Each use of Life Bloom grants the targets with Nourish 1 stack of Nourish.
+    - *Stat Effects:* [Buff 2202630] Effect 2202630
+  - **Node [560] Flourishing Progress** (Cost: `1`, Type: `4`)
+    - *Text:* When holding 2 or more Regen Buds, casting Blossom Charge for damage or healing always triggers a corresponding seed (without costing Regen Buds) and grants 1 Regen Bud.
+    - *Stat Effects:* [Buff 2202640] Effect 2202640
+  - **Node [561] Blooming Reincarnation** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Life Bloom increases Life Bloom's healing by 20% and its Energy consumed by 10% for 4s. This effect can stack up to 5 times.
+    - *Stat Effects:* [Buff 2202650] Effect 2202650
+  - **Node [562] Energy Arcane** (Cost: `1`, Type: `4`)
+    - *Text:* During Fast Growth, increases Energy REG SPD by 50%. Increases Grove Wish's Crit by 10%
+    - *Stat Effects:* [Buff 2202660] Effect 2202660
+  - **Node [563] Transcendence** (Cost: `1`, Type: `4`)
+    - *Text:* Every 60 self-heals from Nourish grants Transcendence.
+    - *Stat Effects:* [Buff 2202670] Effect 2202670
+  - **Node [564] Flourishing Flower** (Cost: `1`, Type: `4`)
+    - *Text:* Within Grass Domain, Flower Stalk appeared 50% earlier.
+    - *Stat Effects:* [Buff 2202680] Effect 2202680
+  - **Node [565] Tricolor Revelation** (Cost: `1`, Type: `4`)
+    - *Text:* Consumes Moonlight Solace to launch Flower Dance - Tricolor Revelation.Flower Dance - Tricolor Revelation: Grants all effects of Flower Stalks, once every 60s.
+    - *Stat Effects:* [Buff 2202690] Effect 2202690
+  - **Node [566] Flower Time Dance** (Cost: `1`, Type: `4`)
+    - *Text:* Every 45s, generates 1 Flower Stalk in the following order: Crimson Insight, Golden Devotion, and Moonlight Solace.
+    - *Stat Effects:* [Buff 2202700] Effect 2202700
+  - **Node [567] Bud to Blossom** (Cost: `1`, Type: `4`)
+    - *Text:* When a Flower Stalk appears, grants 1 Regen Bud every 2s for 10s.
+    - *Stat Effects:* [Buff 2202710] Effect 2202710
+  - **Node [568] Inspire and Strengthen** (Cost: `1`, Type: `4`)
+    - *Text:* Inspiration grants 135 bonus Intellect, Strength, Agility, and Endurance.
+    - *Stat Effects:* [Buff 2202720] Effect 2202720
+  - **Node [569] Energy Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Energy by 20.Using Blossom Charge restores 30% lost Energy.
+    - *Stat Effects:* [Buff 2202730] Effect 2202730
+  - **Node [570] Rescue** (Cost: `1`, Type: `4`)
+    - *Text:* Healing Expertise Skill restore 25% more HP to the targets with HP below 50%.
+    - *Stat Effects:* [Buff 2202740] Effect 2202740
+  - **Node [571] Instant Bloom** (Cost: `1`, Type: `4`)
+    - *Text:* Every 5 uses of Life Bloom accelerates the using of Grove Wish or Regen Pulse by 100% and increases their Healing by 50% in 15s.
+    - *Stat Effects:* [Buff 2202750] Effect 2202750
+
+---
+
+## อาชีพ [9]: **Heavy Guardian**
+- **สาย Talents ย่อย (Specializations):** **Spec 113** (Stage ID: `113`), **Spec 114** (Stage ID: `114`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[1901] Halberd's Edge** (Max Tier/Rank: `0`)
+  - *Text:* RageAn initial cap of 100 points is assigned to this resource, which serves as the essential component for the execution of Special Attacks and Expertise. Restores 2 Rage upon taking DMG, subject to a maximum 0.5s CD. Basic Attack: Halberd's EdgeA heavy four-strike combo with a wide-blade Guardblade, each strike dealing Attack DMG and generating 5 Rage. Tips: Rage should be accumulated through the use of Basic Attacks.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[1922] Shield Bash** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 40 Rage to unleash a powerful shockwave that deals Attack DMG to all nearby enemies. When sufficient Sand Crystal is available, it is consumed to generate a Shield that absorbs all incoming DMG, lasting for 12s. For each additional Sand Crystal consumed, additional shield value is added, with a maximum of 2 Sand Crystals consumed at a time. (Shields can stack, but cannot exceed 150% of Max HP.)Tips: Casting is recommended when no shield is active to ensure continuous shield uptime.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[1907] Cracking Echo** (Max Tier/Rank: `0`)
+  - *Text:* Cracking EchoUnleashes the Power of Rock, instantly dealing Attack DMG in a large area in the front and stunning enemies for 3s, then condenses energy to immediately gain 5 Sand Crystals. Also puts the caster into Rock's Fury state.Rock's FuryLasts for8s, grants Super Armor, increases Armor by 100% and Max HP by 50%, and grants 40 Rage over time.Tips: Use when facing extremely heavy incoming DMG.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[1924] Star Shatter** (Max Tier/Rank: `1`)
+  - *Text:* Charges ahead with immense force. Upon hit, gains 25 Rage and 1 Sand Crystal, deals Attack DMG, and stuns the enemy. Becomes unstoppable during the execution of the charge. This skill holds 2 charges. Tips: This skill enhances mobility and accumulates Rage quickly.
+- **[1927] Sandshroud** (Max Tier/Rank: `2`)
+  - *Text:* Gathers sand around yourself, dealing a burst of Attack DMG to surrounding enemies. The sand then solidifies, dealing Attack DMG to surrounding enemies every second for 6s. Throughout this effect, continuously regenerates Rage and Sand Crystal, providing 33 Rage and 6 Sand Crystals. Tips: Keep it active as often as possible. The continuous AoE DMG poses a great threat to the enemies while generating Rage quickly.
+- **[1936] Stoneform** (Max Tier/Rank: `3`)
+  - *Text:* Channels the power of sandstone, automatically countering Lethal Skills for the next 10s, while increasing Armor and reducing DMG taken by 20%.Tips: Use in high-pressure battles to greatly improve survival.
+- **[1926] Sandgrip** (Max Tier/Rank: `4`)
+  - *Text:* Consumes 30 Rage to swing your weapon and create a vacuum, pulling nearby enemies toward you. Deals Attack DMG, interrupts their actions, and reduces their Move SPD by 70% for 8s. Tips: Effectively pulls monsters into range for faster takedowns.
+- **[1937] Granite Fury** (Max Tier/Rank: `5`)
+  - *Text:* Consumes 3 Sand Crystals, dealing Attack DMG to the target and reducing DMG taken by 10% for the next 10s (non-stackable).Tips: When you have enough Sand Crystals, a good use of Granite Fury delivers high DMG and ensures high chances of survival.
+- **[1925] Rage Burst** (Max Tier/Rank: `6`)
+  - *Text:* Consumes 50 Rage and 5 Sand Crystals. Unleashes a mighty roar, dealing Attack DMG to nearby enemies, interrupting their actions, and granting an all-DMG-absorbing Shield. (Shields may be stacked, with a maximum capacity equivalent to 150% of maximum HP.) Reduces Attack DMG taken from the target by 10% for 12s. Tips: Provides damaging capabilities when survival pressure is minimal and grants greater Armor in situations where enemies predominantly inflict Attack DMG.
+- **[1938] Brave Bastion** (Max Tier/Rank: `7`)
+  - *Text:* Creates a rocky barrier around yourself, automatically countering Lethal Skills for a period of time and increasing Block DMG Reduction. Each Sand Crystal consumed extends the duration by 1s (up to 5s).Tips: Time carefully and use it during massive incoming Attack DMG to maximize Block DMG Reduction and minimize DMG taken.
+- **[1923] Sandward** (Max Tier/Rank: `8`)
+  - *Text:* Erects an immovable rock wall and enter a defensive stance, taunting nearby monsters and becoming invincible. Blocking a Lethal Skill causes the wall to shatter and counterattack the target, dealing Attack DMG to all the enemies in front.Tips: Ultimate tank skill, perfect for absorbing extreme DMG.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[1932] Shield Bash** (Max Tier/Rank: `0`)
+  - *Text:* 场地标记01
+- **[1933] Halberd's Edge** (Max Tier/Rank: `0`)
+  - *Text:* Basic Attack: Halberd's EdgeA heavy four-strike combo with a wide-blade weapon, each strike dealing Attack DMG and generating RagePlunge Attack: AssaultRaise your blade high and dive from the air, slashing through enemies along your descent. Upon impact with the ground, deals Attack DMG.
+- **[1939] Granite Fury** (Max Tier/Rank: `0`)
+  - *Text:* Consumes Sand Crystals and Rage, dealing Attack DMG to the target and reducing DMG taken for the next 10s (non-stackable).
+- **[1940] Rage Burst** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 50 Rage and 5 Sand Crystals to unleash a roar, dealing Attack DMG to nearby enemies and granting a Shield that absorbs all damage (stacks up to 50% of Max HP). Also reduces Attack DMG taken by 10% for 12 seconds. Tips: Provides output capabilities when survival pressure is minimal and grants greater Attack DMG Reduction under conditions where enemy units predominantly inflict Attack DMG.
+- **[1941] Starfall** (Max Tier/Rank: `0`)
+  - *Text:* Enhanced Star Shatter. Lunges at the enemy, dealing Attack DMG equal to 500% ATK, knocking them airborne. Scales with the Level/Tier of Star Shatter. Gains double Rage and becomes Enraged.
+- **[1942] Rupture** (Max Tier/Rank: `0`)
+  - *Text:* Raises your weapon for a mighty blow, dealing Attack DMG equal to 300% ATK, and knocking the target airborne. Scales with the Level/Tier of Basic Attack.Gain 25Rage upon casting.
+- **[1943] Stone Fist** (Max Tier/Rank: `0`)
+  - *Text:* Empowered ​Granite Fury​ channels the Power of Rock to summon a massive boulder from above, dealing Attack DMG equal to 800% ATK to the enemies within range (which scales with the Level/Tier of ​Granite Fury​) and always triggering Crit.
+- **[1944] Rage Burst** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 50 Rage and 5 Sand Crystals to unleash a roar, dealing Attack DMG to nearby enemies and granting a Shield that absorbs all damage (stacks up to 150% of Max HP). Also reduces Attack DMG taken by 10% for 12 seconds. Tips: Provides output capabilities when survival pressure is minimal and grants greater armor under conditions where enemy units predominantly inflict Attack DMG.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3011] Mocking Roar** (Max Tier/Rank: `0`)
+  - *Text:* Taunts the target, greatly increasing Aggro against them for 5s.This skill is unaffected by CD effects.
+- **[3012] Overclock Explosion** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 10m and taunting them. Greatly increases Aggro against affected targets for 10s.This skill is unaffected by CD effects.
+- **[3013] Adamant Will** (Max Tier/Rank: `0`)
+  - *Text:* Grants 45% additional DMG Reduction and Super Armor for 10s. This skill is unaffected by CD effects.
+- **[3014] Veil of Shadow** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `67` โหนด:
+  - **Node [900] Stone Fragment Tide** (Cost: `1`, Type: `4`)
+    - *Text:* For 8s after you cast Cracking Echo, each Basic Attack pulls a target between 8 and 20 meters away toward you. The same target cannot be pulled again within 3s.
+    - *Stat Effects:* [Buff 2201020] Effect 2201020
+  - **Node [901] Power Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Armor +7000Every 3 Strength grants 3.6 Armor.
+    - *Stat Effects:* Armor: +7000 (Type 1), Attr#0: +11352 (Type 4)
+  - **Node [902] Life Suppress** (Cost: `1`, Type: `4`)
+    - *Text:* You gain the Suppress Expertise effect.
+    - *Stat Effects:* [Buff 2201040] Effect 2201040
+  - **Node [903] Weakness Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing DMG, Basic Attacks have a fixed 10% chance to trigger Weakness Strike once.
+    - *Stat Effects:* [Buff 2201050] Effect 2201050
+  - **Node [904] Enhanced Weakness Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Weakness Strike's fixed trigger chance +10%.
+    - *Stat Effects:* [Buff 2201060] Effect 2201060
+  - **Node [906] Block Recovery** (Cost: `1`, Type: `4`)
+    - *Text:* Successful Block restores 1% of your HP and 2 Rage. This can only occur once per second. Triggering Lucky Block restores 2% of your HP and 4 Rage. This can only occur once per second.
+    - *Stat Effects:* [Buff 2201080] Effect 2201080
+  - **Node [907] Countercrush** (Cost: `1`, Type: `4`)
+    - *Text:* A successful Block triggers a Countercrush, once per second.On a Lucky Block, randomly triggers 1 to 3 Countercrush, once per second.
+    - *Stat Effects:* [Buff 2201090] Effect 2201090
+  - **Node [911] Rock Heal** (Cost: `1`, Type: `4`)
+    - *Text:* Stone Fist restores 5% max HP. For every 1 extra enemy hit, restores an additional 2% max HP (up to a total of 15%. Excess healing is converted into an equivalent Shield.
+    - *Stat Effects:* [Buff 2201010] Effect 2201010
+  - **Node [912] Healing Sands** (Cost: `1`, Type: `4`)
+    - *Text:* Max HP +10%
+    - *Stat Effects:* Max HP: +1000 (Type 1)
+  - **Node [913] Fortune Bastion** (Cost: `1`, Type: `4`)
+    - *Text:* During Brave Bastion, you can Block Magic DMG.
+    - *Stat Effects:* [Buff 2201150] Effect 2201150
+  - **Node [914] Slam Shelter** (Cost: `1`, Type: `4`)
+    - *Text:* A successful hit with Shield Bash reduces the target's DMG dealt to you by 3% for 10s, stacking up to 3 times.
+    - *Stat Effects:* [Buff 2201160] Effect 2201160
+  - **Node [916] Resolute Breath** (Cost: `1`, Type: `4`)
+    - *Text:* While shielded, use Basic Attack midair to slam down, detonating the shield and dealing damage equal to 30% max HP to nearby enemies.
+    - *Stat Effects:* [Buff 2201170] Effect 2201170
+  - **Node [917] Smash Support** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the effectiveness of Shield granted by Shield Bash by 30%.
+    - *Stat Effects:* [Buff 2201180] Effect 2201180
+  - **Node [918] Sandy Shelter** (Cost: `1`, Type: `4`)
+    - *Text:* During Stoneform, every 20 Rage gained triggers Sandy Shelter.
+    - *Stat Effects:* [Buff 2201190] Effect 2201190
+  - **Node [919] Shield Combo** (Cost: `1`, Type: `4`)
+    - *Text:* Basic Attacks have a fixed 5% chance to trigger Shield Combo upon dealing DMG. Each 1% Mastery grants an extra 0.2% chance.
+    - *Stat Effects:* [Buff 2201200] Effect 2201200
+  - **Node [920] Breath of Stone** (Cost: `1`, Type: `4`)
+    - *Text:* Each Sand Crystal consumed reduces the CD of Stoneform by 1s.
+    - *Stat Effects:* [Buff 2201210] Effect 2201210
+  - **Node [921] Elemental Harmony** (Cost: `1`, Type: `4`)
+    - *Text:* While shielded, MATK Reduction +10%. Each 1% of Mastery increases this effect by 0.5%, up to a maximum of 40%.
+    - *Stat Effects:* [Buff 2201220] Effect 2201220
+  - **Node [922] Shield Echo** (Cost: `1`, Type: `4`)
+    - *Text:* During Sandshroud, adding a shield to yourself via Shield Bash triggers Shield Echo.
+    - *Stat Effects:* [Buff 2201240] Effect 2201240
+  - **Node [923] Shattering Rageblow** (Cost: `1`, Type: `4`)
+    - *Text:* When dealing DMG, Granite Fury has a 20% chance to allow your next Basic Attack to evolve into Rageblow. Each 2% Luck adds 1% chance. After casting Rageblow, increases Block DMG Reduction by 10% for 10s.
+    - *Stat Effects:* [Buff 2201250] Effect 2201250
+  - **Node [924] Fang of the Alpha** (Cost: `1`, Type: `4`)
+    - *Text:* DMG Reduction vs. Bosses +800
+    - *Stat Effects:* DMG Reduction vs. Bosses: +800 (Type 1)
+  - **Node [925] Survival Instinct** (Cost: `1`, Type: `4`)
+    - *Text:* When HP falls below 30%, triggers Survival Instinct, once every 60s.
+    - *Stat Effects:* [Buff 2201270] Effect 2201270
+  - **Node [926] Shadow Veil** (Cost: `1`, Type: `4`)
+    - *Text:* Each enemy within 3 meters increases your Block chance by 3%, up to 15%. (Doubles the effect against Elite or stronger enemies.) Remains unchanged when Earthfort Spec is active. If Block Spec is activated, the effect becomes: Every enemy within 3 meters increases Block DMG Reduction by 1%, up to 5%. (Doubles the effect against Elite or stronger enemies.)
+    - *Stat Effects:* [Buff 2201280] Effect 2201280
+  - **Node [927] Valiant Fury** (Cost: `1`, Type: `4`)
+    - *Text:* When Enraged, you gain 30% bonus Armor, decreasing by 5% per second.
+    - *Stat Effects:* [Buff 2201290] Effect 2201290
+  - **Node [928] Group Suppress** (Cost: `1`, Type: `4`)
+    - *Text:* Each enemy within 3 meters enhances the effectiveness of Suppress by 3%, up to 15%. This effect is doubled against Elite or stronger enemies.
+    - *Stat Effects:* [Buff 2201300] Effect 2201300
+  - **Node [929] Rage Awakening** (Cost: `1`, Type: `4`)
+    - *Text:* Consuming Rage has a chance to enter Enraged state for 5s. The more Rage you consume, the higher the chance. Each Rage increases the chance by 1%.
+    - *Stat Effects:* [Buff 2201310] Effect 2201310
+  - **Node [930] Block Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with Countercrush, and enhances the ability. When Lucky Block triggers, increases Block DMG Reduction by 10%. Try to keep Countercrush active as much as possible. While it's active, part of incoming DMG can be blocked. High Luck allows parry to yield various buffs.
+    - *Stat Effects:* Attr#1922: +1930 (Type 6), [Buff 2201320] Effect 2201320
+  - **Node [931] Earthfort Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances the ability to use Shield Bash. Each additional enemy hit increases the damage dealt by Shield Bash by 30%, up to 150%. When attacked, increases All-Element Resistance by 0.6% for 4s, stacking up to 10 times. Each 1% Mastery increases this effect by 2%. Maintain shield uptime whenever possible. Besides reducing incoming damage, the shield also applies certain effects when active.
+    - *Stat Effects:* [Buff 2201330] Effect 2201330
+  - **Node [932] Resonant Domain** (Cost: `1`, Type: `4`)
+    - *Text:* Cracking Echo generates a Sandfield that lasts for 5s.
+    - *Stat Effects:* [Buff 2201340] Effect 2201340
+  - **Node [933] Sandstone Rewind** (Cost: `1`, Type: `4`)
+    - *Text:* When Rageblow deals DMG, it reduces the CD of Brave Bastion by 3s.Casting Brave Bastion immediately restores 50% Max HP. Any excess healing is converted into a shield that lasts 10s.
+    - *Stat Effects:* [Buff 2201350] Effect 2201350
+  - **Node [934] Sandstone Shock** (Cost: `1`, Type: `4`)
+    - *Text:* During Brave Bastion, casting Countercrush or Granite Fury triggers Sand Crystal Shock.
+    - *Stat Effects:* [Buff 2201360] Effect 2201360
+  - **Node [935] Block Blessing** (Cost: `1`, Type: `4`)
+    - *Text:* A successful Block grants a fixed 30% chance for your next Granite Fury cast to consume no Sand Crystals. This effect can occur up to once every 3s.
+    - *Stat Effects:* [Buff 2201370] Effect 2201370
+  - **Node [936] Fury Shelter** (Cost: `1`, Type: `4`)
+    - *Text:* While Enraged, Max HP +20%.
+    - *Stat Effects:* [Buff 2201380] Effect 2201380
+  - **Node [937] Enraged Suppress** (Cost: `1`, Type: `4`)
+    - *Text:* While Enraged, Suppress effect +50%.
+    - *Stat Effects:* [Buff 2201390] Effect 2201390
+  - **Node [938] Enrage Delay** (Cost: `1`, Type: `4`)
+    - *Text:* When Strength reaches 500, extends the duration of Enraged by 1 second.
+    - *Stat Effects:* [Buff 2201400] Effect 2201400
+  - **Node [939] Sandstone Revival** (Cost: `1`, Type: `4`)
+    - *Text:* For each 1 Sand Crystal consumed, restore 1% of Max HP.
+    - *Stat Effects:* [Buff 2201410] Effect 2201410
+  - **Node [940] Enrage Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* While Enraged, Attack Speed +8%.
+    - *Stat Effects:* [Buff 2201420] Effect 2201420
+  - **Node [941] Rage Burst improvement** (Cost: `1`, Type: `4`)
+    - *Text:* The charge count of Rage Burst +1.While Enraged, Rage Burst and Terra Sunder become instant cast.
+    - *Stat Effects:* [Buff 2201430] Effect 2201430
+  - **Node [942] Star Fury** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Star Shatter and Starfall DMG by 30%, and guarantees Enraged status.
+    - *Stat Effects:* [Buff 2201440] Effect 2201440
+  - **Node [943] Stone Domain** (Cost: `1`, Type: `4`)
+    - *Text:* Throughout the duration of Sandshroud, being attacked reduces the attack speed of enemy targets within a 5 meter radius by 30% for 3s.throughout the duration of Sandshroud, Armor of allies within an 8 meter radius +10%.
+    - *Stat Effects:* [Buff 2201450] Effect 2201450
+  - **Node [944] Amplified Earthfort** (Cost: `1`, Type: `4`)
+    - *Text:* Upon the triggering of Weakness Strike, gains Amplified Earthfort.
+    - *Stat Effects:* [Buff 2201460] Effect 2201460
+  - **Node [945] Boulder Shield** (Cost: `1`, Type: `4`)
+    - *Text:* During Stoneform, reduces all DMG taken by 10%.
+    - *Stat Effects:* [Buff 2201470] Effect 2201470
+  - **Node [946] Shield Bash** (Cost: `1`, Type: `4`)
+    - *Text:* Enhances Shield effectiveness by 10%.During Sandshroud, additionally enhances Shield effectiveness by 10%.
+    - *Stat Effects:* [Buff 2201480] Effect 2201480
+  - **Node [947] Recovery** (Cost: `1`, Type: `4`)
+    - *Text:* Each successful hit of Expertise Skill or Special Attack increases Strength by 1% in 5s. The effect stacks up to 10 times. With 10 stacks, increases Strength by 10% for 8s. During this effect, the next Expertise Skill heals you for 20% of the DMG dealt, yet no additional Strength stacks can be gained.
+    - *Stat Effects:* [Buff 2201490] Effect 2201490
+  - **Node [948] Starfall** (Cost: `1`, Type: `4`)
+    - *Text:* For every 20 Sand Crystals consumed, Star Shatter evolves into Starfall.
+    - *Stat Effects:* [Buff 2201500] Effect 2201500
+  - **Node [949] Rock Master** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Starfall grants Rock Master.Rock Master: For 15s, Basic Attack evolves into 1 Rupture, and Rage Burst evolves into 1 Terra Sunder.When Rock Master activates, grants 10% Rock Bonus for 10s.
+    - *Stat Effects:* [Buff 2201510] Effect 2201510
+  - **Node [950] Shatter Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When Star Shatter or Starfall defeats a target, Star Shatter immediately recovers 1 charge.
+    - *Stat Effects:* [Buff 2201520] Effect 2201520
+  - **Node [951] Enraged Rupture** (Cost: `1`, Type: `4`)
+    - *Text:* While Enraged, Rupture is bound to trigger Weakness Strike.
+    - *Stat Effects:* [Buff 2201530] Effect 2201530
+  - **Node [952] Bash Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 times damage is taken, the next Shield Bash deals additional fixed damage equal to 100% HP + 300% of current shield amount (shield amount cannot exceed 150% Max HP). Can trigger at most once every 20s. Every 2% of Mastery reduces the required times of damage taken by 1. Every 1% of Versatility reduces the trigger interval by 1% (up to 50%).
+    - *Stat Effects:* [Buff 2201540] Effect 2201540
+  - **Node [953] Great Rock Master** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Stoneform​ grants Rock Master: For 15s, Basic Attack evolves into 1 Rupture, and Rage Burst evolves into 1 Terra Sunder.
+    - *Stat Effects:* [Buff 2201550] Effect 2201550
+  - **Node [954] Bravery in Battle** (Cost: `1`, Type: `4`)
+    - *Text:* While in combat, overhealing is converted into a shield (total shield cannot exceed 50% of Max HP).
+    - *Stat Effects:* [Buff 2201560] Effect 2201560
+  - **Node [955] Rock Guard** (Cost: `1`, Type: `4`)
+    - *Text:* Armor +5%. Each attack of Terra Sunder deals an additional instance of Attack DMG to the target, equal to 100% Armor.
+    - *Stat Effects:* [Buff 2201570] Effect 2201570
+  - **Node [956] Rampart Fury** (Cost: `1`, Type: `4`)
+    - *Text:* When you take DMG, Lucky Block reduces DMG taken by 2%, lasting for 8s, stacking up to 3 times.
+    - *Stat Effects:* [Buff 2201580] Effect 2201580
+  - **Node [957] Block Shelter** (Cost: `1`, Type: `4`)
+    - *Text:* Granite Fury DMG enhances Lucky Block DMG Reduction by 2% for 8s. Stacks up to 3 times.
+    - *Stat Effects:* [Buff 2201590] Effect 2201590
+  - **Node [958] Sand Block** (Cost: `1`, Type: `4`)
+    - *Text:* Successfully Blocking has a fixed 20% chance to gain 1 Sand Crystal. If it was a Lucky Block, gain an additional 1 Sand Crystal.
+    - *Stat Effects:* [Buff 2201600] Effect 2201600
+  - **Node [959] Rock Heart** (Cost: `1`, Type: `4`)
+    - *Text:* Every 10 casts of ​Granite Fury​ grant Rock Heart.Rock Heart: For 10s, ​Granite Fury​ evolves into Stone Fist.When Rock Heart activates, grants 10% Rock Bonus for 10s.Casting Stone Fist guarantees Enraged.
+    - *Stat Effects:* [Buff 2201610] Effect 2201610
+  - **Node [960] Granite** (Cost: `1`, Type: `4`)
+    - *Text:* After casting Stone Fist, for the next 10s, summons 1 Granite every 2s.
+    - *Stat Effects:* [Buff 2201620] Effect 2201620
+  - **Node [961] Granite Fury** (Cost: `1`, Type: `4`)
+    - *Text:* For every 50 Rage generated, summons 1 Granite.
+    - *Stat Effects:* [Buff 2201630] Effect 2201630
+  - **Node [962] Granite Fury Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 times damage is taken, the next Granite Fury deals additional fixed damage equal to 7,000% of Armor. Can trigger at most once every 20s. Every 2% Mastery reduces the required times of damage taken by 1. Every 1% Luck reduces the trigger interval by 1% (up to 50%).
+    - *Stat Effects:* [Buff 2201640] Effect 2201640
+  - **Node [963] Rampart Fortitude** (Cost: `1`, Type: `4`)
+    - *Text:* While Brave Bastion is active, taking DMG doubles Countercrush DMG.
+    - *Stat Effects:* [Buff 2201650] Effect 2201650
+  - **Node [964] Rage Enhancement** (Cost: `1`, Type: `4`)
+    - *Text:* Granite Fury consumes 1 Sand Crystal.
+    - *Stat Effects:* [Buff 2201660] Effect 2201660
+  - **Node [965] Granite Combo** (Cost: `1`, Type: `4`)
+    - *Text:* When Granite deals DMG, there is a chance, of which equals Luck Chance, to summon an additional Granite.
+    - *Stat Effects:* [Buff 2201670] Effect 2201670
+  - **Node [966] Intimidation** (Cost: `1`, Type: `4`)
+    - *Text:* When Granite hits a target, it reduces all DMG taken by 10% for the next 5s.
+    - *Stat Effects:* [Buff 2201680] Effect 2201680
+  - **Node [967] Granite Fury** (Cost: `1`, Type: `4`)
+    - *Text:* Summoning 20 Granites grants Rock Heart: For 10s, Granite Fury evolves into Stone Fist.
+    - *Stat Effects:* [Buff 2201690] Effect 2201690
+  - **Node [968] Counter Storm** (Cost: `1`, Type: `4`)
+    - *Text:* For 10s after casting Cracking Echo, trigger 1 Countercrush every 2s.
+    - *Stat Effects:* [Buff 2201700] Effect 2201700
+  - **Node [969] Rock Luck** (Cost: `1`, Type: `4`)
+    - *Text:* Luck Chance +5%. Countercrush Crit +50%.
+    - *Stat Effects:* [Buff 2201710] Effect 2201710
+  - **Node [970] Rock Mastery** (Cost: `1`, Type: `4`)
+    - *Text:* Mastery +6,250.During Brave Bastion, Mastery +8%.
+    - *Stat Effects:* [Buff 2201720] Effect 2201720
+  - **Node [971] Enraged Rock Heart** (Cost: `1`, Type: `4`)
+    - *Text:* While Enraged, increases Luck Chance by 10%.
+    - *Stat Effects:* [Buff 2201730] Effect 2201730
+
+---
+
+## อาชีพ [11]: **Marksman**
+- **สาย Talents ย่อย (Specializations):** **Spec 116** (Stage ID: `116`), **Spec 117** (Stage ID: `117`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[2201] Bullseye** (Max Tier/Rank: `0`)
+  - *Text:* Photon EnergyInitial max Photon Energy is 100. Once full, performing a Special Attack will activate Photon Reforge state, consuming 25 Photon Energy per second. The state ends when Photon Energy reaches 0. During this state, certain skills gain enhanced effects.Basic Attack: BullseyeQuickly draw the bow to fire up to four consecutive arrows, each dealing Attack DMG. When not in Photon Reforge state, the attack restores 2 Photon Energy.Tips: Use Basic Attack to build up Photon Energy.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[2220] Storm Arrow** (Max Tier/Rank: `0`)
+  - *Text:* Quickly draws the bow to fire 5 arrows at the target, each dealing Attack DMG and generating 1 Photon Energy.This skill holds 2 charges.When Photon Energy reaches max, Storm Arrow instantly gains 2 charges, and the max number of charges increases to 5.Tips: Even after five uses, Storm Arrow will continue to re-charge. Use other skills to buy time for more casts.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[2209] Luminary Bolt** (Max Tier/Rank: `0`)
+  - *Text:* Concentrates Photon Energy and fires a massive arrow toward enemies. Upon impact with an enemy or reaching maximum range, the arrow explodes, dealing continuous Attack DMG to all enemies in the blast area, creating a gravity effect, and inflicting Vulnerability and Rooted. Tips: An excellent crowd-control skill that can be decisive in multi-target engagements.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[2230] Torrent Volley** (Max Tier/Rank: `1`)
+  - *Text:* Continuously draws bow to launch a barrage of arrows at enemies, dealing Attack DMG. Recast to end early.While in Photon Reforge state, Photon Energy consumption stops until the next Special Attack cast and hitting enemies recovers up to 42 Photon Energy.Tips: Cast during Photon Reforge state to pause Photon Energy consumption and regenerate Photon Energy.
+- **[2232] Arrow Rain** (Max Tier/Rank: `2`)
+  - *Text:* Fires a rain of arrows over a target area, dealing continuous Attack DMG. Grants 20 Photon Energy upon cast, plus 2 additional Photon Energy per enemy hit, up to 10 extra.Tips: The more enemies hit, the more energy you gain.
+- **[2237] Wildcall** (Max Tier/Rank: `3`)
+  - *Text:* Summons a powerful combat Companion to provide assistance in battle. Summon Wild Wolf: The summoned Wild Wolf pounces on the current target, dealing Attack DMG to the target and nearby enemies, then joins the battle for 20s before disappearing. Summon Falcon: The summoned Falcon dives in a straight line, dealing Attack DMG to all enemies in its path before disappearing. Tips: Boosts the number of active Companions during the battle. Casting is recommended when all buffs are prepared to ensure maximum efficiency.
+- **[2233] Powerdraw** (Max Tier/Rank: `4`)
+  - *Text:* Charges and then fires a piercing arrow that deals Attack DMG and Knockback to all enemies in its path. Cannot knock back targets with Resilience, but reduces targets' Resilience. Powerdraw deals a bonus 100% Crit DMG.This skill holds 2 charges.No charge time required when in Photon Reforge state.Tips: Great for reducing enemies' Resilience while dealing area damage.
+- **[2234] Radiance Barrage** (Max Tier/Rank: `5`)
+  - *Text:* Charges and fires Photon Arrows to a target area, dealing continuous Attack DMG. The damage interval scales with Attack SPD. While in Photon Reforge state, Photon Arrows consume no Photon Energy, generate extra arrows, and deal 50% more Attack DMG. Tips: Casting during Photon Reforge increases its damage and consumes no Photon Energy.
+- **[2231] Focus** (Max Tier/Rank: `6`)
+  - *Text:* Enters Focus state, greatly increasing Haste and reducing the CD of Special Attacks by 50%.Tips: Best paired with Falconry Spec. Use it just before activating Photon Reforge for maximum uptime.
+- **[2238] Blast Shot** (Max Tier/Rank: `7`)
+  - *Text:* Fires an Explosive Arrow at the target that detonates on impact. The Explosive Arrow deals Attack DMG to all nearby enemies. Each time when a Class Skill deals Crit DMG, Explosive Arrow gains 1 charge. At 5 charges or after 6s, the Explosive Arrow explodes, each charge increases the DMG of Explosive Arrow by 100%. Tips: Better paired with Falconry Spec. Focus on Crit DMG to power up the explosion.
+- **[2235] Deter Shot** (Max Tier/Rank: `8`)
+  - *Text:* Leaps upward swiftly and fires at enemies, dealing Attack DMG. Grants immunity to Attack DMG for you and up to 10 nearby Allies for 5s. This skill holds 2 charges. Tips: This is intended to be equipped in high-pressure situations to increase survivability.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[2224] Lethal Shot** (Max Tier/Rank: `0`)
+  - *Text:* 场地标记01
+- **[2240] Sky Piercing Star Strike** (Max Tier/Rank: `0`)
+  - *Text:* Fires a giant arrow at the target, dealing Attack DMG equal to 1000% ATK.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3611] Overclock Wave** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m.This skill is unaffected by CD effects.
+- **[3612] Unyielding Spirit** (Max Tier/Rank: `0`)
+  - *Text:* Grants 35% additional DMG Reduction for 5s. This skill can store 2 charges. This skill is unaffected by CD effects.
+- **[3613] Master of Stealth** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3614] Energy Reflux** (Max Tier/Rank: `0`)
+  - *Text:* Instantly recovers 50% Stamina and increases Movement Speed by 15% for 5s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `67` โหนด:
+  - **Node [1100] Photon Limit** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Photon Energy by 20, extending the duration of Photon Reforge. Unaffected when Wildpack Spec is active. If Falconry Spec is activated, the effect becomes: Max Photon Energy -20 but Photon Reforge state can be entered more quickly.
+    - *Stat Effects:* [Buff 2203010] Effect 2203010
+  - **Node [1101] Agility Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 10 Agility grants 7 Haste.
+    - *Stat Effects:* Attr#2: +11122 (Type 4)
+  - **Node [1102] Vulnerable Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Dealing DMG grants a fixed 30% chance to apply Vulnerability to the enemy. Vulnerability: Increases the DMG you deal to the target by 10% for 5s.
+    - *Stat Effects:* [Buff 2203030] Effect 2203030
+  - **Node [1103] Wolf Pact** (Cost: `1`, Type: `4`)
+    - *Text:* Tames a Wild Wolf to fight alongside you. Storm Arrow has a 30% fixed chance to trigger Coordinated Attack. Wild WolfA Wild Wolf fights alongside you. Basic Attack: Sweeps the enemy, dealing Attack DMG equal to 60% ATK (which scales with the Level/Tier of your Basic Attack). Coordinated Attack: Wild Wolf leaps to the enemy and bites, dealing Attack DMG equal to 100% ATK (which scales with the Level/Tier of your Basic Attack).
+    - *Stat Effects:* [Buff 2203040] Effect 2203040
+  - **Node [1104] Psychic Surge** (Cost: `1`, Type: `4`)
+    - *Text:* For every 15 Special Attacks cast, Photon Energy granted by the next cast of Arrow Rain +100%.
+    - *Stat Effects:* [Buff 2203050] Effect 2203050
+  - **Node [1105] Battle Howl** (Cost: `1`, Type: `4`)
+    - *Text:* While Wildcall is active, the Wild Wolf is bound to deal Crit DMG on hit.
+    - *Stat Effects:* [Buff 2203060] Effect 2203060
+  - **Node [1106] Direwolf's Hunger** (Cost: `1`, Type: `4`)
+    - *Text:* When the Wild Wolf deals Crit DMG, you and your Beast gain 2% Haste for 10s. This effect stacks up to 5 times.When Haste exceeds 35%, every extra 1% of Haste grants 0.2% ATK.
+    - *Stat Effects:* [Buff 2203070] Effect 2203070
+  - **Node [1107] Meditation** (Cost: `1`, Type: `4`)
+    - *Text:* While in Photon Reforge, Photon Energy drain per second is reduced from 25 to 20, allowing the effect to last longer. Unaffected when Wildpack Spec is active. If Falconry Spec is activated, the effect becomes: Photon Energy regeneration is increased from 2 to 3 points per second, reducing the time required to enter Photon Reforge.
+    - *Stat Effects:* [Buff 2203080] Effect 2203080
+  - **Node [1108] Phantom Wolfstrike** (Cost: `1`, Type: `4`)
+    - *Text:* When Wild Wolf launches a Coordinated Attack, or Tail Sweep, there is a fixed 30% chance to summon a Phantom Direwolf using Pounce and Bite to attack the current enemy. Pounce and Bite inflicts Bleed, and if the target is already suffered from Bleed, Pounce and Bite deals Crit DMG.
+    - *Stat Effects:* [Buff 2203090] Effect 2203090
+  - **Node [1109] Direwolf Bite** (Cost: `1`, Type: `4`)
+    - *Text:* Wild Wolf's Coordinated Attack has a 50% fixed chance to inflict Bleed.
+    - *Stat Effects:* [Buff 2203100] Effect 2203100
+  - **Node [1110] Demon Wolf Twin** (Cost: `1`, Type: `4`)
+    - *Text:* When Storm Arrow deals DMG in battle, it has a fixed 10% chance to summon a Wild Wolf for 8s. This effect can occur once every 40s.
+    - *Stat Effects:* [Buff 2203110] Effect 2203110
+  - **Node [1111] Photon Reforge Lore** (Cost: `1`, Type: `4`)
+    - *Text:* While Photon Reforge is active, all of the Wild Wolf's attacks nullify the target's Armor.
+    - *Stat Effects:* [Buff 2203120] Effect 2203120
+  - **Node [1112] Twin Arrows** (Cost: `1`, Type: `4`)
+    - *Text:* Luminary Bolt additionally causes a Photon Explosion, dealing Attack DMG equal to 1,500% ATK (which scales with the Level/Tier of Ultimate), and also knocks targets airborne and increases the DMG you deal to them by 5% for 10s.
+    - *Stat Effects:* [Buff 2203130] Effect 2203130
+  - **Node [1114] Tracer Arrows** (Cost: `1`, Type: `4`)
+    - *Text:* While Photon Reforge is active, for each beast on the battlefield, Storm Arrow fires 1 extra Lightseeker Arrow (up to 4 arrows).
+    - *Stat Effects:* [Buff 2203140] Effect 2203140
+  - **Node [1115] Radiant Spirit** (Cost: `1`, Type: `4`)
+    - *Text:* Extends the duration of Focus by 3s.
+    - *Stat Effects:* [Buff 2203150] Effect 2203150
+  - **Node [1116] Swift** (Cost: `1`, Type: `4`)
+    - *Text:* Applies Swift to the Falcon when casting Lightning Strike.Swiftness: Increases Attack SPD by 10%. This effect lasts 8s and stacks up to 3 times.
+    - *Stat Effects:* [Buff 2203160] Effect 2203160
+  - **Node [1117] Radiant Sharpshooter** (Cost: `1`, Type: `4`)
+    - *Text:* Reduces Max Photon Energy by 20.
+    - *Stat Effects:* [Buff 2203170] Effect 2203170
+  - **Node [1118] Falcon Raid** (Cost: `1`, Type: `4`)
+    - *Text:* For every 3 instances of Crit DMG dealt by Special Attacks, the Falcon instantly launches Lightning Strike.
+    - *Stat Effects:* [Buff 2203180] Effect 2203180
+  - **Node [1119] Meteor** (Cost: `1`, Type: `4`)
+    - *Text:* When the Falcon strikes, grants you a fixed 30% chance to gain 1 stack of Weak Point Aim. Using Quadraflare leaves behind a Radiance Rift midair. Radiance Rift fires Photon Arrows equal to the current number of Weak Point Aim stacks.
+    - *Stat Effects:* [Buff 2203190] Effect 2203190
+  - **Node [1120] Piercing Shot** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the Crit of Double Arrow and Quadraflare by 7%.
+    - *Stat Effects:* [Buff 2203200] Effect 2203200
+  - **Node [1121] Falcon's Heart** (Cost: `1`, Type: `4`)
+    - *Text:* The Falcon ignores 30% of the target's Armor.
+    - *Stat Effects:* [Buff 2203210] Effect 2203210
+  - **Node [1122] Lightfall** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% critical rate increases Crit DMG by 0.5%.When Double Arrow or Quadraflare deals Crit DMG, 2 Photon Energy is restored.
+    - *Stat Effects:* [Buff 2203220] Effect 2203220
+  - **Node [1123] Focused Shot** (Cost: `1`, Type: `4`)
+    - *Text:* Every target hit grants 1% Light DMG bonus. The bonus lasts 3s and can layerup to 4 times.
+    - *Stat Effects:* [Buff 2203230] Effect 2203230
+  - **Node [1124] Valiant Heart** (Cost: `1`, Type: `4`)
+    - *Text:* Companions deal 15% more DMG to Elites or stronger enemies.
+    - *Stat Effects:* [Buff 2203240] Effect 2203240
+  - **Node [1125] Overcharge** (Cost: `1`, Type: `4`)
+    - *Text:* When Basic Attacks deal DMG, there is a 5% fixed chance to instantly grant Special Attack 1 charge, up to the maximum charge limit.
+    - *Stat Effects:* [Buff 2203250] Effect 2203250
+  - **Node [1126] Wildpack Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances Storm Arrow and the Wild Wolf's power.Storm Arrow always deals 200% Crit DMG on critical hits.While Photon Reforge is active, the chance for the Wild Wolf to trigger Coordinated Attack is increased to 100%.The Wild Wolf becomes empowered, and Haste allows both you and the wolf to attack more frequently.
+    - *Stat Effects:* [Buff 2203260] Effect 2203260
+  - **Node [1127] Arrow Barrage** (Cost: `1`, Type: `4`)
+    - *Text:* Basic Attacks have a fixed 20% chance to fire one arrow at each of up to 3 enemies near the target.
+    - *Stat Effects:* [Buff 2203270] Effect 2203270
+  - **Node [1128] Sundering Arrow** (Cost: `1`, Type: `4`)
+    - *Text:* Basic Attacks have a fixed 15% chance to trigger Split Arrow, once per second.
+    - *Stat Effects:* [Buff 2203280] Effect 2203280
+  - **Node [1129] Falconry Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with Double Arrow and enhances the ability to use this skill.Regenerates 2 Photon Energy per second.Each 1% Haste grants 1% CD decrease to Double Arrow.You can tame a Falcon to assist you in battle.Falcon always follows the caster. When the caster deals DMG with Class Skills, the Falcon has a fixed 23% chance to swiftly strike the target (guaranteed on Crit), dealing Attack DMG equal to 150% ATK to the enemy (which scales with the Level/Tier of Basic Attack). Additionally, when the strike count of the Falcon exceeds 5, the next strike of the Falcon combines all excess strikes and DMG.The Falcon responds to the caster's attacks. Haste and Crit increase its strike frequency, and after learning Lightning Strike, the Falcon deals significantly more DMG.
+    - *Stat Effects:* Attr#2220: +2222 (Type 6), [Buff 2203290] Effect 2203290
+  - **Node [1130] Wolf Dancer** (Cost: `1`, Type: `4`)
+    - *Text:* After you use Arrow Rain, the Wild Wolf continuously performs Tail Sweep until the Arrow Rain ends.Wild Wolf's Tail Sweep is bound to deal Crit DMG and to inflict Bleed.
+    - *Stat Effects:* [Buff 2203300] Effect 2203300
+  - **Node [1131] Explosive Arrow** (Cost: `1`, Type: `4`)
+    - *Text:* When a Basic Attack or Special Attack deals DMG, it has a fixed 10% chance to fire an Explosive Arrow, once every 3s.
+    - *Stat Effects:* [Buff 2203310] Effect 2203310
+  - **Node [1132] Rapid Shot** (Cost: `1`, Type: `4`)
+    - *Text:* Every 5% Haste provides an additional 1% attack speed.
+    - *Stat Effects:* [Buff 2203320] Effect 2203320
+  - **Node [1133] Beast Power** (Cost: `1`, Type: `4`)
+    - *Text:* Companion's damage +10%.
+    - *Stat Effects:* [Buff 2203330] Effect 2203330
+  - **Node [1134] Dexterity** (Cost: `1`, Type: `4`)
+    - *Text:* When Agility reaches 500 points, attack speed +5%.
+    - *Stat Effects:* [Buff 2203340] Effect 2203340
+  - **Node [1135] Quick Shot** (Cost: `1`, Type: `4`)
+    - *Text:* Attack SPD +3%
+    - *Stat Effects:* Attack SPD: +300 (Type 1)
+  - **Node [1136] Wolf Sharp Strike** (Cost: `1`, Type: `4`)
+    - *Text:* In the state of Photon Reforge, Wolf Crit DMG +50%.
+    - *Stat Effects:* [Buff 2203360] Effect 2203360
+  - **Node [1137] Beast Tidal Power** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Light Bonus by 3%. For 5s after casting Torrent Volley or its enhanced form Lumi Torrent, increases Light Bonus by 10%.
+    - *Stat Effects:* [Buff 2203370] Effect 2203370
+  - **Node [1138] Arrow Rain Acceleration** (Cost: `1`, Type: `4`)
+    - *Text:* Each time you summon 1 Wolf or Phantom Wolf, the remaining CD of Arrow Rain -0.5s.
+    - *Stat Effects:* [Buff 2203380] Effect 2203380
+  - **Node [1139] Life Hunt** (Cost: `1`, Type: `4`)
+    - *Text:* For each additional Bleed effect on the target, Wolf deals +3% damage to it.
+    - *Stat Effects:* [Buff 2203390] Effect 2203390
+  - **Node [1140] Wolf Fang Pact** (Cost: `1`, Type: `4`)
+    - *Text:* Wild Wolf's Coordinated Attack or Tail Sweep deals damage (triggers only once even when hitting multiple targets) and reduces the remaining CD of Storm Arrow by 1s.
+    - *Stat Effects:* [Buff 2203400] Effect 2203400
+  - **Node [1141] Light and Shadow Drain** (Cost: `1`, Type: `4`)
+    - *Text:* Lightseeker Arrow has a fixed 50% chance to apply Bleed to the target.
+    - *Stat Effects:* [Buff 2203410] Effect 2203410
+  - **Node [1142] Wolf Evolution** (Cost: `1`, Type: `4`)
+    - *Text:* Wild Wolf evolves into its Adult Form, increases DMG by 30%, DMG Range by 50%.
+    - *Stat Effects:* [Buff 2203420] Effect 2203420
+  - **Node [1143] Legendary Beast** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Wildcall summons a Legendary Companion based on current Photon Energy: If Photon Energy is below 50%, summons Legendary Eagle. If Photon Energy reaches 50% or more, summons Legendary Boar.Wildcall now holds up to 2 charges.
+    - *Stat Effects:* [Buff 2203430] Effect 2203430
+  - **Node [1144] Lumi Torrent** (Cost: `1`, Type: `4`)
+    - *Text:* While in Photon Reforge state, Torrent Volley continuously charges. After 30s of charging, Torrent Volley evolves into Lumi Torrent.Upon casting Lumi Torrent, immediately gain full Photon Energy.
+    - *Stat Effects:* [Buff 2203440] Effect 2203440
+  - **Node [1145] Wild Call CD** (Cost: `1`, Type: `4`)
+    - *Text:* For each Lightseeker Arrow fired, reduces the remaining CD of Wildcall by 0.4s (when Haste exceeds 30%, each extra 1% Haste reduces an additional 0.005s, up to 0.8s).
+    - *Stat Effects:* [Buff 2203450] Effect 2203450
+  - **Node [1146] Mastery of Bleed** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% Mastery grants 6% Bleed DMG.
+    - *Stat Effects:* [Buff 2203460] Effect 2203460
+  - **Node [1147] Light Chasing Sharp** (Cost: `1`, Type: `4`)
+    - *Text:* While Photon Reforge is active, reduces Storm Arrow CD by 50%.
+    - *Stat Effects:* [Buff 2203470] Effect 2203470
+  - **Node [1148] Arrow of Light** (Cost: `1`, Type: `4`)
+    - *Text:* Arrow Rain and Lightseeker Arrow are bound to deal Crit DMG.
+    - *Stat Effects:* [Buff 2203480] Effect 2203480
+  - **Node [1149] Light Intent** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max Photon Energy by 20.
+    - *Stat Effects:* [Buff 2203490] Effect 2203490
+  - **Node [1150] Wolf's Bite** (Cost: `1`, Type: `4`)
+    - *Text:* Wild Wolf deals additionally 30% DMG to targets with current HP less than or equal to 35%.
+    - *Stat Effects:* [Buff 2203500] Effect 2203500
+  - **Node [1151] Stomp** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Wildcall again within 10s of its initial cast commands all beasts on the field to immediately cast Stomp.
+    - *Stat Effects:* [Buff 2203510] Effect 2203510
+  - **Node [1152] Steel Beak** (Cost: `1`, Type: `4`)
+    - *Text:* When the caster and the Falcon deal Crit DMG, inflicts 1 stack of Steel Beak to the target.Every 10 stacks of Steel Beak trigger Lightning Strike, up to once every 3s.
+    - *Stat Effects:* [Buff 2203520] Effect 2203520
+  - **Node [1153] Phantom Falcon** (Cost: `1`, Type: `4`)
+    - *Text:* Triggering Implosion 5 times summons a Phantom Falcon to charge at the target. For each additional target hit by the Phantom Falcon, its DMG increases by 20%, up to 200%.
+    - *Stat Effects:* [Buff 2203530] Effect 2203530
+  - **Node [1154] Focused Concentration** (Cost: `1`, Type: `4`)
+    - *Text:* Throughout the duration of Focus, gains 0.5% Crit and 1% Crit DMG every 0.5s, stacking up to 15 times.
+    - *Stat Effects:* [Buff 2203540] Effect 2203540
+  - **Node [1155] Dual Arrow Mastery** (Cost: `1`, Type: `4`)
+    - *Text:* When a Special Attack deals Crit DMG, reduces the remaining CD of Blast Shot and Powerdraw by 1 second.
+    - *Stat Effects:* [Buff 2203550] Effect 2203550
+  - **Node [1156] Sharp Double Arrow I** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the Crit DMG of Double Arrow and Quadraflare by 15%.
+    - *Stat Effects:* [Buff 2203560] Effect 2203560
+  - **Node [1157] Light Energy Stasis** (Cost: `1`, Type: `4`)
+    - *Text:* When Radiance Barrage hits a target, it applies Light Energy Stasis to them.Light Energy Stasis: movement speed -30%. Being hit by Powerdraw is bound to deal Crit DMG. Lasts for 5s.
+    - *Stat Effects:* [Buff 2203570] Effect 2203570
+  - **Node [1158] Falcon Break** (Cost: `1`, Type: `4`)
+    - *Text:* The Falcon ignores 20% of the target's Armor, and 40% when dealing Crit DMG.
+    - *Stat Effects:* [Buff 2203580] Effect 2203580
+  - **Node [1159] Eagle Eye** (Cost: `1`, Type: `4`)
+    - *Text:* When Photon Energy is above 50%, casting Radiance Barrage counts as Photon Reforge.
+    - *Stat Effects:* [Buff 2203590] Effect 2203590
+  - **Node [1160] Celestial Eagle** (Cost: `1`, Type: `4`)
+    - *Text:* While Focus is active, Radiance Barrage summons 1 Celestial Eagle at the target's location.Now, each 1% of Haste increases the CD Boost of Focus by 1%.
+    - *Stat Effects:* [Buff 2203600] Effect 2203600
+  - **Node [1161] Radiant Charge** (Cost: `1`, Type: `4`)
+    - *Text:* When an arrow fired from Radiance Rift deals DMG for 1 time, increases the DMG of the next Blast Shot by 20%, up to a maximum of 100%.
+    - *Stat Effects:* [Buff 2203610] Effect 2203610
+  - **Node [1162] Light Prism** (Cost: `1`, Type: `4`)
+    - *Text:* When Lightning Strike hits a target, it triggers Light Prism.Light Prism: Deals area damage equal to 100% ATK to up to 5 surrounding enemy targets, and additionally applies 3 stacks of Steel Beak.
+    - *Stat Effects:* [Buff 2203620] Effect 2203620
+  - **Node [1163] Lightning Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Lightning Strike DMG by 30%.
+    - *Stat Effects:* [Buff 2203630] Effect 2203630
+  - **Node [1164] Energy Gathering Power** (Cost: `1`, Type: `4`)
+    - *Text:* Powerdraw CD -50%.When Photon Energy is above 50%, casting Powerdraw counts as Photon Reforge.
+    - *Stat Effects:* [Buff 2203640] Effect 2203640
+  - **Node [1165] Steel Beak Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When Powerdraw hits a target, it applies 2 stacks of Steel Beak. If it deals Crit DMG, it applies 5 stacks of Steel Beak.
+    - *Stat Effects:* [Buff 2203650] Effect 2203650
+  - **Node [1166] Steel Beak Gathering** (Cost: `1`, Type: `4`)
+    - *Text:* When Celestial Eagle hits a target, it prevents the target's Steel Beak from naturally decaying.
+    - *Stat Effects:* [Buff 2203660] Effect 2203660
+  - **Node [1167] Chain Explosion** (Cost: `1`, Type: `4`)
+    - *Text:* Blast Shot Upon detonation, inflicts 10 stacks of Steel Beak on all targets hit.
+    - *Stat Effects:* [Buff 2203670] Effect 2203670
+
+---
+
+## อาชีพ [12]: **Shield Knight**
+- **สาย Talents ย่อย (Specializations):** **Spec 122** (Stage ID: `122`), **Spec 123** (Stage ID: `123`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[2401] Blade of Justice** (Max Tier/Rank: `0`)
+  - *Text:* Holy SigilResource required to cast Special Attacks and some Expertise. There are 5 initial Holy Sigils. Each Holy Sigil enters a 10s CD after being consumed, and generates 10 Photon Energy. Photon EnergyResource required to cast some Expertise, starting at a max of 100. Basic Attack: Blade of JusticeUnleashes a 3-hit sword combo followed by a Swing, each hit dealing Attack DMG.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[2405] Valor Bash** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 1 Holy Sigil to deliver a powerful shield bash to enemies in front, dealing Attack DMG and increasing your Armor, stacking up to 3 times.Tips: Monitor the Armor buff from Valor Bash and try to keep it active at all times.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[2407] Radiant Infusion** (Max Tier/Rank: `0`)
+  - *Text:* Unleashes holy energy to strike nearby enemies, dealing Attack DMG and inflicting Dazzle for 5s. Grants a Radiant Shield equal to 300% ATK. For the next 10s, instantly refreshes 1 Holy Sigil for every 2s (prioritizing the Holy Sigil with the longest remaining CD), and generates 10 Photon Energy each time. Radiant Shield: Infuses the Shield with light, absorbing 50% of incoming DMG. The effect can stack absorption and reset duration when the Skill is reused. Max absorption cannot exceed 100% of Max HP. Tips: Instantly boosts survivability and generates Holy Sigil and Photon Energy. Time the casts wisely.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[2410] Judgment** (Max Tier/Rank: `1`)
+  - *Text:* Consumes 45 Photon Energy to call down a blast of holy light on the target area, dealing Attack DMG and healing yourself based on HP lost (minimum heal: 5% of Max HP).Tips: Cast when your HP is low—but not critically low—to maximize healing while staying safe.
+- **[2412] Reckoning** (Max Tier/Rank: `2`)
+  - *Text:* Consumes 2 Holy Sigils. Performs a fiery blade strike at all nearby enemies, dealing Attack DMG.Tips: Powerful offensive skill. Use when survivability is not an issue.
+- **[2408] Shield Toss** (Max Tier/Rank: `3`)
+  - *Text:* Spins and throws a shield, dealing Attack DMG to enemies hit, interrupting them, and reducing all DMG they deal to the caster for the next 10s.Tips: While improving survivability, it performs well in multi-target situations with its wide-area DMG. Cast it according to your survival conditions or the battle environment.
+- **[2421] Sacred Blade** (Max Tier/Rank: `4`)
+  - *Text:* Consumes 3 Holy Sigils, summoning a sword from beneath the target's feet to deal Attack DMG to the target, while gaining 5 stacks of Lightforged Barrier.Lightforged Barrier: Each stack increases the final Max HP by 2%. You can have up to 10 stacks of Lightforged Barrier, and any damage taken will consume 1 stack. It lasts for 25s or until all stacks are consumed, and the duration resets each time a stack is gained.Tips: While having considerable damage capability, it can efficiently replenish Lightforged Barrier.
+- **[2420] Radiance** (Max Tier/Rank: `5`)
+  - *Text:* Gains unwavering resolve and throws 5 shields at the enemies within 10m (closest first), dealing Attack DMG and interrupting them. Afterward, throws 1 time every 2s and gains 10 Photon Energy each time. For the next 10s, each instance of damage taken is reduced by a percentage of the caster's Max HP, and the caster automatically counters Lethal Skill. Tips: This skill requires no Photon Energy or Holy Sigil to cast and provides solid survivability, making it suitable as an opener.
+- **[2415] Aegis Ward** (Max Tier/Rank: `6`)
+  - *Text:* Summons Aegis Ward to shield yourself, automatically countering Lethal Skills while increasing Armor and DMG Reduction. If you take lethal DMG while this effect is active, the effect is consumed to prevent death and immediately restore 25% HP. Tips: Powerful Resistance effect combined with death prevention, extremely valuable when facing extreme survival threats.
+- **[2419] Zeal Crusade** (Max Tier/Rank: `7`)
+  - *Text:* Consumes up to 8 stacks of Lightforged Barrier, summoning continuous radiant energy to spiral rapidly around you. Each second, it deals Attack DMG to nearby enemies (interval affected by Attack Speed) and grants 1 stack of Lightforged Barrier. Each time it deals DMG to 1 target, restores 1% max HP (up to 5%). When activated, each stack of Lightforged Barrier adds 2s to the duration, up to a maximum of 16s. Lightforged Barrier: Max HP +2% with each stack. Lightforged Barrier stacks up to 10 times. Any incoming DMG consumes 1 stack. The effect lasts 25s or until all stacks are consumed. Duration resets each time a new stack is gained. Tips: Cast Lightforged Barrier to deal DMG and heal. Cast the skill when Lightforged Barrier is fully stacked to achieve excellent defense and burst potential.
+- **[2409] Divine Circle** (Max Tier/Rank: `8`)
+  - *Text:* Creates a holy zone beneath your feet, healing yourself every second and healing allies in the area slightly, dealing Attack DMG to enemies.Tips: Great for sustained DMG and healing. Try to cover as much area as possible.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[2406] Vanguard Strike** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 1 Holy Sigil. After a brief charge, performs a fierce sweep forward, dealing Attack DMG and gaining 2 stacks of Lightforged Barrier.Lightforged Barrier: Each stack increases max HP by 2%, up to 10 stacks. Taking any DMG consumes 1 stack. The Barrier lasts 25s or until all stacks are consumed. Gaining a new stack refreshes the duration.Tips: Maintain high stacks of Lightforged Barrier while weaving in attacks. Pay attention to the use of Vanguard Hunt to trigger bonus effects.
+- **[2411] Scorching Judgment** (Max Tier/Rank: `0`)
+  - *Text:* 场地标记01
+- **[2413] Inferno Reckon** (Max Tier/Rank: `0`)
+  - *Text:* Empowered Reckoning deals 2 times the normal DMG of Reckoning, starts at 250% Crit DMG, and does not consume Holy Sigils, but still generates Holy Energy.
+- **[2416] Condemn** (Max Tier/Rank: `0`)
+  - *Text:* Deals Attack DMG equal to 200% ATK to the enemy (which scales with the Level/Tier of Basic Attack).
+- **[2417] Enhanced Condemn** (Max Tier/Rank: `0`)
+  - *Text:* Enhanced Condemn, whose DMG is equal to 2times that of Condemn.
+- **[2425] Shield Toss** (Max Tier/Rank: `0`)
+  - *Text:* Shield Toss consumes Photon Energy to hurl a spinning shield, dealing Attack DMG to enemies it hits, interrupting them and reducing all damage they deal to the caster for a duration.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3011] Mocking Roar** (Max Tier/Rank: `0`)
+  - *Text:* Taunts the target, greatly increasing Aggro against them for 5s.This skill is unaffected by CD effects.
+- **[3012] Overclock Explosion** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 10m and taunting them. Greatly increases Aggro against affected targets for 10s.This skill is unaffected by CD effects.
+- **[3013] Adamant Will** (Max Tier/Rank: `0`)
+  - *Text:* Grants 45% additional DMG Reduction and Super Armor for 10s. This skill is unaffected by CD effects.
+- **[3014] Veil of Shadow** (Max Tier/Rank: `0`)
+  - *Text:* Conceals the caster's presence to prevent Aggro generation and cleanses all debuffs from the caster for 10s.This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `68` โหนด:
+  - **Node [1200] Lightforged Body** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1 Holy Sigil consumed grants a Radiant Shield equal to 45% ATK (depending on Adventurer Level, up to 90%).
+    - *Stat Effects:* [Buff 2206010] Effect 2206010
+  - **Node [1201] Condemn** (Cost: `1`, Type: `4`)
+    - *Text:* When casting a skill that consumes Photon Energy, there is a 30% fixed chance for Basic Attacks to evolve into Condemn.
+    - *Stat Effects:* [Buff 2206020] Effect 2206020
+  - **Node [1202] Blessing of Holy Sigil** (Cost: `1`, Type: `4`)
+    - *Text:* When using a Skill that consumes Holy Sigils, 20% chance for your next Holy Sigil-consuming skill to consume no Holy Sigils. The effect lasts for 8s or until a Holy Sigil-consuming skill is cast.
+    - *Stat Effects:* [Buff 2206030] Effect 2206030
+  - **Node [1203] Ring of Judgment** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Judgment generates a Divine Circle, with a CD of 30s.Each Holy Sigil consumed reduces the remaining CD by 1s.
+    - *Stat Effects:* [Buff 2206040] Effect 2206040
+  - **Node [1204] Lightforge Continuum** (Cost: `1`, Type: `4`)
+    - *Text:* For every 20 Photon Energy consumed, gains Radiant Shield equal to 45% ATK (this ratio is affected by Adventurer Level, up to 90%).
+    - *Stat Effects:* [Buff 2206050] Effect 2206050
+  - **Node [1205] Haste Sigil** (Cost: `1`, Type: `4`)
+    - *Text:* Each 1% Haste increases the recovery speed of Holy Sigil by 1%. Recovery time = Initial recovery time / (1 + recovery speed bonus).
+    - *Stat Effects:* [Buff 2206060] Effect 2206060
+  - **Node [1206] Power Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Armor +7000Every 3 Strength grants 3.6 Armor.
+    - *Stat Effects:* Armor: +7000 (Type 1), Attr#0: +11352 (Type 4)
+  - **Node [1207] Light of Condemn** (Cost: `1`, Type: `4`)
+    - *Text:* While inside a Divine Circle, your Condemn is enhanced, thrusting a blade of light forward and dealing double DMG.
+    - *Stat Effects:* [Buff 2206080] Effect 2206080
+  - **Node [1208] Recovery Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Further enhances your ability to use Valor Bash. Valor Bash is accompanied by Radiant Impact.Try to maintain the Armor bonus from Valor Bash, and trigger Inferno Reckon through high Crits to gain more Photon Energy. Sufficient Photon Energy means continuous self-healing under the blessing of Judgment and Scorching Judgment.
+    - *Stat Effects:* [Buff 2206090] Effect 2206090
+  - **Node [1209] Oracle** (Cost: `1`, Type: `4`)
+    - *Text:* When a skill that consumes Holy Sigil critically hits, gain an additional 30% Photon Energy. Crit DMG of skills that consume Photon Energy +30%.
+    - *Stat Effects:* [Buff 2206100] Effect 2206100
+  - **Node [1210] Judgment Revelation** (Cost: `1`, Type: `4`)
+    - *Text:* When Divine Strike Crits, there's a 50% fixed chance to automatically cast Judgment on the target (this Judgment cannot trigger Divine Strike).
+    - *Stat Effects:* [Buff 2206110] Effect 2206110
+  - **Node [1211] Divine Circle Defender** (Cost: `1`, Type: `4`)
+    - *Text:* While within the Divine Circle, the Armor effect provided by Valor Bash +30%.
+    - *Stat Effects:* [Buff 2206120] Effect 2206120
+  - **Node [1212] Radiant Guard** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Shield Toss immediately grants a Radiant Shield equal to 55% Armor (affected by Versatility and Element bonuses).The charge count of Shield Toss +1.
+    - *Stat Effects:* [Buff 2206130] Effect 2206130
+  - **Node [1213] Aegis Ward's Anthem** (Cost: `1`, Type: `4`)
+    - *Text:* For every 2 Holy Sigils consumed, the remaining CD of Aegis Ward -1 second.
+    - *Stat Effects:* [Buff 2206140] Effect 2206140
+  - **Node [1214] Fearless Shield** (Cost: `1`, Type: `4`)
+    - *Text:* Each time Shield Toss deals DMG, gain a Radiant Shield equal to 13.75% Armor (affected by Versatility and Element bonuses).
+    - *Stat Effects:* [Buff 2206150] Effect 2206150
+  - **Node [1215] Aegis Ward's Retribution** (Cost: `1`, Type: `4`)
+    - *Text:* During Aegis Ward, Block chance is increased to 1.5 times. When attacked, reduces Aegis Ward's remaining CD by 0.5s. This effect can only trigger once per second.
+    - *Stat Effects:* [Buff 2206160] Effect 2206160
+  - **Node [1216] Lightforged Greatsword** (Cost: `1`, Type: `4`)
+    - *Text:* After every 10 casts of Judgment, the next Judgment is enhanced into Scorching Judgment. Scorching Judgment: Summon a holy greatsword to descend upon the target area for 5s, healing yourself (Healing equal to that of Judgment) while dealing damage over time to nearby enemies and inflicting Scorch, totally dealing Attack DMG equal to 600% ATK (scales with Judgment level/rank). Scorch: Reduces damage taken from the target by 3% for 10s. Stacks up to 10 times. Grants 3 stacks of Scorch on Crit.
+    - *Stat Effects:* [Buff 2206170] Effect 2206170
+  - **Node [1217] Holy Barrier** (Cost: `1`, Type: `4`)
+    - *Text:* Using Ultimate Skill creates a Holy Barrier, shielding nearby allies from DMG. The Holy Barrier lasts for 15s or until it absorbs Total DMG equal to 150% Max HP +3000% Armor.
+    - *Stat Effects:* [Buff 2206180] Effect 2206180
+  - **Node [1218] Shield Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with Vanguard Strike and enhances its power.Each additional enemy hit by Vanguard Strike grants 2 extra Photon Energy, up to 10.Successfully Block prevents losing the stacks of Lightforged Barrier.Lightforged Barrier: Each stack increases Max HP by 2%, up to 10 stacks, with each instance of DMG removing 1 stack. It lasts 25s or until all stacks are consumed. gaining stacks resets the duration.Managing Lightforged Barrier is crucial for sustaining high HP and triggering self-healing and DMG Reduction effects from Judgment, Zeal Crusade, and Radiance.
+    - *Stat Effects:* Attr#2405: +2406 (Type 6), [Buff 2206190] Effect 2206190
+  - **Node [1219] Light Barrier** (Cost: `1`, Type: `4`)
+    - *Text:* Lightforged Barrier cap +2.
+    - *Stat Effects:* [Buff 2206200] Effect 2206200
+  - **Node [1220] Ascension of the Lightforged Barrier** (Cost: `1`, Type: `4`)
+    - *Text:* Photon Energy cap +20.When you have at least 5 stacks of Lightforged Barrier, Judgment consumes 5 less Photon Energy.
+    - *Stat Effects:* [Buff 2206210] Effect 2206210
+  - **Node [1221] Divine Circle Chant** (Cost: `1`, Type: `4`)
+    - *Text:* The recovery rate of Holy Sigils from Haste +100%.
+    - *Stat Effects:* [Buff 2206220] Effect 2206220
+  - **Node [1222] Holy Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Each time 1 stack of Lightforged Barrier is consumed or deducted, 10% chance to obtain 1 Holy Sigil.
+    - *Stat Effects:* [Buff 2206230] Effect 2206230
+  - **Node [1223] Holy Radiance** (Cost: `1`, Type: `4`)
+    - *Text:* When Sacred Blade hits an enemy target, it applies a Holy Mark to the target.Vanguard Strike can spread this Holy Mark to hit enemy targets.
+    - *Stat Effects:* [Buff 2206240] Effect 2206240
+  - **Node [1224] Determination Slash** (Cost: `1`, Type: `4`)
+    - *Text:* When Lightforged Barrier has 5 or fewer stacks, taking DMG no longer reduces its stacks. When Lightforged Barrier has more than 5 stacks, taking DMG has a 50% fixed chance not to reduce its stacks.
+    - *Stat Effects:* [Buff 2206250] Effect 2206250
+  - **Node [1225] Lightforged Drive** (Cost: `1`, Type: `4`)
+    - *Text:* When casting Radiance, it automatically releases Judgment to up to 5 nearby enemy targets.
+    - *Stat Effects:* [Buff 2206260] Effect 2206260
+  - **Node [1226] Ruthless Rewind** (Cost: `1`, Type: `4`)
+    - *Text:* During Zeal Crusade, each Holy Sigil consumed grants Zeal Crusade 1 stack of charge. When the charge reaches 3 stacks, Zeal Crusade bursts outward, dealing DMG equal to 6% max HP.
+    - *Stat Effects:* [Buff 2206270] Effect 2206270
+  - **Node [1227] Divine Circle Resonance** (Cost: `1`, Type: `4`)
+    - *Text:* For each enemy inside Divine Circle, increases Divine Circle DMG by 25% and Divine Circle Healing by 5% (caps at 10 enemies).
+    - *Stat Effects:* [Buff 2206280] Effect 2206280
+  - **Node [1228] Judgment Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 times damage is taken, the next Judgment deals additional fixed damage equal to 200% Max HP. Can trigger at most once every 20s. Every 2% of Mastery reduces the required times of damage taken by 1. Every 1% of Haste reduces the trigger interval by 1% (up to 50%).
+    - *Stat Effects:* [Buff 2206290] Effect 2206290
+  - **Node [1229] Divine Circle Blessing** (Cost: `1`, Type: `4`)
+    - *Text:* While within the Divine Circle, your Healing Received +10%.
+    - *Stat Effects:* [Buff 2206300] Effect 2206300
+  - **Node [1230] Lightforged Balance** (Cost: `1`, Type: `4`)
+    - *Text:* When your HP percentage is higher than your target's, DMG taken from that target -5%.When your HP percentage is lower than your target's, Judgment deals 50% more DMG.
+    - *Stat Effects:* [Buff 2206310] Effect 2206310
+  - **Node [1231] Lightforged Fortitude** (Cost: `1`, Type: `4`)
+    - *Text:* Throughout the duration of Radiant Shield, Block chance +10%.
+    - *Stat Effects:* [Buff 2206320] Effect 2206320
+  - **Node [1232] Energy Guard** (Cost: `1`, Type: `4`)
+    - *Text:* After casting an Ultimate, all allies' Max HP is increased by 10% for 10s (this effect does not stack).
+    - *Stat Effects:* [Buff 2206330] Effect 2206330
+  - **Node [1233] Life Enhancement** (Cost: `1`, Type: `4`)
+    - *Text:* When Strength reaches 500 points, Max HP +12%.
+    - *Stat Effects:* [Buff 2206340] Effect 2206340
+  - **Node [1234] Condemn Time Limit** (Cost: `1`, Type: `4`)
+    - *Text:* When Condemn deals damage, it immediately cools down 1 Holy Sigil (prioritizing the Holy Sigil with the longest remaining CD).
+    - *Stat Effects:* [Buff 2206350] Effect 2206350
+  - **Node [1235] Sword Dance** (Cost: `1`, Type: `4`)
+    - *Text:* When a Expertise Skill critically heals, gain a 15% healing bonus.
+    - *Stat Effects:* [Buff 2206360] Effect 2206360
+  - **Node [1236] Shield Impact** (Cost: `1`, Type: `4`)
+    - *Text:* Hold Valor Bash to charge, then dash forward a short distance.
+    - *Stat Effects:* [Buff 2206370] Effect 2206370
+  - **Node [1237] Reckon Shield** (Cost: `1`, Type: `4`)
+    - *Text:* Each time Inferno Reckon or Reckoning deals Crit DMG to 1 enemy target, Block chance +5%, lasting for 10s, stacking up to 5 times.
+    - *Stat Effects:* [Buff 2206380] Effect 2206380
+  - **Node [1238] Holy Light Time Limit** (Cost: `1`, Type: `4`)
+    - *Text:* During Aegis Ward, when an Expertise Skill deals Crit DMG, there's a 50% fixed chance to instantly reset 1 Holy Sigil CD (prioritizing Holy Sigil with the longest remaining CD). This effect triggers only once when multiple targets are hit.
+    - *Stat Effects:* [Buff 2206390] Effect 2206390
+  - **Node [1239] Holy Summon** (Cost: `1`, Type: `4`)
+    - *Text:* When Shield Toss or Judgment deals DMG, 10% chance to trigger Divine Strike. If Crit DMG is dealt, the chance increases to 50%.
+    - *Stat Effects:* [Buff 2206400] Effect 2206400
+  - **Node [1240] Light Chain** (Cost: `1`, Type: `4`)
+    - *Text:* While Aegis Ward is active, the chance of Divine Strike is doubled.Every 3 times Divine Strike is triggered, the duration of Aegis Ward is extended by 1 second.
+    - *Stat Effects:* [Buff 2206410] Effect 2206410
+  - **Node [1241] Reckon Blaze** (Cost: `1`, Type: `4`)
+    - *Text:* When Valor Bash deals Crit DMG, gain Blazing.Casting Aegis Ward guarantees Blazing.Scorching Heat: For the next 10s, Reckoning evolves into Inferno Reckon.
+    - *Stat Effects:* [Buff 2206420] Effect 2206420
+  - **Node [1242] Holy Heal** (Cost: `1`, Type: `4`)
+    - *Text:* While having Radiant Shield, gains 12% healing bonus.
+    - *Stat Effects:* [Buff 2206430] Effect 2206430
+  - **Node [1243] Light Protection** (Cost: `1`, Type: `4`)
+    - *Text:* While having Radiant Shield, gain 5% Light bonus.
+    - *Stat Effects:* [Buff 2206440] Effect 2206440
+  - **Node [1244] Ultimate Guard** (Cost: `1`, Type: `4`)
+    - *Text:* For 10s after casting Shield Toss, increases Block Chance by 15%.
+    - *Stat Effects:* [Buff 2206450] Effect 2206450
+  - **Node [1245] Shield Guard** (Cost: `1`, Type: `4`)
+    - *Text:* Valor Bash heals for 120% ATK when it deals DMG, and increases DMG dealt by 8% for 8s.
+    - *Stat Effects:* [Buff 2206460] Effect 2206460
+  - **Node [1246] Radiant Heal** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Judgment Healing by 25%.
+    - *Stat Effects:* [Buff 2206470] Effect 2206470
+  - **Node [1247] Ultimate Strike** (Cost: `1`, Type: `4`)
+    - *Text:* When Divine Strike deals DMG, increases Strength by 2% for 10s, stacking up to 5 times.
+    - *Stat Effects:* [Buff 2206480] Effect 2206480
+  - **Node [1248] Magic Guard** (Cost: `1`, Type: `4`)
+    - *Text:* While Aegis Ward is active, each 1% Mastery grants 0.5% MATK Reduction, up to 30%.
+    - *Stat Effects:* [Buff 2206490] Effect 2206490
+  - **Node [1249] Ultimate Conquest** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Zeal Crusade DMG by 50%.
+    - *Stat Effects:* [Buff 2206500] Effect 2206500
+  - **Node [1250] Light's Crit** (Cost: `1`, Type: `4`)
+    - *Text:* Crit +500
+    - *Stat Effects:* Crit: +500 (Type 1)
+  - **Node [1251] Adversity Enhancement** (Cost: `1`, Type: `4`)
+    - *Text:* Special Attack and damaging Expertise are enhanced based on missing HP. For every 1% HP lost, increases their DMG by 1%.
+    - *Stat Effects:* [Buff 2206520] Effect 2206520
+  - **Node [1252] Wide Raid** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Zeal Crusade range by 100%. While Zeal Crusade is active, the effect of Bold Fearless is doubled.
+    - *Stat Effects:* [Buff 2206530] Effect 2206530
+  - **Node [1253] Bold Fearless** (Cost: `1`, Type: `4`)
+    - *Text:* When Sacred Blade or Judgment deals DMG, there is a fixed 25% chance to cause Vanguard Strike to evolve into Vanguard Hunt. Vanguard Hunt: Deals Attack DMG equal to 240% ATK to the target, restores 2% of your max HP, and gains Bold Fearless. Bold Fearless: Increases Haste by 3% for 10s, stacking up to 10 times.
+    - *Stat Effects:* [Buff 2206540] Effect 2206540
+  - **Node [1254] Radiant Core** (Cost: `1`, Type: `4`)
+    - *Text:* Vanguard Hunt can grant Radiant Core.Gaining Radiant Core again reduces its burst time by 2s.
+    - *Stat Effects:* [Buff 2206550] Effect 2206550
+  - **Node [1255] Conquest Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* While Zeal Crusade is active, Vanguard Strike evolves into Vanguard Hunt.
+    - *Stat Effects:* [Buff 2206560] Effect 2206560
+  - **Node [1256] Decisive Blade** (Cost: `1`, Type: `4`)
+    - *Text:* After Radiant Core explosion, Sacred Blade DMG +100% for 20s. Holds up to 3 charges, casting Sacred Blade consumes one charge.
+    - *Stat Effects:* [Buff 2206570] Effect 2206570
+  - **Node [1257] Zeal Haste** (Cost: `1`, Type: `4`)
+    - *Text:* For every 15 points of Photon Energy consumed, the remaining CD of Zeal Crusade -1 second.
+    - *Stat Effects:* [Buff 2206580] Effect 2206580
+  - **Node [1258] Holy Sigil Enhancement** (Cost: `1`, Type: `4`)
+    - *Text:* When Judgment deals DMG, the target takes double DMG from Holy Mark for the next 5s.
+    - *Stat Effects:* [Buff 2206590] Effect 2206590
+  - **Node [1259] Divine Guard** (Cost: `1`, Type: `4`)
+    - *Text:* When in the Divine Circle, reduces all DMG taken by 10%.For each enemy within 10m, ATK Reduction increases by 1.5% (up to 9%), and MATK Reduction increases by 0.75% (up to 4.5%).
+    - *Stat Effects:* [Buff 2206600] Effect 2206600
+  - **Node [1260] Judgment Improvement** (Cost: `1`, Type: `4`)
+    - *Text:* For each 1 stack of Lightforged Barrier you possess, Judgment gains 2% healing bonus. When Lightforged Barrier≥5 stacks, DMG Reduction +8%.
+    - *Stat Effects:* [Buff 2206610] Effect 2206610
+  - **Node [1261] Sigil Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* DMG dealt by Vanguard Hunt and Sacred Blade to targets with Holy Mark increases by 20%.
+    - *Stat Effects:* [Buff 2206620] Effect 2206620
+  - **Node [1262] Overflow Healwall** (Cost: `1`, Type: `4`)
+    - *Text:* When your accumulated overhealing reaches 10% of your Max HP, gains 1 stack of Lightforged Barrier.
+    - *Stat Effects:* [Buff 2206630] Effect 2206630
+  - **Node [1263] Light Healing** (Cost: `1`, Type: `4`)
+    - *Text:* While having Radiant Shield, gains 12% healing bonus.
+    - *Stat Effects:* [Buff 2206640] Effect 2206640
+  - **Node [1264] Light Protection** (Cost: `1`, Type: `4`)
+    - *Text:* While having Radiant shield, gain 5% Light bonus.
+    - *Stat Effects:* [Buff 2206650] Effect 2206650
+  - **Node [1265] Resolved to Return** (Cost: `1`, Type: `4`)
+    - *Text:* Each time 1 stack of Lightforged Barrier is consumed or deducted, reduces the remaining CD of Radiance by 1 second.
+    - *Stat Effects:* [Buff 2206660] Effect 2206660
+  - **Node [1266] Halo** (Cost: `1`, Type: `4`)
+    - *Text:* Divine Circle now has a halo effect, stunning enemy targets for 3s the first time it deals DMG.
+    - *Stat Effects:* [Buff 2206670] Effect 2206670
+  - **Node [1267] Judgment Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* Every 50 times damage is taken, the next Judgment deals additional fixed damage equal to 5000% of Armor. Can trigger at most once every 20s. Every 2% Mastery reduces the required times of damage taken by 1. Every 1% Crit reduces the trigger interval by 1% (up to 50%).
+    - *Stat Effects:* [Buff 2206680] Effect 2206680
+
+---
+
+## อาชีพ [13]: **Beat Performer**
+- **สาย Talents ย่อย (Specializations):** **Spec 119** (Stage ID: `119`), **Spec 120** (Stage ID: `120`)
+
+### 1.1 รายการสกิลประจำคลาส (Skills)
+#### การโจมตีปกติ (Normal Attack):
+- **[2321] String Strike** (Max Tier/Rank: `0`)
+  - *Text:* Peaceful TuneA magical melody that, whenever DMG is dealt, restores HP equal to 20% of the DMG dealt, distributed evenly among up to 5 allies (Party Members Prioritized). Allies at full HP will not be included in the healing targets. If all Allies are at full HP, the healing will be considered as excess healing. Performance Energy: Energy required to play Melody skills (Heroic Melody and Healing Melody). 1 point is regenerated per second. Performance Passion: Required to perform music. 1 point is regenerated every 5s. Basic Attack: String StrikeStrikes the guitar's sideboard to produce a frenzied wave, dealing Magic DMG to nearby enemies. Tips: Using Basic Attacks when Performance Passion and Performance Energy are not maxed out provides consistent healing. Pair with talents to store this healing for emergency use.
+#### สกิลพิเศษประจำอาชีพ (Special Skill):
+- **[2306] Amplified Beat** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 3 Performance Passion to swing your guitar with force, dealing heavy Magic DMG to enemies. Performance Passion: Required to perform music. Regenerates 1 stack every 5s. Tips: High coverage healing skill. Use it before your Performance Passion overflows.
+#### ท่าไม้ตาย (Ultimate Skill):
+- **[2314] Rock the Stage** (Max Tier/Rank: `0`)
+  - *Text:* As a passionate music lover, your impromptu performance immediately grants 5 Performance Passion. It also heals nearby allies and gives them a Shield that lasts for 10s, while dealing Magic DMG to nearby enemies.Performance Passion: Required to perform music. Regenerates 1 stack every 5s.Tips: In emergencies, this powerful shield can ease the team's survival pressure. Time the cast carefully.
+#### สกิลเลือกใส่ Slot 4 ช่อง (Normal Skills Pool):
+- **[2308] Harmonic Anthem** (Max Tier/Rank: `1`)
+  - *Text:* Leaps high and slams your guitar into the ground to burst sparks, dealing Magic DMG to the enemies within range. Each instance of DMG dealt by Amplified Beat (only once per multi-target hit) increases the hit count of Harmonic Anthem by 1, up to 3. Tips: Master the Amplified Beat's mechanic of increasing hit count to boost Harmonic Anthem's Attack.
+- **[2309] Rhapsody of Flame** (Max Tier/Rank: `2`)
+  - *Text:* My Passion Still Burns! Consumes 5 stacks of Performance Passion to summon a randomly shaped graffiti on the ground, healing 10 allies (party members prioritized) and dealing Magic DMG to the enemies within range.While standing within the graffiti, the caster gains 10% Fire Bonus.Only 1 graffiti can exist at a time.Performance Passion: Required to perform music. 1 point is regenerated every 5s.Tips: This skill has the widest range for both healing and DMG. Cast it once the CD ends for max effectiveness.
+- **[2310] Heroic Melody** (Max Tier/Rank: `3`)
+  - *Text:* A rousing melody. When Performance Energy exceeds 15 stacks, you can begin the performance, which cannot be stopped once started. CD: 5s. While performing Heroic Melody, you consume 6 Performance Energy per second, and every 3s, 10 allies restore HP (Interval affected by Haste). While you perform Heroic Melody, every 7s, your String Strike transforms into Fierce Strike. While you perform Heroic Melody, the conversion rate of Peaceful Tune +50%. Performance Energy: Required to play Melody skills (Heroic Melody and Healing Melody). 1 point of energy is regenerated per second. Tips: The skill can't be stopped manually, so time its activation wisely to maximize synergy with Peaceful Tune and Fierce Strike.
+- **[2311] Healing Melody** (Max Tier/Rank: `4`)
+  - *Text:* A soothing melody. When Performance Energy exceeds 15, you can start the performance freely and stop at will. Each time you start, a speaker is deployed to perform a Concerto. (Speaker disappears when Healing Melody ends.) CD: 5s. While performing Healing Melody, consumes 3 Performance Energy per second, and heals 10 allies every 1 second (Interval affected by Haste). Speaker: When you cast Healing Beat, Fivefold Crescendo, Rock the Stage, Concert Circuit, the speaker will simultaneously cast the same skill.Performance Energy: Required to play Melody skills (Heroic Melody, Healing Melody). Regenerates 1 point per second. Tips: Mastering where and when to place the speaker is essential.
+- **[2312] Fivefold Crescendo** (Max Tier/Rank: `5`)
+  - *Text:* Let the passion surge again! Consumes 3 Performance Passion, reigniting the spirits of the weary. Performs a sequence of notes that restores HP to 10 allies within range (prioritizing teammates) and grants Tenacity Chord. Each stack of Tenacity Chord additionally increases Max HP by 0.5% (up to 2.5% Max HP) for 5s (duration cannot be refreshed once 5 stacks are reached).Performance Passion: Required to perform music. Regenerates 1 stack every 5s.Tips: Highest healing potential. Monitor your team's health to maximize efficiency and prevent overhealing.
+- **[2313] Passion Burst** (Max Tier/Rank: `6`)
+  - *Text:* Strums the strings and releases searing flames forward, dealing Magic DMG to the enemies within range.Charging alters the skill's range and DMG.Tier 1: Chants for 0.7s, targeting a fan-shaped area with an 8-meter radius in front.Tier 2: Chants for 1.4s, targeting a fan-shaped area with an 8-meter radius in front and increasing DMG by 50%.Tier 3: Chants for 2.1s, targeting a fan-shaped area with an 8-meter radius in front and increasing DMG by 100%.Tips: High DMG skill. Combine with Talent effects and the amplifier for strong DMG and healing. Be mindful of environmental safety during casting.
+- **[2315] Encore** (Max Tier/Rank: `7`)
+  - *Text:* The perfect piece for fan interaction. Grants Encore effect to 10 allies for 10s. Encore: Grants Super Armor. Each time an offensive or healing Expertise Skill is cast, there is a 50% fixed chance to trigger Encore Strings once, dealing DMG to the current target or healing the lowest-HP ally. Tips: Cast during your team's burst window for optimal DMG and healing of Encore.
+- **[2316] Center Stage** (Max Tier/Rank: `8`)
+  - *Text:* Increases your MATK for a period of time and amplifies the next skill you cast. Special Attack: Your next 2 Special Attacks do not consume Performance Passion. Fivefold Crescendo: Doubles the healing instances. Heroic Melody: Halves the time needed to trigger Fierce Strike. Harmonic Anthem: Doubles the DMG dealt. Passion Burst: Allows for direct cast in its strongest form, no chanting required. Tips: Evaluate the battle environment and your combat style, then apply the appropriate enhancement at the optimal moment.
+#### สกิลพาสซีฟ/อภิสิทธิ์ (Talent Skills Pool):
+- **[2307] Healing Beat** (Max Tier/Rank: `0`)
+  - *Text:* Consumes 3 stacks of Performance Passion to play a tune that heals the caster and the nearby ally with the lowest HP (party members prioritized). The healing amount scales with the caster's MATK (plus an additional fixed heal equal to 3% of the target's Max HP).Performance Passion: Required to perform music. 1 point is regenerated every 5s.Tips: A healing skill with high uptime. Cast it to avoid letting Performance Passion overflow.
+- **[2317] Fierce Strike** (Max Tier/Rank: `0`)
+  - *Text:* Swings your guitar with force, dealing Magic DMG equal to 300% ATK to nearby enemies. Harmonic Anthem instantly gains 1 charge. Scales with the Level/Tier of Basic Attack. Tips: Cast this skill when Harmonic Anthem is on CD.
+- **[2332] Passion Fury** (Max Tier/Rank: `0`)
+  - *Text:* Channels for 6s and continuously spews searing flames forward, dealing Magic DMG equal to 1000% ATK in total to the enemies within range. Tips: Move continuously and try to maximize DMG dealt while staying safe.
+- **[2335] Infinite Rhapsody** (Max Tier/Rank: `0`)
+  - *Text:* Instantly releases a powerful sonic wave, dealing Magic DMG to nearby enemies. Heals nearby allies and grants a Shield that lasts for 10s. Doubles the Performance Passion cap and fully restores Performance Passion.Performance Passion: Required to perform music. Regenerates 1 stack every 5s.Tips: A powerful emergency shield to ease team survival pressure. Time the cast carefully. Once fully charged with Performance Passion, trigger burst.
+- **[2336] Concert Circuit** (Max Tier/Rank: `0`)
+  - *Text:* A mobile performance melody. While performing, continuously heals allies. Deals Magic DMG to nearby enemies. Each healed ally increases healing by 6%, up to 30%. Each enemy hit increases DMG by 6%, up to 30%. Tips: Sustained healing and DMG. Adjust your position based on the number and location of targets to maximize efficiency.
+#### สกิลบทบาท Season 3 (Role Skills Pool):
+- **[3311] Overclock Shock** (Max Tier/Rank: `0`)
+  - *Text:* Releases an energy wave, interrupting all targets within 5m and silencing them for 5s.This skill is unaffected by CD effects.
+- **[3312] Renewal Prayer** (Max Tier/Rank: `0`)
+  - *Text:* Revives the nearest ally within 3m.This skill is unaffected by CD effects.Weakness: Unaffected by same type of effects for 60s (Weakness effects are enhanced in party dungeons in Nightmare mode).
+- **[3313] Life Barrier** (Max Tier/Rank: `0`)
+  - *Text:* Immediately grants the caster and up to 10 nearby allies (party members prioritized) a shield equal to 20% Max HP, and while the shield persists, increases 15% additional DMG Reduction for 10s. This skill is unaffected by CD effects.
+- **[3314] Silent Command** (Max Tier/Rank: `0`)
+  - *Text:* Dispels debuffs from up to 10 allies within 25m (party members prioritized).This skill is unaffected by CD effects.
+- **[3021] Thunderfall Grasp** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Tempest Ogre and channels the power of thunder to generate a vortex, continuously pulling in enemies near the target and dealing AoE Magic DMG when the duration ends.Skill is not affected by CD.
+- **[3022] Flame Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Inferno Ogre to unleash a forward fiery breath, dealing Attack DMG to the target. The damage dealt heals the caster and applies additional DMG reduction (this attribute is triggered up to a maximum of 50%).Skill is not affected by CD.
+- **[3023] Pulse Benediction** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Muku King to channel forest energy, continuously healing the caster and up to 4 allied targets (prioritizing teammates) and dispelling debuffs.Skill is not affected by CD.
+- **[3024] Infernal Thrust** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Iron Fang to deal a large instance of AoE Attack DMG to nearby enemies, inflicting Wound on affected targets.Skill is not affected by CD.
+- **[3025] Thunder Roar** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Golden Juggernaut to provide a Shield for the caster.Skill is not affected by CD.
+- **[3026] Silent Tide** (Max Tier/Rank: `4`)
+  - *Text:* Summons Boss: Lizardman King to deal Attack DMG to nearby enemies and continuously Silence targets.Skill is not affected by CD.
+- **[3027] Blessing of Life** (Max Tier/Rank: `4`)
+  - *Text:* Summons Airona. After a brief chant, some nearby teammates are revived.Weakness: Cannot be affected by the same type of effect for 60s (Weakness effects are amplified in Nightmare party dungeons).Skill is not affected by CD.
+- **[3028] Guardian's Boundary** (Max Tier/Rank: `4`)
+  - *Text:* Summons Fafala to create a field. The caster and allies within the field gain additional DMG reduction (this attribute is triggered up to a maximum of 50%) and Super Armor.(Cannot be stacked; only one instance of the same effect can be active.)Skill is not affected by CD.
+
+### 1.2 ผังโหนด Talents (Talent Tree Nodes & Connections)
+- พบโหนดของคลาสนี้จำนวน `68` โหนด:
+  - **Node [1300] Passion Surge** (Cost: `1`, Type: `4`)
+    - *Text:* When Melody is active, there is a 15% fixed chance per second to gain Passion Surge. Passion Surge: Special Attack costs zero Performance Passion for 10s. Removed after Special Attack is cast.
+    - *Stat Effects:* [Buff 2207010] Effect 2207010
+  - **Node [1301] String Expansion** (Cost: `1`, Type: `4`)
+    - *Text:* Performance Passion max limit +1.
+    - *Stat Effects:* [Buff 2207020] Effect 2207020
+  - **Node [1302] Heat Surge** (Cost: `1`, Type: `4`)
+    - *Text:* When Melody is activated, the trigger chance for Passion Surge +an extra 3% every 1 second (up to 30%). Passion Surge: Special Attack costs zero Performance Passion for 10s. Removed after Special Attack is cast.
+    - *Stat Effects:* [Buff 2207030] Effect 2207030
+  - **Node [1303] Intellect Conversion** (Cost: `1`, Type: `4`)
+    - *Text:* Every 10 points of Intellect provides 1 point of MATK.
+    - *Stat Effects:* Attr#3: +11342 (Type 4)
+  - **Node [1304] Arcane Ascension** (Cost: `1`, Type: `4`)
+    - *Text:* Special Attack costs 1 less Performance Passion.
+    - *Stat Effects:* [Buff 2207050] Effect 2207050
+  - **Node [1305] Melody: Heat Core** (Cost: `1`, Type: `4`)
+    - *Text:* Melody heals ally targets below 50% HP with 100% bonus effect.
+    - *Stat Effects:* [Buff 2207060] Effect 2207060
+  - **Node [1306] Flame Pursuit** (Cost: `1`, Type: `4`)
+    - *Text:* After using 3 Special Attacks, the next Basic Attack hit triggers Flame Pillar Blast.
+    - *Stat Effects:* [Buff 2207070] Effect 2207070
+  - **Node [1307] Flame Pursuit II** (Cost: `1`, Type: `4`)
+    - *Text:* Flame Pillar Blast becomes a two-hit combo.
+    - *Stat Effects:* [Buff 2207080] Effect 2207080
+  - **Node [1308] Dissonance Spec** (Cost: `1`, Type: `5`)
+    - *Text:* While in Rhapsody of Flame, increases all Luck Chance acquired by any means by 50% and increases DMG Reduction by 25%.Healing of Stillness: If you deal no DMG to enemies for 5s, each hit of your Basic Attack will heal up to 10 allies (party members prioritized), with the full 4-hit combo restoring 15.75% of their max HP in total. After casting an Ultimate, Basic Attacks immediately start healing, and Fierce Strike can trigger the 4th hit healing effect, but this is disabled upon dealing DMG to enemies.Maintaining Heroic Melody and Rhapsody of Flame is crucial. Heroic Melody enhances healing while consecutive Fierce Strikes accelerate Harmonic Anthem casting frequency.
+    - *Stat Effects:* [Buff 2207090] Effect 2207090
+  - **Node [1309] Lucky Soundwave** (Cost: `1`, Type: `4`)
+    - *Text:* Gains 1 Soundwave Energy whenever Expertise Skills or Amplified Beat trigger a Lucky Strike.
+    - *Stat Effects:* [Buff 2207100] Effect 2207100
+  - **Node [1310] Trio Rhapsody** (Cost: `1`, Type: `4`)
+    - *Text:* Rhapsody of Flame always appears in its most powerful form.While in Rhapsody of Flame, ATK increases by Haste % x 0.6.
+    - *Stat Effects:* [Buff 2207110] Effect 2207110
+  - **Node [1311] Severed Chapter** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Resilience Break Efficiency of self and Allies within 30 meters by 10%. This effect cannot stack. After activating Heroic Melody, you and Allies within 30 meters have an resilience break efficiency +30% and deal 15% more DMG to Resilience Broken targets. This effect cannot stack.
+    - *Stat Effects:* [Buff 2207120] Effect 2207120
+  - **Node [1312] Sound Blaze** (Cost: `1`, Type: `4`)
+    - *Text:* Gain 1 Soundwave Energy each time you deal DMG equal to 10 times ATK. Soundwave Energy stores up to 50. Skills consuming Performance Passion trigger Scorching Impact when dealing DMG, consuming all Soundwave Energy. Each 1 Soundwave Energy increases Scorching Impact DMG by 16%.
+    - *Stat Effects:* [Buff 2207130] Effect 2207130
+  - **Node [1313] Healing Note** (Cost: `1`, Type: `4`)
+    - *Text:* Basic Attack deals an extra instance of DMG. For every 5 Soundwave Energy obtained, creates a Note for the ally with the lowest HP.
+    - *Stat Effects:* [Buff 2207140] Effect 2207140
+  - **Node [1314] Blazing Heal** (Cost: `1`, Type: `4`)
+    - *Text:* Stores excess Healing (up to 500% of Max HP). After activating Heroic Melody, consumes stored Healing to recover allies' HP every 1 second, up to 15% of Max HP per second.
+    - *Stat Effects:* [Buff 2207150] Effect 2207150
+  - **Node [1315] Concerto** (Cost: `1`, Type: `4`)
+    - *Text:* During Rhapsody of Flame, Amplified Beat gains 1 additional attack.Amplified Beat's DMG -20%.
+    - *Stat Effects:* [Buff 2207160] Effect 2207160
+  - **Node [1316] Restart** (Cost: `1`, Type: `4`)
+    - *Text:* When Harmonic Anthem or Fierce Strike triggers a Lucky Strike, limited to a single activation when striking multiple targets, immediately resets Rhapsody of Flame's CD and allows Rhapsody of Flame not to consume Performance Passion for 10s, this effect is nullified upon casting Rhapsody of Flame.
+    - *Stat Effects:* [Buff 2207170] Effect 2207170
+  - **Node [1317] Concerto Spec** (Cost: `1`, Type: `5`)
+    - *Text:* Replaces Special Attack with Healing Beat. WhileHealing Melody is active, reduces the remaining CD of Fivefold Crescendo and Passion Burst by 1 second per second. Precisely placing the speaker ensures it echoes your Expertise whenever they are cast.
+    - *Stat Effects:* Attr#2306: +2307 (Type 6), [Buff 2207180] Effect 2207180, Attr#2321: +2301 (Type 6)
+  - **Node [1318] Brilliant Charge** (Cost: `1`, Type: `4`)
+    - *Text:* When Healing Beat or Passion Burst applies Crit Healing or deals Crit DMG (triggers only once when hitting multiple targets), gains 1 Performance Passion.
+    - *Stat Effects:* [Buff 2207190] Effect 2207190
+  - **Node [1319] Double Recovery Note** (Cost: `1`, Type: `4`)
+    - *Text:* Healing Beat provides an additional equal Healing to targets under the influence of Healing Melody.
+    - *Stat Effects:* [Buff 2207200] Effect 2207200
+  - **Node [1320] Crit Healing** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Crit Healing by 25%.
+    - *Stat Effects:* [Buff 2207210] Effect 2207210
+  - **Node [1321] Fiery Beat** (Cost: `1`, Type: `4`)
+    - *Text:* Healing Beat Crit Rate +10%. Healing Beat Healing +10%.
+    - *Stat Effects:* [Buff 2207220] Effect 2207220
+  - **Node [1322] Critical Encore** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Crit Rate grants 1% trigger chance for Encore Strings.
+    - *Stat Effects:* [Buff 2207230] Effect 2207230
+  - **Node [1323] Passion Fury** (Cost: `1`, Type: `4`)
+    - *Text:* For each 10 Performance Passion consumed, enhances Passion Burst to Passion Fury for 10s.
+    - *Stat Effects:* [Buff 2207240] Effect 2207240
+  - **Node [1324] Stat Resonance** (Cost: `1`, Type: `4`)
+    - *Text:* While Healing Melody is active, grants allies appropriate buffs (Strength, Intellect, Agility) equal to 8% of Intellect. (Buffs from different Beat Performers cannot stack. Only one with the highest value applies.)
+    - *Stat Effects:* [Buff 2207250] Effect 2207250
+  - **Node [1325] Stat Resonance Crit** (Cost: `1`, Type: `4`)
+    - *Text:* For 10s after using Passion Burst or its enhanced form (Passion Fury), doubles the buffs that Healing Melody provides to allies. While channeling Passion Fury, DMG Reduction +10%. The duration of the doubled stat buffs is refreshed and extended by 0.4s for every 0.2s channeled.
+    - *Stat Effects:* [Buff 2207260] Effect 2207260
+  - **Node [1326] Fire Day** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Fire Bonus by 8% when attacking Elite or higher targets.
+    - *Stat Effects:* [Buff 2207270] Effect 2207270
+  - **Node [1327] Critical Acclaim** (Cost: `1`, Type: `4`)
+    - *Text:* During Center Stage, triggering Encore Strings has a 30% fixed chance to grant Passion Surge. Passion Surge: Special Attack costs zero Performance Passion for 10s. Removed after Special Attack is cast.
+    - *Stat Effects:* [Buff 2207280] Effect 2207280
+  - **Node [1328] Rhythm Spirit** (Cost: `1`, Type: `4`)
+    - *Text:* Defeating an enemy has a fixed 50% chance to grant you 1 Performance Passion.
+    - *Stat Effects:* [Buff 2207290] Effect 2207290
+  - **Node [1329] Infinite Rhapsody** (Cost: `1`, Type: `4`)
+    - *Text:* Replace Ultimate Rock the Stage with Infinite Rhapsody.
+    - *Stat Effects:* Attr#2314: +2335 (Type 6)
+  - **Node [1330] Concert Circuit** (Cost: `1`, Type: `4`)
+    - *Text:* Replace Ultimate Rock the Stage with Concert Circuit.
+    - *Stat Effects:* Attr#2314: +2336 (Type 6)
+  - **Node [1331] Encore Chain** (Cost: `1`, Type: `4`)
+    - *Text:* When Encore Strings triggers, it activates a second time on the same target.
+    - *Stat Effects:* [Buff 2207320] Effect 2207320
+  - **Node [1332] Heat Boost** (Cost: `1`, Type: `4`)
+    - *Text:* When Intellect reaches 500, the Performance Energy cap +20%.
+    - *Stat Effects:* [Buff 2207330] Effect 2207330
+  - **Node [1333] Variation** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Max HP by 20% and activates Dissonance Spec with its original effect intact. If Concerto Spec is activated, its effect is adjusted to replace Basic Attack with Resonant Strings.
+    - *Stat Effects:* [Buff 2207340] Effect 2207340
+  - **Node [1334] Melody Chord** (Cost: `1`, Type: `4`)
+    - *Text:* Melody Healing +20%. Each 1% Haste increases the REG SPD of Performance Passion by 1%.
+    - *Stat Effects:* [Buff 2207350] Effect 2207350
+  - **Node [1335] Exaltation** (Cost: `1`, Type: `4`)
+    - *Text:* Performance Energy REG SPD +10%.
+    - *Stat Effects:* [Buff 2207360] Effect 2207360
+  - **Node [1336] Indomitable Chord** (Cost: `1`, Type: `4`)
+    - *Text:* While Heroic Melody is active, grants Super Armor, increases DMG Reduction by 25%, and boosts Movement Speed by 10%.While Heroic Melody is active, grants Tenacity Chord. Each stack of Tenacity Chord additionally increases Max HP by 0.5% (up to 2.5% Max HP) for 5s (duration cannot be refreshed once 5 stacks are reached).
+    - *Stat Effects:* [Buff 2207370] Effect 2207370
+  - **Node [1337] Swing Reflux** (Cost: `1`, Type: `4`)
+    - *Text:* Hitting a target with Fierce Strike recovers 5 Performance Energy. Each additional target hit provides 1 extra Performance Energy, up to 10 total.
+    - *Stat Effects:* [Buff 2207380] Effect 2207380
+  - **Node [1338] Luck Multiplier** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Luck grants 0.5% Lucky Strike DMG Multiplier. After activating Heroic Melody, doubles its conversion efficiency.
+    - *Stat Effects:* [Buff 2207390] Effect 2207390
+  - **Node [1339] Resonant Counterpoint** (Cost: `1`, Type: `4`)
+    - *Text:* When a Note forms, there's a 50% fixed chance to create an extra Note for a different target.
+    - *Stat Effects:* [Buff 2207400] Effect 2207400
+  - **Node [1340] Sonic Cure** (Cost: `1`, Type: `4`)
+    - *Text:* When Expertise deal DMG (only triggers once when hitting multiple targets), additionally heal targets with Note.
+    - *Stat Effects:* [Buff 2207410] Effect 2207410
+  - **Node [1341] Sonic Therapy** (Cost: `1`, Type: `4`)
+    - *Text:* Converted healing from DMG +20% for targets affected by Note.
+    - *Stat Effects:* [Buff 2207420] Effect 2207420
+  - **Node [1342] Flame's Rampage** (Cost: `1`, Type: `4`)
+    - *Text:* When Heroic Melody is active, Rhapsody of Flame will erupt, dealing Magic DMG equal to 350% ATK every 3s to targets it touches (DMG interval affected by Haste). This DMG can trigger Lucky Strike.While in Rhapsody of Flame, each hit of Harmonic Anthem also heals 1 ally with the lowest HP for 30% of the DMG dealt (this value scales proportionally when hitting multiple targets).
+    - *Stat Effects:* [Buff 2207430] Effect 2207430
+  - **Node [1343] Flame Note** (Cost: `1`, Type: `4`)
+    - *Text:* When you use an Expertise Skill, Rhapsody of Flame will erupt with Rhythm, dealing Magic DMG equal to 700% of ATK and granting Note to allies it touches.
+    - *Stat Effects:* [Buff 2207440] Effect 2207440
+  - **Node [1344] Finale Command** (Cost: `1`, Type: `4`)
+    - *Text:* Within 10s of casting Encore, each use of Rhapsody of Flame caused targets affected by Encore to trigger Encore Strings.
+    - *Stat Effects:* [Buff 2207450] Effect 2207450
+  - **Node [1345] Encore Persistence** (Cost: `1`, Type: `4`)
+    - *Text:* Permanently benefits from Encore effect. For every 5 triggers of Encore Strings, the next Amplified Beat and Harmonic Anthem deal 50% more DMG.
+    - *Stat Effects:* [Buff 2207460] Effect 2207460
+  - **Node [1346] Encore Luck Boost** (Cost: `1`, Type: `4`)
+    - *Text:* Every 1% Luck Chance grants 1% trigger chance for Encore Strings.
+    - *Stat Effects:* [Buff 2207470] Effect 2207470
+  - **Node [1347] Encore Sharp Strike** (Cost: `1`, Type: `4`)
+    - *Text:* Triggering Encore Strings to deal DMG or healing grants 2 Performance Energy. If the Encore Strings triggers Lucky Strike, grants 3 additional Performance Energy.
+    - *Stat Effects:* [Buff 2207480] Effect 2207480
+  - **Node [1348] Absolute Center Stage** (Cost: `1`, Type: `4`)
+    - *Text:* After you use Center Stage, the number of enhanced skills increases from 1 to 2.
+    - *Stat Effects:* [Buff 2207490] Effect 2207490
+  - **Node [1349] Center Stage: Mad Tune** (Cost: `1`, Type: `4`)
+    - *Text:* Each Performance Passion consumed reduces the CD of Center Stage by 1 second.
+    - *Stat Effects:* [Buff 2207500] Effect 2207500
+  - **Node [1350] Tower Multiwave** (Cost: `1`, Type: `4`)
+    - *Text:* Casting Center Stage immediately extends Heroic Melody by 5s.
+    - *Stat Effects:* [Buff 2207510] Effect 2207510
+  - **Node [1351] Soundwave Overclock** (Cost: `1`, Type: `4`)
+    - *Text:* Upon casting Center Stage, grants 15 Soundwave Energy, and doubles all the Soundwave Energy gained in the next 10s.
+    - *Stat Effects:* [Buff 2207520] Effect 2207520
+  - **Node [1352] Crit Charge Rhythm** (Cost: `1`, Type: `4`)
+    - *Text:* Fivefold Crescendo deals Crit DMG or healing (only triggers once for multiple targets), grants 2 Performance Energy. When Healing Melody lands a Crit Hit, grants 1 Performance Energy(only triggers once for multiple targets).
+    - *Stat Effects:* [Buff 2207530] Effect 2207530
+  - **Node [1353] Tower Flame Blast** (Cost: `1`, Type: `4`)
+    - *Text:* The speaker releases a Flame Shock every 5s.
+    - *Stat Effects:* [Buff 2207540] Effect 2207540
+  - **Node [1354] Multi-Target Heat Amp** (Cost: `1`, Type: `4`)
+    - *Text:* Passion Burst and its enhanced version (Passion Fury) deal 5% more DMG per additional target hit, up to 25%.
+    - *Stat Effects:* [Buff 2207550] Effect 2207550
+  - **Node [1355] Heated Tower Flame Blast** (Cost: `1`, Type: `4`)
+    - *Text:* When Passion Burst and its enhanced version (Passion Fury) hit the speaker, it immediately releases a Flame Shock.
+    - *Stat Effects:* [Buff 2207560] Effect 2207560
+  - **Node [1356] Sonic Verdict** (Cost: `1`, Type: `4`)
+    - *Text:* While Healing Melody is active, Fivefold Crescendo also deals DMG, with its total DMG scaling equal to its healing multiplier.While Healing Melody is active, reduces the caster's DMG taken by (10% + Haste % x 0.4) (max -30%).
+    - *Stat Effects:* [Buff 2207570] Effect 2207570
+  - **Node [1357] Harmonic Amplifier** (Cost: `1`, Type: `4`)
+    - *Text:* Increases the DMG dealt and healing of skills triggered by the speaker by 30%.
+    - *Stat Effects:* [Buff 2207580] Effect 2207580
+  - **Node [1358] Crescendo Healing Chord** (Cost: `1`, Type: `4`)
+    - *Text:* Healing Melody gains 7% Healing Strength for every second it remains active, stacking up to 5 times.Healing Melody additionally restores a fixed amount equal to 0.3% of the target's Max HP when healing.
+    - *Stat Effects:* [Buff 2207590] Effect 2207590
+  - **Node [1359] Crit Scale** (Cost: `1`, Type: `4`)
+    - *Text:* Increases Crit Rate by 10% against enemies above 50% HP. Increases Crit Rate by 10% against enemies below 50% HP.
+    - *Stat Effects:* [Buff 2207600] Effect 2207600
+  - **Node [1360] Symphonic Aria** (Cost: `1`, Type: `4`)
+    - *Text:* Enhances Healing by 10% for targets affected by Healing Melody.
+    - *Stat Effects:* [Buff 2207610] Effect 2207610
+  - **Node [1361] Vitality Unleash** (Cost: `1`, Type: `4`)
+    - *Text:* 7% of DMG dealt and 15% of healing done is stored as Rhythm. Within 10s after you cast Center Stage, the use of Expertise and Healing Beat consumes Rhythm to grant up to 40% bonus healing. The cap for Rhythm storage is 30 times MATK.
+    - *Stat Effects:* [Buff 2207620] Effect 2207620
+  - **Node [1362] Encore Chain** (Cost: `1`, Type: `4`)
+    - *Text:* Within 10s after you cast Encore, each use of Expertise Skill triggers Encore Strings for targets affected by Encore.
+    - *Stat Effects:* [Buff 2207630] Effect 2207630
+  - **Node [1363] Tower Resonance** (Cost: `1`, Type: `4`)
+    - *Text:* Permanently benefits from Encore effect. Each trigger of Encore Strings reduces the remaining CD of Expertise by 1 second.
+    - *Stat Effects:* [Buff 2207640] Effect 2207640
+  - **Node [1364] Stat Resonance Overload** (Cost: `1`, Type: `4`)
+    - *Text:* For 15s after actively casting Encore, the stat bonuses provided by Healing Melody are +100%.
+    - *Stat Effects:* [Buff 2207650] Effect 2207650
+  - **Node [1365] Center Stage: Concerto** (Cost: `1`, Type: `4`)
+    - *Text:* The charges of Center Stage increase by 1.
+    - *Stat Effects:* [Buff 2207660] Effect 2207660
+  - **Node [1366] Absolute Center Stage** (Cost: `1`, Type: `4`)
+    - *Text:* After you use Center Stage, the number of enhanced skills increases from 1 to 2.
+    - *Stat Effects:* [Buff 2207490] Effect 2207490
+  - **Node [1367] Spiral Flame** (Cost: `1`, Type: `4`)
+    - *Text:* After casting Center Stage, summon a wave of Sonic Surge.
+    - *Stat Effects:* [Buff 2207680] Effect 2207680
+
+---
+
+## โหนดพื้นฐานส่วนกลาง (Common / Base Talent Nodes — 35 โหนด)
+
+- **Node [1] Strength**: Strength +10 | Effects: `Strength: +10 (Type 1)`
+- **Node [2] Intellect**: Intellect +10 | Effects: `Intellect: +10 (Type 1)`
+- **Node [3] Agility**: Agility +10 | Effects: `Agility: +10 (Type 1)`
+- **Node [4] Endurance**: Endurance +30 | Effects: `Endurance: +30 (Type 1)`
+- **Node [5] Crit**: Crit +25 | Effects: `Crit: +25 (Type 1)`
+- **Node [6] Haste**: Haste +25 | Effects: `Haste: +25 (Type 1)`
+- **Node [7] Luck**: Luck +25 | Effects: `Luck: +25 (Type 1)`
+- **Node [8] Mastery**: Mastery +25 | Effects: `Mastery: +25 (Type 1)`
+- **Node [9] Versatility**: Versatility +25 | Effects: `Versatility: +25 (Type 1)`
+- **Node [20] Ice Attack**: Ice Attack +5 | Effects: `Ice Attack: +5 (Type 1)`
+- **Node [21] Rock Attack**: Rock Attack +5 | Effects: `Rock Attack: +5 (Type 1)`
+- **Node [22] Thunder Attack**: Thunder Attack +5 | Effects: `Thunder Attack: +5 (Type 1)`
+- **Node [23] Forest Attack**: Forest Attack +5 | Effects: `Forest Attack: +5 (Type 1)`
+- **Node [24] Light Attack**: Light Attack +5 | Effects: `Light Attack: +5 (Type 1)`
+- **Node [25] Dark Attack**: Dark Attack +5 | Effects: `Dark Attack: +5 (Type 1)`
+- **Node [26] Wind Attack**: Wind Attack +5 | Effects: `Wind Attack: +5 (Type 1)`
+- **Node [27] Fire Attack**: Fire Attack +5 | Effects: `Fire Attack: +5 (Type 1)`
+- **Node [40] Crit Chance**: Crit +200 | Effects: `Crit: +200 (Type 1)`
+- **Node [41] Attack Speed**: Attack SPD +1% | Effects: `Attack SPD: +100 (Type 1)`
+- **Node [42] Casting SPD**: Attack SPD +1% | Effects: `Attack SPD: +100 (Type 1)`
+- **Node [43] Skill CD**: Skill CD Reduction +100 | Effects: `Skill CD Reduction: +100 (Type 1)`
+- **Node [44] Luck Chance**: Luck +200 | Effects: `Luck: +200 (Type 1)`
+- **Node [45] Crit DMG**: Crit DMG +300 | Effects: `Crit DMG: +300 (Type 1)`
+- **Node [46] Luck Damage**: Lucky Strike DMG Multiplier +300 | Effects: `Lucky Strike DMG Multiplier: +300 (Type 1)`
+- **Node [47] Healing**: Healing Output +300 | Effects: `Healing Output: +300 (Type 1)`
+- **Node [48] Shield DMG Reduction**: Shield DMG Reduction +400 | Effects: `Shield DMG Reduction: +400 (Type 1)`
+- **Node [49] Block DMG Reduction**: Block DMG Reduction +400 | Effects: `Block DMG Reduction: +400 (Type 1)`
+- **Node [50] Universal Damage Bonus**: Versatility Enhancement +300 | Effects: `Versatility Enhancement: +300 (Type 1)`
+- **Node [51] Universal DMG Reduction**: Versatility Resistance +300 | Effects: `Versatility Resistance: +300 (Type 1)`
+- **Node [52] Vulnerability factor**: Shatter Strength +300 | Effects: `Shatter Strength: +300 (Type 1)`
+- **Node [53] Vulnerability Damage Bonus**: Shatter Damage Increase +300 | Effects: `Shatter Damage Increase: +300 (Type 1)`
+- **Node [54] Suppress Damage Bonus**: Suppress Damage +300 | Effects: `Suppress Damage: +300 (Type 1)`
+- **Node [55] Suppress DMG Reduction**: Suppress DMG Reduction +300 | Effects: `Suppress DMG Reduction: +300 (Type 1)`
+- **Node [56] Inspiring Effect**: Inspiration Ratio +300 | Effects: `Inspiration Ratio: +300 (Type 1)`
+- **Node [57] Ignore Defense**: Armor Penetration +200 | Effects: `Armor Penetration: +200 (Type 1)`

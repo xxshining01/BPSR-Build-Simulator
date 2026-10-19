@@ -1,0 +1,983 @@
+# 4. รายการ Sigils / Enchants ทั้งหมด, ช่องอุปกรณ์ที่ติดตั้งได้ และค่าสเตตัสที่ Lv.1 (Base), Lv.2 (Refined) และ Lv.3 (Perfect)
+
+## กลุ่มการติดตั้ง [1001]: GS 40 อุปกรณ์ทุกส่วน (Gems)
+มีรายการให้เลือกทั้งหมด **36 ชนิด**:
+
+- **[1024001] Ruby** (Quality: `1`)
+  - **Lv.1 (Base):** Crit: +10
+- **[1024002] Sapphire** (Quality: `1`)
+  - **Lv.1 (Base):** Haste: +10
+- **[1024003] Emerald** (Quality: `1`)
+  - **Lv.1 (Base):** Mastery: +10
+- **[1024004] Diamond** (Quality: `1`)
+  - **Lv.1 (Base):** Luck: +10
+- **[1024031] Ruby - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Strength: +8
+- **[1024032] Ruby - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Endurance: +20
+- **[1024033] Ruby - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Agility: +8
+- **[1024034] Ruby - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Intellect: +8
+- **[1024051] Ruby - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Strength: +16
+- **[1024052] Ruby - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Endurance: +50
+- **[1024053] Ruby - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Agility: +16
+- **[1024054] Ruby - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Intellect: +16
+- **[1024131] Sapphire - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Strength: +8
+- **[1024132] Sapphire - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Endurance: +20
+- **[1024133] Sapphire - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Agility: +8
+- **[1024134] Sapphire - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Intellect: +8
+- **[1024151] Sapphire - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Strength: +16
+- **[1024152] Sapphire - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Endurance: +50
+- **[1024153] Sapphire - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Agility: +16
+- **[1024154] Sapphire - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Intellect: +16
+- **[1024231] Emerald - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Strength: +8
+- **[1024232] Emerald - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Endurance: +20
+- **[1024233] Emerald - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Agility: +8
+- **[1024234] Emerald - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Intellect: +8
+- **[1024251] Emerald - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Strength: +16
+- **[1024252] Emerald - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Endurance: +50
+- **[1024253] Emerald - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Agility: +16
+- **[1024254] Emerald - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Intellect: +16
+- **[1024331] Diamond - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Strength: +8
+- **[1024332] Diamond - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Endurance: +20
+- **[1024333] Diamond - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Agility: +8
+- **[1024334] Diamond - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Intellect: +8
+- **[1024351] Diamond - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Strength: +16
+- **[1024352] Diamond - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Endurance: +50
+- **[1024353] Diamond - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Agility: +16
+- **[1024354] Diamond - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Intellect: +16
+
+---
+
+## กลุ่มการติดตั้ง [1002]: GS 60 อุปกรณ์ทุกส่วน (Gems)
+มีรายการให้เลือกทั้งหมด **36 ชนิด**:
+
+- **[1024001] Ruby** (Quality: `1`)
+  - **Lv.1 (Base):** Crit: +10
+- **[1024002] Sapphire** (Quality: `1`)
+  - **Lv.1 (Base):** Haste: +10
+- **[1024003] Emerald** (Quality: `1`)
+  - **Lv.1 (Base):** Mastery: +10
+- **[1024004] Diamond** (Quality: `1`)
+  - **Lv.1 (Base):** Luck: +10
+- **[1024031] Ruby - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Strength: +8
+- **[1024032] Ruby - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Endurance: +20
+- **[1024033] Ruby - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Agility: +8
+- **[1024034] Ruby - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Intellect: +8
+- **[1024051] Ruby - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Strength: +16
+- **[1024052] Ruby - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Endurance: +50
+- **[1024053] Ruby - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Agility: +16
+- **[1024054] Ruby - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Intellect: +16
+- **[1024131] Sapphire - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Strength: +8
+- **[1024132] Sapphire - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Endurance: +20
+- **[1024133] Sapphire - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Agility: +8
+- **[1024134] Sapphire - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Intellect: +8
+- **[1024151] Sapphire - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Strength: +16
+- **[1024152] Sapphire - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Endurance: +50
+- **[1024153] Sapphire - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Agility: +16
+- **[1024154] Sapphire - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Intellect: +16
+- **[1024231] Emerald - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Strength: +8
+- **[1024232] Emerald - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Endurance: +20
+- **[1024233] Emerald - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Agility: +8
+- **[1024234] Emerald - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Intellect: +8
+- **[1024251] Emerald - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Strength: +16
+- **[1024252] Emerald - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Endurance: +50
+- **[1024253] Emerald - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Agility: +16
+- **[1024254] Emerald - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Intellect: +16
+- **[1024331] Diamond - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Strength: +8
+- **[1024332] Diamond - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Endurance: +20
+- **[1024333] Diamond - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Agility: +8
+- **[1024334] Diamond - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Intellect: +8
+- **[1024351] Diamond - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Strength: +16
+- **[1024352] Diamond - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Endurance: +50
+- **[1024353] Diamond - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Agility: +16
+- **[1024354] Diamond - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Intellect: +16
+
+---
+
+## กลุ่มการติดตั้ง [1003]: GS 70-90 อุปกรณ์ทุกส่วน (Gems)
+มีรายการให้เลือกทั้งหมด **36 ชนิด**:
+
+- **[1024001] Ruby** (Quality: `1`)
+  - **Lv.1 (Base):** Crit: +10
+- **[1024002] Sapphire** (Quality: `1`)
+  - **Lv.1 (Base):** Haste: +10
+- **[1024003] Emerald** (Quality: `1`)
+  - **Lv.1 (Base):** Mastery: +10
+- **[1024004] Diamond** (Quality: `1`)
+  - **Lv.1 (Base):** Luck: +10
+- **[1024031] Ruby - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Strength: +8
+- **[1024032] Ruby - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Endurance: +20
+- **[1024033] Ruby - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Agility: +8
+- **[1024034] Ruby - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +30, Intellect: +8
+- **[1024051] Ruby - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Strength: +16
+- **[1024052] Ruby - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Endurance: +50
+- **[1024053] Ruby - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Agility: +16
+- **[1024054] Ruby - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +50, Intellect: +16
+- **[1024131] Sapphire - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Strength: +8
+- **[1024132] Sapphire - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Endurance: +20
+- **[1024133] Sapphire - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Agility: +8
+- **[1024134] Sapphire - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +30, Intellect: +8
+- **[1024151] Sapphire - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Strength: +16
+- **[1024152] Sapphire - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Endurance: +50
+- **[1024153] Sapphire - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Agility: +16
+- **[1024154] Sapphire - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +50, Intellect: +16
+- **[1024231] Emerald - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Strength: +8
+- **[1024232] Emerald - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Endurance: +20
+- **[1024233] Emerald - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Agility: +8
+- **[1024234] Emerald - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +30, Intellect: +8
+- **[1024251] Emerald - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Strength: +16
+- **[1024252] Emerald - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Endurance: +50
+- **[1024253] Emerald - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Agility: +16
+- **[1024254] Emerald - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +50, Intellect: +16
+- **[1024331] Diamond - Power 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Strength: +8
+- **[1024332] Diamond - Bulwark 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Endurance: +20
+- **[1024333] Diamond - Agility 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Agility: +8
+- **[1024334] Diamond - Abyss 3** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +30, Intellect: +8
+- **[1024351] Diamond - Power 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Strength: +16
+- **[1024352] Diamond - Bulwark 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Endurance: +50
+- **[1024353] Diamond - Agility 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Agility: +16
+- **[1024354] Diamond - Abyss 5** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +50, Intellect: +16
+
+---
+
+## กลุ่มการติดตั้ง [2001]: GS 100-180 เฉพาะ **อาวุธ (Weapon)**
+มีรายการให้เลือกทั้งหมด **8 ชนิด**:
+
+- **[1024601] Bluespine Lizard Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** All Element Attack: +20
+  - **Lv.2 (Refined / 精):** All Element Attack: +25
+  - **Lv.3 (Perfect / 極):** All Element Attack: +30
+- **[1024611] Emerald Caprahorn Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Strength: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Strength: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Strength: +35
+- **[1024621] Blackstone Commander Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Intellect: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Intellect: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Intellect: +35
+- **[1024631] Blackfire Foxen Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Agility: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Agility: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Agility: +35
+- **[1024691] Basilisk Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +40
+  - **Lv.2 (Refined / 精):** All Element Attack: +45
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50
+- **[1024751] Caprahorn - Bloom & Steel Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Strength: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Strength: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Strength: +70
+- **[1024761] Withered Bloomshard Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Intellect: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Intellect: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Intellect: +70
+- **[1024771] Erosion Bloom Afterimage Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Agility: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Agility: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Agility: +70
+
+---
+
+## กลุ่มการติดตั้ง [2002]: GS 120-170 เฉพาะ **หมวก, เสื้อ, ถุงมือ, รองเท้า (Head/Chest/Gloves/Boots)**
+มีรายการให้เลือกทั้งหมด **10 ชนิด**:
+
+- **[1024401] Cabbage Killer Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +200
+  - **Lv.2 (Refined / 精):** Crit: +250
+  - **Lv.3 (Perfect / 極):** Crit: +300
+- **[1024411] Wasteland Foxen Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +200
+  - **Lv.2 (Refined / 精):** Haste: +250
+  - **Lv.3 (Perfect / 極):** Haste: +300
+- **[1024421] Cabbage Tough Guy Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +200
+  - **Lv.2 (Refined / 精):** Luck: +250
+  - **Lv.3 (Perfect / 極):** Luck: +300
+- **[1024431] Glimmer Caprahorn Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +200
+  - **Lv.2 (Refined / 精):** Mastery: +250
+  - **Lv.3 (Perfect / 極):** Mastery: +300
+- **[1024441] Cabbage Blaster Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Versatility: +200
+  - **Lv.2 (Refined / 精):** Versatility: +250
+  - **Lv.3 (Perfect / 極):** Versatility: +300
+- **[1024701] Goblin Chief Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Crit: +500
+  - **Lv.2 (Refined / 精):** Crit: +560
+  - **Lv.3 (Perfect / 極):** Crit: +600
+- **[1024711] Crimson Foxen Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Haste: +500
+  - **Lv.2 (Refined / 精):** Haste: +560
+  - **Lv.3 (Perfect / 極):** Haste: +600
+- **[1024721] Cabbage Kingpin Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Luck: +500
+  - **Lv.2 (Refined / 精):** Luck: +560
+  - **Lv.3 (Perfect / 極):** Luck: +600
+- **[1024731] Blackstone Captain Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Mastery: +500
+  - **Lv.2 (Refined / 精):** Mastery: +560
+  - **Lv.3 (Perfect / 極):** Mastery: +600
+- **[1024741] Flamehorn Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Versatility: +500
+  - **Lv.2 (Refined / 精):** Versatility: +560
+  - **Lv.3 (Perfect / 極):** Versatility: +600
+
+---
+
+## กลุ่มการติดตั้ง [2003]: GS 120-160 เฉพาะ **ต่างหู, สร้อยคอ, แหวน (Earrings/Necklace/Ring)**
+มีรายการให้เลือกทั้งหมด **9 ชนิด**:
+
+- **[1024451] Nether Caprahorn Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Endurance: +50, Strength: +15
+  - **Lv.2 (Refined / 精):** Endurance: +60, Strength: +20
+  - **Lv.3 (Perfect / 極):** Endurance: +80, Strength: +25
+- **[1024461] Cabbage Hunter Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Endurance: +50, Intellect: +15
+  - **Lv.2 (Refined / 精):** Endurance: +60, Intellect: +20
+  - **Lv.3 (Perfect / 極):** Endurance: +80, Intellect: +25
+- **[1024471] Foxen Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Endurance: +50, Agility: +15
+  - **Lv.2 (Refined / 精):** Endurance: +60, Agility: +20
+  - **Lv.3 (Perfect / 極):** Endurance: +80, Agility: +25
+- **[1024611] Emerald Caprahorn Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Strength: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Strength: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Strength: +35
+- **[1024621] Blackstone Commander Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Intellect: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Intellect: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Intellect: +35
+- **[1024631] Blackfire Foxen Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Agility: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Agility: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Agility: +35
+- **[1024751] Caprahorn - Bloom & Steel Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Strength: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Strength: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Strength: +70
+- **[1024761] Withered Bloomshard Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Intellect: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Intellect: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Intellect: +70
+- **[1024771] Erosion Bloom Afterimage Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Agility: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Agility: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Agility: +70
+
+---
+
+## กลุ่มการติดตั้ง [2004]: GS 120-170 เฉพาะ **กำไลซ้าย, กำไลขวา, เครื่องราง (Bracelets/Charm)**
+มีรายการให้เลือกทั้งหมด **17 ชนิด**:
+
+- **[1024481] Frost Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Crit: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Crit: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Crit: +210
+- **[1024491] Magma Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Haste: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Haste: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Haste: +210
+- **[1024501] Gale Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Luck: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Luck: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Luck: +210
+- **[1024511] Lightning Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Mastery: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Mastery: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Mastery: +210
+- **[1024521] Blackstone Marksman Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Crit: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Crit: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Crit: +210
+- **[1024531] Blackstone Guard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Haste: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Haste: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Haste: +210
+- **[1024541] Blackstone Warrior Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Luck: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Luck: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Luck: +210
+- **[1024551] Blackstone Assaulter Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Mastery: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Mastery: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Mastery: +210
+- **[1024561] Goblin Warrior Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Crit: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Crit: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Crit: +210
+- **[1024571] Goblin Axeman Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Haste: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Haste: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Haste: +210
+- **[1024581] Goblin Priest Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Luck: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Luck: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Luck: +210
+- **[1024591] Goblin Sentry Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Mastery: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Mastery: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Mastery: +210
+- **[1024641] Gloomy Cabbage Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +300
+  - **Lv.2 (Refined / 精):** Crit: +360
+  - **Lv.3 (Perfect / 極):** Crit: +420
+- **[1024651] Blackstone Vanguard Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +300
+  - **Lv.2 (Refined / 精):** Haste: +360
+  - **Lv.3 (Perfect / 極):** Haste: +420
+- **[1024661] Ruthless Cabbage Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +300
+  - **Lv.2 (Refined / 精):** Luck: +360
+  - **Lv.3 (Perfect / 極):** Luck: +420
+- **[1024671] Goblin Trickster Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +300
+  - **Lv.2 (Refined / 精):** Mastery: +360
+  - **Lv.3 (Perfect / 極):** Mastery: +420
+- **[1024681] Goblin Shaman Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Versatility: +300
+  - **Lv.2 (Refined / 精):** Versatility: +360
+  - **Lv.3 (Perfect / 極):** Versatility: +420
+
+---
+
+## กลุ่มการติดตั้ง [3001]: Season 3 (GS 220+) เฉพาะ **อาวุธ (Weapon)**
+มีรายการให้เลือกทั้งหมด **29 ชนิด**:
+
+- **[1024601] Bluespine Lizard Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** All Element Attack: +20
+  - **Lv.2 (Refined / 精):** All Element Attack: +25
+  - **Lv.3 (Perfect / 極):** All Element Attack: +30
+- **[1024611] Emerald Caprahorn Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Strength: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Strength: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Strength: +35
+- **[1024621] Blackstone Commander Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Intellect: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Intellect: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Intellect: +35
+- **[1024631] Blackfire Foxen Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Agility: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Agility: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Agility: +35
+- **[1024691] Basilisk Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +40
+  - **Lv.2 (Refined / 精):** All Element Attack: +45
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50
+- **[1024751] Caprahorn - Bloom & Steel Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Strength: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Strength: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Strength: +70
+- **[1024761] Withered Bloomshard Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Intellect: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Intellect: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Intellect: +70
+- **[1024771] Erosion Bloom Afterimage Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Agility: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Agility: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Agility: +70
+- **[3020001] Infernal Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** ATK: +38
+  - **Lv.2 (Refined / 精):** ATK: +45
+  - **Lv.3 (Perfect / 極):** ATK: +55
+- **[3020004] T - Infernal Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** ATK: +38
+  - **Lv.2 (Refined / 精):** ATK: +45
+  - **Lv.3 (Perfect / 極):** ATK: +55
+- **[3020007] F - Infernal Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** ATK: +38
+  - **Lv.2 (Refined / 精):** ATK: +45
+  - **Lv.3 (Perfect / 極):** ATK: +55
+- **[3020011] Wasteland Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** MATK: +38
+  - **Lv.2 (Refined / 精):** MATK: +45
+  - **Lv.3 (Perfect / 極):** MATK: +55
+- **[3020014] T - Wasteland Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** MATK: +38
+  - **Lv.2 (Refined / 精):** MATK: +45
+  - **Lv.3 (Perfect / 極):** MATK: +55
+- **[3020017] F - Wasteland Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** MATK: +38
+  - **Lv.2 (Refined / 精):** MATK: +45
+  - **Lv.3 (Perfect / 極):** MATK: +55
+- **[3020101] Killer Arachnocrab Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +235, Adaptive Strength/Intellect/Agility: +70
+  - **Lv.2 (Refined / 精):** Endurance: +255, Adaptive Strength/Intellect/Agility: +75
+  - **Lv.3 (Perfect / 極):** Endurance: +275, Adaptive Strength/Intellect/Agility: +80
+- **[3020104] T - Killer Arachnocrab Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +235, Adaptive Strength/Intellect/Agility: +70
+  - **Lv.2 (Refined / 精):** Endurance: +255, Adaptive Strength/Intellect/Agility: +75
+  - **Lv.3 (Perfect / 極):** Endurance: +275, Adaptive Strength/Intellect/Agility: +80
+- **[3020107] F - Killer Arachnocrab Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +235, Adaptive Strength/Intellect/Agility: +70
+  - **Lv.2 (Refined / 精):** Endurance: +255, Adaptive Strength/Intellect/Agility: +75
+  - **Lv.3 (Perfect / 極):** Endurance: +275, Adaptive Strength/Intellect/Agility: +80
+- **[3020151] Predator Arachnocrab Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +66
+  - **Lv.2 (Refined / 精):** All Element Attack: +72
+  - **Lv.3 (Perfect / 極):** All Element Attack: +80
+- **[3020154] T - Predator Arachnocrab Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +66
+  - **Lv.2 (Refined / 精):** All Element Attack: +72
+  - **Lv.3 (Perfect / 極):** All Element Attack: +80
+- **[3020157] F - Predator Arachnocrab Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +66
+  - **Lv.2 (Refined / 精):** All Element Attack: +72
+  - **Lv.3 (Perfect / 極):** All Element Attack: +80
+- **[3020201] Paradox-Calamity Remnant - Origin Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Strength: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Strength: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Strength: +105
+- **[3020204] Sigil 3020204** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Strength: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Strength: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Strength: +105
+- **[3020207] Sigil 3020207** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Strength: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Strength: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Strength: +105
+- **[3020211] Paradox-Calamity Remnant - Continuation Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Intellect: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Intellect: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Intellect: +105
+- **[3020214] Sigil 3020214** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Intellect: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Intellect: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Intellect: +105
+- **[3020217] Sigil 3020217** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Intellect: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Intellect: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Intellect: +105
+- **[3020221] Paradox-Calamity Remnant - Final Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Agility: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Agility: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Agility: +105
+- **[3020224] Sigil 3020224** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Agility: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Agility: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Agility: +105
+- **[3020227] Sigil 3020227** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Agility: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Agility: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Agility: +105
+
+---
+
+## กลุ่มการติดตั้ง [3002]: Season 3 (GS 220+) เฉพาะ **หมวก, เสื้อ, ถุงมือ, รองเท้า (Head/Chest/Gloves/Boots)**
+มีรายการให้เลือกทั้งหมด **37 ชนิด**:
+
+- **[1024401] Cabbage Killer Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +200
+  - **Lv.2 (Refined / 精):** Crit: +250
+  - **Lv.3 (Perfect / 極):** Crit: +300
+- **[1024411] Wasteland Foxen Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +200
+  - **Lv.2 (Refined / 精):** Haste: +250
+  - **Lv.3 (Perfect / 極):** Haste: +300
+- **[1024421] Cabbage Tough Guy Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +200
+  - **Lv.2 (Refined / 精):** Luck: +250
+  - **Lv.3 (Perfect / 極):** Luck: +300
+- **[1024431] Glimmer Caprahorn Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +200
+  - **Lv.2 (Refined / 精):** Mastery: +250
+  - **Lv.3 (Perfect / 極):** Mastery: +300
+- **[1024441] Cabbage Blaster Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Versatility: +200
+  - **Lv.2 (Refined / 精):** Versatility: +250
+  - **Lv.3 (Perfect / 極):** Versatility: +300
+- **[1024701] Goblin Chief Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Crit: +500
+  - **Lv.2 (Refined / 精):** Crit: +560
+  - **Lv.3 (Perfect / 極):** Crit: +600
+- **[1024711] Crimson Foxen Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Haste: +500
+  - **Lv.2 (Refined / 精):** Haste: +560
+  - **Lv.3 (Perfect / 極):** Haste: +600
+- **[1024721] Cabbage Kingpin Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Luck: +500
+  - **Lv.2 (Refined / 精):** Luck: +560
+  - **Lv.3 (Perfect / 極):** Luck: +600
+- **[1024731] Blackstone Captain Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Mastery: +500
+  - **Lv.2 (Refined / 精):** Mastery: +560
+  - **Lv.3 (Perfect / 極):** Mastery: +600
+- **[1024741] Flamehorn Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Versatility: +500
+  - **Lv.2 (Refined / 精):** Versatility: +560
+  - **Lv.3 (Perfect / 極):** Versatility: +600
+- **[3020051] Hunter Mountain Boar Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +620
+  - **Lv.2 (Refined / 精):** Crit: +685
+  - **Lv.3 (Perfect / 極):** Crit: +750
+- **[3020054] T - Hunter Mountain Boar Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +620
+  - **Lv.2 (Refined / 精):** Crit: +685
+  - **Lv.3 (Perfect / 極):** Crit: +750
+- **[3020057] F - Hunter Mountain Boar Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Crit: +620
+  - **Lv.2 (Refined / 精):** Crit: +685
+  - **Lv.3 (Perfect / 極):** Crit: +750
+- **[3020061] Gnashing Furball Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +620
+  - **Lv.2 (Refined / 精):** Haste: +685
+  - **Lv.3 (Perfect / 極):** Haste: +750
+- **[3020064] T - Gnashing Furball Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +620
+  - **Lv.2 (Refined / 精):** Haste: +685
+  - **Lv.3 (Perfect / 極):** Haste: +750
+- **[3020067] F - Gnashing Furball Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Haste: +620
+  - **Lv.2 (Refined / 精):** Haste: +685
+  - **Lv.3 (Perfect / 極):** Haste: +750
+- **[3020071] Spiky Furball Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +620
+  - **Lv.2 (Refined / 精):** Luck: +685
+  - **Lv.3 (Perfect / 極):** Luck: +750
+- **[3020074] T - Spiky Furball Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +620
+  - **Lv.2 (Refined / 精):** Luck: +685
+  - **Lv.3 (Perfect / 極):** Luck: +750
+- **[3020077] F - Spiky Furball Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Luck: +620
+  - **Lv.2 (Refined / 精):** Luck: +685
+  - **Lv.3 (Perfect / 極):** Luck: +750
+- **[3020081] Patrolling Oculoid Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +620
+  - **Lv.2 (Refined / 精):** Mastery: +685
+  - **Lv.3 (Perfect / 極):** Mastery: +750
+- **[3020084] T - Patrolling Oculoid Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +620
+  - **Lv.2 (Refined / 精):** Mastery: +685
+  - **Lv.3 (Perfect / 極):** Mastery: +750
+- **[3020087] F - Patrolling Oculoid Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Mastery: +620
+  - **Lv.2 (Refined / 精):** Mastery: +685
+  - **Lv.3 (Perfect / 極):** Mastery: +750
+- **[3020091] Mechcore Oculoid Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Versatility: +620
+  - **Lv.2 (Refined / 精):** Versatility: +685
+  - **Lv.3 (Perfect / 極):** Versatility: +750
+- **[3020094] T - Mechcore Oculoid Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Versatility: +620
+  - **Lv.2 (Refined / 精):** Versatility: +685
+  - **Lv.3 (Perfect / 極):** Versatility: +750
+- **[3020097] F - Mechcore Oculoid Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Versatility: +620
+  - **Lv.2 (Refined / 精):** Versatility: +685
+  - **Lv.3 (Perfect / 極):** Versatility: +750
+- **[3020161] Rebel King Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Crit: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Crit: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Crit: +1140, Versatility: +1010
+- **[3020164] T - Rebel King Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Crit: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Crit: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Crit: +1140, Versatility: +1010
+- **[3020167] F - Rebel King Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Crit: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Crit: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Crit: +1140, Versatility: +1010
+- **[3020171] Ridge Fang Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Haste: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Haste: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Haste: +1140, Versatility: +1010
+- **[3020174] T - Ridge Fang Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Haste: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Haste: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Haste: +1140, Versatility: +1010
+- **[3020177] F - Ridge Fang Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Haste: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Haste: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Haste: +1140, Versatility: +1010
+- **[3020181] Bloodthirsty Furball Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Luck: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Luck: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Luck: +1140, Versatility: +1010
+- **[3020184] T - Bloodthirsty Furball Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Luck: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Luck: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Luck: +1140, Versatility: +1010
+- **[3020187] F - Bloodthirsty Furball Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Luck: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Luck: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Luck: +1140, Versatility: +1010
+- **[3020191] Void Watcher Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Mastery: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Mastery: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Mastery: +1140, Versatility: +1010
+- **[3020194] T - Void Watcher Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Mastery: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Mastery: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Mastery: +1140, Versatility: +1010
+- **[3020197] F - Void Watcher Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** Mastery: +1010, Versatility: +880
+  - **Lv.2 (Refined / 精):** Mastery: +1075, Versatility: +945
+  - **Lv.3 (Perfect / 極):** Mastery: +1140, Versatility: +1010
+
+---
+
+## กลุ่มการติดตั้ง [3003]: Season 3 (GS 220+) เฉพาะ **ต่างหู, สร้อยคอ, แหวน (Earrings/Necklace/Ring)**
+มีรายการให้เลือกทั้งหมด **27 ชนิด**:
+
+- **[1024451] Nether Caprahorn Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Endurance: +50, Strength: +15
+  - **Lv.2 (Refined / 精):** Endurance: +60, Strength: +20
+  - **Lv.3 (Perfect / 極):** Endurance: +80, Strength: +25
+- **[1024461] Cabbage Hunter Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Endurance: +50, Intellect: +15
+  - **Lv.2 (Refined / 精):** Endurance: +60, Intellect: +20
+  - **Lv.3 (Perfect / 極):** Endurance: +80, Intellect: +25
+- **[1024471] Foxen Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Endurance: +50, Agility: +15
+  - **Lv.2 (Refined / 精):** Endurance: +60, Agility: +20
+  - **Lv.3 (Perfect / 極):** Endurance: +80, Agility: +25
+- **[1024611] Emerald Caprahorn Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Strength: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Strength: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Strength: +35
+- **[1024621] Blackstone Commander Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Intellect: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Intellect: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Intellect: +35
+- **[1024631] Blackfire Foxen Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Endurance: +80, Agility: +25
+  - **Lv.2 (Refined / 精):** Endurance: +90, Agility: +30
+  - **Lv.3 (Perfect / 極):** Endurance: +100, Agility: +35
+- **[1024751] Caprahorn - Bloom & Steel Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Strength: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Strength: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Strength: +70
+- **[1024761] Withered Bloomshard Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Intellect: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Intellect: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Intellect: +70
+- **[1024771] Erosion Bloom Afterimage Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +40, Agility: +50
+  - **Lv.2 (Refined / 精):** All Element Attack: +45, Agility: +60
+  - **Lv.3 (Perfect / 極):** All Element Attack: +50, Agility: +70
+- **[3020001] Infernal Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** ATK: +38
+  - **Lv.2 (Refined / 精):** ATK: +45
+  - **Lv.3 (Perfect / 極):** ATK: +55
+- **[3020004] T - Infernal Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** ATK: +38
+  - **Lv.2 (Refined / 精):** ATK: +45
+  - **Lv.3 (Perfect / 極):** ATK: +55
+- **[3020007] F - Infernal Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** ATK: +38
+  - **Lv.2 (Refined / 精):** ATK: +45
+  - **Lv.3 (Perfect / 極):** ATK: +55
+- **[3020011] Wasteland Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** MATK: +38
+  - **Lv.2 (Refined / 精):** MATK: +45
+  - **Lv.3 (Perfect / 極):** MATK: +55
+- **[3020014] T - Wasteland Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** MATK: +38
+  - **Lv.2 (Refined / 精):** MATK: +45
+  - **Lv.3 (Perfect / 極):** MATK: +55
+- **[3020017] F - Wasteland Arachnocrab Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** MATK: +38
+  - **Lv.2 (Refined / 精):** MATK: +45
+  - **Lv.3 (Perfect / 極):** MATK: +55
+- **[3020151] Predator Arachnocrab Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +66
+  - **Lv.2 (Refined / 精):** All Element Attack: +72
+  - **Lv.3 (Perfect / 極):** All Element Attack: +80
+- **[3020154] T - Predator Arachnocrab Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +66
+  - **Lv.2 (Refined / 精):** All Element Attack: +72
+  - **Lv.3 (Perfect / 極):** All Element Attack: +80
+- **[3020157] F - Predator Arachnocrab Sigil** (Quality: `4`)
+  - **Lv.1 (Base):** All Element Attack: +66
+  - **Lv.2 (Refined / 精):** All Element Attack: +72
+  - **Lv.3 (Perfect / 極):** All Element Attack: +80
+- **[3020201] Paradox-Calamity Remnant - Origin Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Strength: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Strength: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Strength: +105
+- **[3020204] Sigil 3020204** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Strength: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Strength: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Strength: +105
+- **[3020207] Sigil 3020207** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Strength: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Strength: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Strength: +105
+- **[3020211] Paradox-Calamity Remnant - Continuation Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Intellect: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Intellect: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Intellect: +105
+- **[3020214] Sigil 3020214** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Intellect: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Intellect: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Intellect: +105
+- **[3020217] Sigil 3020217** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Intellect: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Intellect: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Intellect: +105
+- **[3020221] Paradox-Calamity Remnant - Final Sigil** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Agility: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Agility: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Agility: +105
+- **[3020224] Sigil 3020224** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Agility: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Agility: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Agility: +105
+- **[3020227] Sigil 3020227** (Quality: `5`)
+  - **Lv.1 (Base):** All Element Attack: +72, Agility: +95
+  - **Lv.2 (Refined / 精):** All Element Attack: +80, Agility: +100
+  - **Lv.3 (Perfect / 極):** All Element Attack: +88, Agility: +105
+
+---
+
+## กลุ่มการติดตั้ง [3004]: Season 3 (GS 220+) เฉพาะ **กำไลซ้าย, กำไลขวา, เครื่องราง (Bracelets/Charm)**
+มีรายการให้เลือกทั้งหมด **38 ชนิด**:
+
+- **[1024481] Frost Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Crit: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Crit: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Crit: +210
+- **[1024491] Magma Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Haste: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Haste: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Haste: +210
+- **[1024501] Gale Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Luck: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Luck: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Luck: +210
+- **[1024511] Lightning Lizard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +12, Mastery: +140
+  - **Lv.2 (Refined / 精):** Strength: +16, Mastery: +175
+  - **Lv.3 (Perfect / 極):** Strength: +20, Mastery: +210
+- **[1024521] Blackstone Marksman Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Crit: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Crit: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Crit: +210
+- **[1024531] Blackstone Guard Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Haste: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Haste: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Haste: +210
+- **[1024541] Blackstone Warrior Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Luck: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Luck: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Luck: +210
+- **[1024551] Blackstone Assaulter Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +12, Mastery: +140
+  - **Lv.2 (Refined / 精):** Intellect: +16, Mastery: +175
+  - **Lv.3 (Perfect / 極):** Intellect: +20, Mastery: +210
+- **[1024561] Goblin Warrior Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Crit: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Crit: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Crit: +210
+- **[1024571] Goblin Axeman Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Haste: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Haste: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Haste: +210
+- **[1024581] Goblin Priest Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Luck: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Luck: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Luck: +210
+- **[1024591] Goblin Sentry Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +12, Mastery: +140
+  - **Lv.2 (Refined / 精):** Agility: +16, Mastery: +175
+  - **Lv.3 (Perfect / 極):** Agility: +20, Mastery: +210
+- **[1024641] Gloomy Cabbage Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +300
+  - **Lv.2 (Refined / 精):** Crit: +360
+  - **Lv.3 (Perfect / 極):** Crit: +420
+- **[1024651] Blackstone Vanguard Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +300
+  - **Lv.2 (Refined / 精):** Haste: +360
+  - **Lv.3 (Perfect / 極):** Haste: +420
+- **[1024661] Ruthless Cabbage Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +300
+  - **Lv.2 (Refined / 精):** Luck: +360
+  - **Lv.3 (Perfect / 極):** Luck: +420
+- **[1024671] Goblin Trickster Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +300
+  - **Lv.2 (Refined / 精):** Mastery: +360
+  - **Lv.3 (Perfect / 極):** Mastery: +420
+- **[1024681] Goblin Shaman Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Versatility: +300
+  - **Lv.2 (Refined / 精):** Versatility: +360
+  - **Lv.3 (Perfect / 極):** Versatility: +420
+- **[3020021] Sandstone Yeti Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Strength: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Strength: +70, Endurance: +235
+- **[3020024] T - Sandstone Yeti Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Strength: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Strength: +70, Endurance: +235
+- **[3020027] F - Sandstone Yeti Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Strength: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Strength: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Strength: +70, Endurance: +235
+- **[3020031] Ashen Yeti Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Intellect: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Intellect: +70, Endurance: +235
+- **[3020034] T - Ashen Yeti Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Intellect: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Intellect: +70, Endurance: +235
+- **[3020037] F - Ashen Yeti Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Intellect: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Intellect: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Intellect: +70, Endurance: +235
+- **[3020041] Wild Mountain Boar Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Agility: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Agility: +70, Endurance: +235
+- **[3020044] T - Wild Mountain Boar Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Agility: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Agility: +70, Endurance: +235
+- **[3020047] F - Wild Mountain Boar Sigil** (Quality: `2`)
+  - **Lv.1 (Base):** Agility: +60, Endurance: +195
+  - **Lv.2 (Refined / 精):** Agility: +65, Endurance: +215
+  - **Lv.3 (Perfect / 極):** Agility: +70, Endurance: +235
+- **[3020111] Dogorman Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Crit: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Crit: +880, Versatility: +750
+- **[3020114] T - Dogorman Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Crit: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Crit: +880, Versatility: +750
+- **[3020117] F - Dogorman Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Crit: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Crit: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Crit: +880, Versatility: +750
+- **[3020121] Verdant Fang Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Haste: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Haste: +880, Versatility: +750
+- **[3020124] T - Verdant Fang Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Haste: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Haste: +880, Versatility: +750
+- **[3020127] F - Verdant Fang Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Haste: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Haste: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Haste: +880, Versatility: +750
+- **[3020131] Man-Eating Furball Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Luck: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Luck: +880, Versatility: +750
+- **[3020134] T - Man-Eating Furball Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Luck: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Luck: +880, Versatility: +750
+- **[3020137] F - Man-Eating Furball Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Luck: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Luck: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Luck: +880, Versatility: +750
+- **[3020141] Sanctuary Eye Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Mastery: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Mastery: +880, Versatility: +750
+- **[3020144] T - Sanctuary Eye Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Mastery: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Mastery: +880, Versatility: +750
+- **[3020147] F - Sanctuary Eye Sigil** (Quality: `3`)
+  - **Lv.1 (Base):** Mastery: +750, Versatility: +620
+  - **Lv.2 (Refined / 精):** Mastery: +815, Versatility: +685
+  - **Lv.3 (Perfect / 極):** Mastery: +880, Versatility: +750
+
+---

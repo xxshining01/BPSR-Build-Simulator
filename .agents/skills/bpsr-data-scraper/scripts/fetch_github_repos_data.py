@@ -2,15 +2,18 @@
 import subprocess
 from pathlib import Path
 
-EXTERNAL_REPOS_DIR = Path("src/data/_external_repos")
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+EXTERNAL_REPOS_DIR = PROJECT_ROOT / "src" / "data" / "_external_repos"
 EXTERNAL_REPOS_DIR.mkdir(parents=True, exist_ok=True)
 
 REPOS = {
-    # 1. โปรเจกต์คำนวณ 5 โมดูลต้นฉบับ (มี module_types.py, module_parser.py, module_optimizer.py)
+    # 1. โปรเจกต์เว็บจัดบิลด์ BPSR โดยตรง (โครงสร้างบิลด์, อุปกรณ์, อาชีพ, UI และ Assets)
+    "bpsr-build-planner": "https://github.com/alalwww/bpsr-build-planner.git",
+    # 2. โปรเจกต์คำนวณ 5 โมดูลต้นฉบับ
     "StarResonanceAutoMod": "https://github.com/fudiyangjin/StarResonanceAutoMod.git",
-    # 2. เว็บคำนวณโมดูล React ภาษาอังกฤษ (มีตารางค่าสเตตัส Module Lv.1-6 ภาษาอังกฤษ)
+    # 3. เว็บคำนวณโมดูลภาษาอังกฤษ
     "star-resonance-module-optimizer": "https://github.com/asgharkapk/star-resonance-module-optimizer.git",
-    # 3. โปรเจกต์ DPS Meter & Combat Log ภาษาอังกฤษ (มี parser-data เก็บ ID สกิล, บัฟ, อาชีพครบทั้งหมด)
+    # 4. โปรเจกต์ DPS Meter & Data Tables ขนาดใหญ่จากไฟล์เกมจริง
     "resonance-logs-global": "https://github.com/donneeee/resonance-logs-global.git",
 }
 
@@ -21,14 +24,9 @@ def sync_reference_repos():
             print(f"[CLONING] กำลังดึงซอร์สโค้ดและตารางข้อมูลจาก {name} ...")
             subprocess.run(["git", "clone", "--depth", "1", url, str(target_path)], check=True)
         else:
-            print(f"[UPDATING] อัปเดตข้อมูลล่าสุดของ {name} ...")
-            subprocess.run(["git", "-C", str(target_path), "pull"], check=True)
+            print(f"[EXISTS] มีโฟลเดอร์ {name} อยู่แล้ว (ข้ามการ Clone)")
 
-    print("\n✅ ดึงข้อมูลจาก GitHub ทั้ง 3 โปรเจกต์เสร็จสมบูรณ์!")
-    print("ไฟล์ข้อมูลสำคัญที่พร้อมนำไปแปลงเป็น JSON:")
-    print("1. src/data/_external_repos/StarResonanceAutoMod/module_types.py")
-    print("2. src/data/_external_repos/star-resonance-module-optimizer/src/")
-    print("3. src/data/_external_repos/resonance-logs-global/parser-data/")
+    print("\n✅ ซิงค์ข้อมูลจาก GitHub ทั้ง 4 โปรเจกต์เสร็จสมบูรณ์!")
 
 if __name__ == "__main__":
     sync_reference_repos()

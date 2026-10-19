@@ -28,7 +28,6 @@
     "src/**/*.tsx",
     ".agents/tools/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  // ในไฟล์ tsconfig.json แก้บรรทัด exclude เป็น:
+  "exclude": ["node_modules", "src/engine/_reference_logic", "src/data/_external_repos"]
 }
