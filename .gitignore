@@ -1,0 +1,16 @@
+# Node.js dependencies & build
+node_modules/
+.next/
+dist/
+build/
+
+# ข้อมูลดิบที่ดึงมาจากสคริปต์ (ขนาดใหญ่และมี .git ซ้อนอยู่)
+# เมื่อย้ายเครื่อง แค่รัน python fetch_github_repos_data.py ใหม่เพียง 10 วินาทีก็จะได้ครบเหมือนเดิม
+src/data/_external_repos/
+src/data/_raw_dumps/
+
+# Environment & Logs
+.env
+.env.*
+*.log
+.DS_Store

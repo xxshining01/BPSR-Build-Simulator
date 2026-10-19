@@ -1,0 +1,21 @@
+version: "1.0"
+agent:
+  name: "bpsr-architect-agent"
+  default_language: "th"
+  code_language: "typescript"
+  temperature: 0.1 # ใช้ค่าต่ำเพื่อความแม่นยำของสมการคณิตศาสตร์และ JSON Schema
+
+permissions:
+  file_system:
+    read: ["src/**", "docs/**", ".agents/**", "public/assets/**"]
+    write: ["src/**", "docs/**", ".agents/memories.md", "public/assets/**"]
+  shell_execution:
+    allow:
+      - "npx tsx .agents/tools/validate_game_db.ts"
+      - "python .agents/tools/verify_stat_formula.py"
+      - "python .agents/skills/bpsr-data-scraper/scripts/*.py"
+      - "npm run test"
+
+skills_directory: ".agents/skills"
+knowledge_directory: ".agents/knowledge"
+rules_directory: ".agents/rules"

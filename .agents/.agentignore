@@ -1,0 +1,10 @@
+node_modules/
+.next/
+dist/
+build/
+public/assets/**/*.webp
+public/assets/**/*.png
+src/data/_raw_dumps/**
+*.log
+.env*
+src/data/_external_repos/
