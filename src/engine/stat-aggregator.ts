@@ -391,9 +391,17 @@ export function calculateCharacterStats(
 
     // (จ) ระบบตีบวก Refine (0 - 30) จาก refine.json
     if (slotCfg.refineLevel > 0) {
-      const refinePoolId = GameDB.refine?.partRefineIds?.[partId]?.[String(profId)];
-      const refineSteps = GameDB.refine?.refineById?.[String(refinePoolId)] || [];
-      for (const step of refineSteps) {
+      const refinePoolId = GameDB.refine?.partRefineIds?.[partId]?.[String(profId)] ??
+        GameDB.refine?.partRefineIds?.[partId]?.["1"];
+      const rawRefineSteps = GameDB.refine?.refineById?.[String(refinePoolId)];
+
+      const refineStepsList = Array.isArray(rawRefineSteps)
+        ? rawRefineSteps
+        : rawRefineSteps && typeof rawRefineSteps === "object"
+          ? Object.values(rawRefineSteps)
+          : [];
+
+      for (const step of refineStepsList as any[]) {
         if (Number(step.level) <= slotCfg.refineLevel) {
           for (const [attrId, val] of step.effects || []) {
             addZTableAttr(flat, pctBonus, Number(attrId), Number(val));

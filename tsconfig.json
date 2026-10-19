@@ -15,19 +15,30 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    ".agents/tools/**/*.ts"
+    ".agents/tools/**/*.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   // ในไฟล์ tsconfig.json แก้บรรทัด exclude เป็น:
-  "exclude": ["node_modules", "src/engine/_reference_logic", "src/data/_external_repos"]
+  "exclude": [
+    "node_modules",
+    "src/engine/_reference_logic",
+    "src/data/_external_repos"
+  ]
 }

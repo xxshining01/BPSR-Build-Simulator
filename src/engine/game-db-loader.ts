@@ -14,6 +14,7 @@ import phantomFactorsRaw from "../data/game-db/phantom-factors.json";
 import seasonConstantsRaw from "../data/game-db/season-constants.json";
 import localeEnRaw from "../data/locales/en_US/game-data.json";
 import { AttributeKey, ClassId, EquipmentSlot, SpecId } from "../data/schemas";
+import playerLevelsRaw from "../data/game-db/player-levels.json";
 
 export const GameDB = {
   classes: classesRaw as Record<string, any>,
@@ -28,6 +29,7 @@ export const GameDB = {
   modules: modulesRaw as Record<string, any>,
   seasonTalents: seasonTalentsRaw as Record<string, any>,
   phantomFactors: phantomFactorsRaw as Record<string, any>,
+  playerLevels: playerLevelsRaw as Record<string, any>,
   seasonConstants: seasonConstantsRaw as {
     diminishingA: number;
     diminishingVersatility: number;
