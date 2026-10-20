@@ -1,138 +1,115 @@
-# System Design Document (SDD)
-**Project:** Blue Protocol: Star Resonance Build & Combat Simulator
+# Software Design Document (SDD)
+
+**Project:** Blue Protocol: Star Resonance — Character Build & Combat Simulator  
+**Version:** 2.0.0 (Synchronized with Implementation)  
+**Last Updated:** 2026-10-20
 
 ---
 
-## 1. โครงสร้างสเตตัสตัวละครที่ Lv.60 (Character Attributes Specification)
-ระบบต้องจัดการตัวแปรสเตตัสทั้งหมดในรูปแบบ Dictionary Object (`Record<StatKey, number>`) โดยแบ่งการแสดงผลเป็น 2 มุมมอง:
+## 1. การออกแบบระบบฐานข้อมูลและตัวแปลงรหัส (`src/engine/game-db-loader.ts`)
 
-### 1.1 หน้าต่างที่ 1: สรุป (Summary View)
-แสดงค่าหลักที่ผู้เล่นใช้ดูภาพรวมบิลด์:
-* **Core Stats:** `maxHp`, `atk` หรือ `matk` (ตามสายอาชีพ), `strength` / `intellect` / `agility` (ตามสายอาชีพ), `endurance`, `illusionBreakingStrength`
-* **Secondary Combat Ratings (แสดงทั้งแต้มดิบและ % ที่แปลงแล้ว):** `crit`, `haste`, `luck`, `mastery`, `versatility`, `block`
+### 1.1 การจับคู่รหัสสเตตัส (`ZTABLE_ATTR_TO_KEY`)
 
-### 1.2 หน้าต่างที่ 2: ข้อมูลเต็ม (Full Attributes View)
-แจกแจงครบทุกหมวดหมู่ตามลำดับดังนี้:
+ฐานข้อมูลเกม (`src/data/game-db/*.json`) ใช้รหัสตัวเลข `attrId` ตามมาตรฐาน ZTable (เช่น `11012` = Strength, `11112` = Crit, `11722` = Attack SPD %) โมดูล `game-db-loader.ts` ทำหน้าที่แปลงรหัสเหล่านี้ให้เป็น `AttributeKey` ตามที่นิยามไว้ใน `src/data/schemas/common.schema.ts` พร้อมตัวหารสเกล (`scaleDivisor: 100` สำหรับค่าเปอร์เซ็นต์ที่เก็บในรูปหน่วยเต็มร้อย)
 
-| หมวดหมู่ (Category) | รายการสเตตัส (Attribute Keys & Labels) |
-| :--- | :--- |
-| **Offensive Attributes** | `strength` (Strength), `intellect` (Intellect), `agility` (Agility), `atk` (ATK), `matk` (MATK), `refinedAtk` (Refined ATK), `refinedMatk` (Refined MATK), `phyBoostPct` (PHY Boost %), `magBoostPct` (MAG Boost %), `attackSpdPct` (Attack SPD %), `castSpdPct` (Cast Speed %), `critDmgPct` (CritDMG %), `luckyStrikeDmgMultPct` (Lucky Strike DMG Multiplier %) |
-| **Defensive Attributes** | `endurance` (Endurance), `maxHp` (Max HP), `armor` (Armor), `resistance` (Resistance), `refinedArmor` (Refined Armor), `atkReductionPct` (ATK Reduction %), `matkReductionPct` (MATK Reduction %), `blockDmgReductionPct` (Block DMG Reduction %) |
-| **Support Attributes** | `critHealingPct` (Crit Healing %), `luckyStrikeHealingPct` (Lucky Strike Healing %), `healingOutputPct` (Healing Output %), `healingReceivedPct` (Healing Received %), `shieldPct` (Shield %), `shieldReceivePct` (Shield Receive %) |
-| **Elemental Attack** | `allElementAtk` (All Element Attack), `fireAtk` (Fire Attack), `iceAtk` (Ice Attack), `forestAtk` (Forest Attack), `thunderAtk` (Thunder Attack), `windAtk` (Wind Attack), `rockAtk` (Rock Attack), `lightAtk` (Light Attack), `darkAtk` (Dark Attack) |
-| **Elemental Bonus** | `allElement` (All Element), `allElementBonusPct` (All-Element Bonus %), `fire` (Fire), `fireBonusPct` (Fire Bonus %), `ice` (Ice), `iceBonusPct` (Ice Bonus %), `forest` (Forest), `forestBonusPct` (Forest Bonus %), `thunder` (Thunder), `thunderBonusPct` (Thunder Bonus %), `wind` (Wind), `windBonusPct` (Wind Bonus %), `rock` (Rock), `rockBonusPct` (Rock Bonus %), `light` (Light), `lightBonusPct` (Light Bonus %), `dark` (Dark), `darkBonusPct` (Dark Bonus %) |
-| **Element Resistance** | `allElementRes` (All Element Resistance), `allElementResPct` (All Element Resistance %), `fireRes` (Fire Resistance), `fireResPct` (Fire Resistance %), `iceRes` (Ice Resistance), `iceResPct` (Ice Resistance %), `forestRes` (Forest Resistance), `forestResPct` (Forest Resistance %), `thunderRes` (Thunder Resistance), `thunderResPct` (Thunder Resistance %), `windRes` (Wind Resistance), `windResPct` (Wind Resistance %), `rockRes` (Rock Resistance), `rockResPct` (Rock Resistance %), `lightRes` (Light Resistance), `lightResPct` (Light Resistance %), `darkRes` (Dark Resistance), `darkResPct` (Dark Resistance %) |
-| **Other Attributes** | `staminaLimit` (Stamina Limit), `staminaRecovery` (Stamina Recovery) |
+### 1.2 การแก้ไขผังสกิลประจำคลาส 7 ช่อง (`resolveClassSkillConfiguration`)
 
----
+- ทุกอาชีพใน `classes.json` มีสกิลล็อกปุ่มตายตัว 3 ช่อง ได้แก่:
+  - **ช่องที่ 1 (คลิกซ้าย / LMB):** `normalAttackSkill[0]` (Basic Attack)
+  - **ช่องที่ 2 (กดเลข 1):** `specialSkill[0]` (Special Skill)
+  - **ช่องที่ 3 (กดปุ่ม R):** `ultimateSkill[0]` (Ultimate Skill)
+- และมีคลังสกิลเลือกใส่เอง (`normalSkill`) สำหรับใส่ลงใน **ช่องที่ 4, 5, 6, 7 (กดเลข 2, 3, 4, 5)**
+- เมื่อผู้เล่นอัปโหนดในผัง Talent Tree ที่มี Effect ประเภท `Type 6` (`[6, fromSkillId, toSkillId]`) ฟังก์ชัน `resolveClassSkillConfiguration` จะสลับรหัสสกิลในช่องที่ 1, 2 หรือ 3 ให้เป็นสกิลขั้นพัฒนาของสายนั้นโดยอัตโนมัติ (เช่น เปลี่ยน _Storm Arrow_ เป็น _Double Arrow_ เมื่อเปิดสาย _Falconry Spec_)
+- ทั้ง 7 ช่องสกิลอนุญาตให้ผู้เล่นปรับระดับ **Skill Level (1–30)** และ **Skill Tier (0–6)** ได้ทุกช่อง
 
-## 2. โมดูลการตั้งค่าบิลด์ของผู้ใช้ (User Input Modules)
+### 1.3 การถอดรหัส Battle Imagines (`resolveBattleImagineDetails`)
 
-### 2.1 Class, Talents, Skills & Imagines
-* **Class & Specialization:** เลือกอาชีพหลัก และสายแยกย่อย (เช่น Marksman -> Falconry หรือ Wildpack)
-* **Talent Tree:** โครงสร้าง Directed Acyclic Graph (DAG) ตรวจสอบแต้มรวม, เงื่อนไขโหนดก่อนหน้า และระดับเลเวลของโหนด
-* **Skill Loadout:** เลือก Active Skills ลง Slot, กำหนด `Skill Level` และ `Skill Tier` (ซึ่งจะเปลี่ยนตัวคูณดาเมจ/ฮีล หรือลด Cooldown)
-* **Imagines (2 Slots):** เลือก Imagine 2 ตัว พร้อมกำหนดระดับ `Tier (0 - 5)` ดึงค่า Passive Stats เข้าตัวละคร และดึง Active Skill เข้าสู่ระบบ Rotation
+อ่านข้อมูลจาก `battle-imagines.json` ร่วมกับ `locales/en_US/game-data.json` เพื่อส่งออกข้อมูลครบทั้ง 2 ส่วนตามระดับ **Tier 0 ถึง Tier 5** ที่ผู้เล่นเลือก:
 
-### 2.2 Equipment, Refine & Sigils (11 Slots)
-* **Slots ทั้ง 11 ช่อง:** อาวุธ (Weapon), หมวก (Head), ชุด (Chest), ถุงมือ (Gloves), รองเท้า (Boots), ต่างหู (Earrings), สร้อยคอ (Necklace), แหวน (Ring), กำไลซ้าย (Left Bracelet), กำไลขวา (Right Bracelet), เครื่องราง (Charm/Talisman)
-* **Equipment Source & Set Rules:**
-  * รองรับไอเทมฟาร์มแมพ, คราฟท์ร้านเฉพาะ (Set 2 ชิ้น / 4 ชิ้น), คราฟท์ Life Skill, อาวุธ Epic และอาวุธ Far Sea
-  * **Stat Restriction Validator:** บังคับตาราง `SlotStatRestrictionMatrix` แยกตามสาย (`STR` / `INT` / `AGI`) เพื่อกรองว่าอุปกรณ์ชิ้นใด **ไม่สามารถ** สุ่มออกสเตตัสใดได้
-* **Sub-components ต่อ 1 ชิ้น:**
-  * เลือก `Main Stat`, `Sub Stats`, `Extra Stats`, และ `Purple Bonus Stat (โบนัสม่วง)` (ถ้าไอเทมชิ้นนั้นรองรับ)
-  * เลือก **Refine Level (0 - 30):** บวกค่าสเตตัสพื้นฐานและ Refined ATK / MATK / Armor ตามตาราง Refine Curve
-  * เลือก **Sigil (1 ชิ้นต่ออุปกรณ์):** กรองเฉพาะ Sigil ที่ติดตั้งลง Slot นั้นได้ และเลือกระดับ **Emblem Level (Lv.1, Lv.2, Lv.3)**
+1. **Passive Effect (ผลลัพธ์จากการสวมใส่เฉยๆ โดยไม่ต้องกดใช้):**
+   - `passiveStats`: ดึงจากอาร์เรย์ `passiveEffects` (`[attrId, valT0, valT1, valT2, valT3, valT4, valT5]`) แสดงค่าสเตตัสที่ได้ใน Tier ปัจจุบัน พร้อมตารางเทียบค่าตั้งแต่ T0 ถึง T5
+   - `passiveBuffs`: ดึงจากอาร์เรย์ `bufPassiveEffects` แทนค่าพารามิเตอร์ตาม Tier ลงในคำอธิบายบัฟ
+2. **Active Skill (ผลลัพธ์เมื่อกดเรียกใช้งาน):** ดึงชื่อและคำอธิบายสกิลจากการเชื่อมโยง `skillId`
 
-### 2.3 Module System (5 Slots)
-* มี 5 ช่องติดตั้ง (Slot 1 - 5)
-* แต่ละช่องสามารถเลือก **Link Effects ได้ 3 อย่าง** โดยแต่ละอย่างกำหนดแต้มระดับได้ตั้งแต่ **1 ถึง 10**
-* **การคำนวณของระบบ:**
-  1. รวมค่า Status พื้นฐานจากโมดูลทั้ง 5 ชิ้นเข้าสู่ตัวละคร
-  2. รวมแต้มของแต่ละชื่อ Link จากทั้ง 5 ชิ้นเข้าด้วยกัน แล้วเทียบตาราง Threshold เพื่อปลดล็อกระดับ **Link Level (Lv.1 - Lv.6)** ของแต่ละประเภท Link
+### 1.4 การสร้างข้อมูลแผนภาพ Talent Tree Map (`buildClassTalentTreeDiagram`)
 
-### 2.4 Deep Slumber Psychoscope & G10 Factors
-* เลือก **Psychoscope 1 จาก 8 สาย** และกำหนดเลเวลของ Psychoscope
-* เลือกเส้นทางอัปเกรดโหนดตามลำดับสายและทางแยก (Branching Paths)
-* ในโหนดที่เป็นช่องใส่ Factor: ให้เลือกติดตั้ง **Factor ระดับ G10** โดยระบบจะกรองตามประเภทช่อง (`Polarity`, `Stasis`, `Inspiration`, `Reality`, และ `Class Stasis` ที่ตรงกับอาชีพ)
-* กำหนดค่า **Bond Points (ตั้งแต่ 3 ถึง 55)** เพื่อเปิดใช้งานเอฟเฟกต์บัฟสะสมตามขั้นของสายที่เลือก
+แบ่งผังโหนด Talent ของแต่ละอาชีพออกเป็น 2 แท็บตามกติกาจริงของเกม:
+
+- **Tab 1 (`basicTreeNodes`):** โหนดพื้นฐาน 30 โหนด (ใช้แต้มอัปโหนดละ 1 แต้ม รวม 30 แต้ม) จัดเรียงเป็นลำดับขั้น (Row 0 ถึง Row 5 แถวละ 5 โหนด) พร้อมรายการโหนดก่อนหน้า (`prerequisiteNodeIds`) เพื่อบังคับให้อัปเรียงจากต้นสายไปปลายสาย
+- **Tab 2 (`specChoices`):** เมื่ออัป Basic ครบ 30/30 แต้ม แต้มที่ 31 จะใช้เลือกโหนดเปิดสายการเล่นหลัก (`isKeystoneSpec: true` จาก `CLASS_SPEC_KEYSTONE_NODES`) ระหว่าง 2 สายของอาชีพ เมื่อเลือกแล้วจะปลดล็อกโหนดในสายนั้นให้อัปต่อได้อีก 69 แต้ม (รวมใช้แต้มใน Tab 2 ได้สูงสุด 70 แต้ม และรวมทั้ง 2 แท็บเป็น 30 + 70 = 100 แต้ม)
 
 ---
 
-## 3. ไปป์ไลน์สมการคำนวณ (Mathematical Calculation Pipeline)
+## 2. การออกแบบระบบคำนวณสเตตัสตัวละครที่ Lv.60 (`src/engine/stat-aggregator.ts`)
 
-การคำนวณแบ่งเป็น 2 สถานะหลัก คือ **Idle State (นอกการต่อสู้)** และ **Combat State (เริ่มการต่อสู้ + บัฟ)**
+ฟังก์ชันหลัก `calculateCharacterStats(build, stateMode)` คำนวณค่าสถานะที่ **Character Level 60** ตามลำดับขั้นในเอกสาร `STATUS_CALCULATION.md`:
 
-### 3.1 การรวมค่าสเตตัส (Stat Aggregation Order)
-สำหรับสเตตัสแต่ละตัว ($S$):
-$$S_{total} = \left( S_{base\_lv60} + \sum S_{flat\_gear} + \sum S_{refine} + \sum S_{sigil} + \sum S_{imagine} + \sum S_{module} + \sum S_{psychoscope} + \sum S_{factor} \right) \times \left( 1 + \sum S_{pct\_passive} \right) + \sum S_{flat\_final}$$
+### 2.1 ลำดับการรวบรวมแต้มดิบ (Raw Stat Aggregation)
 
-### 3.2 การแปลงค่า Rating เป็น Percentage (Rating Conversion Curve)
-สำหรับค่า `Crit`, `Haste`, `Luck`, `Mastery`, `Versatility`, `Block` ที่ Lv.60 ใช้สมการ Diminishing Returns มาตรฐานของเกม:
-$$\text{Stat \%} = \text{Base \%} + \frac{\text{Rating}}{\text{Rating} + K_{lv60}} \times C_{max}$$
-*(หมายเหตุ: ค่าคงที่ $K_{lv60}$ และ $C_{max}$ ของแต่ละสเตตัสให้ดึงจากไฟล์ `formulas.config.ts` เพื่อให้ปรับจูนตามแพตช์ได้ง่าย)*
+1. **สเตตัสตามเลเวลตัวละคร (Lv.1–60):** รวมค่า `levelUpAttr` จาก `player-levels.json`
+2. **อุปกรณ์ทั้ง 11 ชิ้น (`equipments`):**
+   - ดึง `baseStats` ของอุปกรณ์แต่ละชิ้นจาก `equipment.json`
+   - **กรณีอุปกรณ์เซ็ต (Raid Suit GS 270) หรืออาวุธ Far Sea (GS 280):** ดึงค่าสเตตัสทะลุหลอดที่ล็อกตามสายอาชีพ (`fixedEvolutionStats[stageId]`)
+   - **กรณีอุปกรณ์ฟาร์มมาตรฐาน:** คำนวณสเตตัสรองจากค่า Perfection (0–100%) ด้วยสมการ:
+     $$\text{SubStatValue} = \text{reforgeEvoMin} + (\text{reforgeEvoMax} - \text{reforgeEvoMin}) \times \frac{\text{Perfection}}{100}$$
+   - **ออปชันม่วง (`selectedPurpleStat`):** ดึงค่าจาก `legendaryAffix` ของอุปกรณ์ชิ้นนั้น
+   - **ระบบตีบวก (`refineLevel` 0–30):** รวมโบนัสสะสมจาก `refine.json` ตามช่องสวมใส่และอาชีพ
+   - **ระบบฝัง Sigil (`sigilId` & `sigilEmblemLevel` 1–3):** ดึงค่าสเตตัสจาก `enchants.json` ตามระดับ Lv.1 (Base), Lv.2 (`refined` / 精), หรือ Lv.3 (`perfect` / 極)
+   - **โบนัสสวมใส่ครบ 6 ชิ้น:** บวก `Max HP +2` ตามกฎเกมจริง
+3. **Battle Imagines (2 ช่อง):** นำค่า `passiveEffects` ตามระดับ Tier (0–5) ของ Imagine ทั้ง 2 ช่องมาบวกเข้าสเตตัสตัวละครทันที
+4. **โหนด Talent Tree (`allocatedTalents`):** รวมโบนัสสเตตัสจากทุกโหนดที่ผู้เล่นอัปไว้
+5. **ระบบ Modules (5 ช่อง & Link Lv.1–6):** รวมแต้มของแต่ละ `effectId` จากโมดูลทั้ง 5 ชิ้น แล้วเทียบกับเกณฑ์ `[1, 4, 8, 12, 16, 20]` เพื่อปลดล็อกโบนัสสเตตัสและบัฟระดับ Link Lv.1 ถึง Lv.6
+6. **Deep Slumber Psychoscope & Factor G10:** รวมโบนัสจากโหนดบัฟ (`ordinaryEffects`), Factor G10 ที่ติดตั้งในช่อง Socket (`phantom-factors.json`), และโบนัสตามระดับแต้ม Bond Points (3–55)
 
-### 3.3 สมการดาเมจ (Damage Formula)
-สำหรับแต่ละฮิตของสกิล ($i$):
-$$\text{Raw DMG}_i = \left( \text{ATK or MATK} \times \text{SkillMultiplier}_i + \text{FlatSkillDMG}_i + \text{RefinedATK/MATK} \right)$$
+### 2.2 การแปลงค่า Primary Stats และสมการ Diminishing Returns (Season 3 Constants)
 
-$$\text{Mitigated DMG}_i = \text{Raw DMG}_i \times \left( 1 - \text{TargetDefMitigation} \right) + \text{ElementalAttack} \times \text{ElemScaling}_i$$
+- **การปัดเศษแยกส่วน (`convertBySeparatelyTruncatedRates`):**
+  $$\text{ConvertedATK} = \lfloor \text{MainStat} \times \text{BaseRate} \rfloor + \lfloor \text{MainStat} \times \text{R1BonusRate} \rfloor$$
+- **การแปลงสเตตัสพื้นฐานประจำคลาส:**
+  - $\text{Max HP} = \text{round}(\text{BaseHP} + \text{Endurance} \times \text{hpPerEndurance})$
+  - $\text{Armor} = \lfloor \text{BaseArmor} + \text{Strength} \times 0.2 \rfloor$
+  - $\text{Resistance} = \lfloor \text{BaseResistance} + \text{Intellect} \times 0.5 \rfloor$
+  - $\text{Haste Rating} = \lfloor \text{BaseHaste} + \lfloor \text{Agility} \times 0.8 \rfloor \rfloor$
+- **สมการ Diminishing Returns (Season 3):**
+  $$\text{Stat\%} = \text{Base\%} + \frac{100 \times \text{Rating}}{\text{Rating} + K}$$
+  - **Series A ($K_A = 50,000$):** Crit ($\text{Base } 5\%$), Luck ($\text{Base } 5\%$), Mastery ($\text{Base } 6\%$), Haste ($\text{Base } 0\%$), Block ($\text{Base } 0\%$)
+  - **Series B ($K_B = 28,000$):** Versatility ($\text{Base } 0\%$) $\rightarrow$ เพิ่มดาเมจ/ฮีล/เกราะ $\text{Versatility\%} \times 0.35$ และลดดาเมจที่ได้รับ $\text{Versatility\%} \times 0.15$
+  - **Series C ($K_C = 11,000$):** Physical/Magical Boost และ Elemental Bonus / Elemental Resistance
+  - **Series D ($K_D = 22,000$):** Armor Mitigation % และ Magical Resistance Mitigation %
 
-$$\text{Boosted DMG}_i = \text{Mitigated DMG}_i \times \left( 1 + \text{PHY/MAG Boost \%} + \text{DmgBonus \%} \right) \times \left( 1 + \text{ElementalBonus \%} \right) \times \left( 1 + \text{VersatilityDMG \%} \right) \times \left( 1 + \text{MasteryScaling \%} \right)$$
+### 2.3 โครงสร้างข้อมูลขาออก 2 หน้าต่าง (`SummaryWindowStats` & `FullAttributesWindowStats`)
 
-**การคิด Crit และ Lucky Strike (Expected Value ต่อฮิต):**
-* ให้ $P_{crit} = \min(1, \text{CritRate})$, $M_{crit} = \text{CritDMG \%}$
-* ให้ $P_{luck} = \min(1, \text{LuckRate})$, $M_{luck} = \text{LuckyStrikeDMGMult \%}$
-$$\text{Expected DMG}_i = \text{Boosted DMG}_i \times \left( 1 + P_{crit} \times (M_{crit} - 1) \right) \times \left( 1 + P_{luck} \times (M_{luck} - 1) \right)$$
-
-### 3.4 สมการการฮีล (Healing Formula)
-$$\text{Base Heal}_i = \left( \text{MATK or Stat} \times \text{HealMultiplier}_i + \text{FlatHeal}_i \right) \times \left( 1 + \text{HealingOutput \%} \right) \times \left( 1 + \text{VersatilityHeal \%} \right)$$
-$$\text{Expected Heal}_i = \text{Base Heal}_i \times \left( 1 + P_{crit} \times (\text{CritHealing \%} - 1) \right) \times \left( 1 + P_{luck} \times (\text{LuckyStrikeHealing \%} - 1) \right)$$
-
----
-
-## 4. ระบบจำลองการต่อสู้อัตโนมัติ 5 นาที (5-Minute Auto-Rotation Simulator)
-
-### 4.1 การตั้งค่าก่อนรัน (Simulation Toggles & Context)
-* **Duration:** 300 วินาที (300,000 ms), ความละเอียด Tick = `50ms` (รวม 6,000 Ticks)
-* **User Toggles (เปิด/ปิด):**
-  * `[x] Use Ultimate Skill`
-  * `[x] Use Imagine Slot 1 Active`
-  * `[x] Use Imagine Slot 2 Active`
-* **External Buffs Context:** เลือกบัฟปาร์ตี้จากอาชีพอื่น, อาหาร (Food), และบัฟอีเว้นท์ (Event)
-
-### 4.2 กลไก State Machine ของ Auto-Rotation
-ในแต่ละ Tick ($t$):
-1. **Update Timers:** ลด Cooldown ของสกิลทั้งหมด, ลดระยะเวลา Buff/Debuff ที่ทำงานอยู่, ฟื้นฟู Stamina/Class Resource
-2. **Process DOTs / HOTs:** หากมีสถานะพิษ/เผาไหม้/ฮีลต่อเนื่องที่ถึงรอบทำงาน ให้คำนวณดาเมจ/ฮีลและบันทึก Log
-3. **Check Animation Lock:** หากตัวละครยังอยู่ในช่วง `Cast Time` หรือ `Animation Lock` ของท่าก่อนหน้า ให้ข้ามไป Tick ถัดไป (โดยเวลาร่ายและ Animation จะถูกย่อลงตามค่า `Cast Speed %` และ `Attack SPD %` / `Haste`)
-4. **Priority Queue Decision (เมื่อตัวละครว่าง):**
-   ตรวจสอบเงื่อนไขและกดสกิลตามลำดับความสำคัญของสายอาชีพนั้นๆ:
-   * *ลำดับที่ 1:* Imagine Active 1 / 2 (หากติ๊กเปิดใช้งาน และไม่อยู่ใน Cooldown)
-   * *ลำดับที่ 2:* Ultimate Skill (หากติ๊กเปิดใช้งาน และเกจเต็ม/ไม่อยู่ใน Cooldown)
-   * *ลำดับที่ 3:* Proc Skills / Empowered Skills ที่เด้งขึ้นมาจาก Talent
-   * *ลำดับที่ 4:* Core Active Skills เรียงตาม Priority Weight ของสายอาชีพ
-   * *ลำดับที่ 5:* Basic Attack (การโจมตีปกติ เมื่อสกิลอื่นติด Cooldown ทั้งหมด)
-5. **Execute & Record:** คำนวณ DMG, Heal, Buff Uptime, และการติด Passive Proc จากสกิลนั้น แล้วบันทึกเข้าตารางสถิติ
-
-### 4.3 ตารางผลลัพธ์การจำลอง (Simulation Output Analytics)
-* **Summary Cards:**
-  * `Total DMG` และ `DPS` (Total DMG / 300)
-  * `Total Heal` และ `HPS` (Total Heal / 300)
-  * `Average Buff %` (ค่าเฉลี่ยถ่วงน้ำหนักเวลา Uptime ของบัฟเพิ่มพลังโจมตี/สเตตัสตลอด 300 วินาที)
-* **Action Breakdown Table (แจกแจงทุกแอคชั่น):**
-  แสดงแยกตามที่มา: *Basic Attack, Active Skills, Passive Skills, Talent Sub-skills, Imagine Skills*
-  * `Action Name & Source` (ชื่อท่าและที่มา)
-  * `Cast / Trigger Count` (จำนวนครั้งที่ใช้งานหรือทำงาน)
-  * `Total DMG` | `Skill DPS` | `DMG Contribution %` ($\frac{\text{Skill DMG}}{\text{Total DMG}} \times 100$)
-  * `Total Heal` | `Skill HPS` | `Heal Contribution %` ($\frac{\text{Skill Heal}}{\text{Total Heal}} \times 100$)
-  * `Buff/Debuff Uptime %` | `Buff Contribution %` (สัดส่วนการมีส่วนร่วมของบัฟเทียบกับบัฟทั้งหมด)
+- **หน้าต่างที่ 1 (`summaryWindow`):** `maxHp`, `atk`, `matk`, `primaryStatKey`, `primaryStatValue`, `strength`, `intellect`, `agility`, `endurance`, `illusionBreakingStrength`, และอ็อบเจกต์ `{ rating, percent }` ของ `crit`, `haste`, `luck`, `mastery`, `versatility`, `block`
+- **หน้าต่างที่ 2 (`fullAttributesWindow`):** แบ่งเป็น 6 หมวดหมู่ย่อยครบตามหน้าจอเกมจริง ได้แก่ `offensive`, `defensive`, `support`, `elementalAttack`, `elementalBonus`, `elementResistance`, และ `other` (`staminaLimit`, `staminaRecovery`)
 
 ---
 
-## 5. ระบบบันทึกและเปรียบเทียบบิลด์ (Build Storage & Comparison Engine)
-* **Rule Enforcement:** เปรียบเทียบได้เฉพาะ `Build A.specId === Build B.specId` (เช่น *Falconry vs Falconry* เท่านั้น ห้าม *Falconry vs Wildpack*)
-* **Comparison Diff View:**
-  1. **Stat Diff:** แสดงตารางเปรียบเทียบสเตตัสทั้งหน้า Summary และ Full Attributes พร้อมตัวเลขผลต่าง (`+` สีเขียว / `-` สีแดง)
-  2. **Simulation Diff:** เทียบ `DPS Diff (% และตัวเลข)`, `HPS Diff`, `Avg Buff % Diff`
-  3. **Skill Contribution Diff:** เทียบตารางสกิลแบบบรรทัดต่อบรรทัดว่าบิลด์ไหนรีดดาเมจจากสกิลใดได้มากกว่ากันเพราะอะไร (เช่น เพราะเปลี่ยน Sigil หรือเปลี่ยนโหนด Psychoscope)
+## 3. การออกแบบระบบคำนวณดาเมจและจำลองการต่อสู้ 5 นาที (`damage-calculator.ts` & `combat-simulator.ts`)
+
+### 3.1 สมการคำนวณดาเมจและฮีลต่อฮิต (`calculateSkillHitExpectedValue`)
+
+- **สมการดาเมจหลัก:**
+  $$\text{MitigatedATKPool} = \text{ATK} \times (1 - \text{EnemyDefMitigation}) + \text{RefinedATK} + \text{ElementalATK}$$
+  $$\text{ExpectedDirectDMG} = (\text{MitigatedATKPool} \times \text{SkillMult\%}) \times \text{AdditiveBonusMult} \times \text{ElemBonusMult} \times \text{VersatilityMult} \times \text{CritExpectedMult}$$
+- **สมการดาเมจ Lucky Strike (ทะลุเกราะป้องกัน 100%):**
+  $$\text{ExpectedLuckyDMG} = \text{LuckProb} \times (\text{ATK} + \text{RefinedATK}) \times \text{LuckyStrikeMult\%} \times \text{CritExpectedMult} \times \text{AdditiveBonusMult} \times \text{ElemBonusMult} \times \text{VersatilityMult}$$
+
+### 3.2 ลูปจำลองการหมุนสกิล 5 นาที (`runFiveMinuteCombatSimulation`)
+
+- จำลองเวลา `300,000 ms` (300 วินาที) โดยเดินเวลาทีละ `50 ms` (6,000 Ticks)
+- ดึงตัวคูณของสกิลทั้ง 7 ช่องตามระดับ **Skill Level (1–30)** และ **Tier (0–6)** ที่ผู้เล่นตั้งไว้:
+  - ช่องที่ 1 (`[LMB]` Basic Attack), ช่องที่ 2 (`[Key 1]` Special Skill), ช่องที่ 3 (`[Key R - Ultimate]` Ultimate Skill — เปิด/ปิดได้ด้วย `useUltimate`)
+  - ช่องที่ 4–7 (`[Key 2]` ถึง `[Key 5]` Expertise Skills)
+- ดึงสกิลกดใช้ของ Battle Imagine ช่องที่ 1 และ 2 (เปิด/ปิดได้ด้วย `useImagine1`, `useImagine2`) และดึงสกิลเสริมที่เกิดจากโหนด Talent (`talent_proc`)
+- บันทึกสถิติของทุกแอคชั่นลงใน `actionsBreakdown` เพื่อคำนวณ `triggerOrCastCount`, `totalDamage`, `dps`, `damageSharePct`, `totalHeal`, `hps`, `healSharePct`, `avgBuffPct`, และ `buffContributionPct`
+
+---
+
+## 4. การออกแบบ UI คอมโพเนนต์ (`src/app/page.tsx` & `src/components/TalentTreeDiagram.tsx`)
+
+1. **`src/components/TalentTreeDiagram.tsx`:**
+   - วาดแผนผัง SVG ของโหนด Talent แยกเป็น **Tab 1: Basic Talents (30 โหนด)** และ **Tab 2: สายการเล่นเฉพาะตัว (70 แต้ม)**
+   - ตรวจสอบเงื่อนไขโหนดก่อนหน้า (`canAllocateNode`) บังคับให้อัป Basic ครบ 30 แต้มก่อนจึงจะกดเลือกโหนดเปิดสาย (แต้มที่ 31) ใน Tab 2 ได้
+   - แสดงกล่องคำอธิบายโหนดและโบนัสสเตตัสแบบ Real-time เมื่อนำเมาส์ไปชี้ (`onMouseEnter`)
+2. **`src/app/page.tsx`:**
+   - แบ่งพื้นที่ทำงานเป็นฝั่งซ้าย 8 คอลัมน์ (6 แท็บหลัก: อาชีพ/Talents/Skills/Imagines, อุปกรณ์ 11 ชิ้น, โมดูล 5 ช่อง, Deep Slumber Psychoscope, 5-Min Simulator, และ Spec-Locked Compare) และฝั่งขวาแบบ Sticky 4 คอลัมน์ (สลับดูสเตตัสหน้าต่างที่ 1: สรุป และหน้าต่างที่ 2: Attributes)
