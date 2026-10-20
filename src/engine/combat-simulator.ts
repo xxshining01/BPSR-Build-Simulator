@@ -34,85 +34,102 @@ export function runFiveMinuteCombatSimulation(
   const profId = CLASS_ID_TO_PROFESSION_ID[build.classId];
   const classEntry = GameDB.classes[String(profId)];
   const isMagicClass = ["spellcaster", "verdant_oracle", "beat_performer"].includes(build.classId);
-  const dmgType = isMagicClass ? "magical" : "physical";
+  const dmgType: "physical" | "magical" = isMagicClass ? "magical" : "physical";
 
   const actors: SimActionActor[] = [];
 
-  // 1. ดึง Basic Attack & Special Attack ประจำคลาส
-  const basicSkillId = classEntry?.normalAttackSkill?.[0] || 1701;
+  // ดึงตัวคูณตาม Skill Level (1-30) และ Tier (0-6) ของสกิลทั้ง 7 ช่อง
+  const getSlotScale = (slotIndex: number): number => {
+    const found = build.equippedSkills?.find((s) => s.slotIndex === slotIndex);
+    const lv = found?.skillLevel ?? 30;
+    const tier = found?.skillTier ?? 6;
+    return 1 + (lv - 1) * 0.045 + tier * 0.08;
+  };
+
+  // 1. ช่องที่ 1 (คลิกซ้าย): Basic Attack
+  const basicSlot = build.equippedSkills?.find((s) => s.slotIndex === 1);
+  const basicSkillId = basicSlot?.skillId || classEntry?.normalAttackSkill?.[0] || 1701;
   actors.push({
     actionId: String(basicSkillId),
-    actionName: getEnglishText("skills", basicSkillId).name,
+    actionName: `[LMB] ${getEnglishText("skills", basicSkillId).name}`,
     sourceCategory: "basic",
     damageType: dmgType,
     baseCooldownMs: 0,
     castAndAnimMs: 650,
-    damageMultiplierPct: 145,
+    damageMultiplierPct: Math.round(95 * getSlotScale(1)),
     healMultiplierPct: 0,
     buffValuePct: 0,
     buffDurationMs: 0,
     priority: 10,
   });
 
-  const specialSkillId = classEntry?.specialSkill?.[0];
+  // 2. ช่องที่ 2 (กดเลข 1): Special Skill
+  const specialSlot = build.equippedSkills?.find((s) => s.slotIndex === 2);
+  const specialSkillId = specialSlot?.skillId || classEntry?.specialSkill?.[0];
   if (specialSkillId) {
     actors.push({
       actionId: String(specialSkillId),
-      actionName: getEnglishText("skills", specialSkillId).name,
+      actionName: `[Key 1] ${getEnglishText("skills", specialSkillId).name}`,
       sourceCategory: "class_special",
       damageType: dmgType,
       baseCooldownMs: 4500,
       castAndAnimMs: 900,
-      damageMultiplierPct: 380,
-      healMultiplierPct: build.classId === "verdant_oracle" ? 220 : 0,
+      damageMultiplierPct: Math.round(210 * getSlotScale(2)),
+      healMultiplierPct:
+        build.classId === "verdant_oracle" ? Math.round(140 * getSlotScale(2)) : 0,
       buffValuePct: 5,
       buffDurationMs: 6000,
       priority: 75,
     });
   }
 
-  // 2. ดึง Active Skills ที่ผู้เล่นเลือกใส่ใน Slot (พร้อมคำนวณตัวคูณตาม Skill Level & Tier)
-  for (const eqSkill of build.equippedSkills || []) {
+  // 3. ช่องที่ 4, 5, 6, 7 (กดเลข 2, 3, 4, 5): สกิลเลือกใส่ 4 ช่อง
+  for (const eqSkill of (build.equippedSkills || []).filter((s) => s.slotIndex >= 4)) {
+    if (!eqSkill.skillId) continue;
     const sInfo = getEnglishText("skills", eqSkill.skillId);
-    const lvScale = 1 + (eqSkill.skillLevel - 1) * 0.045 + eqSkill.skillTier * 0.08;
+    const lvScale = getSlotScale(eqSkill.slotIndex);
     const isHealerSkill =
       build.classId === "verdant_oracle" ||
       (build.classId === "beat_performer" && sInfo.description.toLowerCase().includes("heal"));
 
     actors.push({
       actionId: String(eqSkill.skillId),
-      actionName: sInfo.name,
+      actionName: `[Key ${eqSkill.slotIndex - 2}] ${sInfo.name}`,
       sourceCategory: "active",
       damageType: isHealerSkill ? "heal" : dmgType,
       baseCooldownMs: 12000,
       castAndAnimMs: 850,
-      damageMultiplierPct: isHealerSkill ? 0 : Math.round(420 * lvScale),
-      healMultiplierPct: isHealerSkill ? Math.round(360 * lvScale) : 0,
+      damageMultiplierPct: isHealerSkill ? 0 : Math.round(240 * lvScale),
+      healMultiplierPct: isHealerSkill ? Math.round(200 * lvScale) : 0,
       buffValuePct: sInfo.description.toLowerCase().includes("increase") ? 10 : 0,
       buffDurationMs: 10000,
       priority: 80,
     });
   }
 
-  // 3. ตรวจสอบ Toggle: Ultimate Skill
-  if (build.simulationToggles.useUltimate && classEntry?.ultimateSkill?.[0]) {
-    const ultId = classEntry.ultimateSkill[0];
+  // 4. ช่องที่ 3 (กดปุ่ม R): Ultimate Skill
+  const ultSlot = build.equippedSkills?.find((s) => s.slotIndex === 3);
+  const ultId = ultSlot?.skillId || classEntry?.ultimateSkill?.[0];
+  if (build.simulationToggles.useUltimate && ultId) {
     actors.push({
       actionId: String(ultId),
-      actionName: `[Ultimate] ${getEnglishText("skills", ultId).name}`,
+      actionName: `[Key R - Ultimate] ${getEnglishText("skills", ultId).name}`,
       sourceCategory: "ultimate",
       damageType: dmgType,
       baseCooldownMs: 45000,
       castAndAnimMs: 1600,
-      damageMultiplierPct: 1150,
-      healMultiplierPct: build.classId === "verdant_oracle" || build.classId === "beat_performer" ? 650 : 0,
+      damageMultiplierPct: Math.round(620 * getSlotScale(3)),
+      healMultiplierPct:
+        build.classId === "verdant_oracle" || build.classId === "beat_performer"
+          ? Math.round(350 * getSlotScale(3))
+          : 0,
       buffValuePct: 20,
       buffDurationMs: 12000,
       priority: 95,
     });
   }
 
-  // 4. ตรวจสอบ Toggle: Imagine 1 & Imagine 2
+  // 5. ตรวจสอบ Toggle: Imagine 1 & Imagine 2
   const imagineToggles = [
     build.simulationToggles.useImagine1,
     build.simulationToggles.useImagine2,
@@ -136,10 +153,11 @@ export function runFiveMinuteCombatSimulation(
     });
   });
 
-  // 5. ดึงสกิลเสริมที่ทำงานจากโหนด Talents (Talent Procs)
+  // 6. ดึงสกิลเสริมที่ทำงานจากโหนด Talents (Talent Procs)
   for (const [nodeId, rank] of Object.entries(build.allocatedTalents || {})) {
     if (rank <= 0) continue;
-    const tText = getEnglishText("talents", nodeId);
+    const lookupId = nodeId.includes("_stat_") ? nodeId.split("_stat_")[1] : nodeId;
+    const tText = getEnglishText("talents", lookupId);
     if (
       tText.description.toLowerCase().includes("trigger") ||
       tText.description.toLowerCase().includes("summon") ||
@@ -151,7 +169,7 @@ export function runFiveMinuteCombatSimulation(
         sourceCategory: "talent_proc",
         damageType: dmgType,
         baseCooldownMs: 3500,
-        castAndAnimMs: 0, // Instant Proc ไม่กินเวลาออกท่า
+        castAndAnimMs: 0,
         damageMultiplierPct: 195 * rank,
         healMultiplierPct: 0,
         buffValuePct: 4,
@@ -161,10 +179,8 @@ export function runFiveMinuteCombatSimulation(
     }
   }
 
-  // เรียงลำดับตาม Priority จากสูงไปต่ำ
   actors.sort((a, b) => b.priority - a.priority);
 
-  // สถานะการจำลองตลอด 300,000 ms
   const cooldowns: Record<string, number> = {};
   const activeBuffExpires: Record<string, { valuePct: number; expiresAtMs: number }> = {};
   const statsLog: Record<
@@ -194,9 +210,7 @@ export function runFiveMinuteCombatSimulation(
   const spdMultiplier = 1 + combatStatus.rawMap.attackSpdPct / 100;
   const hasteCdDivisor = 1 + combatStatus.rawMap.hastePct / 100;
 
-  // ลูปจำลองการต่อสู้ 6,000 Ticks (300 วินาที)
   for (let nowMs = 0; nowMs < DURATION_MS; nowMs += TICK_MS) {
-    // คำนวณบัฟที่กำลังแสดงผลอยู่ใน Tick นี้
     let currentTickBuffPct = 0;
     for (const [aid, bState] of Object.entries(activeBuffExpires)) {
       if (bState.expiresAtMs > nowMs) {
@@ -206,7 +220,6 @@ export function runFiveMinuteCombatSimulation(
       }
     }
 
-    // 1. สั่งทำงาน Instant Talent Procs ที่ถึงเวลา Cooldown
     for (const act of actors) {
       if (act.castAndAnimMs === 0 && cooldowns[act.actionId] <= nowMs) {
         const hitRes = calculateSkillHitExpectedValue(
@@ -236,7 +249,6 @@ export function runFiveMinuteCombatSimulation(
       }
     }
 
-    // 2. หากตัวละครว่างจากการออกท่า ให้เลือกสกิลตามลำดับ Priority
     if (nowMs >= animationLockUntilMs) {
       const chosen = actors.find((a) => a.castAndAnimMs > 0 && cooldowns[a.actionId] <= nowMs);
       if (chosen) {
@@ -282,7 +294,6 @@ export function runFiveMinuteCombatSimulation(
     }
   }
 
-  // สรุปผลรวมและคำนวณ % Contribution ของแต่ละสกิล
   let grandTotalDamage = 0;
   let grandTotalHeal = 0;
 
