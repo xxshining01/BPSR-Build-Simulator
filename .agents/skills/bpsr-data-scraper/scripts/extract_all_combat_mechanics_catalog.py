@@ -36,17 +36,16 @@ def format_effect_params(params_list) -> list[str]:
         label = clean_html(row[0])
         val_part = row[1]
         if isinstance(val_part, list):
-            # กรณีเป็นโครงสร้าง [{"r": [...]}, " ATK +", {"l": [...]}] หรือ ["1000%", ..., "1750%"]
             has_dict = any(isinstance(x, dict) for x in val_part)
             if has_dict:
                 pieces = []
                 for elem in val_part:
                     if isinstance(elem, dict):
-                        if "r" in elem and isinstance(elem["r"], list):
-                            r_vals = elem["r"]
+                        if "r" in elem and isinstance(elem["r"], list) and len(elem["r"]) > 0:
+                            r_vals = [clean_html(v) for v in elem["r"]]
                             pieces.append(f"[Tier G0→G6: {r_vals[0]} .. {r_vals[-1]} ({', '.join(r_vals)})]")
-                        elif "l" in elem and isinstance(elem["l"], list):
-                            l_vals = elem["l"]
+                        elif "l" in elem and isinstance(elem["l"], list) and len(elem["l"]) > 0:
+                            l_vals = [clean_html(v) for v in elem["l"]]
                             pieces.append(f"[Lv1→Lv30: {l_vals[0]} .. {l_vals[-1]}]")
                     else:
                         pieces.append(clean_html(elem))
@@ -55,8 +54,10 @@ def format_effect_params(params_list) -> list[str]:
                 cleaned_vals = [clean_html(v) for v in val_part]
                 if len(cleaned_vals) == 1:
                     out.append(f"  - **{label}**: `{cleaned_vals[0]}`")
-                else:
+                elif len(cleaned_vals) > 1:
                     out.append(f"  - **{label} (T0→T5)**: {' → '.join(f'`{v}`' for v in cleaned_vals)}")
+        else:
+            out.append(f"  - **{label}**: `{clean_html(val_part)}`")
     return out
 
 def main():
@@ -185,34 +186,58 @@ def main():
         lines.append(f"### Suit ID `[{suit_id}]`")
         lines.append("```json\n" + json.dumps(sdata, ensure_ascii=False, indent=2) + "\n```")
 
-    # =========================================================================
+# =========================================================================
     # SECTION 5: MODULES & LINK LEVELS (LV.1 - LV.6)
     # =========================================================================
-    lines.append("\n---\n## หมวดที่ 5: โมดูลทั้ง 21 ชนิด และผลลัพธ์ที่ระดับ Link Lv.1–6 (`moduleEffects`)\n")
-    for mod_id, m_en in sorted(en_mod_effects.items(), key=lambda x: int(x[0]) if str(x[0]).isdigit() else 9999):
-        m_name = clean_html(m_en.get("name", f"Module#{mod_id}"))
-        m_descs = m_en.get("descriptions") or m_en.get("levels") or m_en
-        lines.append(f"- **`[{mod_id}] {m_name}`**: `{clean_html(json.dumps(m_descs, ensure_ascii=False))}`")
+    lines.append("\n---\n## หมวดที่ 5: โมดูลทั้ง 21 ชนิด และผลลัพธ์ที่ระดับ Link Lv.1–6 (`moduleEffects` & `modules.json`)\n")
+    if isinstance(en_mod_effects, dict):
+        for mod_id, m_en in sorted(en_mod_effects.items(), key=lambda x: int(x[0]) if str(x[0]).isdigit() else 9999):
+            if isinstance(m_en, dict):
+                m_name = clean_html(m_en.get("name", f"Module#{mod_id}"))
+                m_descs = m_en.get("descriptions") or m_en.get("levels") or m_en
+                lines.append(f"- **`[{mod_id}] {m_name}`**: `{clean_html(json.dumps(m_descs, ensure_ascii=False))}`")
+            else:
+                lines.append(f"- **`[{mod_id}]`**: `{clean_html(m_en)}`")
+
+    # ดึงข้อมูล Link Effects Lv.1-6 จาก modules.json และ moduleData.ts เพิ่มเติม
+    mod_data_ts = REF_LOGIC_DIR / "moduleData.ts"
+    if mod_data_ts.exists():
+        lines.append("\n### โครงสร้างการคำนวณ Module Link Lv.1–6 จาก `moduleData.ts`:")
+        lines.append("```typescript\n" + mod_data_ts.read_text(encoding="utf-8") + "\n```")
 
     # =========================================================================
     # SECTION 6: DEEP SLUMBER PSYCHOSCOPE (8 TEMPLATES, ORDINARY & BOND EFFECTS)
     # =========================================================================
-    lines.append("\n---\n## หมวดที่ 6: Deep Slumber Psychoscope ทั้ง 8 สาย (`templates`, `ordinaryEffects`, `advancedEffects`)\n")
-    st_templates = en_season_talents.get("templates", {})
-    st_ordinary = en_season_talents.get("ordinaryEffects", {})
-    st_advanced = en_season_talents.get("advancedEffects", {})
+    lines.append("\n---\n## หมวดที่ 6: Deep Slumber Psychoscope ทั้ง 8 สาย (`seasonTalents` & `phantomData.ts`)\n")
+    if isinstance(en_season_talents, dict):
+        st_templates = en_season_talents.get("templates", {})
+        st_ordinary = en_season_talents.get("ordinaryEffects", {})
+        st_advanced = en_season_talents.get("advancedEffects", {})
 
-    lines.append("### 6.1 รายชื่อสาย Psychoscope ทั้ง 8 สาย:")
-    for tid, tval in st_templates.items():
-        lines.append(f"- **Template `[{tid}]`**: `{clean_html(json.dumps(tval, ensure_ascii=False))}`")
+        if isinstance(st_templates, dict) and st_templates:
+            lines.append("### 6.1 รายชื่อสาย Psychoscope ทั้ง 8 สาย:")
+            for tid, tval in st_templates.items():
+                lines.append(f"- **Template `[{tid}]`**: `{clean_html(json.dumps(tval, ensure_ascii=False))}`")
 
-    lines.append("\n### 6.2 โหนดบัฟธรรมดา (`ordinaryEffects`):")
-    for oid, oval in list(st_ordinary.items())[:25]:
-        lines.append(f"- **`[{oid}]`**: `{clean_html(json.dumps(oval, ensure_ascii=False))}`")
+        if isinstance(st_ordinary, dict) and st_ordinary:
+            lines.append("\n### 6.2 โหนดบัฟธรรมดา (`ordinaryEffects`):")
+            for oid, oval in list(st_ordinary.items())[:30]:
+                lines.append(f"- **`[{oid}]`**: `{clean_html(json.dumps(oval, ensure_ascii=False))}`")
 
-    lines.append("\n### 6.3 เอฟเฟกต์ขั้นบันไดจาก Bond Points (`advancedEffects`):")
-    for aid, aval in st_advanced.items():
-        lines.append(f"- **`[{aid}]`**: `{clean_html(json.dumps(aval, ensure_ascii=False))}`")
+        if isinstance(st_advanced, dict) and st_advanced:
+            lines.append("\n### 6.3 เอฟเฟกต์ขั้นบันไดจาก Bond Points (`advancedEffects`):")
+            for aid, aval in st_advanced.items():
+                lines.append(f"- **`[{aid}]`**: `{clean_html(json.dumps(aval, ensure_ascii=False))}`")
+
+        # กรณี en_season_talents เก็บเป็น key-value ตรงๆ
+        if not st_templates and not st_ordinary and not st_advanced:
+            for k, v in list(en_season_talents.items())[:40]:
+                lines.append(f"- **`[{k}]`**: `{clean_html(json.dumps(v, ensure_ascii=False))}`")
+
+    phantom_summary_ts = REF_LOGIC_DIR / "phantomEffectSummary.ts"
+    if phantom_summary_ts.exists():
+        lines.append("\n### โครงสร้างการคำนวณเอฟเฟกต์ Psychoscope & Bond Points จาก `phantomEffectSummary.ts`:")
+        lines.append("```typescript\n" + phantom_summary_ts.read_text(encoding="utf-8") + "\n```")
 
     # =========================================================================
     # SECTION 7: COOKING FOOD & ALCHEMY SERUMS / POTIONS
