@@ -79,3 +79,35 @@
 - **Status:** Accepted & Strictly Enforced (Added on 2026-10-20)
 - **Context:** เพื่อป้องกันไม่ให้โครงสร้างไฟล์ ชื่อไฟล์ หรือสถาปัตยกรรมของโปรเจกต์ผิดเพี้ยนไปจากเอกสารออกแบบโดยพลการในอนาคต
 - **Decision:** บังคับใช้กฎ **Documentation-First Change Control Protocol** ใน `.agents/agents.md` และ `.agents/rules/strict_architecture_governance.md` โดย AI Agent ต้องยึดถือโครงสร้างและชื่อไฟล์ตาม `ADR.md`, `SAD.md`, และ `SDD.md` อย่างเคร่งครัด หากจำเป็นต้องเพิ่ม/ลบ/เปลี่ยนชื่อไฟล์หรือเปลี่ยนสถาปัตยกรรมให้ต่างจากเอกสาร **ต้องแจ้งขออนุญาตผู้ใช้ก่อนเสมอ** เมื่อได้รับอนุมัติแล้ว ต้องบันทึกเหตุผลลงใน `ADR.md` และอัปเดต `SAD.md` กับ `SDD.md` ให้เสร็จสิ้นก่อน จึงจะได้รับอนุญาตให้แก้ไขโค้ดจริง
+---
+
+## ADR-010: การใช้ `alalwww/bpsr-build-planner` เป็น Base Application 100% และต่อยอดโมดูล Combat Simulator & Multi-Build Comparator
+
+* **สถานะ (Status):** Accepted (บังคับใช้แทนการเขียน UI Build Planner แยกเอง)
+* **วันที่ (Date):** 2026-10-22
+* **บริบท (Context):**
+  * โปรเจกต์โอเพนซอร์ส `alalwww/bpsr-build-planner` มีระบบคำนวณค่าสเตตัสพื้นฐาน (`calculateRawStats.ts`, `deriveStats.ts`), ระบบจัดการอุปกรณ์ 11 ชิ้น (`equipment.json`, `refine.json`, `suits.json`), โมดูล 21 ชนิด (`modules.json`), ระบบตีตรา Sigils (`enchants.json`), ระบบผังสกิลและพรสวรรค์ (`talent-tree.json`), ระบบ Deep Slumber Psychoscope & Factors (`season-talents.json`, `phantom-factors.json`), และระบบบันทึกหลายบิลด์ (`PlanManager` ใน `localStorage`) ที่สมบูรณ์และตรงกับเกมจริง 100% อยู่แล้ว
+  * การเขียน UI สำหรับจัดบิลด์ใหม่ตั้งแต่ศูนย์เป็นการทำงานซ้ำซ้อนและเสี่ยงต่อความคลาดเคลื่อนของสูตรพื้นฐาน
+  * สิ่งที่ `bpsr-build-planner` ยังขาดไปคือ **ระบบจำลองการต่อสู้ตามเวลาจริง (Time-Stepped Combat Simulator Engine)** ที่นำตัวคูณสกิล, สกิลลูก (`<linktext>`), โหนด Talent ที่ติด Proc, บัฟชั่วคราวตอนกดใช้ Battle Imagine, โบนัสเซ็ตอุปกรณ์ 2/4 ชิ้น, อาวุธทอง Far Sea (`effectType=3`), และเอฟเฟกต์ต่อสู้ของโมดูล/อาหาร/Psychoscope มาคำนวณเป็นค่า DPS / HPS / Total Damage และ **ระบบเปรียบเทียบหลายบิลด์ (Multi-Build Comparator)**
+* **การตัดสินใจ (Decision):**
+  1. ย้ายซอร์สโค้ดและโครงสร้างทั้งหมดของ `bpsr-build-planner` ขึ้นมาเป็น Root Application ของโปรเจกต์โดยตรง (รักษา UI, Zustand Store, i18n 3 ภาษา `ja`, `en_US`, `zh_Hans`, และระบบ `PlanManager` เดิมไว้ครบ 100%)
+  2. สร้างโมดูลส่วนขยายแยกเฉพาะที่ `src/build-planner/simulator/` เพื่อทำหน้าที่จำลองการต่อสู้และเปรียบเทียบหลายบิลด์ โดยเชื่อมต่อกับ `useBuildPlannerStore` และ `loadPlans()` โดยตรง
+* **ผลลัพธ์ (Consequences):**
+  * ผู้ใช้สามารถจัดบิลด์ด้วย UI ที่สมบูรณ์แบบของ `bpsr-build-planner` ได้ทันที และกดปุ่ม **"⚡ Combat Simulator & Build Compare"** เพื่อจำลองโรเตชั่นการต่อสู้และเปรียบเทียบว่าบิลด์ไหนทำ DPS/HPS สูงที่สุดได้ในคลิกเดียว
+
+---
+
+## ADR-011: สถาปัตยกรรมการแยกสเตตัสตั้งต้นออกจากบัฟจับเวลา (`Clean Baseline Sanitizer` & `De-Duplication Registry`)
+
+* **สถานะ (Status):** Accepted
+* **วันที่ (Date):** 2026-10-22
+* **บริบท (Context):**
+  * จากการตรวจสอบโค้ดจริงของ `calculateRawStats.ts`, `deriveStats.ts`, `cookingBuff.ts`, และ `attrMaps.ts` พบว่า `bpsr-build-planner` มีการนำบัฟที่มีเงื่อนไขเวลาในระหว่างการต่อสู้ (เช่น `Life Wave` 5 วินาทีเมื่อเลือดขยับ, `Agile` ที่หลุดเมื่อโดนตี, `Stat Resonance` 10 วินาทีหลังร่ายสกิล) ไปบวกแช่ไว้ในสเตตัสหน้าแรกทันทีที่ผู้ใช้ติ๊กเปิด
+  * นอกจากนี้ โหนด Talent และ Passive ของ Imagine บางตัว (เช่น `Igoreus` `3210180` หรือ Factor `3057040` ของ Beat Performer) ถูกดึงเฉพาะพารามิเตอร์ตัวแรก (`{p1}` หรือ `{p2}` ที่เป็นค่าคงที่) ไปบวกใน `calculateRawStats.ts` แล้ว แต่ทิ้งส่วนที่เป็นเงื่อนไขการต่อสู้ไว้
+  * หาก Combat Simulator ดึงค่า `finalStats` หน้าแรกมาใช้ตรงๆ แล้วคำนวณบัฟในไฟต์ทับเข้าไปอีก จะเกิดปัญหา **การคำนวณซ้ำซ้อน (Double Counting)** และ **บัฟจับเวลากลายเป็นบัฟอมตะ 100% Uptime**
+* **การตัดสินใจ (Decision):**
+  1. สร้างฟังก์ชัน **`computeSanitizedBaselineBundle(state)`** ที่ล้างค่าสวิตช์บัฟจับเวลา (`lifeWaveEnabled: false`, `agileEnabled: false`, `dmgStackEnabled: false`, `statResonanceEnabled: false`, และจัดการ `inspirationEnabled` ไม่ให้ซ้อนทับเมื่อเล่น Verdant Oracle เอง) ก่อนคำนวณสเตตัสตั้งต้นสำหรับส่งเข้า Simulator
+  2. แยกบัฟอาหาร (`cookingEnabled`), ยาน้ำเชื่อมธาตุ (`syrupEnabled`), น้ำมันทาอาวุธ (`starOilEnabled`), และบัฟกิจกรรม (`eventBuffEnabled`) ให้สามารถเปิด/ปิดและติดตามระยะเวลา (`remainingDurationSec` พร้อมโบนัส `+30%` จากโหนด `Chrono Elixir` `3002080`) ในลูปการต่อสู้จริง พร้อมนำ `cookingEliteDamagePercent` (`+5%`/`+10%`) ที่โค้ดเดิมไม่ได้คำนวณ มาคูณในสมการดาเมจจริง
+  3. บังคับใช้ตาราง **`DE_DUPLICATION_REGISTRY`** ใน `combatSimulatorEngine.ts` โดยระบุรายการ `buffId` / `talentId` ที่ส่วนค่าคงที่ถูกบวกใน `calculateRawStats.ts` ไปแล้ว เพื่อให้ Simulator คำนวณเฉพาะส่วนที่เป็น Dynamic Stack / Proc / Active Window เท่านั้น
+* **ผลลัพธ์ (Consequences):**
+  * ตัวเลขสเตตัสก่อนเข้าไฟต์และระหว่างไฟต์มีความถูกต้องตามกลไกเกมจริง 100% ไม่มีการคิดซ้ำแม้แต่จุดเดียว และสามารถแสดงกราฟ/ตารางเปรียบเทียบผลของบัฟตามเวลาจริงได้อย่างแม่นยำ

@@ -1,0 +1,155 @@
+# เก็บตกข้อมูล 1% สุดท้าย: Far Sea Weapon Effects, High-GS Armor Legendary Affixes, และ Factors ที่เหลือ
+
+## 1. คำอธิบายจริงของเอฟเฟกต์พิเศษบนอาวุธทอง Far Sea (`legendaryAffixGroups` EffectType=3)
+
+- **Spec Stage `101` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `101` | `attrId=2401020`** (`values=[600]`): `Grants {p1} PHY Boost bonus while Volt Surge is active.`
+- **Spec Stage `101` | `attrId=2401250`** (`values=[500]`): `Skills that consume Thunder Sigil gain {p1} PHY Boost`
+- **Spec Stage `102` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `102` | `attrId=2401030`** (`values=[500]`): `Attack Expertise Skills enhance PHY Boost by {p1}.`
+- **Spec Stage `102` | `attrId=2401040`** (`values=[600]`): `Grants {p1} PHY Boost bonus while Stormflash is active.`
+- **Spec Stage `104` | `attrId=2400004`** (`values=[800]`): `Magic DMG +{p1}`
+- **Spec Stage `104` | `attrId=2402010`** (`values=[600]`): `While Permafrost is active, grants {p1} MAG Boost`
+- **Spec Stage `104` | `attrId=2402020`** (`values=[600]`): `Lucky Strike enhances MAG Boost by {p1}.`
+- **Spec Stage `105` | `attrId=2400004`** (`values=[800]`): `Magic DMG +{p1}`
+- **Spec Stage `105` | `attrId=2402030`** (`values=[600]`): `DoT enhances MAG Boost by {p1}.`
+- **Spec Stage `105` | `attrId=2402280`** (`values=[600]`): `While Permafrost is active, grants {p1} MAG Boost`
+- **Spec Stage `107` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `107` | `attrId=2403010`** (`values=[500]`): `Attack Expertise Skills enhance PHY Boost by {p1}.`
+- **Spec Stage `107` | `attrId=2403250`** (`values=[600]`): `{p1} PHY Boost while in Galeform`
+- **Spec Stage `108` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `108` | `attrId=2403020`** (`values=[600]`): `Lucky Strike enhances PHY Boost by {p1}.`
+- **Spec Stage `108` | `attrId=2403260`** (`values=[600]`): `{p1} PHY Boost while in Galeform`
+- **Spec Stage `110` | `attrId=2400004`** (`values=[800]`): `Magic DMG +{p1}`
+- **Spec Stage `110` | `attrId=2404010`** (`values=[600]`): `Grants {p1} MAG Boost bonus while Infusion is active.`
+- **Spec Stage `110` | `attrId=2404020`** (`values=[600]`): `Luck effect enhances MAG Boost by {p1}.`
+- **Spec Stage `110` | `attrId=2404170`** (`values=[1500]`): `Lucky Strike DMG +{p1}`
+- **Spec Stage `111` | `attrId=2400004`** (`values=[800]`): `Magic DMG +{p1}`
+- **Spec Stage `111` | `attrId=2404030`** (`values=[800]`): `Healing Skills enhance MAG Boost by {p1}.`
+- **Spec Stage `111` | `attrId=2404280`** (`values=[1000]`): `Grants {p1} Inspiration bonus`
+- **Spec Stage `113` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `113` | `attrId=2406250`** (`values=[800]`): `When Enraged is active, {p1} PHY Boost will be gained`
+- **Spec Stage `114` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `114` | `attrId=2406260`** (`values=[800]`): `When Countercrush is active, {p1} PHY Boost will be gained`
+- **Spec Stage `116` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `116` | `attrId=2405010`** (`values=[600]`): `Grants {p1} PHY Boost bonus while Focus is active.`
+- **Spec Stage `116` | `attrId=2405020`** (`values=[500]`): `DMG dealt by Companions enhances PHY Boost by {p1}.`
+- **Spec Stage `117` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `117` | `attrId=2405030`** (`values=[600]`): `Grants {p1} PHY Boost bonus while Focus is active.`
+- **Spec Stage `117` | `attrId=2405040`** (`values=[600]`): `Falcon Strike increases PHY Boost by {p1}.`
+- **Spec Stage `119` | `attrId=2400004`** (`values=[800]`): `Magic DMG +{p1}`
+- **Spec Stage `119` | `attrId=2408010`** (`values=[600]`): `Luck effect enhances MAG Boost by {p1}.`
+- **Spec Stage `119` | `attrId=2408020`** (`values=[600]`): `After actively casting Encore, increases MAG Boost by {p1} for 20s.`
+- **Spec Stage `119` | `attrId=2408230`** (`values=[1500]`): `Luck effect DMG is boosted by {p1}`
+- **Spec Stage `120` | `attrId=2400004`** (`values=[800]`): `Magic DMG +{p1}`
+- **Spec Stage `120` | `attrId=2408030`** (`values=[800]`): `Healing Skills enhance MAG Boost by {p1}.`
+- **Spec Stage `120` | `attrId=2408240`** (`values=[800]`): `While Healing Melody is active, grants {p1} Intellect bonus`
+- **Spec Stage `122` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `122` | `attrId=2407260`** (`values=[800]`): `When Valor Bash is active, {p1} PHY Boost will be gained`
+- **Spec Stage `123` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `123` | `attrId=2407270`** (`values=[800]`): `When Lightforged Barrier is active, {p1} PHY Boost will be gained`
+- **Spec Stage `128` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `128` | `attrId=2409010`** (`values=[500]`): `Lucky Strike enhances PHY Boost by {p1}.`
+- **Spec Stage `128` | `attrId=2409020`** (`values=[500]`): `Grants {p1} PHY Boost bonus while Wasteland's End is active.`
+- **Spec Stage `129` | `attrId=2400003`** (`values=[800]`): `Attack DMG +{p1}`
+- **Spec Stage `129` | `attrId=2409030`** (`values=[500]`): `Attack Expertise Skills enhance PHY Boost by {p1}.`
+- **Spec Stage `129` | `attrId=2409040`** (`values=[500]`): `Grants {p1} PHY Boost bonus while Endless Hellfire is active.`
+
+---
+## 2. รายการออปชันม่วง (`legendaryAffix`) ทั้งหมดของชุดเกราะและเครื่องประดับระดับสูง (Part 200–210)
+
+- **Part `200` | Type `1` | `attrId=11334`** (`values=[350]`): `ATK`
+- **Part `200` | Type `1` | `attrId=11344`** (`values=[350]`): `MATK`
+- **Part `200` | Type `1` | `attrId=11722`** (`values=[350]`): `Attack SPD`
+- **Part `200` | Type `1` | `attrId=11732`** (`values=[700]`): `Cast Speed`
+- **Part `200` | Type `1` | `attrId=11792`** (`values=[300, 350, 400]`): `Healing Output`
+- **Part `200` | Type `1` | `attrId=11812`** (`values=[250, 300, 350]`): `Shield`
+- **Part `200` | Type `1` | `attrId=11832`** (`values=[1800]`): `Resilience Break Efficiency`
+- **Part `200` | Type `1` | `attrId=12632`** (`values=[350]`): `DMG Bonus vs. Bosses`
+- **Part `200` | Type `3` | `attrId=2400001`** (`values=[250, 300, 350]`): `Melee DMG +{p1}`
+- **Part `200` | Type `3` | `attrId=2400002`** (`values=[250, 300, 350]`): `Ranged DMG +{p1}`
+- **Part `201` | Type `1` | `attrId=11014`** (`values=[50, 100, 150]`): `Strength`
+- **Part `201` | Type `1` | `attrId=11024`** (`values=[50, 100, 150]`): `Intellect`
+- **Part `201` | Type `1` | `attrId=11034`** (`values=[50, 100, 150]`): `Agility`
+- **Part `201` | Type `1` | `attrId=11322`** (`values=[6000]`): `Max HP`
+- **Part `201` | Type `1` | `attrId=11352`** (`values=[400]`): `Armor`
+- **Part `201` | Type `1` | `attrId=11732`** (`values=[200]`): `Cast Speed`
+- **Part `201` | Type `1` | `attrId=13202`** (`values=[200]`): `All Element Resistance`
+- **Part `202` | Type `1` | `attrId=11014`** (`values=[50, 100, 150]`): `Strength`
+- **Part `202` | Type `1` | `attrId=11024`** (`values=[50, 100, 150]`): `Intellect`
+- **Part `202` | Type `1` | `attrId=11034`** (`values=[50, 100, 150]`): `Agility`
+- **Part `202` | Type `1` | `attrId=11322`** (`values=[6000]`): `Max HP`
+- **Part `202` | Type `1` | `attrId=11352`** (`values=[400]`): `Armor`
+- **Part `202` | Type `1` | `attrId=11812`** (`values=[400]`): `Shield`
+- **Part `202` | Type `1` | `attrId=13202`** (`values=[200]`): `All Element Resistance`
+- **Part `203` | Type `1` | `attrId=11014`** (`values=[50, 100, 150]`): `Strength`
+- **Part `203` | Type `1` | `attrId=11024`** (`values=[50, 100, 150]`): `Intellect`
+- **Part `203` | Type `1` | `attrId=11034`** (`values=[50, 100, 150]`): `Agility`
+- **Part `203` | Type `1` | `attrId=11322`** (`values=[6000]`): `Max HP`
+- **Part `203` | Type `1` | `attrId=11352`** (`values=[400]`): `Armor`
+- **Part `203` | Type `1` | `attrId=11722`** (`values=[100]`): `Attack SPD`
+- **Part `203` | Type `1` | `attrId=13202`** (`values=[200]`): `All Element Resistance`
+- **Part `204` | Type `1` | `attrId=11014`** (`values=[50, 100, 150]`): `Strength`
+- **Part `204` | Type `1` | `attrId=11024`** (`values=[50, 100, 150]`): `Intellect`
+- **Part `204` | Type `1` | `attrId=11034`** (`values=[50, 100, 150]`): `Agility`
+- **Part `204` | Type `1` | `attrId=11322`** (`values=[6000]`): `Max HP`
+- **Part `204` | Type `1` | `attrId=11352`** (`values=[400]`): `Armor`
+- **Part `204` | Type `1` | `attrId=13202`** (`values=[200]`): `All Element Resistance`
+- **Part `204` | Type `5` | `attrId=92000`** (`values=[400]`): `Movement Speed +{v}`
+- **Part `205` | Type `1` | `attrId=11334`** (`values=[200]`): `ATK`
+- **Part `205` | Type `1` | `attrId=11344`** (`values=[200]`): `MATK`
+- **Part `205` | Type `1` | `attrId=11722`** (`values=[200]`): `Attack SPD`
+- **Part `205` | Type `1` | `attrId=11732`** (`values=[400]`): `Cast Speed`
+- **Part `205` | Type `1` | `attrId=11792`** (`values=[150, 200, 250]`): `Healing Output`
+- **Part `205` | Type `1` | `attrId=11812`** (`values=[100, 150, 200]`): `Shield`
+- **Part `205` | Type `1` | `attrId=11832`** (`values=[900]`): `Resilience Break Efficiency`
+- **Part `205` | Type `1` | `attrId=12632`** (`values=[200]`): `DMG Bonus vs. Bosses`
+- **Part `205` | Type `3` | `attrId=2400001`** (`values=[100, 150, 200]`): `Melee DMG +{p1}`
+- **Part `205` | Type `3` | `attrId=2400002`** (`values=[100, 150, 200]`): `Ranged DMG +{p1}`
+- **Part `206` | Type `1` | `attrId=11334`** (`values=[200]`): `ATK`
+- **Part `206` | Type `1` | `attrId=11344`** (`values=[200]`): `MATK`
+- **Part `206` | Type `1` | `attrId=11722`** (`values=[200]`): `Attack SPD`
+- **Part `206` | Type `1` | `attrId=11732`** (`values=[400]`): `Cast Speed`
+- **Part `206` | Type `1` | `attrId=11792`** (`values=[150, 200, 250]`): `Healing Output`
+- **Part `206` | Type `1` | `attrId=11812`** (`values=[100, 150, 200]`): `Shield`
+- **Part `206` | Type `1` | `attrId=11832`** (`values=[900]`): `Resilience Break Efficiency`
+- **Part `206` | Type `1` | `attrId=12632`** (`values=[200]`): `DMG Bonus vs. Bosses`
+- **Part `206` | Type `3` | `attrId=2400001`** (`values=[100, 150, 200]`): `Melee DMG +{p1}`
+- **Part `206` | Type `3` | `attrId=2400002`** (`values=[100, 150, 200]`): `Ranged DMG +{p1}`
+- **Part `207` | Type `1` | `attrId=11334`** (`values=[200]`): `ATK`
+- **Part `207` | Type `1` | `attrId=11344`** (`values=[200]`): `MATK`
+- **Part `207` | Type `1` | `attrId=11722`** (`values=[200]`): `Attack SPD`
+- **Part `207` | Type `1` | `attrId=11732`** (`values=[400]`): `Cast Speed`
+- **Part `207` | Type `1` | `attrId=11792`** (`values=[150, 200, 250]`): `Healing Output`
+- **Part `207` | Type `1` | `attrId=11812`** (`values=[100, 150, 200]`): `Shield`
+- **Part `207` | Type `1` | `attrId=11832`** (`values=[900]`): `Resilience Break Efficiency`
+- **Part `207` | Type `1` | `attrId=12632`** (`values=[200]`): `DMG Bonus vs. Bosses`
+- **Part `207` | Type `3` | `attrId=2400001`** (`values=[100, 150, 200]`): `Melee DMG +{p1}`
+- **Part `207` | Type `3` | `attrId=2400002`** (`values=[100, 150, 200]`): `Ranged DMG +{p1}`
+- **Part `208` | Type `1` | `attrId=11014`** (`values=[50, 100, 150]`): `Strength`
+- **Part `208` | Type `1` | `attrId=11024`** (`values=[50, 100, 150]`): `Intellect`
+- **Part `208` | Type `1` | `attrId=11034`** (`values=[50, 100, 150]`): `Agility`
+- **Part `208` | Type `1` | `attrId=11322`** (`values=[6000]`): `Max HP`
+- **Part `208` | Type `1` | `attrId=11352`** (`values=[400]`): `Armor`
+- **Part `208` | Type `1` | `attrId=11792`** (`values=[400]`): `Healing Output`
+- **Part `208` | Type `1` | `attrId=13202`** (`values=[200]`): `All Element Resistance`
+- **Part `209` | Type `1` | `attrId=11014`** (`values=[50, 100, 150]`): `Strength`
+- **Part `209` | Type `1` | `attrId=11024`** (`values=[50, 100, 150]`): `Intellect`
+- **Part `209` | Type `1` | `attrId=11034`** (`values=[50, 100, 150]`): `Agility`
+- **Part `209` | Type `1` | `attrId=11322`** (`values=[6000]`): `Max HP`
+- **Part `209` | Type `1` | `attrId=11352`** (`values=[400]`): `Armor`
+- **Part `209` | Type `1` | `attrId=11792`** (`values=[400]`): `Healing Output`
+- **Part `209` | Type `1` | `attrId=13202`** (`values=[200]`): `All Element Resistance`
+- **Part `210` | Type `1` | `attrId=11334`** (`values=[200]`): `ATK`
+- **Part `210` | Type `1` | `attrId=11344`** (`values=[200]`): `MATK`
+- **Part `210` | Type `1` | `attrId=11722`** (`values=[200]`): `Attack SPD`
+- **Part `210` | Type `1` | `attrId=11732`** (`values=[400]`): `Cast Speed`
+- **Part `210` | Type `1` | `attrId=11792`** (`values=[150, 200, 250]`): `Healing Output`
+- **Part `210` | Type `1` | `attrId=11812`** (`values=[100, 150, 200]`): `Shield`
+- **Part `210` | Type `1` | `attrId=11832`** (`values=[900]`): `Resilience Break Efficiency`
+- **Part `210` | Type `1` | `attrId=12632`** (`values=[200]`): `DMG Bonus vs. Bosses`
+- **Part `210` | Type `3` | `attrId=2400001`** (`values=[100, 150, 200]`): `Melee DMG +{p1}`
+- **Part `210` | Type `3` | `attrId=2400002`** (`values=[100, 150, 200]`): `Ranged DMG +{p1}`
+
+---
+## 3. รายการ Factors ส่วนท้ายสุดที่เหลือใน `byClass` (ตั้งแต่ `202328` จนจบ)

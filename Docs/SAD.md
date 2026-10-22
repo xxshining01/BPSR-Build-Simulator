@@ -1,182 +1,105 @@
-# System Architecture Document (SAD)
-
-**Project:** Blue Protocol: Star Resonance — Build & Combat Simulator  
-**Version:** 2.0.0 (Synchronized with Actual Repository Structure)  
-**Last Updated:** 2026-10-20
-
----
-
-## 1. ภาพรวมสถาปัตยกรรมระบบ (System Overview)
-
-ระบบถูกออกแบบโดยแบ่งแยกชั้นข้อมูลและหน้าที่อย่างชัดเจน (Layered Clean Architecture) ออกเป็น **5 ชั้นหลัก (5 Layers)** เพื่อให้การคำนวณสเตตัสและดาเมจมีความแม่นยำตามข้อมูล ZTable จากตัวเกมจริง 100%:
-
-1. **Data & Scraping Pipeline Layer (`.agents/skills/bpsr-data-scraper/scripts/`):** ชุดสคริปต์ Python สำหรับดึงข้อมูลดิบจาก Repository อ้างอิง (`bpsr-build-planner`, `resonance-logs-global`, `StarResonanceAutoMod`), ตรวจสอบความครบถ้วนของข้อมูล, สร้างแคตตาล็อก (`Docs/catalog/`), และนำเข้าฐานข้อมูลที่ตรวจสอบแล้วเข้าสู่โปรเจกต์
-2. **Verified Game Database & Schema Layer (`/src/data/`):** จัดเก็บไฟล์ฐานข้อมูล ZTable JSON ทั้ง 17 ไฟล์หลัก (`/src/data/game-db/`), ตารางจำลองการต่อสู้ (`/src/data/game-db/combat-sim/`), พจนานุกรมภาษาอังกฤษ (`/src/data/locales/en_US/`), และ Zod Schemas ทั้ง 7 หมวด (`/src/data/schemas/`)
-3. **Core Calculation & Simulation Engine Layer (`/src/engine/`):** สมองกลคำนวณภาษา TypeScript แบบ Pure Functions ที่แยกอิสระจาก UI ประกอบด้วยตัวโหลดฐานข้อมูล (`game-db-loader.ts`), ตัวรวมสเตตัส 2 หน้าต่าง (`stat-aggregator.ts`), ตัวคำนวณดาเมจ/ฮีล (`damage-calculator.ts`), ตัวจำลองการหมุนสกิล 5 นาที (`combat-simulator.ts`), และตัวเปรียบเทียบบิลด์ (`build-comparator.ts`)
-4. **Application State Layer (`/src/store/useBuildStore.ts`):** จัดการสถานะของบิลด์ปัจจุบัน, รายการบิลด์ที่บันทึกไว้ใน `localStorage`, และการซิงค์สถานะสายอาชีพ (`specId`) กับสกิลทั้ง 7 ช่องเมื่อมีการอัปโหนดบนผัง Talent Tree
-5. **Presentation & Interactive UI Layer (`/src/app/` & `/src/components/`):** หน้าเว็บ Interactive Build Planner (`src/app/page.tsx`) และแผนผัง SVG Talent Tree Map (`src/components/TalentTreeDiagram.tsx`)
+# เอกสารสถาปัตยกรรมซอฟต์แวร์ (Software Architecture Document - SAD)
+**โครงการ:** Blue Protocol: Star Resonance (BPSR) Build Planner & Dynamic Combat Simulator
+**เวอร์ชัน:** 3.0.0 (Full Integration with `alalwww/bpsr-build-planner` + Time-Stepped Combat Simulator)
+**อัปเดตล่าสุด:** 2026-10-22
 
 ---
 
-## 2. แผนผังการไหลของข้อมูล (Data Flow Diagram)
+## 1. ภาพรวมสถาปัตยกรรมระบบ (System Architecture Overview)
 
-```
-[External Verified Repos: bpsr-build-planner / resonance-logs-global]
-│
-▼ (import_verified_gamedb.py)
-[/src/data/game-db/.json (17 Files) + /src/data/locales/en_US/game-data.json]
-│
-▼ (Loaded & Resolved via)
-[/src/engine/game-db-loader.ts] ◄── Validates against ── [/src/data/schemas/.schema.ts]
-│
-▼
-[/src/store/useBuildStore.ts (Zustand + LocalStorage Persistence)]
-│
-├──► [/src/engine/stat-aggregator.ts]
-│         └──► Returns: SummaryWindowStats & FullAttributesWindowStats (@ Lv.60)
-│
-├──► [/src/engine/damage-calculator.ts] ──► [/src/engine/combat-simulator.ts]
-│         └──► Returns: 5-Minute (300s) Action Breakdown, DPS, HPS, Avg Buff %
-│
-└──► [/src/engine/build-comparator.ts]
-└──► Returns: Spec-Locked Stat Diffs & Simulation Diffs (Build A vs Build B)
-```
-
----
-
-## 3. โครงสร้างไดเรกทอรีและไฟล์จริงของโปรเจกต์ (Canonical Directory Structure)
-
-> **กฎเหล็ก (Strict Governance):** โครงสร้างด้านล่างนี้คือโครงสร้างมาตรฐานปัจจุบันของโปรเจกต์ ห้ามสร้างไฟล์ใหม่ ลบไฟล์ หรือเปลี่ยนชื่อไฟล์ให้ต่างไปจากแผนผังนี้โดยไม่ผ่านขั้นตอนขออนุมัติและอัปเดตเอกสารก่อน
+ระบบถูกออกแบบโดยใช้ **`alalwww/bpsr-build-planner`** เป็นแกนหลัก (Core Base Application) สำหรับการจัดบิลด์ตัวละครและคำนวณสเตตัสพื้นฐานทั้งหมด และเชื่อมต่อเข้ากับ **Dynamic Combat Simulator & Multi-Build Comparator Engine** (`src/build-planner/simulator/`) โดยมีลำดับการไหลของข้อมูล (Data Pipeline) 4 ชั้นดังนี้:
 
 ```text
-BPSR-Build-Simulator/
-├── .agents/                                      # ระบบควบคุม AI Agent, กฎเหล็ก, ความทรงจำ และสกิลเฉพาะทาง
-│   ├── .agentignore                              # รายการไฟล์ที่ยกเว้นการสแกนของ Agent
-│   ├── agents.md                                 # กฎการทำงานหลักและโปรโตคอลควบคุมการแก้ไขเอกสาร
-│   ├── config.yaml                               # การตั้งค่าพารามิเตอร์ของ Agent
-│   ├── memories.md                               # บันทึกความจำระยะยาวของโปรเจกต์
-│   ├── rules/
-│   │   ├── zero_hallucination.md                 # กฎห้ามมั่วข้อมูลเกมและตัวเลขสเตตัส
-│   │   └── strict_architecture_governance.md     # กฎบังคับยึดตามเอกสาร ADR/SAD/SDD อย่างเคร่งครัด
-│   ├── knowledge/                                # คลังความรู้กลไกเกมและสมการคำนวณ
-│   │   ├── 01_combat_formulas_and_ratings.md
-│   │   ├── 02_classes_talents_and_skills.md
-│   │   ├── 03_equipment_refine_and_sigils.md
-│   │   ├── 04_imagines_modules_psychoscopes.md
-│   │   └── 05_simulator_and_rotation_engine.md
-│   ├── skills/                                   # สกิลเฉพาะทางของ Agent (ใช้ชื่อไฟล์ SKILL.md)
-│   │   ├── bpsr-combat-simulator/
-│   │   │   ├── SKILL.md
-│   │   │   └── references/rotation_priority_rules.md
-│   │   ├── bpsr-data-scraper/
-│   │   │   ├── SKILL.md
-│   │   │   ├── references/source_endpoints.md
-│   │   │   └── scripts/
-│   │   │       ├── audit_data_coverage.py
-│   │   │       ├── build_database.py
-│   │   │       ├── export_human_readable_catalog.py
-│   │   │       ├── extract_maxroll_master_db.py
-│   │   │       ├── fetch_github_repos_data.py
-│   │   │       ├── generate_readable_lists.py
-│   │   │       ├── import_verified_gamedb.py
-│   │   │       ├── inspect_extracted_data.py
-│   │   │       └── requirements.txt
-│   │   ├── bpsr-math-engine/
-│   │   │   ├── SKILL.md
-│   │   │   └── references/stat_keys_mapping.md
-│   │   └── bpsr-planner-ui/
-│   │       ├── SKILL.md
-│   │       └── assets/component_template.tsx
-│   └── tools/
-│       ├── validate_game_db.ts
-│       └── verify_stat_formula.py
-│
-├── Docs/                                         # เอกสารสถาปัตยกรรมและรายงานแคตตาล็อกข้อมูลเกม
-│   ├── ADR.md                                    # Architectural Decision Records
-│   ├── SAD.md                                    # System Architecture Document (ไฟล์นี้)
-│   ├── SDD.md                                    # Software Design Document
-│   ├── DATA_AUDIT_REPORT.md                      # รายงานผลการตรวจสอบความครบถ้วนของข้อมูลดิบ
-│   ├── FULL_GAME_DATA_CATALOG.md                 # รายงานโครงสร้างข้อมูลดิบทั้งหมด
-│   └── catalog/                                  # สารานุกรมข้อมูลเกมฉบับมนุษย์อ่านทั้ง 7 หมวด
-│       ├── 01_CLASSES_SKILLS_TALENTS.md
-│       ├── 02_BATTLE_IMAGINES_ALL_TIERS.md
-│       ├── 03_EQUIPMENTS_PERFECTION_AND_SETS.md
-│       ├── 04_SIGILS_AND_ENCHANTS.md
-│       ├── 05_FACTORS_G10.md
-│       ├── 06_DEEP_SLUMBER_PSYCHOSCOPES.md
-│       └── 07_MODULES_AND_LINK_LEVELS.md
-│
-├── public/                                       # ไฟล์ Static Assets และไอคอนเกม
-│   └── assets/
-│
-├── src/
-│   ├── app/                                      # Next.js App Router Pages
-│   │   ├── layout.tsx                            # Root Layout ของแอปพลิเคชัน
-│   │   └── page.tsx                              # หน้าหลักของ Build Planner, Status Windows & Simulator
-│   │
-│   ├── components/                               # Reusable UI Components
-│   │   └── TalentTreeDiagram.tsx                 # แผนผัง SVG Talent Tree Map 2 แท็บ (Basic 30 + Spec 70)
-│   │
-│   ├── data/
-│   │   ├── schemas/                              # Zod Validation Schemas & TypeScript Types ทั้ง 7 ไฟล์
-│   │   │   ├── common.schema.ts
-│   │   │   ├── class-talent.schema.ts
-│   │   │   ├── equipment.schema.ts
-│   │   │   ├── imagine.schema.ts
-│   │   │   ├── module.schema.ts
-│   │   │   ├── psychoscope.schema.ts
-│   │   │   ├── user-build.schema.ts
-│   │   │   └── index.ts
-│   │   │
-│   │   ├── game-db/                              # ฐานข้อมูล ZTable ของจริงที่นำเข้าจากตัวเกม (17 ไฟล์หลัก)
-│   │   │   ├── attr-icons.json
-│   │   │   ├── battle-imagines.json
-│   │   │   ├── classes.json
-│   │   │   ├── enchant-material-icons.json
-│   │   │   ├── enchants.json
-│   │   │   ├── equipment.json
-│   │   │   ├── modules.json
-│   │   │   ├── phantom-factors.json
-│   │   │   ├── player-levels.json
-│   │   │   ├── refine.json
-│   │   │   ├── season-constants.json
-│   │   │   ├── season-talents.json
-│   │   │   ├── skill-fight-values.json
-│   │   │   ├── skill-rank-fight-values.json
-│   │   │   ├── skills.json
-│   │   │   ├── suits.json
-│   │   │   ├── talent-tree.json
-│   │   │   └── combat-sim/                       # ตารางตัวคูณสกิลและ Cooldown สำหรับ 5-Min Simulator
-│   │   │       ├── SkillBreakdownDetailsRuntime.json
-│   │   │       ├── SkillCooldowns.json
-│   │   │       ├── SkillDamageChainRuntime.json
-│   │   │       ├── SkillEffectTable.json
-│   │   │       └── SkillFightLevelTable.json
-│   │   │
-│   │   ├── locales/en_US/                        # พจนานุกรมคำแปลภาษาอังกฤษของรหัส ID ทั้งหมด
-│   │   │   ├── bpsr-bp-ui.json
-│   │   │   └── game-data.json
-│   │   │
-│   │   ├── _external_repos/                      # (Git Ignored) โฟลเดอร์ Clone โปรเจกต์อ้างอิงภายนอก
-│   │   └── _raw_dumps/                           # (Git Ignored) โฟลเดอร์พักข้อมูลดิบจากการดึงข้อมูล
-│   │
-│   ├── engine/                                   # สมองกลคำนวณสเตตัส ดาเมจ และการจำลองการต่อสู้
-│   │   ├── game-db-loader.ts                     # ตัวโหลดฐานข้อมูล ZTable, แปลงรหัส AttrID และดึงคำแปล en_US
-│   │   ├── stat-aggregator.ts                    # คำนวณสเตตัส Lv.60 แยกเป็น SummaryWindow & FullAttributesWindow
-│   │   ├── damage-calculator.ts                  # คำนวณ Expected Damage, Crit, Lucky Strike และ Heal ต่อฮิต
-│   │   ├── combat-simulator.ts                   # จำลองลูปการต่อสู้ 5 นาที (300 วินาที / 6,000 Ticks)
-│   │   ├── build-comparator.ts                   # เปรียบเทียบบิลด์ A vs B ภายใต้กฎ Spec-Locked
-│   │   ├── test-run.ts                           # สคริปต์ CLI สำหรับรันทดสอบ Engine ทั้งระบบผ่าน npx tsx
-│   │   └── _reference_logic/                     # (TS Excluded) โค้ดต้นแบบจาก bpsr-build-planner สำหรับเทียบเคียงสูตร
-│   │
-│   └── store/                                    # State Management
-│       └── useBuildStore.ts                      # Zustand Store จัดการบิลด์ปัจจุบันและบันทึกบิลด์ลง LocalStorage
-│
-├── .gitignore
-├── next-env.d.ts
-├── package.json
-├── package-lock.json
-└── tsconfig.json
++-----------------------------------------------------------------------------------+
+| Layer 1: Game Data & Localization (src/data/ & src/locales/)                      |
+| - Equipment (equipment.json), Refine (refine.json), Suits (suits.json)            |
+| - Skills (skills.json), Talents (talent-tree.json), Imagines (battle-imagines...) |
+| - Modules (modules.json), Enchants/Sigils (enchants.json)                         |
+| - Psychoscope (season-talents.json) & Factors (phantom-factors.json)              |
+| - Full Text & Parameter Tables (src/locales/{ja,en_US,zh_Hans}/game-data.json)    |
++-----------------------------------------------------------------------------------+
+                                         |
+                                         v
++-----------------------------------------------------------------------------------+
+| Layer 2: Base Build Planner State & Stat Engine (src/build-planner/)              |
+| - Zustand Store (store/useBuildPlannerStore.ts + 6 Slices)                        |
+| - Saved Builds Manager (plans/planStorage.ts -> localStorage)                     |
+| - Base Stat Calculator (stats/calculateRawStats.ts & stats/deriveStats.ts)        |
+| - Buff & Consumable Config (stats/cookingBuff.ts & stats/attrMaps.ts)             |
++-----------------------------------------------------------------------------------+
+                                         |
+                                         v
++-----------------------------------------------------------------------------------+
+| Layer 3: Baseline Sanitizer & Combat Simulator Engine (src/build-planner/simulator/)|
+| 1. baselineSanitizer.ts: ล้างบัฟจับเวลาออกจากสเตตัสเริ่มต้น + ป้องกันการคิดซ้ำ 100%   |
+| 2. combatMechanicsRegistry.ts: ฐานข้อมูลกฎการต่อสู้ของ 9 อาชีพ, สกิลลูก, โหนด Proc, |
+|    เซ็ตอุปกรณ์ 2/4 ชิ้น, อาวุธ Far Sea (effectType=3), Imagine Active/Passive,      |
+|    โมดูล (DMG Stack, Agile, Life Wave, Elite Strike), และ Psychoscope            |
+| 3. combatSimulatorEngine.ts: จำลองการต่อสู้แบบ Discrete Time-Stepped (dt=50ms)    |
+|    จัดการ Cooldown, Charges, Class Resources, Buff Windows, Procs, และบันทึก       |
+|    Formula Breakdown รายสกิลเพื่อใช้ตรวจสอบย้อนกลับได้ทุกบรรทัด                    |
+| 4. buildComparatorEngine.ts: รันจำลองเทียบหลายบิลด์จาก PlanManager พร้อมกัน        |
+|    เพื่อจัดอันดับและชี้วัดว่า Comp Build ไหนทำ DPS / HPS / Burst สูงที่สุด             |
++-----------------------------------------------------------------------------------+
+                                         |
+                                         v
++-----------------------------------------------------------------------------------+
+| Layer 4: Interactive UI & Inspector (src/build-planner/components/)               |
+| - หน้าจัดบิลด์หลักของ bpsr-build-planner (BuildPlannerPage.tsx)                    |
+| - ปุ่มเปิดหน้าต่าง CombatSimulatorDialog.tsx บน Top Bar                            |
+| - แท็บที่ 1: ผลจำลองการต่อสู้ของบิลด์ปัจจุบัน (Skill Breakdown, Buff Uptime,          |
+|   Resource Timeline, และหน้าต่างคลิกดูสมการคำนวณจริง Formula Audit Inspector)      |
+| - แท็บที่ 2: ตารางเปรียบเทียบหลายบิลด์ (Multi-Build Comparison Matrix & Winner)     |
++-----------------------------------------------------------------------------------+
 ```
 
 ---
+
+## 2. โครงสร้างไดเรกทอรีของโปรเจกต์ (Directory Structure)
+
+```text
+/workspaces/BPSR-Build-Simulator/
+├── Docs/
+│   ├── ADR.md                                      # บันทึกการตัดสินใจทางสถาปัตยกรรม (ADR-001 ถึง ADR-011)
+│   ├── SAD.md                                      # เอกสารสถาปัตยกรรมซอฟต์แวร์ฉบับนี้
+│   ├── SDD.md                                      # เอกสารการออกแบบสมการและกฎการคำนวณอย่างละเอียด
+│   ├── COMBAT_SIMULATOR_MASTER_DATA_2.md           # ข้อมูลสกิล, โหนด Talent, Imagines, Suits ที่สกัดจากเกมจริง
+│   ├── RESOLVED_SUBSKILLS_AND_BUFFS.md             # ข้อมูลสกิลลูก (<linktext>) และคำอธิบายบัฟ (attrDescs)
+│   ├── COMPLETE_GEAR_MODULES_PHANTOM_CONSUMABLES.md# ข้อมูลอาวุธ, โมดูล Lv.1-6, Psychoscope, อาหารและยา
+│   ├── FINAL_VERIFIED_MISSING_PIECES.md            # ข้อมูล Psychoscope Links 1200-1219, Bond Points, Factors, Sigils
+│   ├── FINAL_1_PERCENT_EXTRACTION.md               # ข้อมูลเอฟเฟกต์อาวุธ Far Sea (EffectType=3) และออปชันม่วง
+│   └── RAW_AND_DERIVED_STATS_AUDIT.md              # ผลตรวจสอบโค้ด calculateRawStats.ts และ deriveStats.ts
+├── src/
+│   ├── data/                                       # ไฟล์ฐานข้อมูล ZTable JSON ของตัวเกมทั้งหมด
+│   ├── locales/                                    # ไฟล์ภาษาและพารามิเตอร์สกิล (en_US, ja, zh_Hans)
+│   └── build-planner/                              # ซอร์สโค้ดหลักของแอปพลิเคชัน
+│       ├── BuildPlannerPage.tsx                    # หน้าจอหลักของ Build Planner + ปุ่มเปิด Combat Simulator
+│       ├── types.ts                                # โครงสร้างข้อมูลกลางของระบบ
+│       ├── profession.ts                           # นิยาม 9 อาชีพหลักและค่าสัมประสิทธิ์ประจำอาชีพ
+│       ├── store/                                  # Zustand Store และ Slices ทั้ง 6 ส่วน
+│       ├── stats/                                  # ระบบคำนวณสเตตัสพื้นฐาน (calculateRawStats, deriveStats, attrMaps, cookingBuff)
+│       ├── equipment/                              # ระบบจัดการอุปกรณ์ 11 ชิ้นและเซ็ตอุปกรณ์
+│       ├── module/                                 # ระบบจัดการโมดูลและ Link Effects
+│       ├── phantom/                                # ระบบจัดการ Deep Slumber Psychoscope และ Factors
+│       ├── plans/                                  # ระบบจัดการบันทึกและโหลดหลายบิลด์ (PlanManager)
+│       ├── components/                             # คอมโพเนนต์ UI ทั้งหมดของระบบ
+│       └── simulator/                              # [NEW] โมดูลจำลองการต่อสู้และเปรียบเทียบหลายบิลด์
+│           ├── types.ts                            # โครงสร้างข้อมูลของ Simulator, Combat Log, Formula Trace, และผลเปรียบเทียบ
+│           ├── baselineSanitizer.ts                # ตัวแยกสเตตัสตั้งต้นออกจากบัฟจับเวลาและป้องกันการคิดซ้ำ
+│           ├── combatMechanicsRegistry.ts          # ฐานข้อมูลตัวคูณสกิล, สกิลลูก, โหนด Talent, Imagine, Suit, Far Sea, Factor
+│           ├── combatSimulatorEngine.ts            # สมองกลจำลองการต่อสู้แบบ Time-Stepped (dt=50ms)
+│           ├── buildComparatorEngine.ts            # ตัวรันเปรียบเทียบหลายบิลด์จาก PlanManager พร้อมสรุปจุดเด่น/จุดด้อย
+│           └── CombatSimulatorDialog.tsx           # หน้าต่าง UI แสดงผล DPS/HPS, Formula Inspector, และตารางเปรียบเทียบบิลด์
+└── package.json
+```
+
+---
+
+## 3. การรับประกันความถูกต้องและการไม่คำนวณซ้ำ (Data Integrity & Non-Duplication Guarantee)
+
+1. **แยกสเตตัสก่อนเริ่มไฟต์ออกจากบัฟในไฟต์ (`baselineSanitizer.ts`):**
+   * ทุกครั้งที่รัน Simulator ระบบจะสร้าง `SanitizedCookingBuff` ที่ปิดสวิตช์บัฟจับเวลาชั่วคราว (`lifeWaveEnabled: false`, `agileEnabled: false`, `dmgStackEnabled: false`, `statResonanceEnabled: false`) ก่อนเรียก `computeStatsBundle()` เพื่อให้ได้ **Pure Pre-Combat Stats** ที่แท้จริง
+2. **การจำลองบัฟตามเวลาและเงื่อนไขจริง (`Dynamic Buff & Proc State Machine`):**
+   * บัฟที่มีระยะเวลาจำกัด (เช่น `Muku Chief` 20s, `Focus` 12–15s, `Volt Surge` 12s, `Permafrost` 10s, `Galeform` 15s, `Heroic Melody`, `Life Wave` 5s, `DMG Stack` 8s) จะถูกเปิด/ปิดตามวินาทีจริงในลูป `combatSimulatorEngine.ts` และคำนวณ `DerivedStats` ณ วินาทีนั้นใหม่ทุกครั้งที่มีการเปลี่ยนแปลงบัฟ
+3. **ความโปร่งใสที่ตรวจสอบได้ทุกฮิต (`Formula Traceability`):**
+   * ในผลลัพธ์ของแต่ละสกิล จะแนบอ็อบเจกต์ `formulaBreakdown` ที่แสดงตัวเลขทุกตัวในสมการ (ตั้งแต่ `Active ATK`, `Skill Multiplier %`, `Flat Bonus`, `Defense Mitigation`, `Additive DMG Bonus Bucket`, `Elemental & Mastery Mult`, `Illusion-Breaking Mult`, `Crit EV`, ไปจนถึง `Lucky Strike EV`) เพื่อให้ผู้ใช้คลิกตรวจสอบเทียบกับการคิดมือได้ 100%
