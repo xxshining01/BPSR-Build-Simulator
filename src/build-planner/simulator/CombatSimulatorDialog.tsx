@@ -861,3 +861,4 @@ export default function CombatSimulatorDialog({ onClose }: CombatSimulatorDialog
     </DraggableDialog>
   );
 }
+

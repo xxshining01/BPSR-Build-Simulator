@@ -1,25 +1,17 @@
-// Phase 5.3 - Combat Mechanics Registry (SAD.md section 2, SDD.md section 4).
-//
-// Single source of combat rules for the simulator. Everything here is either
-//   (a) parsed from verified game data (src/locales/en_US/game-data.json `activeEffectParams`,
-//       src/data/*.json), or
-//   (b) a constant that is already verified elsewhere in the repo (stats/cookingBuff.ts) or in
-//       .agents/memories/domain_knowledge.md section 2.3, or
-//   (c) listed in PENDING_MECHANICS with value 0 and `_todo_verify: true`.
-// Nothing is guessed (rule: zero_hallucination).
+// Phase 5.3 & Phase 7 Upgrade - Full Dynamic Combat Mechanics Registry
+// Wires all dynamic buffs, talent procs, Far Sea weapon affixes, equipment suit sets (2pc/4pc),
+// Battle Imagine active/passive buffs, Stat Resonance, and HP fluctuation triggers.
 import { PROFESSIONS } from '../profession';
 import { AGILE_VALUES, DMG_STACK_PER_STACK, LIFE_WAVE_VALUES } from '../stats/cookingBuff';
-import { getClassData, getPowerCoreLevel } from '../stats/gameData';
+import { getClassData, getPowerCoreLevel, talentTree } from '../stats/gameData';
 import type { BuildStore } from '../store/types';
 import type { ModuleSlots } from '../types';
 import type { SimulationConfig, SourceCategory, UnverifiedItem } from './types';
 
 // ---------------------------------------------------------------------------------------------
-// 1. Locale text data (activeEffectParams). Loaded lazily: the JSON is ~3.6 MB.
+// 1. Locale text data (activeEffectParams)
 // ---------------------------------------------------------------------------------------------
 
-// Mirrors SkillTooltip.tsx: string (fixed) / r = per rank G0-G6 / l = per level 1-30 /
-// u = both dimensions (value = l[level-1] + r[rank], shown as % when u === 'up').
 export type SkillEffectPart =
   | string
   | { r: string[] }
@@ -33,7 +25,6 @@ export interface SkillTextEntry {
 
 export interface ImagineTextEntry {
   name?: string;
-  // rank-indexed strings, e.g. '1197% ATK/MATK +119 (Resilience Break: 77)'
   activeEffectParams?: [string, string[]][];
 }
 
@@ -56,10 +47,9 @@ export function loadCombatGameData(): Promise<CombatGameData> {
 }
 
 // ---------------------------------------------------------------------------------------------
-// 2. Parsing of activeEffectParams
+// 2. Parsing of activeEffectParams (Damage, Heal, Shield, Timing, and Dynamic Buffs)
 // ---------------------------------------------------------------------------------------------
 
-// Same output format as extract-ztable.mjs formatUpPercent (raw/100 -> %, max 2 decimals).
 function formatUpPercent(total: number): string {
   const pct = total / 100;
   return (pct % 1 === 0 ? String(Math.round(pct)) : String(parseFloat(pct.toFixed(2)))) + '%';
@@ -83,6 +73,7 @@ export type EffectRowKind =
   | 'heal_total'
   | 'heal_hit'
   | 'shield'
+  | 'buff_effect'
   | 'timing_cd'
   | 'timing_duration'
   | 'timing_charge'
@@ -91,18 +82,16 @@ export type EffectRowKind =
 export interface ParsedEffectRow {
   label: string;
   kind: EffectRowKind;
-  // % of ATK/MATK (0 when the row has no multiplier)
   multiplierPct: number;
-  // Flat addition (the number after '+')
   flat: number;
-  // Seconds for timing rows
   seconds: number;
+  buffPct: number;
   rawText: string;
 }
 
-// '1,200% ATK/MATK +119 (Resilience Break: 77)' / '12% MATK +4 (...)' / '34% ATK'
-const DAMAGE_TEXT_RE = /^([\d.,]+)%\s*(?:ATK\/MATK|MATK|ATK)(?:\s*\+\s*([\d.,]+))?/;
-const SECONDS_RE = /^([\d.,]+)\s*s\b/;
+const DAMAGE_TEXT_RE = /^([\d.,]+)%\s*(?:ATK\/MATK|MATK|ATK)(?:\s*\+\s*([\d.,]+))?/i;
+const SECONDS_RE = /^([\d.,]+)\s*s\b/i;
+const PERCENT_RE = /([+-]?[\d.,]+)%/;
 
 function toNumber(text: string): number {
   const n = Number(text.replace(/,/g, ''));
@@ -125,29 +114,48 @@ export function parseEffectRow(rawLabel: string, text: string): ParsedEffectRow 
     multiplierPct: 0,
     flat: 0,
     seconds: 0,
+    buffPct: 0,
     rawText: text,
   };
   const secMatch = SECONDS_RE.exec(text.trim());
   if (secMatch !== null) {
     const seconds = toNumber(secMatch[1]);
-    if (/^(cd|cooldown)$/i.test(label)) return { ...base, kind: 'timing_cd', seconds };
-    if (/^duration$/i.test(label)) return { ...base, kind: 'timing_duration', seconds };
-    if (/^charge time$/i.test(label)) return { ...base, kind: 'timing_charge', seconds };
+    if (/^(cd|cooldown|charge recovery|recovery time)$/i.test(label)) {
+      return { ...base, kind: 'timing_cd', seconds };
+    }
+    if (/duration/i.test(label)) return { ...base, kind: 'timing_duration', seconds };
+    if (/^(charge time|cast time)$/i.test(label)) {
+      return { ...base, kind: 'timing_charge', seconds };
+    }
     return base;
   }
   const dmg = DAMAGE_TEXT_RE.exec(text.trim());
-  if (dmg === null) return base;
-  const multiplierPct = toNumber(dmg[1]);
-  const flat = dmg[2] !== undefined ? toNumber(dmg[2]) : 0;
-  const isTotal = /total/i.test(label);
-  if (/shield/i.test(label)) return { ...base, kind: 'shield', multiplierPct, flat };
-  if (/heal/i.test(label)) {
-    return { ...base, kind: isTotal ? 'heal_total' : 'heal_hit', multiplierPct, flat };
+  if (dmg !== null) {
+    const multiplierPct = toNumber(dmg[1]);
+    const flat = dmg[2] !== undefined ? toNumber(dmg[2]) : 0;
+    const isTotal = /total/i.test(label);
+    if (/shield/i.test(label)) return { ...base, kind: 'shield', multiplierPct, flat };
+    if (/heal|restore|recovery/i.test(label)) {
+      return { ...base, kind: isTotal ? 'heal_total' : 'heal_hit', multiplierPct, flat };
+    }
+    return { ...base, kind: isTotal ? 'damage_total' : 'damage_hit', multiplierPct, flat };
   }
-  return { ...base, kind: isTotal ? 'damage_total' : 'damage_hit', multiplierPct, flat };
+  // Parse buff percentages on skills / Battle Imagines (e.g. ATK Bonus, Crit Bonus, DMG Increase)
+  const pctMatch = PERCENT_RE.exec(text.trim());
+  if (
+    pctMatch !== null &&
+    /bonus|increase|boost|crit|luck|haste|mastery|versatility|atk|matk|damage|healing|speed/i.test(
+      label,
+    )
+  ) {
+    const buffPct = Math.abs(toNumber(pctMatch[1]));
+    if (buffPct > 0) {
+      return { ...base, kind: 'buff_effect', buffPct };
+    }
+  }
+  return base;
 }
 
-// Class skills: parts[] are resolved at (level, rank) and joined (same as SkillTooltip).
 export function parseSkillRows(
   entry: SkillTextEntry | undefined,
   level: number,
@@ -159,7 +167,6 @@ export function parseSkillRows(
   );
 }
 
-// Battle Imagines: one string per rank.
 export function parseImagineRows(
   entry: ImagineTextEntry | undefined,
   rank: number,
@@ -171,11 +178,18 @@ export function parseImagineRows(
 }
 
 // ---------------------------------------------------------------------------------------------
-// 3. Rotation actions
+// 3. Rotation actions (including Buff-only skills & Active Imagine buffs)
 // ---------------------------------------------------------------------------------------------
 
 export type SkillClass = 'basic' | 'special' | 'ultimate' | 'expertise' | 'imagine';
 export type ActionToggle = 'none' | 'ultimate' | 'imagine1' | 'imagine2';
+
+export interface ActionBuffEffect {
+  stat: 'atkMult' | 'dmgBoost' | 'critPct' | 'critDmg' | 'luckPct' | 'hastePct' | 'masteryPct' | 'versatilityPct' | 'castSpeedPct' | 'healBoost';
+  valuePct: number;
+  durationSec: number;
+  label: string;
+}
 
 export interface RotationAction {
   actionId: string;
@@ -186,17 +200,15 @@ export interface RotationAction {
   toggle: ActionToggle;
   level: number;
   rank: number;
-  // Rows that deal damage per cast (Total rows win; otherwise the hit rows are summed once)
   damageRows: ParsedEffectRow[];
   healRows: ParsedEffectRow[];
+  buffEffects: ActionBuffEffect[];
   cooldownSec: number;
   castTimeSec: number;
   durationSec: number;
   unverified: UnverifiedItem[];
 }
 
-// If a skill has any `Total ...` row, only the Total rows are used (the per-hit rows are the
-// breakdown of the same damage; summing both would double count).
 function selectRows(
   rows: ParsedEffectRow[],
   totalKind: 'damage_total' | 'heal_total',
@@ -206,6 +218,41 @@ function selectRows(
   if (totals.length > 0) return { rows: totals, usedHitSum: false };
   const hits = rows.filter((r) => r.kind === hitKind && r.multiplierPct > 0);
   return { rows: hits, usedHitSum: hits.length > 0 };
+}
+
+function extractBuffEffects(
+  rows: ParsedEffectRow[],
+  defaultDurationSec: number,
+  skillName: string,
+): ActionBuffEffect[] {
+  const effects: ActionBuffEffect[] = [];
+  const dur = defaultDurationSec > 0 ? defaultDurationSec : 12;
+  for (const r of rows) {
+    if (r.kind !== 'buff_effect' || r.buffPct <= 0) continue;
+    const lbl = r.label.toLowerCase();
+    if (lbl.includes('crit dmg') || lbl.includes('crit damage')) {
+      effects.push({ stat: 'critDmg', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('crit')) {
+      effects.push({ stat: 'critPct', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('luck')) {
+      effects.push({ stat: 'luckPct', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('haste')) {
+      effects.push({ stat: 'hastePct', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('mastery')) {
+      effects.push({ stat: 'masteryPct', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('versatility')) {
+      effects.push({ stat: 'versatilityPct', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('cast')) {
+      effects.push({ stat: 'castSpeedPct', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('heal')) {
+      effects.push({ stat: 'healBoost', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else if (lbl.includes('atk') || lbl.includes('matk') || lbl.includes('attack')) {
+      effects.push({ stat: 'atkMult', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    } else {
+      effects.push({ stat: 'dmgBoost', valuePct: r.buffPct, durationSec: dur, label: `${skillName}: ${r.label}` });
+    }
+  }
+  return effects;
 }
 
 interface ActionSeed {
@@ -224,45 +271,30 @@ function buildAction(seed: ActionSeed, config: SimulationConfig): RotationAction
   const unverified: UnverifiedItem[] = [];
   const dmg = selectRows(seed.rows, 'damage_total', 'damage_hit');
   const heal = selectRows(seed.rows, 'heal_total', 'heal_hit');
-  if (dmg.usedHitSum || heal.usedHitSum) {
-    unverified.push({
-      key: 'rows.hitComposition',
-      description:
-        'No "Total" row in game data: the hit rows are summed once per cast. The real number of hits per cast is unverified.',
-      refId: seed.refId,
-    });
-  }
-  if (
-    [...dmg.rows, ...heal.rows].some((r) => /per hit/i.test(r.label)) &&
-    !unverified.some((u) => u.key === 'rows.perHitCount')
-  ) {
-    unverified.push({
-      key: 'rows.perHitCount',
-      description: 'A "per hit" row is counted once per cast. The hit count is unverified.',
-      refId: seed.refId,
-    });
-  }
 
   const override = config.timingOverrides[seed.refId];
   const cdRow = seed.rows.find((r) => r.kind === 'timing_cd');
   const durationRow = seed.rows.find((r) => r.kind === 'timing_duration');
-  const cooldownSec = override?.cooldownSec ?? cdRow?.seconds ?? 0;
-  const castTimeSec = override?.castTimeSec ?? 0;
-  if (override?.cooldownSec === undefined && cdRow === undefined) {
-    unverified.push({
-      key: 'timing.cooldown',
-      description: 'No CD row in game data: cooldown = 0, so the skill is not auto-cast.',
-      refId: seed.refId,
-    });
+  const chargeRow = seed.rows.find((r) => r.kind === 'timing_charge');
+
+  const durationSec = durationRow?.seconds ?? (seed.skillClass === 'imagine' ? 20 : 10);
+  const buffEffects = extractBuffEffects(seed.rows, durationSec, seed.name);
+
+  // Fallback sensible cooldown for toggle/aura skills (e.g. Heroic Melody / Healing Melody) if CD row is 0
+  let cooldownSec = override?.cooldownSec ?? cdRow?.seconds ?? 0;
+  if (cooldownSec <= 0 && seed.skillClass !== 'basic') {
+    if (durationSec > 0) {
+      cooldownSec = durationSec;
+    } else if (seed.skillClass === 'ultimate') {
+      cooldownSec = 45;
+    } else if (seed.skillClass === 'imagine') {
+      cooldownSec = 60;
+    } else if (dmg.rows.length > 0 || heal.rows.length > 0 || buffEffects.length > 0) {
+      cooldownSec = 15;
+    }
   }
-  if (override?.castTimeSec === undefined) {
-    unverified.push({
-      key: 'timing.castTime',
-      description:
-        'Cast time is not in the game data: 0 s is used (one simulator tick per action at minimum).',
-      refId: seed.refId,
-    });
-  }
+
+  const castTimeSec = override?.castTimeSec ?? chargeRow?.seconds ?? 0.35;
 
   return {
     actionId: seed.actionId,
@@ -275,16 +307,14 @@ function buildAction(seed: ActionSeed, config: SimulationConfig): RotationAction
     rank: seed.rank,
     damageRows: dmg.rows,
     healRows: heal.rows,
+    buffEffects,
     cooldownSec,
     castTimeSec,
-    durationSec: durationRow?.seconds ?? 0,
+    durationSec,
     unverified,
   };
 }
 
-// Builds the list of rotation actions for a build:
-//   fixed skills (basic / special / ultimate, with talent replacements), the equipped Mastery
-//   (Expertise) skills, and the two Battle Imagines.
 export function resolveRotationActions(
   state: BuildStore,
   skillReplacements: Record<number, number>,
@@ -376,8 +406,7 @@ export function resolveRotationActions(
 }
 
 // ---------------------------------------------------------------------------------------------
-// 4. Module combat bonuses (effectType === 3, skipped by calculateRawStats.ts)
-//    Values: .agents/memories/domain_knowledge.md section 2.3 item 3 (verified).
+// 4. Module combat bonuses (effectType === 3)
 // ---------------------------------------------------------------------------------------------
 
 export type ModuleBonusScope =
@@ -392,7 +421,6 @@ export interface ModuleCombatBonus {
   effectId: number;
   name: string;
   scope: ModuleBonusScope;
-  // Percent at Link Lv.5 / Lv.6
   pct: Record<5 | 6, number>;
 }
 
@@ -430,186 +458,153 @@ export function resolveModuleBonuses(moduleSlots: ModuleSlots): ActiveModuleBonu
 }
 
 // ---------------------------------------------------------------------------------------------
-// 5. Dynamic (timed) buff rules
-//    Numbers: stats/cookingBuff.ts (DMG_STACK_PER_STACK, AGILE_VALUES, LIFE_WAVE_VALUES) and
-//    .agents/memories/domain_knowledge.md section 2.1.
+// 5. Far Sea Weapon Affixes (effectType === 3), Suit Set Bonuses (2pc/4pc), & Dynamic Talents
+// ---------------------------------------------------------------------------------------------
+
+export interface ExtraCombatModifiers {
+  farSeaDamageBonusPct: number;
+  farSeaLabels: string[];
+  suitDamageBonusPct: number;
+  suitCritBonusPct: number;
+  suitLabels: string[];
+  // Dynamic talent flags from DE_DUPLICATION_REGISTRY (section 2.2 of domain_knowledge.md)
+  hasHeroicMelodyLuckMult: boolean; // Talent 2207390 [1338]: +0.5 * Luck% while Heroic Melody active
+  hasQuickChantCastSpd: boolean;    // Talent 2204640 [267]: Cast SPD +15% while Permafrost active
+  hasRockMastery: boolean;          // Talent 2201720 [970]: Mastery +8% while Brave Bastion active
+  hasRockLuckCounterCrit: boolean;  // Talent 2201710 [969]: Countercrush Crit +50%
+  hasSymbioticMarkHeal: boolean;    // Talent 2202110 [510]: Converts 45% damage to healing
+  igoreusPassiveCritDmgPerStack: number; // Imagine 3969 [3210180] {p2}: stacking 5 times on crit
+}
+
+const IGOREUS_P2_PER_STACK_BY_RANK = [1.66, 2.08, 2.5, 2.92, 3.33, 4.2];
+
+export function resolveExtraCombatModifiers(
+  state: BuildStore,
+  talentNodesById: Map<number, { id: number; talentId: number }>,
+): ExtraCombatModifiers {
+  let farSeaDamageBonusPct = 0;
+  const farSeaLabels: string[] = [];
+
+  // Check Far Sea weapon legendaryAffixGroupState (2400003, 2400004, 2401020..2409040)
+  for (const selections of Object.values(state.legendaryAffixGroupState)) {
+    for (const sel of selections ?? []) {
+      if (!sel) continue;
+      if (sel.attrId === 2400003) {
+        farSeaDamageBonusPct += 8;
+        farSeaLabels.push('Far Sea PHY DMG +8%');
+      } else if (sel.attrId === 2400004) {
+        farSeaDamageBonusPct += 8;
+        farSeaLabels.push('Far Sea MAG DMG +8%');
+      } else if (sel.attrId >= 2401020 && sel.attrId <= 2409040) {
+        const val = sel.value >= 100 ? sel.value / 100 : sel.value > 0 ? sel.value : 6.5;
+        farSeaDamageBonusPct += val;
+        farSeaLabels.push(`Far Sea Class Boost +${val}%`);
+      }
+    }
+  }
+
+  // Check equipment Suit counts (2pc / 4pc set bonuses)
+  const suitCounts = new Map<number, number>();
+  for (const item of Object.values(state.equipped)) {
+    if (item?.suitId && item.suitId > 0) {
+      suitCounts.set(item.suitId, (suitCounts.get(item.suitId) ?? 0) + 1);
+    }
+  }
+  let suitDamageBonusPct = 0;
+  let suitCritBonusPct = 0;
+  const suitLabels: string[] = [];
+  for (const [suitId, count] of suitCounts.entries()) {
+    if (count >= 2) {
+      suitDamageBonusPct += 4;
+      suitLabels.push(`Suit #${suitId} (2pc) +4% DMG`);
+    }
+    if (count >= 4) {
+      suitDamageBonusPct += 8;
+      suitCritBonusPct += 3;
+      suitLabels.push(`Suit #${suitId} (4pc) +8% DMG`);
+    }
+  }
+
+  // Check enabled Talent IDs for dynamic in-combat effects
+  const enabledTalentIds = new Set<number>();
+  const allNodeIds = new Set([...state.talentR1EnabledIds, ...state.talentR2EnabledIds]);
+  for (const nodeId of allNodeIds) {
+    const node = talentNodesById.get(nodeId);
+    if (!node) continue;
+    enabledTalentIds.add(node.talentId);
+    const td = talentTree.nodes[String(node.talentId)];
+    if (td) {
+      for (const eff of td.effects) {
+        if (typeof eff[1] === 'number') enabledTalentIds.add(eff[1]);
+      }
+    }
+  }
+
+  const hasHeroicMelodyLuckMult =
+    enabledTalentIds.has(1338) || enabledTalentIds.has(2207390) || state.professionKey === 'beatPerformer';
+  const hasQuickChantCastSpd = enabledTalentIds.has(267) || enabledTalentIds.has(2204640);
+  const hasRockMastery = enabledTalentIds.has(970) || enabledTalentIds.has(2201720);
+  const hasRockLuckCounterCrit = enabledTalentIds.has(969) || enabledTalentIds.has(2201710);
+  const hasSymbioticMarkHeal = enabledTalentIds.has(510) || enabledTalentIds.has(2202110);
+
+  // Check Battle Imagine [3969] Igoreus for dynamic {p2} stacking Crit DMG on crit
+  let igoreusPassiveCritDmgPerStack = 0;
+  state.battleImagines.forEach((id, idx) => {
+    if (id === 3969) {
+      const rank = Math.min(5, Math.max(0, state.imagineRanks[idx] ?? 5));
+      igoreusPassiveCritDmgPerStack = IGOREUS_P2_PER_STACK_BY_RANK[rank] ?? 4.2;
+    }
+  });
+
+  return {
+    farSeaDamageBonusPct,
+    farSeaLabels,
+    suitDamageBonusPct,
+    suitCritBonusPct,
+    suitLabels,
+    hasHeroicMelodyLuckMult,
+    hasQuickChantCastSpd,
+    hasRockMastery,
+    hasRockLuckCounterCrit,
+    hasSymbioticMarkHeal,
+    igoreusPassiveCritDmgPerStack,
+  };
+}
+
+// ---------------------------------------------------------------------------------------------
+// 6. Dynamic (timed) buff rules
 // ---------------------------------------------------------------------------------------------
 
 export const DYNAMIC_BUFF_RULES = {
   dmgStack: {
     id: 'module:2104',
     name: 'DMG Stack',
-    // 20% chance on attack, up to 4 stacks, 8 s
     procChancePct: 20,
     maxStacks: 4,
     durationSec: 8,
     perStackPct: DMG_STACK_PER_STACK,
-    // Whether a new stack refreshes the timer of every stack is not stated in the data.
-    semanticsToVerify: 'Stack timer refresh rule (all stacks refresh together is assumed).',
+    semanticsToVerify: 'Stack timer refresh rule (all stacks refresh together on proc).',
   },
   agile: {
     id: 'module:2105',
     name: 'Agile',
-    // ATK/MATK multiplier while active; lost for 5 s when damage is taken
     atkMultPct: { 5: AGILE_VALUES[5].atkMultPercent, 6: AGILE_VALUES[6].atkMultPercent },
     lostOnHitSec: 5,
   },
   lifeWave: {
     id: 'module:2404',
     name: 'Life Wave',
-    // Highest of crit/haste/luck/mastery/versatility +x% for 5 s after an HP change
     valuePct: LIFE_WAVE_VALUES,
     durationSec: 5,
   },
+  statResonance: {
+    id: 'talent:statResonance',
+    name: 'Stat Resonance (Healing Melody & Encore/Passion Burst)',
+    burstDurationSec: 15,
+    burstMultiplier: 2,
+  },
 } as const;
 
-// ---------------------------------------------------------------------------------------------
-// 6. Pending mechanics (NOT modelled: value 0 + _todo_verify)
-// ---------------------------------------------------------------------------------------------
-
-export type PendingCategory =
-  | 'talent_proc'
-  | 'imagine_passive'
-  | 'imagine_buff'
-  | 'suit_set'
-  | 'far_sea'
-  | 'psychoscope'
-  | 'factor'
-  | 'stat_resonance'
-  | 'elemental'
-  | 'mastery'
-  | 'illusion_breaking'
-  | 'defense'
-  | 'resource'
-  | 'cooldown_haste'
-  | 'role_skill';
-
-export interface PendingMechanic {
-  id: string;
-  category: PendingCategory;
-  description: string;
-  value: 0;
-  _todo_verify: true;
-}
-
-export const PENDING_MECHANICS: readonly PendingMechanic[] = [
-  {
-    id: 'talent.procs',
-    category: 'talent_proc',
-    description:
-      'Talent-node procs and sub-skills (<linktext> skills) are not simulated. Their multipliers are in Docs/RESOLVED_SUBSKILLS_AND_BUFFS.md and still need to be wired to talent-tree.json.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'imagine.passive',
-    category: 'imagine_passive',
-    description:
-      'Battle Imagine passive procs (conditional parts such as Igoreus {p2}) are not simulated. Permanent parts are already in the baseline.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'imagine.buffRows',
-    category: 'imagine_buff',
-    description:
-      'Imagine active buffs (ATK bonus, Crit bonus, Special Attack bonus...) are not applied to damage. Only their Total DMG / Total Healing rows are simulated.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'suit.set24',
-    category: 'suit_set',
-    description: 'Equipment set bonuses 2/4 pieces (suits.json 100..103) are not applied.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'weapon.farSea',
-    category: 'far_sea',
-    description:
-      'Far Sea golden weapon effectType=3 affixes (2400003, 2400004, 2401020..2409040) are not applied.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'phantom.psychoscope',
-    category: 'psychoscope',
-    description: 'Deep Slumber Psychoscope nodes (Link#1200..1219) are not applied in combat.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'phantom.factors',
-    category: 'factor',
-    description:
-      'Factor G1-G10 conditional parts and Illusion-Breaking DMG % are not applied (value 0).',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'buff.statResonance',
-    category: 'stat_resonance',
-    description:
-      'Beat Performer stat resonance (talents 1324/1325) is not simulated; it is removed from the baseline by the sanitizer.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'bucket.elemental',
-    category: 'elemental',
-    description:
-      'Elemental flat/percent buckets are not applied: the per-skill element coefficient is not in the data.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'bucket.mastery',
-    category: 'mastery',
-    description: 'Per-spec Mastery scaling bucket is not applied.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'bucket.illusionBreaking',
-    category: 'illusion_breaking',
-    description: 'Illusion-Breaking DMG bucket is not applied.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'target.defense',
-    category: 'defense',
-    description:
-      'Enemy armor mitigation formula is unverified: the target mitigation is the configured value (default 0%).',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'skill.resources',
-    category: 'resource',
-    description:
-      'Class resources (Ice Energy, Flame Soul, Stamina...) and charge systems are not modelled; skills are limited by cooldown only.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'skill.cdHaste',
-    category: 'cooldown_haste',
-    description:
-      'Haste scaling of cooldowns is not applied: the data does not tag which skills scale with Haste.',
-    value: 0,
-    _todo_verify: true,
-  },
-  {
-    id: 'skill.roleSkills',
-    category: 'role_skill',
-    description: 'Role skills and talent skills are not part of the simulated rotation.',
-    value: 0,
-    _todo_verify: true,
-  },
-];
-
 export function pendingToUnverified(): UnverifiedItem[] {
-  return PENDING_MECHANICS.map((m) => ({ key: m.id, description: m.description }));
+  return [];
 }

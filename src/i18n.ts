@@ -11,7 +11,7 @@ import zhCnUi from './locales/zh_CN/bpsr-bp-ui.json';
 import zhTwGameData from './locales/zh_TW/game-data.json';
 import zhTwUi from './locales/zh_TW/bpsr-bp-ui.json';
 
-const savedLang = localStorage.getItem('bpsr-language') ?? 'ja_JP';
+const savedLang = localStorage.getItem('bpsr-language') ?? 'en_US';
 
 void i18n.use(initReactI18next).init({
   resources: {
@@ -22,7 +22,7 @@ void i18n.use(initReactI18next).init({
     zh_TW: { translation: zhTwUi, 'game-data': zhTwGameData },
   },
   lng: savedLang,
-  fallbackLng: 'ja_JP',
+  fallbackLng: 'en_US',
   interpolation: { escapeValue: false },
 });
 
