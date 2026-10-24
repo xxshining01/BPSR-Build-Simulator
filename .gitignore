@@ -174,3 +174,6 @@ backend/public/config.php
 /vite.config.base.d.ts
 /vitest.config.js
 /vitest.config.d.ts
+
+# Legacy Next.js output
+.next/

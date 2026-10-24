@@ -12,6 +12,8 @@ import PhantomPanel from './phantom/PhantomPanel';
 import { PROFESSIONS } from './profession';
 import SkillPanel from './skill/SkillPanel';
 import StatsDetailDialog from './character/StatsDetailDialog';
+import CombatSimulatorDialog from './simulator/CombatSimulatorDialog';
+import './simulator/simulator.css';
 import { isTauri } from '../platform';
 import { applyLanguage } from '../platform/languageSync';
 import { SUPPORTED_LANGUAGES } from '../platform/languages';
@@ -109,6 +111,7 @@ function BuildPlanner() {
   const [activeTab, setActiveTab] = useState<Tab>('skill');
   const [showTalentTree, setShowTalentTree] = useState(false);
   const [showStatsDetail, setShowStatsDetail] = useState(false);
+  const [showCombatSim, setShowCombatSim] = useState(false);
 
   const handleTabClick = (tab: Tab) => {
     setActiveTab(tab);
@@ -192,6 +195,14 @@ function BuildPlanner() {
               )}
             </div>
             <div className="build-planner__nav-right">
+              <button
+                type="button"
+                className="build-planner__combat-sim-btn"
+                onClick={() => setShowCombatSim(true)}
+                title="5-Minute Combat Simulator & Multi-Build Comparator"
+              >
+                ⚡ Combat Sim
+              </button>
               <span className="build-planner__season-badge">{t('buildPlanner.seasonBadge')}</span>
               <div className="nav-lang" ref={langMenuRef}>
                 <button
@@ -277,6 +288,7 @@ function BuildPlanner() {
         </div>
       </div>
       {showStatsDetail && <StatsDetailDialog onClose={() => setShowStatsDetail(false)} />}
+      {showCombatSim && <CombatSimulatorDialog onClose={() => setShowCombatSim(false)} />}
     </>
   );
 }

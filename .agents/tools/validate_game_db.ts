@@ -30,12 +30,29 @@ const BaseAssetSchema = z.object({
 });
 
 function validateAllDatabases() {
-    const dbDir = path.resolve(process.cwd(), "src/data/game-db");
+    const dbDir = path.resolve(process.cwd(), "src/data");
     if (!fs.existsSync(dbDir)) {
-        console.error("[ERROR] ไม่พบโฟลเดอร์ src/data/game-db");
+        console.error("[ERROR] ไม่พบโฟลเดอร์ src/data");
         process.exit(1);
     }
-    console.log("[SUCCESS] โครงสร้าง Zod Schema และฐานข้อมูลพร้อมใช้งาน");
+    const requiredFiles = [
+        "skills.json",
+        "classes.json",
+        "talent-tree.json",
+        "equipment.json",
+        "battle-imagines.json",
+        "modules.json",
+        "suits.json",
+        "enchants.json"
+    ];
+    for (const file of requiredFiles) {
+        const filePath = path.join(dbDir, file);
+        if (!fs.existsSync(filePath)) {
+            console.error(`[ERROR] ไม่พบไฟล์ที่จำเป็น: src/data/${file}`);
+            process.exit(1);
+        }
+    }
+    console.log("[SUCCESS] โครงสร้าง Zod Schema และฐานข้อมูล src/data/*.json พร้อมใช้งาน");
 }
 
 validateAllDatabases();

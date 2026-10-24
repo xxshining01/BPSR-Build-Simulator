@@ -14,12 +14,13 @@
      4. **จึงค่อยปรับปรุงโค้ดและระบบ** ให้เป็นไปตามเอกสารที่เปลี่ยนแปลงแล้ว
 2. **Zero Hallucination Policy (`rules/zero_hallucination.md`):**
    - ห้ามเดาหรือสมมติชื่อไอเทม, ชื่อโหนด Talent, ชื่อสกิล, ค่าคงที่สมการ ($K_A, K_B, K_C, K_D$), หรือตัวเลขสเตตัสขึ้นมาเองเด็ดขาด
-   - ข้อมูลทุกชิ้นต้องอ้างอิงจาก `/src/data/game-db/*.json`, `/src/data/locales/en_US/game-data.json`, และคลังความรู้ใน `.agents/knowledge/` เท่านั้น
+   - ข้อมูลทุกชิ้นต้องอ้างอิงจาก `/src/data/*.json`, `/src/locales/en_US/game-data.json`, และคลังความรู้ใน `.agents/knowledge/` เท่านั้น
 3. **Strict Schema Validation:**
-   - โครงสร้างข้อมูลบิลด์และสเตตัสต้องผ่านการตรวจสอบด้วย Zod Schema ใน `/src/data/schemas/` เสมอ
+   - โครงสร้างข้อมูลบิลด์และสเตตัสต้องผ่านการตรวจสอบด้วย Zod Schema หรือ TypeScript Type Definitions เสมอ
 4. **Spec-Locked Comparison:**
-   - การเปรียบเทียบบิลด์ (`src/engine/build-comparator.ts`) อนุญาตให้เปรียบเทียบเฉพาะภายในอาชีพ (`classId`) และสายการเล่น (`specId`) เดียวกันเท่านั้น
-
+   - การเปรียบเทียบบิลด์ (`src/build-planner/simulator/buildComparatorEngine.ts`) อนุญาตให้เปรียบเทียบเฉพาะภายในอาชีพ (`professionKey`) และสายการเล่น (`professionTypeKey`) เดียวกันเท่านั้น
+5. **Always Update Memory**
+   - ทุกครั้งที่ดำเนินการเสร็จสิ้น ให้ทำการอัปเดตไฟล์ `.agents/memories/*.md` เพื่อบันทึกสถานะล่าสุดของโปรเจกต์
 ---
 
 ## 2. ลำดับการโหลดบริบทก่อนเริ่มงาน (Context Loading Order)

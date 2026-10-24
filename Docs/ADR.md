@@ -111,3 +111,23 @@
   3. บังคับใช้ตาราง **`DE_DUPLICATION_REGISTRY`** ใน `combatSimulatorEngine.ts` โดยระบุรายการ `buffId` / `talentId` ที่ส่วนค่าคงที่ถูกบวกใน `calculateRawStats.ts` ไปแล้ว เพื่อให้ Simulator คำนวณเฉพาะส่วนที่เป็น Dynamic Stack / Proc / Active Window เท่านั้น
 * **ผลลัพธ์ (Consequences):**
   * ตัวเลขสเตตัสก่อนเข้าไฟต์และระหว่างไฟต์มีความถูกต้องตามกลไกเกมจริง 100% ไม่มีการคิดซ้ำแม้แต่จุดเดียว และสามารถแสดงกราฟ/ตารางเปรียบเทียบผลของบัฟตามเวลาจริงได้อย่างแม่นยำ
+
+---
+
+## ADR-012: แก้ไขพาธในเอกสารให้ตรงกับโครงสร้างจริงของ `alalwww/bpsr-build-planner` และกำหนดแหล่งข้อมูลของ Simulator
+
+* **สถานะ (Status):** Accepted (ผู้ใช้อนุมัติอย่างชัดเจนเมื่อ 2026-10-24)
+* **วันที่ (Date):** 2026-10-24
+* **บริบท (Context):**
+  * หลังทำ Phase 4 เสร็จ (Root เป็น Vite + React + Zustand ของ `bpsr-build-planner` และ `npm run build` ผ่าน) พบว่า `SAD.md`, `SDD.md`, `ADR-010` และกฎใน `.agents/` อ้างอิงพาธที่ไม่มีอยู่จริงในโค้ด ได้แก่ `BuildPlannerPage.tsx`, `store/useBuildPlannerStore.ts`, `plans/planStorage.ts`, `PlanManager`/`loadPlans()`, `src/data/game-db/`, `src/data/schemas/`, และ `src/engine/build-comparator.ts`
+  * โครงสร้างจริง: หน้าจอหลักคือ `src/build-planner/BuildPlanner.tsx`, Store คือ `store/useBuildStore.ts` (ประกอบจาก 7 Slice), ระบบบันทึกหลายบิลด์อยู่ที่ `plan/buildPlan.ts` (`loadBuildPlans()`, `persistBuildPlans()`, ชนิด `BuildPlanData`) และ `store/planSlice.ts` (state `buildPlans`), ฟังก์ชันรวมสเตตัสคือ `computeStatsBundle(state)` ใน `store/derivedSelectors.ts`, ข้อมูลเกมอยู่ที่ `src/data/*.json`, ค่าตัวคูณสกิล (`activeEffectParams`) อยู่ใน `src/locales/<locale>/game-data.json`
+  * `buildPlans` ไม่เก็บ `cookingBuff` (บัฟอาหาร/โมดูลที่ติ๊กเปิด) ไว้ในแต่ละบิลด์ จึงต้องกำหนดเงื่อนไขกลางของการจำลองแยกต่างหาก
+* **การตัดสินใจ (Decision):**
+  1. แก้พาธใน `SAD.md` และ `SDD.md` ให้ตรงกับโครงสร้างจริงข้างต้น โดย **ไม่เปลี่ยนชื่อและเลย์เอาต์ของโฟลเดอร์ `src/build-planner/simulator/`** (`types.ts`, `baselineSanitizer.ts`, `combatMechanicsRegistry.ts`, `combatSimulatorEngine.ts`, `buildComparatorEngine.ts`, `CombatSimulatorDialog.tsx`)
+  2. Multi-Build Comparator ดึงบิลด์จาก `buildPlans` ใน `useBuildStore` (หรือ `loadBuildPlans()` ใน `plan/buildPlan.ts`) แทน `PlanManager`/`loadPlans()` และคงกฎ Spec-Locked (เทียบได้เฉพาะ `professionKey` และ `professionTypeKey` เดียวกัน)
+  3. แหล่งข้อมูลที่ยืนยันแล้วของ Simulator คือ `src/data/*.json` และ `src/locales/en_US/game-data.json` เท่านั้น ส่วนกฎ `zero_hallucination.md`, `agents.md`, `validate_game_db.ts` และ `bpsr-data-scraper/SKILL.md` ถูกแก้ให้ชี้ไปที่ `src/data/*.json` แทน `src/data/game-db/`
+  4. ข้อมูลที่ไม่มีใน `src/data/*.json` / `game-data.json` (เช่น เวลาร่ายสกิล, ช่วงห่างของการโจมตีปกติ, สูตรเกราะมอนสเตอร์, จำนวนฮิตของแถว `per hit`) ต้องตั้งค่าเป็น `0` พร้อม `_todo_verify: true` และผลลัพธ์ต้องถูกติดป้าย `provisional` พร้อมรายการที่ยังไม่ยืนยัน ห้ามเดาตัวเลข
+* **ผลลัพธ์ (Consequences):**
+  * เอกสาร โค้ด และกฎของ AI Agent อ้างอิงพาธเดียวกันทั้งหมด การพัฒนา Phase 5–6 จึงอ้างอิงเอกสารได้ตรง
+  * ตัวเลข DPS/HPS ที่ได้จะมีป้ายสถานะ `provisional` จนกว่าข้อมูลเวลาร่าย/ช่วงโจมตี/เกราะจะถูกยืนยันและเติมลงข้อมูลเกม
+  * ไฟล์ทดสอบแบบ co-located (`simulator/*.test.ts`) ไม่ได้รวมอยู่ในมติฉบับนี้ ต้องขออนุญาตแยกต่างหากหากต้องการเพิ่ม

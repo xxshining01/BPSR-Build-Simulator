@@ -1,0 +1,229 @@
+// Phase 5.2 - Clean Baseline Sanitizer & De-Duplication Registry (ADR-011, SDD section 1).
+//
+// calculateRawStats.ts / cookingBuff.ts bake the four timed buffs into the permanent stats as
+// soon as the user ticks the switch. For a 5-minute simulation they must be removed from the
+// baseline and re-simulated in the combat loop, otherwise they would be double counted and
+// would have 100% uptime.
+import { PROFESSIONS } from '../profession';
+import type { ProfessionKey } from '../profession';
+import { getPowerCoreLevel } from '../stats/gameData';
+import { POWER_CORE_EFFECT_IDS } from '../stats/cookingBuff';
+import { computeStatsBundle } from '../store/derivedSelectors';
+import type { StatsBundle } from '../store/derivedSelectors';
+import type { BuildStore } from '../store/types';
+import type { CookingBuffState, ModuleSlots } from '../types';
+
+// ---- DE_DUPLICATION_REGISTRY (SDD section 1.3) ----
+
+export interface DeDuplicationEntry {
+  // 'Talent 2207340' / 'Imagine 3210180' / 'Factor 3057040' / 'Module 2406'
+  id: string;
+  name: string;
+  // Already added in calculateRawStats.ts -> DO NOT ADD AGAIN in the simulator
+  alreadyInBaseStats: string;
+  // The part only the simulator may add during combat (empty string = nothing)
+  dynamicOnly: string;
+}
+
+export const DE_DUPLICATION_REGISTRY: readonly DeDuplicationEntry[] = [
+  {
+    id: 'Talent 2207340',
+    name: '[1333] Variation',
+    alreadyInBaseStats: 'Max HP +20% (Dissonance type1)',
+    dynamicOnly: 'Basic Attack becomes Resonant Strings on type2',
+  },
+  {
+    id: 'Talent 2204340',
+    name: '[237] Secondary Amp',
+    alreadyInBaseStats: 'Highest of 5 secondary stats +3.5%',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2207210',
+    name: '[1320] Crit Healing',
+    alreadyInBaseStats: 'Crit Healing +25%',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2200540',
+    name: '[152] Arcane',
+    alreadyInBaseStats: 'Crit DMG +10%',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2208520',
+    name: '[351] Crimson Break Slash',
+    alreadyInBaseStats: 'Crit DMG +8%',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2204520',
+    name: '[255] Luck Damage',
+    alreadyInBaseStats: 'Lucky Strike Mult +15% and +0.5 per 1% Luck',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2208310',
+    name: '[330] Formless Flame Slash - Break',
+    alreadyInBaseStats: 'Lucky Strike Mult +5% and +0.8 per 1% Luck',
+    dynamicOnly: 'Allows Formless Flame Slash to apply Lucky Strike',
+  },
+  {
+    id: 'Talent 2202570',
+    name: '[553] Luck Damage',
+    alreadyInBaseStats: 'Lucky Strike Mult +5% and +1.5 per 1% Luck',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2207390',
+    name: '[1338] Luck Multiplier',
+    alreadyInBaseStats: '+0.5 Lucky Strike Mult per 1% Luck',
+    dynamicOnly: 'While Heroic Melody is active add another +0.5 * Luck%',
+  },
+  {
+    id: 'Talent 2205680',
+    name: '[470] Kamikaze Luck',
+    alreadyInBaseStats: 'Lucky Strike DMG +50%',
+    dynamicOnly: 'Each Sharp used restores +3 Courage',
+  },
+  {
+    id: 'Talent 2202110',
+    name: '[510] Smite Spec',
+    alreadyInBaseStats: 'Lucky Strike DMG +50%',
+    dynamicOnly: 'Converts 45% of damage to healing on targets with Symbiotic Mark',
+  },
+  {
+    id: 'Talent 2204640',
+    name: '[267] Quick Chant',
+    alreadyInBaseStats: 'Haste +2,500',
+    dynamicOnly: 'Casting SPD +15% while Permafrost is active',
+  },
+  {
+    id: 'Talent 2201720',
+    name: '[970] Rock Mastery',
+    alreadyInBaseStats: 'Mastery +6,250',
+    dynamicOnly: 'Mastery +8% while Brave Bastion is active',
+  },
+  {
+    id: 'Talent 2201710',
+    name: '[969] Rock Luck',
+    alreadyInBaseStats: 'Luck +5%',
+    dynamicOnly: 'Countercrush has a chance of Crit +50%',
+  },
+  {
+    id: 'Talent 2200560',
+    name: '[154] Advancement',
+    alreadyInBaseStats: 'Mastery +6%',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Talent 2204680',
+    name: '[271] Intellect Amp',
+    alreadyInBaseStats: 'Intellect +5%',
+    dynamicOnly: '',
+  },
+  {
+    id: 'Imagine 3210180',
+    name: '[3969] Igoreus Passive',
+    alreadyInBaseStats: '{p1}: Crit DMG +5.6%..14% (permanent)',
+    dynamicOnly:
+      '{p2}: Crit DMG +1.66%..4.2% stacking 5 times for 2 s on crit, plus the 20 s Active skill',
+  },
+  {
+    id: 'Factor 3057040',
+    name: '[202181] Beat Performer Factor',
+    alreadyInBaseStats: '{p2}: MATK +1.95%..9.00% (permanent)',
+    dynamicOnly:
+      '{p1}: Peaceful Tune healing -5%..32% and 8 Illusion Energy/s while Heroic Melody is active',
+  },
+  {
+    id: 'Module 2406',
+    name: 'Team Luck & Crit Lv.5/6',
+    alreadyInBaseStats: 'Crit DMG & Luck DMG when luckyCritEnabled is on',
+    dynamicOnly: 'Read from moduleSlots directly; never added on top of luckyCritEnabled',
+  },
+];
+
+// ---- createSanitizedCookingBuff (SDD section 1.2) ----
+
+// Removes every timed in-combat buff from the permanent baseline. `professionKey` is optional:
+// when the player IS a Verdant Oracle, the Inspiration buff is generated by their own talent
+// tree, so the manual switch is cleared to avoid double counting (ADR-011 decision 1).
+export function createSanitizedCookingBuff(
+  rawBuff: CookingBuffState,
+  includeConsumables: boolean,
+  professionKey?: ProfessionKey,
+): CookingBuffState {
+  return {
+    ...rawBuff,
+    cookingEnabled: includeConsumables ? rawBuff.cookingEnabled : false,
+    syrupEnabled: includeConsumables ? rawBuff.syrupEnabled : false,
+    starOilEnabled: includeConsumables ? rawBuff.starOilEnabled : false,
+    eventBuffEnabled: includeConsumables ? rawBuff.eventBuffEnabled : false,
+    inspirationEnabled: professionKey === 'verdantOracle' ? false : rawBuff.inspirationEnabled,
+    // Timed in-combat buffs are removed from the baseline and simulated in the loop instead.
+    lifeWaveEnabled: false,
+    agileEnabled: false,
+    dmgStackEnabled: false,
+    statResonanceEnabled: false,
+  };
+}
+
+// ---- Dynamic buff requests ----
+
+// What the user asked for (raw switches AND the module actually being on Lv.5/6). The engine
+// simulates these over time instead of using the baked-in permanent value.
+export interface DynamicBuffRequests {
+  lifeWaveLevel: 0 | 5 | 6;
+  agileLevel: 0 | 5 | 6;
+  dmgStackLevel: 0 | 5 | 6;
+  // Beat Performer stat resonance: requested but NOT simulated (values unverified in data)
+  statResonanceRequested: boolean;
+}
+
+export function resolveDynamicBuffRequests(
+  rawBuff: CookingBuffState,
+  moduleSlots: ModuleSlots,
+): DynamicBuffRequests {
+  return {
+    lifeWaveLevel: rawBuff.lifeWaveEnabled
+      ? getPowerCoreLevel(moduleSlots, POWER_CORE_EFFECT_IDS.lifeWave)
+      : 0,
+    agileLevel: rawBuff.agileEnabled
+      ? getPowerCoreLevel(moduleSlots, POWER_CORE_EFFECT_IDS.agile)
+      : 0,
+    dmgStackLevel: rawBuff.dmgStackEnabled
+      ? getPowerCoreLevel(moduleSlots, POWER_CORE_EFFECT_IDS.dmgStack)
+      : 0,
+    statResonanceRequested: rawBuff.statResonanceEnabled,
+  };
+}
+
+// ---- computeSanitizedBaselineBundle (ADR-011 decision 1) ----
+
+export interface SanitizedBaselineBundle {
+  bundle: StatsBundle;
+  sanitizedCookingBuff: CookingBuffState;
+  dynamicBuffRequests: DynamicBuffRequests;
+}
+
+// Computes the Pure Pre-Combat Stats of `state`. `state.cookingBuff` is treated as the user's
+// REQUEST; the stats themselves are computed with the sanitized copy.
+export function computeSanitizedBaselineBundle(
+  state: BuildStore,
+  includeConsumables: boolean,
+): SanitizedBaselineBundle {
+  const sanitizedCookingBuff = createSanitizedCookingBuff(
+    state.cookingBuff,
+    includeConsumables,
+    state.professionKey,
+  );
+  const dynamicBuffRequests = resolveDynamicBuffRequests(state.cookingBuff, state.moduleSlots);
+  const bundle = computeStatsBundle({ ...state, cookingBuff: sanitizedCookingBuff });
+  return { bundle, sanitizedCookingBuff, dynamicBuffRequests };
+}
+
+// Convenience for the engine: attack stat key of the profession.
+export function attackStatOf(professionKey: ProfessionKey): 'atk' | 'matk' {
+  return PROFESSIONS[professionKey].attackType === 'physical' ? 'atk' : 'matk';
+}
